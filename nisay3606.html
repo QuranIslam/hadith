@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+سنن النسائي حديث رقم 3606 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+سنن النسائي حديث رقم 3606 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">أَخْبَرَنَا إِسْحَاقُ بْنُ إِبْرَاهِيمَ، قَالَ أَنْبَأَنَا الْمُعْتَمِرُ بْنُ سُلَيْمَانَ، قَالَ سَمِعْتُ أَبِي يُحَدِّثُ، عَنْ حُصَيْنِ بْنِ عَبْدِ الرَّحْمَنِ، عَنْ عَمْرِو بْنِ جَاوَانَ، - رَجُلٌ مِنْ بَنِي تَمِيمٍ - وَذَاكَ أَنِّي قُلْتُ لَهُ أَرَأَيْتَ اعْتِزَالَ الأَحْنَفِ بْنِ قَيْسٍ مَا كَانَ قَالَ سَمِعْتُ الأَحْنَفَ يَقُولُ أَتَيْتُ الْمَدِينَةَ وَأَنَا حَاجٌّ فَبَيْنَا نَحْنُ فِي مَنَازِلِنَا نَضَعُ رِحَالَنَا إِذْ أَتَى آتٍ فَقَالَ قَدِ اجْتَمَعَ النَّاسُ فِي الْمَسْجِدِ فَاطَّلَعْتُ فَإِذَا يَعْنِي النَّاسَ مُجْتَمِعُونَ وَإِذَا بَيْنَ أَظْهُرِهِمْ نَفَرٌ قُعُودٌ فَإِذَا هُوَ عَلِيُّ بْنُ أَبِي طَالِبٍ وَالزُّبَيْرُ وَطَلْحَةُ وَسَعْدُ بْنُ أَبِي وَقَّاصٍ رَحْمَةُ اللَّهِ عَلَيْهِمْ فَلَمَّا قُمْتُ عَلَيْهِمْ قِيلَ هَذَا عُثْمَانُ بْنُ عَفَّانَ قَدْ جَاءَ - قَالَ - فَجَاءَ وَعَلَيْهِ مُلَيَّةٌ صَفْرَاءُ فَقُلْتُ لِصَاحِبِي كَمَا أَنْتَ حَتَّى أَنْظُرَ مَا جَاءَ بِهِ ‏.‏ فَقَالَ عُثْمَانُ أَهَا هُنَا عَلِيٌّ أَهَا هُنَا الزُّبَيْرُ أَهَا هُنَا طَلْحَةُ أَهَا هُنَا سَعْدٌ قَالُوا نَعَمْ ‏.‏ قَالَ فَأَنْشُدُكُمْ بِاللَّهِ الَّذِي لاَ إِلَهَ إِلاَّ هُوَ أَتَعْلَمُونَ أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ ‏"‏ مَنْ يَبْتَاعُ مِرْبَدَ بَنِي فُلاَنٍ غَفَرَ اللَّهُ لَهُ ‏"‏ ‏.‏ فَابْتَعْتُهُ فَأَتَيْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم فَقُلْتُ إِنِّي ابْتَعْتُ مِرْبَدَ بَنِي فُلاَنٍ ‏.‏ قَالَ ‏"‏ فَاجْعَلْهُ فِي مَسْجِدِنَا وَأَجْرُهُ لَكَ ‏"‏ ‏.‏ قَالُوا نَعَمْ ‏.‏ قَالَ فَأَنْشُدُكُمْ بِاللَّهِ الَّذِي لاَ إِلَهَ إِلاَّ هُوَ هَلْ تَعْلَمُونَ أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ ‏"‏ مَنْ يَبْتَاعُ بِئْرَ رُومَةَ غَفَرَ اللَّهُ لَهُ ‏"‏ ‏.‏ فَأَتَيْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم فَقُلْتُ قَدِ ابْتَعْتُ بِئْرَ رُومَةَ ‏.‏ قَالَ ‏"‏ فَاجْعَلْهَا سِقَايَةً لِلْمُسْلِمِينَ وَأَجْرُهَا لَكَ ‏"‏ ‏.‏ قَالُوا نَعَمْ ‏.‏ قَالَ فَأَنْشُدُكُمْ بِاللَّهِ الَّذِي لاَ إِلَهَ إِلاَّ هُوَ هَلْ تَعْلَمُونَ أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ ‏"‏ مَنْ يُجَهِّزْ جَيْشَ الْعُسْرَةِ غَفَرَ اللَّهُ لَهُ ‏"‏ ‏.‏ فَجَهَّزْتُهُمْ حَتَّى مَا يَفْقِدُونَ عِقَالاً وَلاَ خِطَامًا ‏.‏ قَالُوا نَعَمْ ‏.‏ قَالَ اللَّهُمَّ اشْهَدِ اللَّهُمَّ اشْهَدِ اللَّهُمَّ اشْهَدْ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">سنن النسائي</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">3606</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">-</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sunan an-Nasa'i 3606</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated>Al-Ahnaf said:</div><div class=text_details>"I came to Al-Madinah, and I was performing Hajj, and while we were in our camping place unloading our mounts, someone came to us and said: 'The people have gathered in the Masjid.' I looked and found the people gathered, and in the midst of them was a group; there I saw 'Ali bin Abi Talib, Az-Zubair, Talhah and Sa'd bin Abi Waqqas, may Allah have mercy on them. When I got there, it was said that 'Uthman bin 'Affan had come. He came, wearing a yellowish cloak. I said to my companion: Stay where you are until I find out what is happening. 'Uthman said: Is 'Ali here? Is Az-Zubair here? Is Talhah here? Is Sa'd here? They said: Yes. He said: I adjure you by Allah, beside Whom there is none worthy of worship, are you aware that the Messenger of Allah said: Whoever buys the Mirbad of Banu so and so, Allah will forgive him, and I bought it, then I came to the Messenger of Allah and told him, and he said: Add it to our Masjid and the reward for it will be yours? They said: Yes. He said: I adjure you by Allah, beside Whom there is none worthy of worship, are you aware that the Messenger of Allah said: Whoever buys the well of Rumah, Allah will forgive him, so I came to the Messenger of Allah and said: I have bought the well of Rumah. He said: Give it to provide water for the Muslims, and the reward for it will be yours? They said: Yes. He said: 'I adjure you by Allah, beside Whom there is none worthy of worship, are you aware that the Messenger of Allah said: Whoever equips the army of Al-'Usrah (i.e. Tabuk), Allah will forgive him, so I equipped them until they were not lacking even a rope or a bridle?' They said: Yes. He said: O Allah, bear witness, O Allah, bear witness, O Allah, bear witness."</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sunan an-Nasa'i</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">3606</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">-</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح مسلم حديث رقم 2484 مكرر موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح مسلم حديث رقم 2484 مكرر مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic">حَدَّثَنَا قُتَيْبَةُ بْنُ سَعِيدٍ، وَإِسْحَاقُ بْنُ إِبْرَاهِيمَ، - وَاللَّفْظُ لِقُتَيْبَةَ - حَدَّثَنَا جَرِيرٌ، عَنِ الأَعْمَشِ، عَنْ سُلَيْمَانَ بْنِ مُسْهِرٍ، عَنْ خَرَشَةَ بْنِ الْحُرِّ، قَالَ كُنْتُ جَالِسًا فِي حَلْقَةٍ فِي مَسْجِدِ الْمَدِينَةِ - قَالَ - وَفِيهَا شَيْخٌ حَسَنُ الْهَيْئَةِ وَهُوَ عَبْدُ اللَّهِ بْنُ سَلاَمٍ - قَالَ - فَجَعَلَ يُحَدِّثُهُمْ حَدِيثًا حَسَنًا - قَالَ - فَلَمَّا قَامَ قَالَ الْقَوْمُ مَنْ سَرَّهُ أَنْ يَنْظُرَ إِلَى رَجُلٍ مِنْ أَهْلِ الْجَنَّةِ فَلْيَنْظُرْ إِلَى هَذَا ‏.‏ قَالَ فَقُلْتُ وَاللَّهِ لأَتْبَعَنَّهُ فَلأَعْلَمَنَّ مَكَانَ بَيْتِهِ ‏.‏ قَالَ فَتَبِعْتُهُ فَانْطَلَقَ حَتَّى كَادَ أَنْ يَخْرُجَ مِنَ الْمَدِينَةِ ثُمَّ دَخَلَ مَنْزِلَهُ - قَالَ - فَاسْتَأْذَنْتُ عَلَيْهِ فَأَذِنَ لِي فَقَالَ مَا حَاجَتُكَ يَا ابْنَ أَخِي قَالَ فَقُلْتُ لَهُ سَمِعْتُ الْقَوْمَ يَقُولُونَ لَكَ لَمَّا قُمْتَ مَنْ سَرَّهُ أَنْ يَنْظُرَ إِلَى رَجُلٍ مِنْ أَهْلِ الْجَنَّةِ فَلْيَنْظُرْ إِلَى هَذَا ‏.‏ فَأَعْجَبَنِي أَنْ أَكُونَ مَعَكَ قَالَ اللَّهُ أَعْلَمُ بِأَهْلِ الْجَنَّةِ وَسَأُحَدِّثُكَ مِمَّ قَالُوا ذَاكَ إِنِّي بَيْنَمَا أَنَا نَائِمٌ إِذْ أَتَانِي رَجُلٌ فَقَالَ لِي قُمْ ‏.‏ فَأَخَذَ بِيَدِي فَانْطَلَقْتُ مَعَهُ - قَالَ - فَإِذَا أَنَا بِجَوَادَّ عَنْ شِمَالِي - قَالَ - فَأَخَذْتُ لآخُذَ فِيهَا فَقَالَ لِي لاَ تَأْخُذْ فِيهَا فَإِنَّهَا طُرُقُ أَصْحَابِ الشِّمَالِ - قَالَ - فَإِذَا جَوَادُّ مَنْهَجٌ عَلَى يَمِيِنِي فَقَالَ لِي خُذْ هَا هُنَا ‏.‏ فَأَتَى بِي جَبَلاً فَقَالَ لِي اصْعَدْ - قَالَ - فَجَعَلْتُ إِذَا أَرَدْتُ أَنْ أَصْعَدَ خَرَرْتُ عَلَى اسْتِي - قَالَ - حَتَّى فَعَلْتُ ذَلِكَ مِرَارًا - قَالَ - ثُمَّ انْطَلَقَ بِي حَتَّى أَتَى بِي عَمُودًا رَأْسُهُ فِي السَّمَاءِ وَأَسْفَلُهُ فِي الأَرْضِ فِي أَعْلاَهُ حَلْقَةٌ فَقَالَ لِيَ ‏.‏ اصْعَدْ فَوْقَ هَذَا ‏.‏ قَالَ قُلْتُ كَيْفَ أَصْعَدُ هَذَا وَرَأْسُهُ فِي السَّمَاءِ - قَالَ - فَأَخَذَ بِيَدِي فَزَجَلَ بِي - قَالَ - فَإِذَا أَنَا مُتَعَلِّقٌ بِالْحَلْقَةِ - قَالَ - ثُمَّ ضَرَبَ الْعَمُودَ فَخَرَّ - قَالَ - وَبَقِيتُ مُتَعَلِّقًا بِالْحَلْقَةِ حَتَّى أَصْبَحْتُ - قَالَ - فَأَتَيْتُ النَّبِيَّ صلى الله عليه وسلم فَقَصَصْتُهَا عَلَيْهِ فَقَالَ ‏</span><span class="hadith">"‏ أَمَّا الطُّرُقُ الَّتِي رَأَيْتَ عَنْ يَسَارِكَ فَهِيَ طُرُقُ أَصْحَابِ الشِّمَالِ - قَالَ - وَأَمَّا الطُّرُقُ الَّتِي رَأَيْتَ عَنْ يَمِينِكَ فَهِيَ طُرُقُ أَصْحَابِ الْيَمِينِ وَأَمَّا الْجَبَلُ فَهُوَ مَنْزِلُ الشُّهَدَاءِ وَلَنْ تَنَالَهُ وَأَمَّا الْعَمُودُ فَهُوَ عَمُودُ الإِسْلاَمِ وَأَمَّا الْعُرْوَةُ فَهِيَ عُرْوَةُ الإِسْلاَمِ وَلَنْ تَزَالَ مُتَمَسِّكًا بِهَا حَتَّى تَمُوتَ ‏"</span><span class="arabic_sanad arabic">‏ ‏.‏</span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح مسلم</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">2484 مكرر</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih Muslim 2484c</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Kharasha b. Hurr reported:</div><div class=text_details>I was sitting in a circle in the mosque of Medina and there was an old man, quite handsome. He was 'Abdullah b. Salim. He was telling good things to them (to the people sitting in that company). As he stood up (to depart) the people said: He who is desirous of looking at a person from amongst the people of Paradise should see him. I said: By Allah, I will follow him, and would try to know his residence. So I followed him and he walked on until he reached the outskirts of Medina. He then entered his house. I sought permission from him to get in, and he granted me the permission, saying: My nephew, what is the need (that has brought you here)? I said to him: As you stood up, I heard people say about you: He who is desirous of seeing a person from among the people of Paradise should look at him. So I became desirous of accompanying you. He ('Abdullah b. Salim) said: It is Allah Who knows best about the people of Paradise. I would, however, narrate to you as to why they said like it. (The story is) that while I was asleep (one night) there came to me a person (in the dream) who asked me to stand up. (So I stood up) and he caught hold of my hand and I walked along with him, and, lo, I found some paths on my left and I was about to set out upon them. Thereupon he said to me Do not set yourself on (them) for these are the paths of the leftists (denizens of Hell-fire). Then there were paths leading to the right side, whereupon he said: Set yourself on these paths. We came across a hill and he said to me: Climb up, and I attempted to climb up that I fell upon my buttocks. I made several attempts (but failed to succeed). He led until he came to a pillar (so high) that its upper end touched the sky and its base was in the earth. And there was a handhold at its upper end. He said to me Climb over it. I said: How can I climb upon it, as its upper end touches the sky? He cought hold of my hand and pushed me up and I found myself suspended with the handhold. He then struck the pillar and it fell down, but I remained attached to that handhold until it was morning (and the dream was thus over). I came to Allah's Apostle (ﷺ) and narrated it to him. He said: So far as the paths which you saw on your left are concerned, these are paths of the leftists (denizens of Hell) and the paths which you saw on your right, these are the paths of the rightists (the dwellers of Paradise) and the mountain represents the destination of the martyrs which you would not be able to attain. The pillar implies the pillar of Islam. and so far as the handhold is concerned, it implies the handhold of Islam, and you would hold to it fastly until you would meet death.</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih Muslim</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">2484c</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

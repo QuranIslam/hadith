@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+سنن أبي داود حديث رقم 2985 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+سنن أبي داود حديث رقم 2985 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا أَحْمَدُ بْنُ صَالِحٍ، حَدَّثَنَا عَنْبَسَةُ، حَدَّثَنَا يُونُسُ، عَنِ ابْنِ شِهَابٍ، أَخْبَرَنِي عَبْدُ اللَّهِ بْنُ الْحَارِثِ بْنِ نَوْفَلٍ الْهَاشِمِيُّ، أَنَّ عَبْدَ الْمُطَّلِبِ بْنَ رَبِيعَةَ بْنِ الْحَارِثِ بْنِ عَبْدِ الْمُطَّلِبِ، أَخْبَرَهُ أَنَّ أَبَاهُ رَبِيعَةَ بْنَ الْحَارِثِ وَعَبَّاسَ بْنَ عَبْدِ الْمُطَّلِبِ قَالاَ لِعَبْدِ الْمُطَّلِبِ بْنِ رَبِيعَةَ وَلِلْفَضْلِ بْنِ عَبَّاسٍ ائْتِيَا رَسُولَ اللَّهِ صلى الله عليه وسلم فَقُولاَ لَهُ يَا رَسُولَ اللَّهِ قَدْ بَلَغْنَا مِنَ السِّنِّ مَا تَرَى وَأَحْبَبْنَا أَنْ نَتَزَوَّجَ وَأَنْتَ يَا رَسُولَ اللَّهِ أَبَرُّ النَّاسِ وَأَوْصَلُهُمْ وَلَيْسَ عِنْدَ أَبَوَيْنَا مَا يُصْدِقَانِ عَنَّا فَاسْتَعْمِلْنَا يَا رَسُولَ اللَّهِ عَلَى الصَّدَقَاتِ فَلْنُؤَدِّ إِلَيْكَ مَا يُؤَدِّي الْعُمَّالُ وَلْنُصِبْ مَا كَانَ فِيهَا مِنْ مِرْفَقٍ ‏.‏ قَالَ فَأَتَى إِلَيْنَا عَلِيُّ بْنُ أَبِي طَالِبٍ وَنَحْنُ عَلَى تِلْكَ الْحَالِ فَقَالَ لَنَا إِنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ ‏"‏ لاَ وَاللَّهِ لاَ نَسْتَعْمِلُ مِنْكُمْ أَحَدًا عَلَى الصَّدَقَةِ ‏"‏ ‏.‏ فَقَالَ لَهُ رَبِيعَةُ هَذَا مِنْ أَمْرِكَ قَدْ نِلْتَ صِهْرَ رَسُولِ اللَّهِ صلى الله عليه وسلم فَلَمْ نَحْسُدْكَ عَلَيْهِ ‏.‏ فَأَلْقَى عَلِيٌّ رِدَاءَهُ ثُمَّ اضْطَجَعَ عَلَيْهِ فَقَالَ أَنَا أَبُو حَسَنٍ الْقَرْمُ وَاللَّهِ لاَ أَرِيمُ حَتَّى يَرْجِعَ إِلَيْكُمَا ابْنَاكُمَا بِجَوَابِ مَا بَعَثْتُمَا بِهِ إِلَى النَّبِيِّ صلى الله عليه وسلم ‏.‏ قَالَ عَبْدُ الْمُطَّلِبِ فَانْطَلَقْتُ أَنَا وَالْفَضْلُ إِلَى بَابِ حُجْرَةِ النَّبِيِّ صلى الله عليه وسلم حَتَّى نُوَافِقَ صَلاَةَ الظُّهْرِ قَدْ قَامَتْ فَصَلَّيْنَا مَعَ النَّاسِ ثُمَّ أَسْرَعْتُ أَنَا وَالْفَضْلُ إِلَى بَابِ حُجْرَةِ النَّبِيِّ صلى الله عليه وسلم وَهُوَ يَوْمَئِذٍ عِنْدَ زَيْنَبَ بِنْتِ جَحْشٍ فَقُمْنَا بِالْبَابِ حَتَّى أَتَى رَسُولُ اللَّهِ صلى الله عليه وسلم فَأَخَذَ بِأُذُنِي وَأُذُنِ الْفَضْلِ ثُمَّ قَالَ أَخْرِجَا مَا تُصَرِّرَانِ ثُمَّ دَخَلَ فَأَذِنَ لِي وَلِلْفَضْلِ فَدَخَلْنَا فَتَوَاكَلْنَا الْكَلاَمَ قَلِيلاً ثُمَّ كَلَّمْتُهُ أَوْ كَلَّمَهُ الْفَضْلُ - قَدْ شَكَّ فِي ذَلِكَ عَبْدُ اللَّهِ - قَالَ كَلَّمَهُ بِالأَمْرِ الَّذِي أَمَرَنَا بِهِ أَبَوَانَا فَسَكَتَ رَسُولُ اللَّهِ صلى الله عليه وسلم سَاعَةً وَرَفَعَ بَصَرَهُ قِبَلَ سَقْفِ الْبَيْتِ حَتَّى طَالَ عَلَيْنَا أَنَّهُ لاَ يَرْجِعُ إِلَيْنَا شَيْئًا حَتَّى رَأَيْنَا زَيْنَبَ تَلْمَعُ مِنْ وَرَاءِ الْحِجَابِ بِيَدِهَا تُرِيدُ أَنْ لاَ تَعْجَلاَ وَإِنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم فِي أَمْرِنَا ثُمَّ خَفَّضَ رَسُولُ اللَّهِ صلى الله عليه وسلم رَأْسَهُ فَقَالَ لَنَا ‏"‏ إِنَّ هَذِهِ الصَّدَقَةَ إِنَّمَا هِيَ أَوْسَاخُ النَّاسِ وَإِنَّهَا لاَ تَحِلُّ لِمُحَمَّدٍ وَلاَ لآلِ مُحَمَّدٍ ادْعُوا لِي نَوْفَلَ بْنَ الْحَارِثِ ‏"‏ ‏.‏ فَدُعِيَ لَهُ نَوْفَلُ بْنُ الْحَارِثِ فَقَالَ ‏"‏ يَا نَوْفَلُ أَنْكِحْ عَبْدَ الْمُطَّلِبِ ‏"‏ ‏.‏ فَأَنْكَحَنِي نَوْفَلٌ ثُمَّ قَالَ النَّبِيُّ صلى الله عليه وسلم ‏"‏ ادْعُوا لِي مَحْمِيَةَ بْنَ جَزْءٍ ‏"‏ ‏.‏ وَهُوَ رَجُلٌ مِنْ بَنِي زُبَيْدٍ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم اسْتَعْمَلَهُ عَلَى الأَخْمَاسِ فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم لِمَحْمِيَةَ ‏"‏ أَنْكِحِ الْفَضْلَ ‏"‏ ‏.‏ فَأَنْكَحَهُ ثُمَّ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ قُمْ فَأَصْدِقْ عَنْهُمَا مِنَ الْخُمُسِ كَذَا وَكَذَا ‏"‏ ‏.‏ لَمْ يُسَمِّهِ لِي عَبْدُ اللَّهِ بْنُ الْحَارِثِ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">سنن أبي داود</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">2985</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">&nbsp;<b> صحيح</b>&nbsp;&nbsp; (الألباني) </span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sunan Abi Dawud 2985</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Narrated AbdulMuttalib ibn Rabi'ah ibn al-Harith:</div><div class=text_details></p><p>AbdulMuttalib ibn Rabi'ah ibn al-Harith said that his father, Rabi'ah ibn al-Harith, and Abbas ibn al-Muttalib said to AbdulMuttalib ibn Rabi'ah and al-Fadl ibn Abbas: Go to the Messenger of Allah (ﷺ) and tell him: Messenger of Allah, we are now of age as you see, and we wish to marry. Messenger of Allah, you are the kindest of the people and the most skilled in matchmaking. Our fathers have nothing with which to pay our dower. So appoint us collector of sadaqah (zakat), Messenger of Allah, and we shall give you what the other collectors give you, and we shall have the benefit accruing from it. Ali came to us while we were in this condition.  </p><p>He said: The Messenger of Allah (ﷺ) said: No, I swear by Allah, he will not appoint any of you collector of sadaqah (zakat).  </p><p>Rabi'ah said to him: This is your condition; you have gained your relationship with the Messenger of Allah (ﷺ) by marriage, but we did not grudge you that. Ali then put his cloak on the earth and lay on it.  </p><p>He then said: I am the father of Hasan, the chief. I swear by Allah, I shall not leave this place until your sons come with a reply (to the question) for which you have sent them to the Prophet (ﷺ).  </p><p>AbdulMuttalib said: So I and al-Fadl went towards the door of the apartment of the Prophet (ﷺ). We found that the noon prayer in congregation had already started. So we prayed along with the people. I and al-Fadl then hastened towards the door of the apartment of the Prophet (ﷺ). He was (staying) with Zaynab, daughter of Jahsh, that day. We stood until the Messenger of Allah (ﷺ) came. He caught my ear and the ear of al-Fadl.  </p><p>He then said: Reveal what you conceal in your hearts. He then entered  and permitted me and al-Fadl (to enter). So we entered and for a little while we asked each other to talk. I then talked to him, or al-Fadl talked to him (the narrator, Abdullah was not sure).  </p><p>He said: He spoke to him concerning the matter about which our fathers ordered us to ask him. The Messenger of Allah (ﷺ) remained silent for a moment and raised his eyes towards the ceiling of the room. He took so long that we thought he would not give any reply to us. Meanwhile we saw that Zaynab was signalling to us with her hand from behind the veil, asking us not to be in a hurry, and that the Messenger of Allah (ﷺ) was (thinking) about our matter.  </p><p>The Messenger of Allah (ﷺ) then lowered his head and said to us: This sadaqah (zakat) is a dirt of the people. It is legal neither for Muhammad nor for the family of Muhammad. Call Nawfal ibn al-Harith to me. So Nawfal ibn al-Harith was called to him.  </p><p>He said: Nawfal, marry AbdulMuttalib (to your daughter). So Nawfal married me (to his daughter).  </p><p>The Prophet (ﷺ) then said: Call Mahmiyyah ibn Jaz'i to me. He was a man of Banu Zubayd, whom the Messenger of Allah (ﷺ) had appointed collector of the fifths.  </p><p>The Messenger of Allah (ﷺ) said to Mahmiyyah: Marry al-Fadl (to your daughter). So he married him to her. The Messenger of Allah (ﷺ) said: Stand up and pay the dower from the fifth so-and-so on their behalf. Abdullah ibn al-Harith did not name it (i.e. the amount of the dower).</p></b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sunan Abi Dawud</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">2985</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">&nbsp;<b>Sahih</b> (Al-Albani)</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

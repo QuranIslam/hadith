@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+سنن النسائي حديث رقم 307 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+سنن النسائي حديث رقم 307 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">أَخْبَرَنَا أَحْمَدُ بْنُ عُثْمَانَ بْنِ حَكِيمٍ، قَالَ حَدَّثَنَا خَالِدٌ، - يَعْنِي ابْنَ مَخْلَدٍ - قَالَ حَدَّثَنَا عَلِيٌّ، - وَهُوَ ابْنُ صَالِحٍ - عَنْ أَبِي إِسْحَاقَ، عَنْ عَمْرِو بْنِ مَيْمُونٍ، قَالَ حَدَّثَنَا عَبْدُ اللَّهِ، فِي بَيْتِ الْمَالِ قَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم يُصَلِّي عِنْدَ الْبَيْتِ وَمَلأٌ مِنْ قُرَيْشٍ جُلُوسٌ وَقَدْ نَحَرُوا جَزُورًا فَقَالَ بَعْضُهُمْ أَيُّكُمْ يَأْخُذُ هَذَا الْفَرْثَ بِدَمِهِ ثُمَّ يُمْهِلُهُ حَتَّى يَضَعَ وَجْهَهُ سَاجِدًا فَيَضَعُهُ - يَعْنِي - عَلَى ظَهْرِهِ قَالَ عَبْدُ اللَّهِ فَانْبَعَثَ أَشْقَاهَا فَأَخَذَ الْفَرْثَ فَذَهَبَ بِهِ ثُمَّ أَمْهَلَهُ فَلَمَّا خَرَّ سَاجِدًا وَضَعَهُ عَلَى ظَهْرِهِ فَأُخْبِرَتْ فَاطِمَةُ بِنْتُ رَسُولِ اللَّهِ صلى الله عليه وسلم وَهِيَ جَارِيَةٌ فَجَاءَتْ تَسْعَى فَأَخَذَتْهُ مِنْ ظَهْرِهِ فَلَمَّا فَرَغَ مِنْ صَلاَتِهِ قَالَ ‏"‏ اللَّهُمَّ عَلَيْكَ بِقُرَيْشٍ ‏"‏ ‏.‏ ثَلاَثَ مَرَّاتٍ ‏"‏ اللَّهُمَّ عَلَيْكَ بِأَبِي جَهْلِ بْنِ هِشَامٍ وَشَيْبَةَ بْنِ رَبِيعَةَ وَعُتْبَةَ بْنِ رَبِيعَةَ وَعُقْبَةَ بْنِ أَبِي مُعَيْطٍ ‏"‏ ‏.‏ حَتَّى عَدَّ سَبْعَةً مِنْ قُرَيْشٍ ‏.‏ قَالَ عَبْدُ اللَّهِ فَوَالَّذِي أَنْزَلَ عَلَيْهِ الْكِتَابَ لَقَدْ رَأَيْتُهُمْ صَرْعَى يَوْمَ بَدْرٍ فِي قَلِيبٍ وَاحِدٍ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">سنن النسائي</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">307</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">-</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sunan an-Nasa'i 307</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated>It was narrated that 'Amr bin Maimun said:</div><div class=text_details>"Abdullah told us: 'The Messenger of Allah (ﷺ) was praying at the House (the Ka'bah) and a group of the nobles of Quraish were sitting there. They had just slaughtered a camel and one of them said: "Which of you will take these stomach contents with the blood and wait until he prostrates, then put them on his back?" 'Abdullah said: 'The one who was most doomed got up and took the stomach contents, then went and waited until he prostrated himself, and put it on his back. Fatimah, the daughter of the Messenger of Allah (ﷺ), who was a young girl, was told about that, and she came running and took it off his back. When he had finished praying he said: "O Allah! Punish the Quraish," three times, "O Allah, punish Abu Jahl bin Hisham, Shaibah bin Rabi'ah, 'Utbah bin Rabi'ah, 'Uqbah bin Abi Mu'ait" until he had listed seven men from Quraish.' 'Abdullah said: 'By the One Who revealed the Book to him, I saw them dead on the day of Badr (their corpses) in a single dry well.'"</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sunan an-Nasa'i</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">307</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">-</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

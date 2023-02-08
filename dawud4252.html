@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+سنن أبي داود حديث رقم 4252 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+سنن أبي داود حديث رقم 4252 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا سُلَيْمَانُ بْنُ حَرْبٍ، وَمُحَمَّدُ بْنُ عِيسَى، قَالاَ حَدَّثَنَا حَمَّادُ بْنُ زَيْدٍ، عَنْ أَيُّوبَ، عَنْ أَبِي قِلاَبَةَ، عَنْ أَبِي أَسْمَاءَ، عَنْ ثَوْبَانَ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ إِنَّ اللَّهَ زَوَى لِيَ الأَرْضَ ‏"‏ ‏.‏ أَوْ قَالَ ‏"‏ إِنَّ رَبِّي زَوَى لِيَ الأَرْضَ فَرَأَيْتُ مَشَارِقَهَا وَمَغَارِبَهَا وَإِنَّ مُلْكَ أُمَّتِي سَيَبْلُغُ مَا زُوِيَ لِي مِنْهَا وَأُعْطِيتُ الْكَنْزَيْنِ الأَحْمَرَ وَالأَبْيَضَ وَإِنِّي سَأَلْتُ رَبِّي لأُمَّتِي أَنْ لاَ يُهْلِكَهَا بِسَنَةٍ بِعَامَّةٍ وَلاَ يُسَلِّطَ عَلَيْهِمْ عَدُوًّا مِنْ سِوَى أَنْفُسِهِمْ فَيَسْتَبِيحَ بَيْضَتَهُمْ وَإِنَّ رَبِّي قَالَ لِي يَا مُحَمَّدُ إِنِّي إِذَا قَضَيْتُ قَضَاءً فَإِنَّهُ لاَ يُرَدُّ وَلاَ أُهْلِكُهُمْ بِسَنَةٍ بِعَامَّةٍ وَلاَ أُسَلِّطُ عَلَيْهِمْ عَدُوًّا مِنْ سِوَى أَنْفُسِهِمْ فَيَسْتَبِيحَ بَيْضَتَهُمْ وَلَوِ اجْتَمَعَ عَلَيْهِمْ مَنْ بَيْنَ أَقْطَارِهَا أَوْ قَالَ بِأَقْطَارِهَا حَتَّى يَكُونَ بَعْضُهُمْ يُهْلِكُ بَعْضًا وَحَتَّى يَكُونَ بَعْضُهُمْ يَسْبِي بَعْضًا وَإِنَّمَا أَخَافُ عَلَى أُمَّتِي الأَئِمَّةَ الْمُضِلِّينَ وَإِذَا وُضِعَ السَّيْفُ فِي أُمَّتِي لَمْ يُرْفَعْ عَنْهَا إِلَى يَوْمِ الْقِيَامَةِ وَلاَ تَقُومُ السَّاعَةُ حَتَّى تَلْحَقَ قَبَائِلُ مِنْ أُمَّتِي بِالْمُشْرِكِينَ وَحَتَّى تَعْبُدَ قَبَائِلُ مِنْ أُمَّتِي الأَوْثَانَ وَإِنَّهُ سَيَكُونُ فِي أُمَّتِي كَذَّابُونَ ثَلاَثُونَ كُلُّهُمْ يَزْعُمُ أَنَّهُ نَبِيٌّ وَأَنَا خَاتَمُ النَّبِيِّينَ لاَ نَبِيَّ بَعْدِي وَلاَ تَزَالُ طَائِفَةٌ مِنْ أُمَّتِي عَلَى الْحَقِّ ‏"‏ ‏.‏ قَالَ ابْنُ عِيسَى ‏"‏ ظَاهِرِينَ ‏"‏ ‏.‏ ثُمَّ اتَّفَقَا ‏"‏ لاَ يَضُرُّهُمْ مَنْ خَالَفَهُمْ حَتَّى يَأْتِيَ أَمْرُ اللَّهِ ‏"‏ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">سنن أبي داود</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">4252</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">&nbsp;<b> صحيح</b>&nbsp;&nbsp; (الألباني) </span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sunan Abi Dawud 4252</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated>Narrated Thawban:</div><div class=text_details>The Messenger of Allah (ﷺ) as saying: Allah, the Exalted, folded for me the earth, or he said (the narrator is doubtful): My Lord folded for me the earth, so much so that I saw its easts and wests (i.e. the extremities). The kingdom of my community will reach as far as the earth was floded for me. The two treasures, the red and the white, were bestowed on me. I prayed to my Lord that He may not destroy my community by prevailing famine, and not give their control to an enemy who annihilates then en masse except from among themselves. My Lord said to me: Muhammad, If I make a decision, it is not withdrawn ; and I shall not destroy them by prevailing famine, and I shall not give their control to an enemy, except from among themselves, who exterminates them en masse, even if they are stormed from all sides of the earth ; only a section of them will destroy another section, and a section will captive another section. I am afraid about my community of those leaders who will lead astray. When the sword is used among my people, it will not be withdrawn from them till the Day of Resurrection, and the Last Hour will not come before the tribes of my people attach themselves to the polytheists and tribes of my people worship idols. There will be among my people thirty great liars each of them asserting that he is (Allah's) prophet, where as I am the seal of the Prophet  s after whom (me) there will be no prophet ; and a section of my people will continue to hold to the truth - (according to the Ibn Isa's version: (will continue to dominate) - the agreed version goes: "and will not be injured by those who oppose them, till Allah's command comes."</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sunan Abi Dawud</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">4252</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">&nbsp;<b>Sahih</b> (Al-Albani)</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

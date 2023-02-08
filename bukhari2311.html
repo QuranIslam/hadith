@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح البخاري حديث رقم 2311 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح البخاري حديث رقم 2311 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">وَقَالَ عُثْمَانُ بْنُ الْهَيْثَمِ أَبُو عَمْرٍو حَدَّثَنَا عَوْفٌ، عَنْ مُحَمَّدِ بْنِ سِيرِينَ، عَنْ أَبِي هُرَيْرَةَ ـ رضى الله عنه ـ قَالَ وَكَّلَنِي رَسُولُ اللَّهِ صلى الله عليه وسلم بِحِفْظِ زَكَاةِ رَمَضَانَ، فَأَتَانِي آتٍ فَجَعَلَ يَحْثُو مِنَ الطَّعَامِ، فَأَخَذْتُهُ، وَقُلْتُ وَاللَّهِ لأَرْفَعَنَّكَ إِلَى رَسُولِ اللَّهِ صلى الله عليه وسلم‏.‏ قَالَ إِنِّي مُحْتَاجٌ، وَعَلَىَّ عِيَالٌ، وَلِي حَاجَةٌ شَدِيدَةٌ‏.‏ قَالَ فَخَلَّيْتُ عَنْهُ فَأَصْبَحْتُ فَقَالَ النَّبِيُّ صلى الله عليه وسلم ‏"‏ يَا أَبَا هُرَيْرَةَ مَا فَعَلَ أَسِيرُكَ الْبَارِحَةَ ‏"‏‏.‏ قَالَ قُلْتُ يَا رَسُولَ اللَّهِ شَكَا حَاجَةً شَدِيدَةً وَعِيَالاً فَرَحِمْتُهُ، فَخَلَّيْتُ سَبِيلَهُ‏.‏ قَالَ ‏"‏ أَمَا إِنَّهُ قَدْ كَذَبَكَ وَسَيَعُودُ ‏"‏‏.‏ فَعَرَفْتُ أَنَّهُ سَيَعُودُ لِقَوْلِ رَسُولِ اللَّهِ صلى الله عليه وسلم إِنَّهُ سَيَعُودُ‏.‏ فَرَصَدْتُهُ فَجَاءَ يَحْثُو مِنَ الطَّعَامِ فَأَخَذْتُهُ فَقُلْتُ لأَرْفَعَنَّكَ إِلَى رَسُولِ اللَّهِ صلى الله عليه وسلم‏.‏ قَالَ دَعْنِي فَإِنِّي مُحْتَاجٌ، وَعَلَىَّ عِيَالٌ لاَ أَعُودُ، فَرَحِمْتُهُ، فَخَلَّيْتُ سَبِيلَهُ فَأَصْبَحْتُ، فَقَالَ لِي رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ يَا أَبَا هُرَيْرَةَ، مَا فَعَلَ أَسِيرُكَ ‏"‏‏.‏ قُلْتُ يَا رَسُولَ اللَّهِ شَكَا حَاجَةً شَدِيدَةً وَعِيَالاً، فَرَحِمْتُهُ فَخَلَّيْتُ سَبِيلَهُ‏.‏ قَالَ ‏"‏ أَمَا إِنَّهُ قَدْ كَذَبَكَ وَسَيَعُودُ ‏"‏‏.‏ فَرَصَدْتُهُ الثَّالِثَةَ فَجَاءَ يَحْثُو مِنَ الطَّعَامِ، فَأَخَذْتُهُ فَقُلْتُ لأَرْفَعَنَّكَ إِلَى رَسُولِ اللَّهِ صلى الله عليه وسلم، وَهَذَا آخِرُ ثَلاَثِ مَرَّاتٍ أَنَّكَ تَزْعُمُ لاَ تَعُودُ ثُمَّ تَعُودُ‏.‏ قَالَ دَعْنِي أُعَلِّمْكَ كَلِمَاتٍ يَنْفَعُكَ اللَّهُ بِهَا‏.‏ قُلْتُ مَا هُوَ قَالَ إِذَا أَوَيْتَ إِلَى فِرَاشِكَ فَاقْرَأْ آيَةَ الْكُرْسِيِّ <A id="q1" name="q1" href="javascript:openquran(1,255,255)"><c_q1>‏{‏اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَىُّ الْقَيُّومُ‏}‏</c_q1></a> حَتَّى تَخْتِمَ الآيَةَ، فَإِنَّكَ لَنْ يَزَالَ عَلَيْكَ مِنَ اللَّهِ حَافِظٌ وَلاَ يَقْرَبَنَّكَ شَيْطَانٌ حَتَّى تُصْبِحَ‏.‏ فَخَلَّيْتُ سَبِيلَهُ فَأَصْبَحْتُ، فَقَالَ لِي رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ مَا فَعَلَ أَسِيرُكَ الْبَارِحَةَ ‏"‏‏.‏ قُلْتُ يَا رَسُولَ اللَّهِ زَعَمَ أَنَّهُ يُعَلِّمُنِي كَلِمَاتٍ، يَنْفَعُنِي اللَّهُ بِهَا، فَخَلَّيْتُ سَبِيلَهُ‏.‏ قَالَ ‏"‏ مَا هِيَ ‏"‏‏.‏ قُلْتُ قَالَ لِي إِذَا أَوَيْتَ إِلَى فِرَاشِكَ فَاقْرَأْ آيَةَ الْكُرْسِيِّ مِنْ أَوَّلِهَا حَتَّى تَخْتِمَ <A id="q2" name="q2" href="javascript:openquran(1,255,255)"><c_q2>‏{‏اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَىُّ الْقَيُّومُ‏}‏</c_q2></a> وَقَالَ لِي لَنْ يَزَالَ عَلَيْكَ مِنَ اللَّهِ حَافِظٌ وَلاَ يَقْرَبَكَ شَيْطَانٌ حَتَّى تُصْبِحَ، وَكَانُوا أَحْرَصَ شَىْءٍ عَلَى الْخَيْرِ‏.‏ فَقَالَ النَّبِيُّ صلى الله عليه وسلم ‏"‏ أَمَا إِنَّهُ قَدْ صَدَقَكَ وَهُوَ كَذُوبٌ، تَعْلَمُ مَنْ تُخَاطِبُ مُنْذُ ثَلاَثِ لَيَالٍ يَا أَبَا هُرَيْرَةَ ‏"‏‏.‏ قَالَ لاَ‏.‏ قَالَ ‏"‏ ذَاكَ شَيْطَانٌ ‏"‏‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح البخاري</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">2311</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih al-Bukhari 2311</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>     Narrated Abu Huraira:</div><div class=text_details><p>     Allah's Messenger (ﷺ) deputed me to keep Sadaqat (al-Fitr) of Ramadan. A      comer came and started taking handfuls of the foodstuff (of the      Sadaqa) (stealthily). I took hold of him and said, "By Allah, I will      take you to Allah's Messenger (ﷺ) ." He said, "I am needy and have many      dependents, and I am in great need." I released him, and in the      morning Allah's Messenger (ﷺ) asked me, "What did your prisoner do      yesterday?" I said, "O Allah's Messenger (ﷺ)! The person complained of being     needy and of having many dependents, so, I pitied him and let him go."     Allah's Messenger (ﷺ) said, "Indeed, he told you a lie and he will be coming     again." I believed that he would show up again as Allah's Messenger (ﷺ) had      told me that he would return. So, I waited for him watchfully. When he     (showed up and) started stealing handfuls of foodstuff, I caught hold      of him again and said, "I will definitely take you to Allah's Messenger (ﷺ).     He said, "Leave me, for I am very needy and have many dependents. I      promise I will not come back again." I pitied him and let him go. <p>     In the morning Allah's Messenger (ﷺ) asked me, "What did your prisoner do."      I replied, "O Allah's Messenger (ﷺ)! He complained of his great need and of      too many dependents, so I took pity on him and set him free." Allah's      Apostle said, "Verily, he told you a lie and he will return." I waited     for him attentively for the third time, and when he (came and) started     stealing handfuls of the foodstuff, I caught hold of him and said, "I      will surely take you to Allah's Messenger (ﷺ) as it is the third time you      promise not to return, yet you break your promise and come." He said,      "(Forgive me and) I will teach you some words with which Allah will      benefit you." I asked, "What are they?" He replied, "Whenever you go      to bed, recite "Ayat-al-Kursi"-- 'Allahu la ilaha illa huwa-l-Haiy-ul      Qaiyum' till you finish the whole verse. (If you do so), Allah will      appoint a guard for you who will stay with you and no satan will come      near you till morning. " So, I released him. In the morning, Allah's      Apostle asked, "What did your prisoner do yesterday?" I replied, "He      claimed that he would teach me some words by which Allah will benefit      me, so I let him go." Allah's Messenger (ﷺ) asked, "What are they?" I      replied, "He said to me, 'Whenever you go to bed, recite Ayat-al-Kursi     from the beginning to the end ---- Allahu la ilaha illa      huwa-lHaiy-ul-Qaiyum----.' He further said to me, '(If you do so),      Allah will appoint a guard for you who will stay with you, and no      satan will come near you till morning.' (Abu Huraira or another      sub-narrator) added that they (the companions) were very keen to do      good deeds. The Prophet (ﷺ) said, "He really spoke the truth, although he      is an absolute liar. Do you know whom you were talking to, these three     nights, O Abu Huraira?" Abu Huraira said, "No." He said, "It was      Satan."<p></b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih al-Bukhari</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">2311</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

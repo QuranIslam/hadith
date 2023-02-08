@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح البخاري حديث رقم 4513, 4514, 4515 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح البخاري حديث رقم 4513, 4514, 4515 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا مُحَمَّدُ بْنُ بَشَّارٍ، حَدَّثَنَا عَبْدُ الْوَهَّابِ، حَدَّثَنَا عُبَيْدُ اللَّهِ، عَنْ نَافِعٍ، عَنِ ابْنِ عُمَرَ ـ رضى الله عنهما ـ أَتَاهُ رَجُلاَنِ فِي فِتْنَةِ ابْنِ الزُّبَيْرِ فَقَالاَ إِنَّ النَّاسَ قَدْ ضُيِّعُوا، وَأَنْتَ ابْنُ عُمَرَ وَصَاحِبُ النَّبِيِّ صلى الله عليه وسلم فَمَا يَمْنَعُكَ أَنْ تَخْرُجَ فَقَالَ يَمْنَعُنِي أَنَّ اللَّهَ حَرَّمَ دَمَ أَخِي‏.‏ فَقَالاَ أَلَمْ يَقُلِ اللَّهُ ‏<A id="q63" name="q63" href="javascript:openquran(1,193,193)"><c_q63>{‏وَقَاتِلُوهُمْ حَتَّى لاَ تَكُونَ فِتْنَةٌ ‏}</c_q63></a>‏ فَقَالَ قَاتَلْنَا حَتَّى لَمْ تَكُنْ فِتْنَةٌ، وَكَانَ الدِّينُ لِلَّهِ، وَأَنْتُمْ تُرِيدُونَ أَنْ تُقَاتِلُوا حَتَّى تَكُونَ فِتْنَةٌ، وَيَكُونَ الدِّينُ لِغَيْرِ اللَّهِ‏.‏       وَزَادَ عُثْمَانُ بْنُ صَالِحٍ عَنِ ابْنِ وَهْبٍ، قَالَ أَخْبَرَنِي فُلاَنٌ، وَحَيْوَةُ بْنُ شُرَيْحٍ، عَنْ بَكْرِ بْنِ عَمْرٍو الْمَعَافِرِيِّ، أَنَّ بُكَيْرَ بْنَ عَبْدِ اللَّهِ، حَدَّثَهُ عَنْ نَافِعٍ، أَنَّ رَجُلاً، أَتَى ابْنَ عُمَرَ فَقَالَ يَا أَبَا عَبْدِ الرَّحْمَنِ مَا حَمَلَكَ عَلَى أَنْ تَحُجَّ عَامًا وَتَعْتَمِرَ عَامًا، وَتَتْرُكَ الْجِهَادَ فِي سَبِيلِ اللَّهِ عَزَّ وَجَلَّ، وَقَدْ عَلِمْتَ مَا رَغَّبَ اللَّهُ فِيهِ قَالَ يَا ابْنَ أَخِي بُنِيَ الإِسْلاَمُ عَلَى خَمْسٍ إِيمَانٍ بِاللَّهِ وَرَسُولِهِ، وَالصَّلاَةِ الْخَمْسِ، وَصِيَامِ رَمَضَانَ، وَأَدَاءِ الزَّكَاةِ، وَحَجِّ الْبَيْتِ‏.‏ قَالَ يَا أَبَا عَبْدِ الرَّحْمَنِ، أَلاَ تَسْمَعُ مَا ذَكَرَ اللَّهُ فِي كِتَابِهِ ‏<A id="q64" name="q64" href="javascript:openquran(48,9,9)"><c_q64>{‏وَإِنْ طَائِفَتَانِ مِنَ الْمُؤْمِنِينَ اقْتَتَلُوا فَأَصْلِحُوا بَيْنَهُمَا‏}</c_q64></a>‏ ‏<A id="q65" name="q65" href="javascript:openquran(48,9,9)"><c_q65>{‏إِلَى أَمْرِ اللَّهِ‏}</c_q65></a>‏ ‏<A id="q66" name="q66" href="javascript:openquran(1,193,193)"><c_q66>{‏قَاتِلُوهُمْ حَتَّى لاَ تَكُونَ فِتْنَةٌ‏}</c_q66></a>‏ قَالَ فَعَلْنَا عَلَى عَهْدِ رَسُولِ اللَّهِ صلى الله عليه وسلم وَكَانَ الإِسْلاَمُ قَلِيلاً، فَكَانَ الرَّجُلُ يُفْتَنُ فِي دِينِهِ إِمَّا قَتَلُوهُ، وَإِمَّا يُعَذِّبُوهُ، حَتَّى كَثُرَ الإِسْلاَمُ فَلَمْ تَكُنْ فِتْنَةٌ‏.‏       قَالَ فَمَا قَوْلُكَ فِي عَلِيٍّ وَعُثْمَانَ قَالَ أَمَّا عُثْمَانُ فَكَأَنَّ اللَّهَ عَفَا عَنْهُ، وَأَمَّا أَنْتُمْ فَكَرِهْتُمْ أَنْ تَعْفُوا عَنْهُ، وَأَمَّا عَلِيٌّ فَابْنُ عَمِّ رَسُولِ اللَّهِ صلى الله عليه وسلم وَخَتَنُهُ‏.‏ وَأَشَارَ بِيَدِهِ فَقَالَ هَذَا بَيْتُهُ حَيْثُ تَرَوْنَ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح البخاري</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">4513, 4514, 4515</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih al-Bukhari 4513-4514- 4515</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Narrated Nafi`:</div><div class=text_details><p>During the affliction of Ibn Az-Zubair, two men came to Ibn `Umar and said, "The people are lost, and you are the son of `Umar, and the companion of the Prophet, so what forbids you from coming out?" He said, "What forbids me is that Allah has prohibited the shedding of my brother's blood." They both said, "Didn't Allah say, 'And fight then until there is no more affliction?" He said "We fought until there was no more affliction and the worship is for Allah (Alone while you want to fight until there is affliction and until the worship become for other than Allah." Narrated Nafi` (through another group of sub-narrators): A man came to Ibn `Umar and said, "O Abu `Abdur Rahman! What made you perform Hajj in one year and Umra in another year and leave the Jihad for Allah' Cause though you know how much Allah recommends it?" Ibn `Umar replied, "O son of my brother! Islam is founded on five principles, i.e. believe in Allah and His Apostle, the five compulsory prayers, the fasting of the month of Ramadan, the payment of Zakat, and the Hajj to the House (of Allah)." The man said, "O Abu `Abdur Rahman! Won't you listen to why Allah has mentioned in His Book: 'If two groups of believers fight each other, then make peace between them, but if one of then transgresses beyond bounds against the other, then you all fight against the one that transgresses. (49.9) and:--"And fight them till there is no more affliction (i.e. no more worshiping of others along with Allah)." Ibn `Umar said, "We did it, during the lifetime of Allah's Messenger (ﷺ) when Islam had only a few followers. A man would be put to trial because of his religion; he would either be killed or tortured. But when the Muslims increased, there was no more afflictions or oppressions." The man said, "What is your opinion about `Uthman and `Ali?" Ibn `Umar said, "As for `Uthman, it seems that Allah has forgiven him, but you people dislike that he should be forgiven. And as for `Ali, he is the cousin of Allah's Messenger (ﷺ) and his son-in-law." Then he pointed with his hand and said, "That is his house which you see."</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih al-Bukhari</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">4513-4514- 4515</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

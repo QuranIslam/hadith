@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح مسلم حديث رقم 1428 مكرر موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح مسلم حديث رقم 1428 مكرر مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا مُحَمَّدُ بْنُ حَاتِمِ بْنِ مَيْمُونٍ، حَدَّثَنَا بَهْزٌ، ح وَحَدَّثَنِي مُحَمَّدُ بْنُ رَافِعٍ، حَدَّثَنَا أَبُو النَّضْرِ، هَاشِمُ بْنُ الْقَاسِمِ قَالاَ جَمِيعًا حَدَّثَنَا سُلَيْمَانُ بْنُ الْمُغِيرَةِ، عَنْ ثَابِتٍ، عَنْ أَنَسٍ، وَهَذَا حَدِيثُ بَهْزٍ قَالَ لَمَّا انْقَضَتْ عِدَّةُ زَيْنَبَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم لِزَيْدٍ ‏"‏ فَاذْكُرْهَا عَلَىَّ ‏"‏ ‏.‏ قَالَ فَانْطَلَقَ زَيْدٌ حَتَّى أَتَاهَا وَهْىَ تُخَمِّرُ عَجِينَهَا قَالَ فَلَمَّا رَأَيْتُهَا عَظُمَتْ فِي صَدْرِي حَتَّى مَا أَسْتَطِيعُ أَنْ أَنْظُرَ إِلَيْهَا أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم ذَكَرَهَا فَوَلَّيْتُهَا ظَهْرِي وَنَكَصْتُ عَلَى عَقِبِي فَقُلْتُ يَا زَيْنَبُ أَرْسَلَ رَسُولُ اللَّهِ صلى الله عليه وسلم يَذْكُرُكِ ‏.‏ قَالَتْ مَا أَنَا بِصَانِعَةٍ شَيْئًا حَتَّى أُوَامِرَ رَبِّي ‏.‏ فَقَامَتْ إِلَى مَسْجِدِهَا وَنَزَلَ الْقُرْآنُ وَجَاءَ رَسُولُ اللَّهِ صلى الله عليه وسلم فَدَخَلَ عَلَيْهَا بِغَيْرِ إِذْنٍ قَالَ فَقَالَ وَلَقَدْ رَأَيْتُنَا أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم أَطْعَمَنَا الْخُبْزَ وَاللَّحْمَ حِينَ امْتَدَّ النَّهَارُ فَخَرَجَ النَّاسُ وَبَقِيَ رِجَالٌ يَتَحَدَّثُونَ فِي الْبَيْتِ بَعْدَ الطَّعَامِ فَخَرَجَ رَسُولُ اللَّهِ صلى الله عليه وسلم وَاتَّبَعْتُهُ فَجَعَلَ يَتَتَبَّعُ حُجَرَ نِسَائِهِ يُسَلِّمُ عَلَيْهِنَّ وَيَقُلْنَ يَا رَسُولَ اللَّهِ كَيْفَ وَجَدْتَ أَهْلَكَ قَالَ فَمَا أَدْرِي أَنَا أَخْبَرْتُهُ أَنَّ الْقَوْمَ خَرَجُوا أَوْ أَخْبَرَنِي - قَالَ - فَانْطَلَقَ حَتَّى دَخَلَ الْبَيْتَ فَذَهَبْتُ أَدْخُلُ مَعَهُ فَأَلْقَى السِّتْرَ بَيْنِي وَبَيْنَهُ وَنَزَلَ الْحِجَابُ قَالَ وَوُعِظَ الْقَوْمُ بِمَا وُعِظُوا بِهِ ‏.‏ زَادَ ابْنُ رَافِعٍ فِي حَدِيثِهِ ‏<A id="q2" name="q2" href="javascript:openquran(32,53,53)"><c_q2>{‏ لاَ تَدْخُلُوا بُيُوتَ النَّبِيِّ إِلاَّ أَنْ يُؤْذَنَ لَكُمْ إِلَى طَعَامٍ غَيْرَ نَاظِرِينَ إِنَاهُ‏}</c_q2></a>‏ إِلَى قَوْلِهِ ‏<A id="q3" name="q3" href="javascript:openquran(32,53,53)"><c_q3>{‏ وَاللَّهُ لاَ يَسْتَحْيِي مِنَ الْحَقِّ‏}</c_q3></a>‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح مسلم</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">1428 مكرر</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih Muslim 1428b</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Anas (Allah be pleased with him) reported:</div><div class=text_details>When the 'Iddah of Zainab was over, Allah's Messenger (ﷺ) said to Zaid to make a mention to her about him. Zaid went on until he came to her and she was fermenting her flour. He (Zaid) said: As I saw her I felt in my heart an idea of her greatness so much so that I could not see towards her (simply for the fact) that Allah's Messenger (ﷺ) had made a mention of her. So I turned my back towards her. and I turned upon my heels, and said: Zainab, Allah's Messenger (ﷺ) has sent (me) with a message to you. She said: I do not do anything until I solicit the will of my Lord. So she stood at her place of worship and the (verse of) the Qur'an (pertaining to her marriage) were revealed, and Allah's Messenger (ﷺ) came to her without permission. He (the narrator) said: I saw that Allah's Messenger (ﷺ) served us bread and meat until it was broad day light and the people went away, but some persons who were busy in con- versation stayed on in the house after the meal. Allah's Messenger (ﷺ) also went out and I also followed him, and he began to visit the apartments of his wives greeting them (with the words): As-Salamu 'alaikum, and they would say: Allah's Messenger, how did you find your family (hadrat Zainab)? He (the narrator) stated: I do not know whether I had informed him that the people had gone out or he (the Holy Prophet) informed me (about that). He moved on until he entered the apartment, and I also went and wanted to enter (the apartment) along with him, but he threw a curtain between me and him, as (the verfes pertaining to seclusion) had been revealed, and people were instructed in what they had been instructed. Ibn Rafii had made this addition in his narration:" O you who believe, enter not the houses of the Prophet unless permission is given to you for a meal, not waiting for its cooking being finished..." to the words"... Allah forbears not from the truth."</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih Muslim</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">1428b</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

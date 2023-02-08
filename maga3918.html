@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+سنن ابن ماجه حديث رقم 3918 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+سنن ابن ماجه حديث رقم 3918 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا يَعْقُوبُ بْنُ حُمَيْدِ بْنِ كَاسِبٍ الْمَدَنِيُّ، حَدَّثَنَا سُفْيَانُ بْنُ عُيَيْنَةَ، عَنِ الزُّهْرِيِّ، عَنْ عُبَيْدِ اللَّهِ بْنِ عَبْدِ اللَّهِ، عَنِ ابْنِ عَبَّاسٍ، قَالَ أَتَى النَّبِيَّ ـ صلى الله عليه وسلم ـ رَجُلٌ مُنْصَرَفَهُ مِنْ أُحُدٍ فَقَالَ يَا رَسُولَ اللَّهِ إِنِّي رَأَيْتُ فِي الْمَنَامِ ظُلَّةً تَنْطِفُ سَمْنًا وَعَسَلاً وَرَأَيْتُ النَّاسَ يَتَكَفَّفُونَ مِنْهَا فَالْمُسْتَكْثِرُ وَالْمُسْتَقِلُّ وَرَأَيْتُ سَبَبًا وَاصِلاً إِلَى السَّمَاءِ رَأَيْتُكَ أَخَذْتَ بِهِ فَعَلَوْتَ بِهِ ثُمَّ أَخَذَ بِهِ رَجُلٌ بَعْدَكَ فَعَلاَ بِهِ ثُمَّ أَخَذَ بِهِ رَجُلٌ بَعْدَهُ فَعَلاَ بِهِ ثُمَّ أَخَذَ بِهِ رَجُلٌ بَعْدَهُ فَانْقَطَعَ بِهِ ثُمَّ وُصِلَ لَهُ فَعَلاَ بِهِ ‏.‏ فَقَالَ أَبُو بَكْرٍ دَعْنِي أَعْبُرْهَا يَا رَسُولَ اللَّهِ ‏.‏ قَالَ ‏"‏ اعْبُرْهَا ‏"‏ ‏.‏ قَالَ أَمَّا الظُّلَّةُ فَالإِسْلاَمُ وَأَمَّا مَا يَنْطِفُ مِنْهَا مِنَ الْعَسَلِ وَالسَّمْنِ فَهُوَ الْقُرْآنُ حَلاَوَتُهُ وَلِينُهُ وَأَمَّا مَا يَتَكَفَّفُ مِنْهُ النَّاسُ فَالآخِذُ مِنَ الْقُرْآنِ كَثِيرًا وَقَلِيلاً وَأَمَّا السَّبَبُ الْوَاصِلُ إِلَى السَّمَاءِ فَمَا أَنْتَ عَلَيْهِ مِنَ الْحَقِّ أَخَذْتَ بِهِ فَعَلاَ بِكَ ثُمَّ يَأْخُذُهُ رَجُلٌ مِنْ بَعْدِكَ فَيَعْلُو بِهِ ثُمَّ آخَرُ فَيَعْلُو بِهِ ثُمَّ آخَرُ فَيَنْقَطِعُ بِهِ ثُمَّ يُوَصَّلُ لَهُ فَيَعْلُو بِهِ ‏.‏ قَالَ ‏"‏ أَصَبْتَ بَعْضًا وَأَخْطَأْتَ بَعْضًا ‏"‏ ‏.‏ قَالَ أَبُو بَكْرٍ أَقْسَمْتُ عَلَيْكَ يَا رَسُولَ اللَّهِ لَتُخْبِرَنِّي بِالَّذِي أَصَبْتُ مِنَ الَّذِي أَخْطَأْتُ ‏.‏ فَقَالَ النَّبِيُّ ـ صلى الله عليه وسلم ـ ‏"‏ لاَ تُقْسِمْ يَا أَبَا بَكْرٍ ‏"‏ ‏.‏ <br><p>حَدَّثَنَا مُحَمَّدُ بْنُ يَحْيَى، حَدَّثَنَا عَبْدُ الرَّزَّاقِ، أَنْبَأَنَا مَعْمَرٌ، عَنِ الزُّهْرِيِّ، عَنْ عُبَيْدِ اللَّهِ، عَنِ ابْنِ عَبَّاسٍ، قَالَ كَانَ أَبُو هُرَيْرَةَ يُحَدِّثُ أَنَّ رَجُلاً، أَتَى رَسُولَ اللَّهِ ـ صلى الله عليه وسلم ـ فَقَالَ يَا رَسُولَ اللَّهِ رَأَيْتُ ظُلَّةً بَيْنَ السَّمَاءِ وَالأَرْضِ تَنْطِفُ سَمْنًا وَعَسَلاً فَذَكَرَ الْحَدِيثَ نَحْوَهُ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">سنن ابن ماجه</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">3918</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">&nbsp;<b>صحيح</b> (دار السلام)</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sunan Ibn Majah 3918</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated>It wasnarrated that Ibn ‘Abbas said:</div><div class=text_details>“A man came to the Prophet(ﷺ),upon his return from Uhud, and said: ‘O Messenger of Allah, inmydream I saw a cloud giving shade, from which drops of ghee andhoneywere falling, and I saw people collecting them in the palms oftheirhands, some gathering a lot and some a little. And I saw a ropereaching up into heaven, and I saw you take hold of it and rise withit. Then another man took hold of it after you rose with it, thenanother man took hold of it after him and rose with it. Then a mantook hold of it after him and it broke, then it was reconnected andherose with it.’ Abu Bakr said: ‘Let me interpret it, OMessenger ofAllah.’ He said: ‘Interpret it.’ He said: ‘Asfor the cloud givingshade, it is Islam, and the drops of honey andghee that fall from it(represent) the Qur’an with its sweetnessand softness. As for thepeople collecting that in their palms, somelearn a lot of the Qur’anand some learn a little. As for the ropereaching up into heaven, itis the truth that you are following; youtook hold of it and rose withit, then another man till take hold ofit after you and rise with you,then another, who will rise with it,then another, but it will breakand then he reconnected, then he willrise with it.’ He said: ‘Youhave got some of it right and someof it wrong.’ Abu Bakr said: ‘Iadjure you O Messenger of Allah,tell me what I got right and what Igot wrong.’ The Prophet (ﷺ)said: ‘Do not swear, O Abu Bakr.”*</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sunan Ibn Majah</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">3918</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">&nbsp;<b>Sahih</b> (Darussalam)</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

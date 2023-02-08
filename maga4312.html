@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+سنن ابن ماجه حديث رقم 4312 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+سنن ابن ماجه حديث رقم 4312 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا نَصْرُ بْنُ عَلِيٍّ، حَدَّثَنَا خَالِدُ بْنُ الْحَارِثِ، حَدَّثَنَا سَعِيدٌ، عَنْ قَتَادَةَ، عَنْ أَنَسِ بْنِ مَالِكٍ، أَنَّ رَسُولَ اللَّهِ ـ صلى الله عليه وسلم ـ قَالَ ‏"‏ يَجْتَمِعُ الْمُؤْمِنُونَ يَوْمَ الْقِيَامَةِ يُلْهَمُونَ - أَوْ يَهُمُّونَ شَكَّ سَعِيدٌ - فَيَقُولُونَ لَوْ تَشَفَّعْنَا إِلَى رَبِّنَا فَأَرَاحَنَا مِنْ مَكَانِنَا فَيَأْتُونَ آدَمَ فَيَقُولُونَ أَنْتَ آدَمُ أَبُو النَّاسِ خَلَقَكَ اللَّهُ بِيَدِهِ وَأَسْجَدَ لَكَ مَلاَئِكَتَهُ فَاشْفَعْ لَنَا عِنْدَ رَبِّكَ يُرِحْنَا مِنْ مَكَانِنَا هَذَا ‏.‏ فَيَقُولُ لَسْتُ هُنَاكُمْ - وَيَذْكُرُ وَيَشْكُو إِلَيْهِمْ ذَنْبَهُ الَّذِي أَصَابَ فَيَسْتَحْيِي مِنْ ذَلِكَ - وَلَكِنِ ائْتُوا نُوحًا فَإِنَّهُ أَوَّلُ رَسُولٍ بَعَثَهُ اللَّهُ إِلَى أَهْلِ الأَرْضِ فَيَأْتُونَهُ فَيَقُولُ لَسْتُ هُنَاكُمْ - وَيَذْكُرُ سُؤَالَهُ رَبَّهُ مَا لَيْسَ لَهُ بِهِ عِلْمٌ وَيَسْتَحْيِي مِنْ ذَلِكَ - وَلَكِنِ ائْتُوا خَلِيلَ الرَّحْمَنِ إِبْرَاهِيمَ فَيَأْتُونَهُ فَيَقُولُ لَسْتُ هُنَاكُمْ وَلَكِنِ ائْتُوا مُوسَى عَبْدًا كَلَّمَهُ اللَّهُ وَأَعْطَاهُ التَّوْرَاةَ ‏.‏ فَيَأْتُونَهُ فَيَقُولُ لَسْتُ هُنَاكُمْ - وَيَذْكُرُ قَتْلَهُ النَّفْسَ بِغَيْرِ النَّفْسِ - وَلَكِنِ ائْتُوا عِيسَى عَبْدَ اللَّهِ وَرَسُولَهُ وَكَلِمَةَ اللَّهِ وَرُوحَهُ ‏.‏ فَيَأْتُونَهُ فَيَقُولُ لَسْتُ هُنَاكُمْ وَلَكِنِ ائْتُوا مُحَمَّدًا عَبْدًا غَفَرَ اللَّهُ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ وَمَا تَأَخَّرَ ‏.‏ قَالَ فَيَأْتُونِي فَأَنْطَلِقُ - قَالَ فَذَكَرَ هَذَا الْحَرْفَ عَنِ الْحَسَنِ ‏.‏ قَالَ فَأَمْشِي بَيْنَ السِّمَاطَيْنِ مِنَ الْمُؤْمِنِينَ ‏.‏ قَالَ ثُمَّ عَادَ إِلَى حَدِيثِ أَنَسٍ - قَالَ ‏"‏ فَأَسْتَأْذِنُ عَلَى رَبِّي فَيُؤْذَنُ لِي فَإِذَا رَأَيْتُهُ وَقَعْتُ سَاجِدًا فَيَدَعُنِي مَا شَاءَ اللَّهُ أَنْ يَدَعَنِي ثُمَّ يُقَالُ ارْفَعْ يَا مُحَمَّدُ وَقُلْ تُسْمَعْ وَسَلْ تُعْطَهْ وَاشْفَعْ تُشَفَّعْ فَأَحْمَدُهُ بِتَحْمِيدٍ يُعَلِّمُنِيهِ ثُمَّ أَشْفَعُ فَيَحُدُّ لِي حَدًّا فَيُدْخِلُهُمُ الْجَنَّةَ ثُمَّ أَعُودُ الثَّانِيَةَ فَإِذَا رَأَيْتُهُ وَقَعْتُ سَاجِدًا فَيَدَعُنِي مَا شَاءَ اللَّهُ أَنْ يَدَعَنِي ثُمَّ يُقَالُ لِي ارْفَعْ مُحَمَّدُ قُلْ تُسْمَعْ وَسَلْ تُعْطَهْ وَاشْفَعْ تُشَفَّعْ فَأَرْفَعُ رَأْسِي فَأَحْمَدُهُ بِتَحْمِيدٍ يُعَلِّمُنِيهِ ثُمَّ أَشْفَعُ فَيَحُدُّ لِي حَدًّا فَيُدْخِلُهُمُ الْجَنَّةَ ثُمَّ أَعُودُ الثَّالِثَةَ فَإِذَا رَأَيْتُ رَبِيِّ وَقَعْتُ سَاجِدًا فَيَدَعُنِي مَا شَاءَ اللَّهُ أَنْ يَدَعَنِي ثُمَّ يُقَالُ ارْفَعْ مُحَمَّدُ قُلْ تُسْمَعْ وَسَلْ تُعْطَهْ وَاشْفَعْ تُشَفَّعْ فَأَرْفَعُ رَأْسِي فَأَحْمَدُهُ بِتَحْمِيدٍ يُعَلِّمُنِيهِ ثُمَّ أَشْفَعُ فَيَحُدُّ لِي حَدًّا فَيُدْخِلُهُمُ الْجَنَّةَ ثُمَّ أَعُودُ الرَّابِعَةَ فَأَقُولُ يَا رَبِّ مَا بَقِيَ إِلاَّ مَنْ حَبَسَهُ الْقُرْآنُ ‏"‏ ‏.‏ <br><p> <p> يَقُولُ قَتَادَةُ عَلَى أَثَرِ هَذَا الْحَدِيثِ وَحَدَّثَنَا أَنَسُ بْنُ مَالِكٍ أَنَّ رَسُولَ اللَّهِ ـ صلى الله عليه وسلم ـ قَالَ ‏"‏ يَخْرُجُ مِنَ النَّارِ مَنْ قَالَ لاَ إِلَهَ إِلاَّ اللَّهُ وَكَانَ فِي قَلْبِهِ مِثْقَالُ شَعِيرَةٍ مِنْ خَيْرٍ وَيَخْرُجُ مِنَ النَّارِ مَنْ قَالَ لاَ إِلَهَ إِلاَّ اللَّهُ وَكَانَ فِي قَلْبِهِ مِثْقَالُ بُرَّةٍ مِنْ خَيْرٍ وَيَخْرُجُ مِنَ النَّارِ مَنْ قَالَ لاَ إِلَهَ إِلاَّ اللَّهُ وَكَانَ فِي قَلْبِهِ مِثْقَالُ ذَرَّةٍ مِنْ خَيْرٍ ‏"‏ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">سنن ابن ماجه</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">4312</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">&nbsp;<b>صحيح</b> (دار السلام)</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sunan Ibn Majah 4312</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated>It wasnarrated from Anas bin Malik that the Messenger of Allah (ﷺ) said:</div><div class=text_details>“The believers will be gathered on the Day of Resurrection,inspired or worried.” – Sa’eed was not sure – “And theywill say: ‘If we seek someone to intercede for us with our Lord, wemay find relief from our situation.’ So they will go to Adam andwill say: ‘You are Adam, the father of mankind. Allah created youwith His Hand and His angels prostrated to you. Intercede for us withyour Lord, that He might grant us relief from our situation.’ Hewill say: ‘I am not the one,’ and he will mention to them andcomplain of the sin that he committed. He will feel too shy to dothat (and will say): ‘Rather go to Nuh, for he is the firstMessenger whom Allah sent to the people of earth.’ So they will goto him, but he will say: ‘I am not the one,’ and he will mentionof how he asked of Allah that of which he had no knowledge.* He willfeel too shy to do that (and will say): ‘Rather go to the CloseFriend of the Most Merciful, Ibrahim.’ So they will go to him andhe will say: ‘I am not the one. Rather go to Musa, a slave to whomAllah spoke and to whom He gave the Torah.’ So they will go to himand he will say: ‘I am not the one,’ and he will mention how hekilled a soul, not in retaliation for murder (and will say): ‘Rathergo to ‘Isa, the slave of Allah and His Messenger, the Word of Allahand a spirit created by Him.’ So they will go to him, but he willsay: ‘I am not the one. Rather go to Muhammad, a slave whose pastand future sins Allah forgave.’ So they will come to me and I willgo with them.” – There was a similar report from Hasan who added(the Prophet (ﷺ) said:) And I will walk between two rows of thebelievers.” Then he went back to the Hadith of Anas. – And hesaid: “And I will ask my Lord for permission and permission will begiven to me. When I see Him I will fall down prostrating, and I willbe left as long as Allah wills to leave me. Then it will be said:‘Get up, O Muhammad. Speak, you will be heard; ask, you will begiven; intercede, your intercession will be accepted.’ I willpraise Him with praise that He will teach me, then I will intercede,and a limit will be set. Then they will be admitted to Paradise, andI will come back a second time. When I see Him I will fall downprostrating, and I will be left as long as Allah wills to leave me.Then it will be said: ‘Get up, O Muhammad. Speak, you will beheard; ask, you will be given; intercede, your intercession will beaccepted.’ I will praise Him with praise that He will teach me,then I will intercede, and a limit will be set. Then they will beadmitted to Paradise, and I will come back a third time. When I seeHim I will fall down prostrating, and I will be left as long as Allahwills to leave me. Then it will be said: ‘Get up, O Muhammad.Speak, you will be heard; ask, you will be given; intercede, yourintercession will be accepted.’ I will praise Him with praise thatHe will teach me, then I will intercede, and a limit will be set.Then they will be admitted to Paradise, and I will come back a fourthtime and will say: ‘O Lord, there is no one left except those whoare detained by the Qur’an.’” **<p>Qatadah (the Tabi'ee in the chain) would narrate after this hadith that Anas (ra) said "Those who said 'La illaha illa Allah' (there is no god except Allah) and had the weight of a grain of barley in good in his heart will come out of the Fire, and those who said 'La illaha illa Allah' and had a weight of a grain of wheat in good in his heart will come out of the Fire, and those who said 'La illaha illa Allah' and had a weight of a grain of dust in good in his heart will come out of the Fire."</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sunan Ibn Majah</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">4312</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">&nbsp;<b>Sahih</b> (Darussalam)</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

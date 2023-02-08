@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح البخاري حديث رقم 4712 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح البخاري حديث رقم 4712 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic">حَدَّثَنَا مُحَمَّدُ بْنُ مُقَاتِلٍ، أَخْبَرَنَا عَبْدُ اللَّهِ، أَخْبَرَنَا أَبُو حَيَّانَ التَّيْمِيُّ، عَنْ أَبِي زُرْعَةَ بْنِ عَمْرِو بْنِ جَرِيرٍ، عَنْ أَبِي هُرَيْرَةَ ـ رضى الله عنه ـ قَالَ أُتِيَ رَسُولُ اللَّهِ صلى الله عليه وسلم بِلَحْمٍ، فَرُفِعَ إِلَيْهِ الذِّرَاعُ، وَكَانَتْ تُعْجِبُهُ، فَنَهَسَ مِنْهَا نَهْسَةً ثُمَّ قَالَ ‏</span><span class="hadith">"‏ أَنَا سَيِّدُ النَّاسِ يَوْمَ الْقِيَامَةِ، وَهَلْ تَدْرُونَ مِمَّ ذَلِكَ يُجْمَعُ النَّاسُ الأَوَّلِينَ وَالآخِرِينَ فِي صَعِيدٍ وَاحِدٍ، يُسْمِعُهُمُ الدَّاعِي، وَيَنْفُذُهُمُ الْبَصَرُ، وَتَدْنُو الشَّمْسُ، فَيَبْلُغُ النَّاسَ مِنَ الْغَمِّ وَالْكَرْبِ مَا لاَ يُطِيقُونَ وَلاَ يَحْتَمِلُونَ فَيَقُولُ النَّاسُ أَلاَ تَرَوْنَ مَا قَدْ بَلَغَكُمْ أَلاَ تَنْظُرُونَ مَنْ يَشْفَعُ لَكُمْ إِلَى رَبِّكُمْ فَيَقُولُ بَعْضُ النَّاسِ لِبَعْضٍ عَلَيْكُمْ بِآدَمَ فَيَأْتُونَ آدَمَ عليه السلام فَيَقُولُونَ لَهُ أَنْتَ أَبُو الْبَشَرِ خَلَقَكَ اللَّهُ بِيَدِهِ‏.‏ وَنَفَخَ فِيكَ مِنْ رُوحِهِ، وَأَمَرَ الْمَلاَئِكَةَ فَسَجَدُوا لَكَ، اشْفَعْ لَنَا إِلَى رَبِّكَ، أَلاَ تَرَى إِلَى مَا نَحْنُ فِيهِ أَلاَ تَرَى إِلَى مَا قَدْ بَلَغَنَا فَيَقُولُ آدَمُ إِنَّ رَبِّي قَدْ غَضِبَ الْيَوْمَ غَضَبًا لَمْ يَغْضَبْ قَبْلَهُ مِثْلَهُ وَلَنْ يَغْضَبَ بَعْدَهُ مِثْلَهُ، وَإِنَّهُ نَهَانِي عَنِ الشَّجَرَةِ فَعَصَيْتُهُ، نَفْسِي نَفْسِي نَفْسِي، اذْهَبُوا إِلَى غَيْرِي، اذْهَبُوا إِلَى نُوحٍ، فَيَأْتُونَ نُوحًا فَيَقُولُونَ يَا نُوحُ إِنَّكَ أَنْتَ أَوَّلُ الرُّسُلِ إِلَى أَهْلِ الأَرْضِ، وَقَدْ سَمَّاكَ اللَّهُ عَبْدًا شَكُورًا اشْفَعْ لَنَا إِلَى رَبِّكَ، أَلاَ تَرَى إِلَى مَا نَحْنُ فِيهِ فَيَقُولُ إِنَّ رَبِّي عَزَّ وَجَلَّ قَدْ غَضِبَ الْيَوْمَ غَضَبًا لَمْ يَغْضَبْ قَبْلَهُ مِثْلَهُ، وَلَنْ يَغْضَبَ بَعْدَهُ مِثْلَهُ، وَإِنَّهُ قَدْ كَانَتْ لِي دَعْوَةٌ دَعَوْتُهَا عَلَى قَوْمِي نَفْسِي نَفْسِي نَفْسِي اذْهَبُوا إِلَى غَيْرِي، اذْهَبُوا إِلَى إِبْرَاهِيمَ، فَيَأْتُونَ إِبْرَاهِيمَ، فَيَقُولُونَ يَا إِبْرَاهِيمُ، أَنْتَ نَبِيُّ اللَّهِ وَخَلِيلُهُ مِنْ أَهْلِ الأَرْضِ اشْفَعْ لَنَا إِلَى رَبِّكَ أَلاَ تَرَى إِلَى مَا نَحْنُ فِيهِ فَيَقُولُ لَهُمْ إِنَّ رَبِّي قَدْ غَضِبَ الْيَوْمَ غَضَبًا لَمْ يَغْضَبْ قَبْلَهُ مِثْلَهُ وَلَنْ يَغْضَبَ بَعْدَهُ مِثْلَهُ، وَإِنِّي قَدْ كُنْتُ كَذَبْتُ ثَلاَثَ كَذَبَاتٍ ـ فَذَكَرَهُنَّ أَبُو حَيَّانَ فِي الْحَدِيثِ ـ نَفْسِي نَفْسِي نَفْسِي، اذْهَبُوا إِلَى غَيْرِي اذْهَبُوا إِلَى مُوسَى، فَيَأْتُونَ مُوسَى، فَيَقُولُونَ يَا مُوسَى أَنْتَ رَسُولُ اللَّهِ، فَضَّلَكَ اللَّهُ بِرِسَالَتِهِ وَبِكَلاَمِهِ عَلَى النَّاسِ، اشْفَعْ لَنَا إِلَى رَبِّكَ أَلاَ تَرَى إِلَى مَا نَحْنُ فِيهِ فَيَقُولُ إِنَّ رَبِّي قَدْ غَضِبَ الْيَوْمَ غَضَبًا لَمْ يَغْضَبْ قَبْلَهُ مِثْلَهُ، وَلَنْ يَغْضَبَ بَعْدَهُ مِثْلَهُ، وَإِنِّي قَدْ قَتَلْتُ نَفْسًا لَمْ أُومَرْ بِقَتْلِهَا، نَفْسِي نَفْسِي نَفْسِي، اذْهَبُوا إِلَى غَيْرِي، اذْهَبُوا إِلَى عِيسَى، فَيَأْتُونَ عِيسَى فَيَقُولُونَ يَا عِيسَى أَنْتَ رَسُولُ اللَّهِ وَكَلِمَتُهُ أَلْقَاهَا إِلَى مَرْيَمَ وَرُوحٌ مِنْهُ، وَكَلَّمْتَ النَّاسَ فِي الْمَهْدِ صَبِيًّا اشْفَعْ لَنَا أَلاَ تَرَى إِلَى مَا نَحْنُ فِيهِ فَيَقُولُ عِيسَى إِنَّ رَبِّي قَدْ غَضِبَ الْيَوْمَ غَضَبًا لَمْ يَغْضَبْ قَبْلَهُ مِثْلَهُ، وَلَنْ يَغْضَبَ بَعْدَهُ مِثْلَهُ ـ وَلَمْ يَذْكُرْ ذَنْبًا ـ نَفْسِي نَفْسِي نَفْسِي، اذْهَبُوا إِلَى غَيْرِي اذْهَبُوا إِلَى مُحَمَّدٍ صلى الله عليه وسلم فَيَأْتُونَ مُحَمَّدًا صلى الله عليه وسلم فَيَقُولُونَ يَا مُحَمَّدُ أَنْتَ رَسُولُ اللَّهِ وَخَاتَمُ الأَنْبِيَاءِ، وَقَدْ غَفَرَ اللَّهُ لَكَ مَا تَقَدَّمَ مِنْ ذَنْبِكَ وَمَا تَأَخَّرَ، اشْفَعْ لَنَا إِلَى رَبِّكَ أَلاَ تَرَى إِلَى مَا نَحْنُ فِيهِ فَأَنْطَلِقُ فَآتِي تَحْتَ الْعَرْشِ، فَأَقَعُ سَاجِدًا لِرَبِّي عَزَّ وَجَلَّ ثُمَّ يَفْتَحُ اللَّهُ عَلَىَّ مِنْ مَحَامِدِهِ وَحُسْنِ الثَّنَاءِ عَلَيْهِ شَيْئًا لَمْ يَفْتَحْهُ عَلَى أَحَدٍ قَبْلِي ثُمَّ يُقَالُ يَا مُحَمَّدُ ارْفَعْ رَأْسَكَ، سَلْ تُعْطَهْ، وَاشْفَعْ تُشَفَّعْ، فَأَرْفَعُ رَأْسِي، فَأَقُولُ أُمَّتِي يَا رَبِّ، أُمَّتِي يَا رَبِّ فَيُقَالُ يَا مُحَمَّدُ أَدْخِلْ مِنْ أُمَّتِكَ مَنْ لاَ حِسَابَ عَلَيْهِمْ مِنَ الْبَابِ الأَيْمَنِ مِنْ أَبْوَابِ الْجَنَّةِ وَهُمْ شُرَكَاءُ النَّاسِ فِيمَا سِوَى ذَلِكَ مِنَ الأَبْوَابِ، ثُمَّ قَالَ وَالَّذِي نَفْسِي بِيَدِهِ إِنَّ مَا بَيْنَ الْمِصْرَاعَيْنِ مِنْ مَصَارِيعِ الْجَنَّةِ كَمَا بَيْنَ مَكَّةَ وَحِمْيَرَ، أَوْ كَمَا بَيْنَ مَكَّةَ وَبُصْرَى ‏"</span><span class="arabic_sanad arabic">‏‏.‏</span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح البخاري</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">4712</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih al-Bukhari 4712</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Narrated Abu Huraira:</div><div class=text_details><p>Some (cooked) meat was brought to Allah Apostle and the meat of a forearm was presented to him as he used to like it. He ate a morsel of it and said, "I will be the chief of all the people on the Day of Resurrection. Do you know the reason for it? Allah will gather all the human being of early generations as well as late generation on one plain so that the announcer will be able to make them all-hear his voice and the watcher will be able to see all of them. The sun will come so close to the people that they will suffer such distress and trouble as they will not be able to bear or stand. Then the people will say, 'Don't you see to what state you have reached? Won't you look for someone who can intercede for you with your Lord' Some people will say to some others, 'Go to Adam.' So they will go to Adam and say to him. 'You are the father of mankind; Allah created you with His Own Hand, and breathed into you of His Spirit (meaning the spirit which he created for you); and ordered the angels to prostrate before you; so (please) intercede for us with your Lord. Don't you see in what state we are? Don't you see what condition we have reached?' Adam will say, 'Today my Lord has become angry as He has never become before, nor will ever become thereafter. He forbade me (to eat of the fruit of) the tree, but I disobeyed Him . Myself! Myself! Myself! (I am preoccuied with my own problems). Go to someone else; go to Noah.' So they will go to Noah and say (to him), 'O Noah! You are the first (of Allah's Messengers) to the people of the earth, and Allah has named you a thankful slave; please intercede for us with your Lord. Don't you see in what state we are?' He will say.' Today my Lord has become angry as He has never become nor will ever become thereafter. I had (in the world) the right to make one definitely accepted invocation, and I made it against my nation. Myself! Myself! Myself! Go to someone else; go to Abraham.' They will go to Abraham and say, 'O Abraham! You are Allah's Messenger (ﷺ) and His Khalil from among the people of the earth; so please intercede for us with your Lord. Don't you see in what state we are?' He will say to them, 'My Lord has today become angry as He has never become before, nor will ever become thereafter. I had told three lies (Abu Haiyan (the sub-narrator) mentioned them in the Hadith) Myself! Myself! Myself! Go to someone else; go to Moses.' The people will then go to Moses and say, 'O Moses! You art Allah's Messenger (ﷺ) and Allah gave you superiority above the others with this message and with His direct Talk to you; (please) intercede for us with your Lord Don't you see in what state we are?' Moses will say, 'My Lord has today become angry as He has never become before, nor will become thereafter, I killed a person whom I had not been ordered to kill. Myself! Myself! Myself! Go to someone else; go to Jesus.' So they will go to Jesus and say, 'O Jesus! You are Allah's Messenger (ﷺ) and His Word which He sent to Mary, and a superior soul created by Him, and you talked to the people while still young in the cradle. Please intercede for us with your Lord. Don't you see in what state we are?' Jesus will say. 'My Lord has today become angry as He has never become before nor will ever become thereafter. Jesus will not mention any sin, but will say, 'Myself! Myself! Myself! Go to someone else; go to Muhammad.' So they will come to me and say, 'O Muhammad ! You are Allah's Messenger (ﷺ) and the last of the prophets, and Allah forgave your early and late sins. (Please) intercede for us with your Lord. Don't you see in what state we are?" The Prophet (ﷺ) added, "Then I will go beneath Allah's Throne and fall in prostration before my Lord. And then Allah will guide me to such praises and glorification to Him as He has never guided anybody else before me. Then it will be said, 'O Muhammad Raise your head. Ask, and it will be granted. Intercede and It (your intercession) will be accepted.' So I will raise my head and Say, 'My followers, O my Lord! My followers, O my Lord'. It will be said, 'O Muhammad! Let those of your followers who have no accounts, enter through such a gate of the gates of Paradise as lies on the right; and they will share the other gates with the people." The Prophet (ﷺ) further said, "By Him in Whose Hand my soul is, the distance between every two gate-posts of Paradise is like the distance between Mecca and Busra (in Sham).</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih al-Bukhari</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">4712</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

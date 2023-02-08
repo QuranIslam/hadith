@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح البخاري حديث رقم 3522 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح البخاري حديث رقم 3522 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic">حَدَّثَنَا زَيْدٌ ـ هُوَ ابْنُ أَخْزَمَ ـ قَالَ أَبُو قُتَيْبَةَ سَلْمُ بْنُ قُتَيْبَةَ حَدَّثَنِي مُثَنَّى بْنُ سَعِيدٍ الْقَصِيرُ، قَالَ حَدَّثَنِي أَبُو جَمْرَةَ، قَالَ لَنَا ابْنُ عَبَّاسِ أَلاَ أُخْبِرُكُمْ بِإِسْلاَمِ أَبِي ذَرٍّ، قَالَ قُلْنَا بَلَى‏.‏ قَالَ قَالَ أَبُو ذَرٍّ كُنْتُ رَجُلاً مِنْ غِفَارٍ، فَبَلَغَنَا أَنَّ رَجُلاً قَدْ خَرَجَ بِمَكَّةَ، يَزْعُمُ أَنَّهُ نَبِيٌّ، فَقُلْتُ لأَخِي انْطَلِقْ إِلَى هَذَا الرَّجُلِ كَلِّمْهُ وَأْتِنِي بِخَبَرِهِ‏.‏ فَانْطَلَقَ فَلَقِيَهُ، ثُمَّ رَجَعَ فَقُلْتُ مَا عِنْدَكَ فَقَالَ وَاللَّهِ لَقَدْ رَأَيْتُ رَجُلاً يَأْمُرُ بِالْخَيْرِ وَيَنْهَى عَنِ الشَّرِّ‏.‏ فَقُلْتُ لَهُ لَمْ تَشْفِنِي مِنَ الْخَبَرِ‏.‏ فَأَخَذْتُ جِرَابًا وَعَصًا، ثُمَّ أَقْبَلْتُ إِلَى مَكَّةَ فَجَعَلْتُ لاَ أَعْرِفُهُ، وَأَكْرَهُ أَنْ أَسْأَلَ عَنْهُ، وَأَشْرَبُ مِنْ مَاءِ زَمْزَمَ وَأَكُونُ فِي الْمَسْجِدِ‏.‏ قَالَ فَمَرَّ بِي عَلِيٌّ فَقَالَ كَأَنَّ الرَّجُلَ غَرِيبٌ‏.‏ قَالَ قُلْتُ نَعَمْ‏.‏ قَالَ فَانْطَلِقْ إِلَى الْمَنْزِلِ‏.‏ قَالَ فَانْطَلَقْتُ مَعَهُ لاَ يَسْأَلُنِي عَنْ شَىْءٍ، وَلاَ أُخْبِرُهُ، فَلَمَّا أَصْبَحْتُ غَدَوْتُ إِلَى الْمَسْجِدِ لأَسْأَلَ عَنْهُ، وَلَيْسَ أَحَدٌ يُخْبِرُنِي عَنْهُ بِشَىْءٍ‏.‏ قَالَ فَمَرَّ بِي عَلِيٌّ فَقَالَ أَمَا نَالَ لِلرَّجُلِ يَعْرِفُ مَنْزِلَهُ بَعْدُ قَالَ قُلْتُ لاَ‏.‏ قَالَ انْطَلِقْ مَعِي‏.‏ قَالَ فَقَالَ مَا أَمْرُكَ وَمَا أَقْدَمَكَ هَذِهِ الْبَلْدَةَ قَالَ قُلْتُ لَهُ إِنْ كَتَمْتَ عَلَىَّ أَخْبَرْتُكَ‏.‏ قَالَ فَإِنِّي أَفْعَلُ‏.‏ قَالَ قُلْتُ لَهُ بَلَغَنَا أَنَّهُ قَدْ خَرَجَ هَا هُنَا رَجُلٌ يَزْعُمُ أَنَّهُ نَبِيٌّ، فَأَرْسَلْتُ أَخِي لِيُكَلِّمَهُ فَرَجَعَ وَلَمْ يَشْفِنِي مِنَ الْخَبَرِ، فَأَرَدْتُ أَنْ أَلْقَاهُ‏.‏ فَقَالَ لَهُ أَمَا إِنَّكَ قَدْ رَشَدْتَ، هَذَا وَجْهِي إِلَيْهِ، فَاتَّبِعْنِي، ادْخُلْ حَيْثُ أَدْخُلُ، فَإِنِّي إِنْ رَأَيْتُ أَحَدًا أَخَافُهُ عَلَيْكَ، قُمْتُ إِلَى الْحَائِطِ، كَأَنِّي أُصْلِحُ نَعْلِي، وَامْضِ أَنْتَ، فَمَضَى وَمَضَيْتُ مَعَهُ، حَتَّى دَخَلَ وَدَخَلْتُ مَعَهُ عَلَى النَّبِيِّ صلى الله عليه وسلم فَقُلْتُ لَهُ اعْرِضْ عَلَىَّ الإِسْلاَمَ‏.‏ فَعَرَضَهُ فَأَسْلَمْتُ مَكَانِي، فَقَالَ لِي ‏</span><span class="hadith">"‏ يَا أَبَا ذَرٍّ اكْتُمْ هَذَا الأَمْرَ، وَارْجِعْ إِلَى بَلَدِكَ، فَإِذَا بَلَغَكَ ظُهُورُنَا فَأَقْبِلْ ‏"</span><span class="arabic_sanad arabic">‏‏.‏ فَقُلْتُ وَالَّذِي بَعَثَكَ بِالْحَقِّ لأَصْرُخَنَّ بِهَا بَيْنَ أَظْهُرِهِمْ‏.‏ فَجَاءَ إِلَى الْمَسْجِدِ، وَقُرَيْشٌ فِيهِ فَقَالَ يَا مَعْشَرَ قُرَيْشٍ، إِنِّي أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ‏.‏ فَقَالُوا قُومُوا إِلَى هَذَا الصَّابِئِ‏.‏ فَقَامُوا فَضُرِبْتُ لأَمُوتَ فَأَدْرَكَنِي الْعَبَّاسُ، فَأَكَبَّ عَلَىَّ ثُمَّ أَقْبَلَ عَلَيْهِمْ، فَقَالَ وَيْلَكُمْ تَقْتُلُونَ رَجُلاً مِنْ غِفَارَ، وَمَتْجَرُكُمْ وَمَمَرُّكُمْ عَلَى غِفَارَ‏.‏ فَأَقْلَعُوا عَنِّي، فَلَمَّا أَنْ أَصْبَحْتُ الْغَدَ رَجَعْتُ فَقُلْتُ مِثْلَ مَا قُلْتُ بِالأَمْسِ، فَقَالُوا قُومُوا إِلَى هَذَا الصَّابِئِ‏.‏ فَصُنِعَ ‏{‏بِي‏}‏ مِثْلَ مَا صُنِعَ بِالأَمْسِ وَأَدْرَكَنِي الْعَبَّاسُ فَأَكَبَّ عَلَىَّ، وَقَالَ مِثْلَ مَقَالَتِهِ بِالأَمْسِ‏.‏ قَالَ فَكَانَ هَذَا أَوَّلَ إِسْلاَمِ أَبِي ذَرٍّ رَحِمَهُ اللَّهُ‏.‏</span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح البخاري</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">3522</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih al-Bukhari 3522</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Narrated Abu Jamra:</div><div class=text_details><p>Ibn `Abbas said to us, "Shall I tell you the story of Abu Dhar's conversion to Islam?" We said, "Yes." He said, "Abu Dhar said: I was a man from the tribe of Ghifar. We heard that a man had appeared in Mecca, claiming to be a Prophet. ! said to my brother, 'Go to that man and talk to him and bring me his news.' He set out, met him and returned. I asked him, 'What is the news with you?' He said, 'By Allah, I saw a man enjoining what is good and forbidding what is evil.' I said to him, 'You have not satisfied me with this little information.' So, I took a waterskin and a stick and proceeded towards Mecca. Neither did I know him (i.e. the Prophet (ﷺ) ), nor did I like to ask anyone about him. I Kept on drinking Zam zam water and staying in the Mosque. Then `Ali passed by me and said, 'It seems you are a stranger?' I said, 'Yes.' He proceeded to his house and I accompanied him. Neither did he ask me anything, nor did I tell him anything. Next morning I went to the Mosque to ask about the Prophet but no-one told me anything about him. `Ali passed by me again and asked, 'Hasn't the man recognized his dwelling place yet' I said, 'No.' He said, 'Come along with me.' He asked me, 'What is your business? What has brought you to this town?' I said to him, 'If you keep my secret, I will tell you.' He said, 'I will do,' I said to him, 'We have heard that a person has appeared here, claiming to be a Prophet. I sent my brother to speak to him and when he returned, he did not bring a satisfactory report; so I thought of meeting him personally.' `Ali said (to Abu Dhar), 'You have reached your goal; I am going to him just now, so follow me, and wherever I enter, enter after me. If I should see someone who may cause you trouble, I will stand near a wall pretending to mend my shoes (as a warning), and you should go away then.' `Ali proceeded and I accompanied him till he entered a place, and I entered with him to the Prophet (ﷺ) to whom I said, 'Present (the principles of) Islam to me.' When he did, I embraced Islam 'immediately. He said to me, 'O Abu Dhar! Keep your conversion as a secret and return to your town; and when you hear of our victory, return to us. ' I said, 'By H him Who has sent you with the Truth, I will announce my conversion to Islam publicly amongst them (i.e. the infidels),' Abu Dhar went to the Mosque, where some people from Quraish were present, and said, 'O folk of Quraish ! I testify that None has the right to be worshipped except Allah, and I (also) testify that Muhammad is Allah's Slave and His Apostle.' (Hearing that) the Quraishi men said, 'Get at this Sabi (i.e. Muslim) !' They got up and beat me nearly to death. Al `Abbas saw me and threw himself over me to protect me. He then faced them and said, 'Woe to you! You want to kill a man from the tribe of Ghifar, although your trade and your communications are through the territory of Ghifar?' They therefore left me. The next morning I returned (to the Mosque) and said the same as I have said on the previous day. They again said, 'Get at this Sabi!' I was treated in the same way as on the previous day, and again Al-Abbas found me and threw himself over me to protect me and told them the same as he had said the day before.' So, that was the conversion of Abu Dhar (may Allah be Merciful to him) to Islam."</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih al-Bukhari</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">3522</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

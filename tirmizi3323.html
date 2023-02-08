@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+سنن الترمذي حديث رقم 3323 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+سنن الترمذي حديث رقم 3323 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا عَبْدُ بْنُ حُمَيْدٍ، حَدَّثَنِي أَبُو الْوَلِيدِ، حَدَّثَنَا أَبُو عَوَانَةَ، عَنْ أَبِي بِشْرٍ، عَنْ سَعِيدِ بْنِ جُبَيْرٍ، عَنِ ابْنِ عَبَّاسٍ، رضى الله عنهما قَالَ مَا قَرَأَ رَسُولُ اللَّهِ صلى الله عليه وسلم عَلَى الْجِنِّ وَلاَ رَآهُمُ انْطَلَقَ رَسُولُ اللَّهِ صلى الله عليه وسلم فِي طَائِفَةٍ مِنْ أَصْحَابِهِ عَامِدِينَ إِلَى سُوقِ عُكَاظٍ وَقَدْ حِيلَ بَيْنَ الشَّيَاطِينِ وَبَيْنَ خَبَرِ السَّمَاءِ وَأُرْسِلَتْ عَلَيْهِمُ الشُّهُبُ فَرَجَعَتِ الشَّيَاطِينُ إِلَى قَوْمِهِمْ فَقَالُوا مَا لَكُمْ قَالُوا حِيلَ بَيْنَنَا وَبَيْنَ خَبَرِ السَّمَاءِ وَأُرْسِلَتْ عَلَيْنَا الشُّهُبُ ‏.‏ فَقَالُوا مَا حَالَ بَيْنَنَا وَبَيْنَ خَبَرِ السَّمَاءِ إِلاَّ مِنْ أَمْرٍ حَدَثَ فَاضْرِبُوا مَشَارِقَ الأَرْضِ وَمَغَارِبَهَا فَانْظُرُوا مَا هَذَا الَّذِي حَالَ بَيْنَكُمْ وَبَيْنَ خَبَرِ السَّمَاءِ قَالَ فَانْطَلَقُوا يَضْرِبُونَ مَشَارِقَ الأَرْضِ وَمَغَارِبَهَا يَبْتَغُونَ مَا هَذَا الَّذِي حَالَ بَيْنَهُمْ وَبَيْنَ خَبَرِ السَّمَاءِ فَانْصَرَفَ أُولَئِكَ النَّفَرُ الَّذِينَ تَوَجَّهُوا إِلَى نَحْوِ تِهَامَةَ إِلَى رَسُولِ اللَّهِ صلى الله عليه وسلم وَهُوَ بِنَخْلَةَ عَامِدًا إِلَى سُوقِ عُكَاظٍ وَهُوَ يُصَلِّي بِأَصْحَابِهِ صَلاَةَ الْفَجْرِ فَلَمَّا سَمِعُوا الْقُرْآنَ اسْتَمَعُوا لَهُ فَقَالُوا هَذَا وَاللَّهِ الَّذِي حَالَ بَيْنَكُمْ وَبَيْنَ خَبَرِ السَّمَاءِ ‏.‏ قَالَ فَهُنَالِكَ رَجَعُوا إِلَى قَوْمِهِمْ فَقَالُوا يَا قَوْمَنَا ‏:‏ ‏<A id="q44" name="q44" href="javascript:openquran(70,5,5)"><c_q44>(‏ إنَّا سَمِعْنَا قُرْآنًا عَجَبًا * يَهْدِي إِلَى الرُّشْدِ فَآمَنَّا بِهِ وَلَنْ نُشْرِكَ بِرَبِّنَا أَحَدًا ‏)</c_q44></a>‏ فَأَنْزَلَ اللَّهُ عَلَى نَبِيِّهِ ‏:‏ ‏(‏ قلْ أُوحِيَ إِلَىَّ أَنَّهُ اسْتَمَعَ ‏)‏ وَإِنَّمَا أُوحِيَ إِلَيْهِ قَوْلُ الْجِنِّ ‏.‏ <br> قَالَ وَبِهَذَا الإِسْنَادِ عَنِ ابْنِ عَبَّاسٍ، قَالَ قَوْلُ الْجِنِّ لِقَوْمِهِمْ ‏<A id="q45" name="q45" href="javascript:openquran(71,19,19)"><c_q45>(‏لمَّا قَامَ عَبْدُ اللَّهِ يَدْعُوهُ كَادُوا يَكُونُونَ عَلَيْهِ لِبَدًا ‏)</c_q45></a>‏ قَالَ لَمَّا رَأَوْهُ يُصَلِّي وَأَصْحَابُهُ يُصَلُّونَ بِصَلاَتِهِ فَيَسْجُدُونَ بِسُجُودِهِ قَالَ تَعَجَّبُوا مِنْ طَوَاعِيَةِ أَصْحَابِهِ لَهُ قَالُوا لِقَوْمِهِمْ ‏:‏ ‏<A id="q46" name="q46" href="javascript:openquran(71,19,19)"><c_q46>(‏لمَّا قَامَ عَبْدُ اللَّهِ يَدْعُوهُ كَادُوا يَكُونُونَ عَلَيْهِ لِبَدًا ‏)</c_q46></a>‏ ‏.‏ قَالَ هَذَاَ حَدِيثٌ حَسَنٌ صَحِيحٌ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">سنن الترمذي</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">3323</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">&nbsp;<b>صحيح</b> (دار السلام)</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sunan at-Tirmizi 3323</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated>Ibn Abbas [may Allah be pleased with them] said:</div><div class=text_details>the Messenger of Allah did not recite for the jinns nor did he see them. The Messenger of Allah went out with a group of his Companions towards the Ukaz market. Something had been intervening between the Shayatin and the news from the heavens, and shooting stars has been sent upon them, so the Shayatin returned to their people and they said to them: ‘What is wrong with you?’ They replied: ‘Something has been intervening between us and the news of the heavens except that something has happened. So travel east and west in the earth and look for what is it that intervenes between you an between the news of the heavens.’” He said: “So they went traveling east and west on the earth, seeking whatever it was that had been intervening between them and the news of the heavens. A group of those who were traveling towards Tihamah headed in the direction of the Messenger of Allah, while he was at Nakhlah, enroute to the Ukaz market. He was performing Salat Al-Fajr with his Companions. When they heard the Quran they listened to it, and they said: ‘By Allah! This is what has been intervening between us and the news of the heavens.’” He said: “Then they returned to their people and said: ‘O our people! Verily we heard a wonderful Recitation! It guides to the Right Path, and we have believed therein, and we shall never join anything with our Lord.’ So Allah, Blessed is He and Most High, revealed to His Prophet: Say: ‘It has been revealed to me that a group of the jinn listened.’ So the saying of the jinns was only revealed to him.”<br>[He said:] With this chain, from Ibn 'Abbas, who said: "The jinns said to their people: When the worshipper stood up invoking Him in prayer, they just made round him a dense crowd as if sticking one over the other." He said: "When they saw him performing Salat, and his Companions were performing Salãt, and they were prostrating along with his prostrations." He said: "They were amazed at how his Companions obeyed him so they said to their people: When the worshipper stood up invoking Him in prayer, they just made round Him a dense crowd as if sticking one over the other."</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sunan at-Tirmizi</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">3323</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">&nbsp;<b>Sahih</b> (Darussalam)</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

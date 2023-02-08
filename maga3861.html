@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+سنن ابن ماجه حديث رقم 3861 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+سنن ابن ماجه حديث رقم 3861 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic">حَدَّثَنَا هِشَامُ بْنُ عَمَّارٍ، حَدَّثَنَا عَبْدُ الْمَلِكِ بْنُ مُحَمَّدٍ الصَّنْعَانِيُّ، حَدَّثَنَا أَبُو الْمُنْذِرِ، زُهَيْرُ بْنُ مُحَمَّدٍ التَّمِيمِيُّ حَدَّثَنَا مُوسَى بْنُ عُقْبَةَ، حَدَّثَنِي عَبْدُ الرَّحْمَنِ الأَعْرَجُ، عَنْ أَبِي هُرَيْرَةَ، أَنَّ رَسُولَ اللَّهِ ـ صلى الله عليه وسلم ـ قَالَ ‏</span><span class="hadith">"‏ إِنَّ لِلَّهِ تِسْعَةً وَتِسْعِينَ اسْمًا مِائَةً إِلاَّ وَاحِدًا إِنَّهُ وِتْرٌ يُحِبُّ الْوِتْرَ مَنْ حَفِظَهَا دَخَلَ الْجَنَّةَ وَهِيَ اللَّهُ الْوَاحِدُ الصَّمَدُ الأَوَّلُ الآخِرُ الظَّاهِرُ الْبَاطِنُ الْخَالِقُ الْبَارِئُ الْمُصَوِّرُ الْمَلِكُ الْحَقُّ السَّلاَمُ الْمُؤْمِنُ الْمُهَيْمِنُ الْعَزِيزُ الْجَبَّارُ الْمُتَكَبِّرُ الرَّحْمَنُ الرَّحِيمُ اللَّطِيفُ الْخَبِيرُ السَّمِيعُ الْبَصِيرُ الْعَلِيمُ الْعَظِيمُ الْبَارُّ الْمُتَعَالِ الْجَلِيلُ الْجَمِيلُ الْحَىُّ الْقَيُّومُ الْقَادِرُ الْقَاهِرُ الْعَلِيُّ الْحَكِيمُ الْقَرِيبُ الْمُجِيبُ الْغَنِيُّ الْوَهَّابُ الْوَدُودُ الشَّكُورُ الْمَاجِدُ الْوَاجِدُ الْوَالِي الرَّاشِدُ الْعَفُوُّ الْغَفُورُ الْحَلِيمُ الْكَرِيمُ التَّوَّابُ الرَّبُّ الْمَجِيدُ الْوَلِيُّ الشَّهِيدُ الْمُبِينُ الْبُرْهَانُ الرَّءُوفُ الرَّحِيمُ الْمُبْدِئُ الْمُعِيدُ الْبَاعِثُ الْوَارِثُ الْقَوِيُّ الشَّدِيدُ الضَّارُّ النَّافِعُ الْبَاقِي الْوَاقِي الْخَافِضُ الرَّافِعُ الْقَابِضُ الْبَاسِطُ الْمُعِزُّ الْمُذِلُّ الْمُقْسِطُ الرَّزَّاقُ ذُو الْقُوَّةِ الْمَتِينُ الْقَائِمُ الدَّائِمُ الْحَافِظُ الْوَكِيلُ الْفَاطِرُ السَّامِعُ الْمُعْطِي الْمُحْيِي الْمُمِيتُ الْمَانِعُ الْجَامِعُ الْهَادِي الْكَافِي الأَبَدُ الْعَالِمُ الصَّادِقُ النُّورُ الْمُنِيرُ التَّامُّ الْقَدِيمُ الْوِتْرُ الأَحَدُ الصَّمَدُ الَّذِي لَمْ يَلِدْ وَلَمْ يُولَدْ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ ‏"</span><span class="arabic_sanad arabic">‏ ‏.‏ قَالَ زُهَيْرٌ فَبَلَغَنَا عَنْ غَيْرِ وَاحِدٍ مِنْ أَهْلِ الْعِلْمِ أَنَّ أَوَّلَهَا يُفْتَحُ بِقَوْلِ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ بِيَدِهِ الْخَيْرُ وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ لاَ إِلَهَ إِلاَّ اللَّهُ لَهُ الأَسْمَاءُ الْحُسْنَى ‏.‏</span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">سنن ابن ماجه</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">3861</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">&nbsp;<b>ضعيف</b> (دار السلام)</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sunan Ibn Majah 3861</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated>It was narrated from Abu Hurairah that :</div><div class=text_details>the Messenger of Allah (saas) said: "Allah has ninety-nine names, one hundred less one, for He is One and loves the odd (numbered). Whoever learns them will enter Paradise.  They are: Allah, Al-Wahid (the One), As-Samad (the Self-Sufficient Master who all creatures need, He neither eats nor drinks), Al-Awwal (the First), Al-Akhir (the Last), Az-Zahir (the Most High), Al-Batin (the Most Near), Al-Khaliq (the Creator), Al-Bari (the Inventor of all things), Al-Musawwir (the Bestower of forms), Al-Malik (the King), Al-Haqq (the Truth), As-Salam (the One free from all defects), Al-Mu'min (the Giver of security), Al-Muhaymin (the Watcher over His creatures), Al-'Aziz (the All-Mighty), Al-Jabbar (the Compeller), Al-Mutakabbir (the Supreme), Ar-Rahman (the Most Gracious), Ar-Rahim (the Most Merciful), Al-Latif (the Most Subtle and Courteous), Al-Khabir (the Aware), As-Sami' (the Hearing), Al-Basir (the Seeing), Al-'Alim (the All-Knowing), Al-'Azim (the Most Great), Al-Barr (the Source of goodness), Al-Muta'al (the Most Exalted), Al-Jalil (the Sublime One), Al-Jamil (the Beautiful), Al-Hayy (the Ever-Living), Al-Qayyum (the One Who sustains and protects all that exists), Al-Qadir (the Able), Al-Qahir (the Irrestible), Al-'Ali (the Exalted), Al-Hakim (the Most Wise), Al-Qarib (the Ever-Near), Al-Mujib (the Responsive), Al-Ghani (the Self-Sufficient), Al-Wahhab (the Bestower), Al-Wadud (the Loving), Ash-Shakur (the Appreciative), Al-Majid (the Most Gentle), Al-Wajid (the Patron), Al-Wali (the Governor), Al-Rashid (the Guide), Al-'Afuw (the Pardoner), Al-Ghafur (the Forgiver), Al-Halim (the Forbearing One), Al-Karim (the Most Generous), At-Tawwab (the Acceptor of Repentance), Ar-Rabb (the Lord and Cherisher), Al-Majid (the Most Glorious), Al-Wali (the Helper), Ash-Shahid (the Witness), Al-Mubin (the Manifest), Al-Burhan (the Proof), Ar-Ra'uf (the Compassionate), Ar-Rahim (the Most Merciful), Al-Mubdi' (the Originator), Al-Mu'id (the Restorer), Al-Ba'ith (the Resurrector), Al-Warith (the Supreme Inheritor), Al-Qawi (the All-Strong), Ash-Shadid (the Severe), Ad-Darr (the One Who harms), An-Nafi' (the One Who benefits), Al-Baqi' (the Everlasting), Al-Waqi (the Protector), Al-Khafid (the Humble), Ar-Rafi' (the Exalter), Al-Qabid (the Retainer), Al-Basit (the Expander), Al-Mu'izz (the Honorer), Al-Mudhill (the Humiliator), Al-Muqsit (the Equitable), Ar-Razzaq (the Providor), Dhul-Quwwah (the Powerful), Al-Matin (the Most Strong), Al-Qa'im (the Firm), Ad-Da'im (the Eternal), Al-Hafiz (the Guardian), Al-Wakil (the Trustee), Al-Fatir (the Originator of creation), As-Sami' (the Hearer), Al-Mu'ti (the Giver), Al-Muhyi (the Giver of life), Al-Mumit (the Giver of death), Al-Mani' (the Withholder), Al-Jami' (the Gatherer), Al-Hadi (the Guide), Al-Kafi (the Sufficient), Al-Abad (the Eternal), Al-'Alim (the Knower), As-Sadiq (the Truthful), An-Nur (the Light), Al-Munir (the Giver of light), At-Tamm (the Perfect), Al-Qadim (the Earlier), Al-Witr (the One), Al-Ahad (the Lone), As-Samad [(the Self-sufficient Master, Who all creatures need, (He neither eats no drinks)]. He begets not, nor was He begotten. And there is none co-equal or comparable unto him."(One of the narrators) Zuhair said: We heard from more than one of the scholars that the first of these (names) should begin after saying: La ilaha illallahu wahdahu la sharika lahu, lahul-mulku wa lahul-hamdu, bi yadihil-khair wa Huwa 'ala kulli shay-in Qadir, la ilaha illallahu lahul-asma'ul-husna [None has the right to be worshipped but Allah, with no partner or associate. His is the dominion and all praise is His. In His Hand is (all) goodness, and He is Able to do all things, none has the right to be worshipped but Allah, and His are the (Most) Beautiful Names].</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sunan Ibn Majah</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">3861</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">&nbsp;<b>Da’if</b> (Darussalam)</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

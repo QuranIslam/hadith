@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+سنن النسائي حديث رقم 3176 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+سنن النسائي حديث رقم 3176 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">أَخْبَرَنَا عِيسَى بْنُ يُونُسَ، قَالَ حَدَّثَنَا ضَمْرَةُ، عَنْ أَبِي زُرْعَةَ السَّيْبَانِيِّ، عَنْ أَبِي سُكَيْنَةَ، - رَجُلٌ مِنَ الْمُحَرَّرِينَ - عَنْ رَجُلٍ، مِنْ أَصْحَابِ النَّبِيِّ صلى الله عليه وسلم قَالَ لَمَّا أَمَرَ النَّبِيُّ صلى الله عليه وسلم بِحَفْرِ الْخَنْدَقِ عَرَضَتْ لَهُمْ صَخْرَةٌ حَالَتْ بَيْنَهُمْ وَبَيْنَ الْحَفْرِ فَقَامَ رَسُولُ اللَّهِ صلى الله عليه وسلم وَأَخَذَ الْمِعْوَلَ وَوَضَعَ رِدَاءَهُ نَاحِيَةَ الْخَنْدَقِ وَقَالَ ‏"‏ ‏<A id="q1" name="q1" href="javascript:openquran(5,115,115)"><c_q1>{‏ تَمَّتْ كَلِمَةُ رَبِّكَ صِدْقًا وَعَدْلاً لاَ مُبَدِّلَ لِكَلِمَاتِهِ وَهُوَ السَّمِيعُ الْعَلِيمُ ‏}</c_q1></a>‏ ‏"‏ ‏.‏ فَنَدَرَ ثُلُثُ الْحَجَرِ وَسَلْمَانُ الْفَارِسِيُّ قَائِمٌ يَنْظُرُ فَبَرَقَ مَعَ ضَرْبَةِ رَسُولِ اللَّهِ صلى الله عليه وسلم بَرْقَةٌ ثُمَّ ضَرَبَ الثَّانِيَةَ وَقَالَ ‏"‏ ‏<A id="q2" name="q2" href="javascript:openquran(5,115,115)"><c_q2>{‏ تَمَّتْ كَلِمَةُ رَبِّكَ صِدْقًا وَعَدْلاً لاَ مُبَدِّلَ لِكَلِمَاتِهِ وَهُوَ السَّمِيعُ الْعَلِيمُ ‏}</c_q2></a>‏ ‏"‏ ‏.‏ فَنَدَرَ الثُّلُثُ الآخَرُ فَبَرَقَتْ بَرْقَةٌ فَرَآهَا سَلْمَانُ ثُمَّ ضَرَبَ الثَّالِثَةَ وَقَالَ ‏"‏ ‏<A id="q3" name="q3" href="javascript:openquran(5,115,115)"><c_q3>{‏ تَمَّتْ كَلِمَةُ رَبِّكَ صِدْقًا وَعَدْلاً لاَ مُبَدِّلَ لِكَلِمَاتِهِ وَهُوَ السَّمِيعُ الْعَلِيمُ ‏}</c_q3></a>‏ ‏"‏ ‏.‏ فَنَدَرَ الثُّلُثُ الْبَاقِي وَخَرَجَ رَسُولُ اللَّهِ صلى الله عليه وسلم فَأَخَذَ رِدَاءَهُ وَجَلَسَ ‏.‏ قَالَ سَلْمَانُ يَا رَسُولَ اللَّهِ رَأَيْتُكَ حِينَ ضَرَبْتَ مَا تَضْرِبُ ضَرْبَةً إِلاَّ كَانَتْ مَعَهَا بَرْقَةٌ ‏.‏ قَالَ لَهُ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ يَا سَلْمَانُ رَأَيْتَ ذَلِكَ ‏"‏ ‏.‏ فَقَالَ إِي وَالَّذِي بَعَثَكَ بِالْحَقِّ يَا رَسُولَ اللَّهِ ‏.‏ قَالَ ‏"‏ فَإِنِّي حِينَ ضَرَبْتُ الضَّرْبَةَ الأُولَى رُفِعَتْ لِي مَدَائِنُ كِسْرَى وَمَا حَوْلَهَا وَمَدَائِنُ كَثِيرَةٌ حَتَّى رَأَيْتُهَا بِعَيْنَىَّ ‏"‏ ‏.‏ قَالَ لَهُ مَنْ حَضَرَهُ مِنْ أَصْحَابِهِ يَا رَسُولَ اللَّهِ ادْعُ اللَّهَ أَنْ يَفْتَحَهَا عَلَيْنَا وَيُغَنِّمَنَا دِيَارَهُمْ وَيُخَرِّبَ بِأَيْدِينَا بِلاَدَهُمْ ‏.‏ فَدَعَا رَسُولُ اللَّهِ صلى الله عليه وسلم بِذَلِكَ ‏"‏ ثُمَّ ضَرَبْتُ الضَّرْبَةَ الثَّانِيَةَ فَرُفِعَتْ لِي مَدَائِنُ قَيْصَرَ وَمَا حَوْلَهَا حَتَّى رَأَيْتُهَا بِعَيْنَىَّ ‏"‏ ‏.‏ قَالُوا يَا رَسُولَ اللَّهِ ادْعُ اللَّهَ أَنْ يَفْتَحَهَا عَلَيْنَا وَيُغَنِّمَنَا دِيَارَهُمْ وَيُخَرِّبَ بِأَيْدِينَا بِلاَدَهُمْ ‏.‏ فَدَعَا رَسُولُ اللَّهِ صلى الله عليه وسلم بِذَلِكَ ‏"‏ ثُمَّ ضَرَبْتُ الثَّالِثَةَ فَرُفِعَتْ لِي مَدَائِنُ الْحَبَشَةِ ‏.‏ وَمَا حَوْلَهَا مِنَ الْقُرَى حَتَّى رَأَيْتُهَا بِعَيْنَىَّ ‏"‏ ‏.‏ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم عِنْدَ ذَلِكَ ‏"‏ دَعُوا الْحَبَشَةَ مَا وَدَعُوكُمْ وَاتْرُكُوا التُّرْكَ مَا تَرَكُوكُمْ ‏"‏ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">سنن النسائي</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">3176</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">-</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sunan an-Nasa'i 3176</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated>It was narrated from Abu Sukainah, a man from among the Muharririn,[1] that a man among the Companions of the the Prophet (ﷺ) said:</div><div class=text_details>"When the Prophet (ﷺ) commanded them to dig the trench (Al-Khandaq), there was a rock in their way preventing them from digging. The Messenger of Allah (ﷺ) stood, picked up a pickaxe, put his Rida' (upper garment) at the edge of the ditch and said: 'And the Word of your Lord has been fulfilled in truth and in justice. None can change His Words. And He is the All-Hearer, the All-Knower.' [1] One-third of the rock broke off while Salman Al-Farisi was standing there watching, and there was a flash of light when the Messenger of Allah (ﷺ)struck (the rock). Then he struck it again and said: 'And the Word of your Lord has been fulfilled in truth and in justice. Nonce can change His Words. Ans He is the All-Hearer, the All-Knower' And another third of the rock broke off and there was another flash of light, which Salman saw. Then he struck (the rock) a third time and said: 'And the Word of your Lord has been fulfilled in truth and in justice. None can change His Words. And He is the All-Hearer, the All-Knower.' The last third fell, and the Messenger of Allah (ﷺ) came out, picked up his Rida' and sat down. Salman said: 'O Messenger of Allah, Each time you struck the rock there was a flash of light.' The Messenger of Allah (ﷺ) said to him: 'O Salman, did you see that?' He said: 'Yes, by the One Who sent you with the truth, O Messenger of Allah.' He said: 'When I struck the first blow, the cities of Kisra and their environs were shown to me, and many other cities, and I saw them with my own eyes.' Those of his Companions who were present said: 'O Messenger of Allah, pray to Allah to grant us victory and to give us their land as spoils of war, and to destroy their lands at our hands.' So the Messenger of Allah (ﷺ) prayed for that. (Then he said:) 'Then I struck the second blow and the cities of Caesar and their environs were shown to me, and I saw them with my own eyes.' They said: 'O Messenger of Allah, pray to Allah to grant us victory and to give us their lands as spoils of war, and to destroy their lands at our hands.' So the Messenger of Allah (ﷺ) prayed for that. (Then he said:) 'Then I struck the third blow and the cities of Ethiopia were shown to me, and the villages around them, and I saw them with my own eyes.' But the Messenger of Allah (ﷺ) said at that point: 'Leave the Ethiopians alone so long as they leave you alone, and leave the Turks alone so long as they leave you alone.'"[1] An-An'am 6:115.</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sunan an-Nasa'i</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">3176</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">-</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

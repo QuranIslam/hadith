@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+سنن أبي داود حديث رقم 4503 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+سنن أبي داود حديث رقم 4503 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا مُوسَى بْنُ إِسْمَاعِيلَ، حَدَّثَنَا حَمَّادٌ، قَالَ حَدَّثَنَا مُحَمَّدُ بْنُ إِسْحَاقَ، فَحَدَّثَنِي مُحَمَّدُ بْنُ جَعْفَرِ بْنِ الزُّبَيْرِ، قَالَ سَمِعْتُ زِيَادَ بْنَ ضُمَيْرَةَ الضَّمْرِيَّ، ح وَحَدَّثَنَا وَهْبُ بْنُ بَيَانٍ، وَأَحْمَدُ بْنُ سَعِيدٍ الْهَمْدَانِيُّ، قَالاَ حَدَّثَنَا ابْنُ وَهْبٍ، أَخْبَرَنِي عَبْدُ الرَّحْمَنِ بْنُ أَبِي الزِّنَادِ، عَنْ عَبْدِ الرَّحْمَنِ بْنِ الْحَارِثِ، عَنْ مُحَمَّدِ بْنِ جَعْفَرٍ، أَنَّهُ سَمِعَ زِيَادَ بْنَ سَعْدِ بْنِ ضُمَيْرَةَ السُّلَمِيَّ، - وَهَذَا حَدِيثُ وَهْبٍ وَهُوَ أَتَمُّ - يُحَدِّثُ عُرْوَةَ بْنَ الزُّبَيْرِ عَنْ أَبِيهِ - قَالَ مُوسَى - وَجَدِّهِ وَكَانَا شَهِدَا مَعَ رَسُولِ اللَّهِ صلى الله عليه وسلم حُنَيْنًا - ثُمَّ رَجَعْنَا إِلَى حَدِيثِ وَهْبٍ - أَنَّ مُحَلِّمَ بْنَ جَثَّامَةَ اللَّيْثِيَّ قَتَلَ رَجُلاً مِنْ أَشْجَعَ فِي الإِسْلاَمِ وَذَلِكَ أَوَّلُ غِيَرٍ قَضَى بِهِ رَسُولُ اللَّهِ صلى الله عليه وسلم فَتَكَلَّمَ عُيَيْنَةُ فِي قَتْلِ الأَشْجَعِيِّ لأَنَّهُ مِنْ غَطَفَانَ وَتَكَلَّمَ الأَقْرَعُ بْنُ حَابِسٍ دُونَ مُحَلِّمٍ لأَنَّهُ مِنْ خِنْدِفَ فَارْتَفَعَتِ الأَصْوَاتُ وَكَثُرَتِ الْخُصُومَةُ وَاللَّغَطُ فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ يَا عُيَيْنَةُ أَلاَ تَقْبَلُ الْغِيَرَ ‏"‏ ‏.‏ فَقَالَ عُيَيْنَةُ لاَ وَاللَّهِ حَتَّى أُدْخِلَ عَلَى نِسَائِهِ مِنَ الْحَرْبِ وَالْحَزَنِ مَا أَدْخَلَ عَلَى نِسَائِي ‏.‏ قَالَ ثُمَّ ارْتَفَعَتِ الأَصْوَاتُ وَكَثُرَتِ الْخُصُومَةُ وَاللَّغَطُ فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ يَا عُيَيْنَةُ أَلاَ تَقْبَلُ الْغِيَرَ ‏"‏ ‏.‏ فَقَالَ عُيَيْنَةُ مِثْلَ ذَلِكَ أَيْضًا إِلَى أَنْ قَامَ رَجُلٌ مِنْ بَنِي لَيْثٍ يُقَالُ لَهُ مُكَيْتِلٌ عَلَيْهِ شِكَّةٌ وَفِي يَدِهِ دَرَقَةٌ فَقَالَ يَا رَسُولَ اللَّهِ إِنِّي لَمْ أَجِدْ لِمَا فَعَلَ هَذَا فِي غُرَّةِ الإِسْلاَمِ مَثَلاً إِلاَّ غَنَمًا وَرَدَتْ فَرُمِيَ أَوَّلُهَا فَنَفَرَ آخِرُهَا اسْنُنِ الْيَوْمَ وَغَيِّرْ غَدًا فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ خَمْسُونَ فِي فَوْرِنَا هَذَا وَخَمْسُونَ إِذَا رَجَعْنَا إِلَى الْمَدِينَةِ ‏"‏ ‏.‏ وَذَلِكَ فِي بَعْضِ أَسْفَارِهِ وَمُحَلِّمٌ رَجُلٌ طَوِيلٌ آدَمُ وَهُوَ فِي طَرَفِ النَّاسِ فَلَمْ يَزَالُوا حَتَّى تَخَلَّصَ فَجَلَسَ بَيْنَ يَدَىْ رَسُولِ اللَّهِ صلى الله عليه وسلم وَعَيْنَاهُ تَدْمَعَانِ فَقَالَ يَا رَسُولَ اللَّهِ إِنِّي قَدْ فَعَلْتُ الَّذِي بَلَغَكَ وَإِنِّي أَتُوبُ إِلَى اللَّهِ تَبَارَكَ وَتَعَالَى فَاسْتَغْفِرِ اللَّهَ عَزَّ وَجَلَّ لِي يَا رَسُولَ اللَّهِ ‏.‏ فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ أَقَتَلْتَهُ بِسِلاَحِكَ فِي غُرَّةِ الإِسْلاَمِ اللَّهُمَّ لاَ تَغْفِرْ لِمُحَلِّمٍ ‏"‏ ‏.‏ بِصَوْتٍ عَالٍ زَادَ أَبُو سَلَمَةَ فَقَامَ وَإِنَّهُ لَيَتَلَقَّى دُمُوعَهُ بِطَرَفِ رِدَائِهِ قَالَ ابْنُ إِسْحَاقَ فَزَعَمَ قَوْمُهُ أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم اسْتَغْفَرَ لَهُ بَعْدَ ذَلِكَ ‏.‏ قَالَ أَبُو دَاوُدَ قَالَ النَّضْرُ بْنُ شُمَيْلٍ الْغِيَرُ الدِّيَةُ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">سنن أبي داود</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">4503</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">&nbsp;<b> ضعيف</b>&nbsp;&nbsp; (الألباني) </span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sunan Abi Dawud 4503</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Narrated Ziyad ibn Sa'd ibn Dumayrah as-Sulami:</div><div class=text_details></p><p>On the authority of his father (Sa'd) and his grandfather (Dumayrah) (according to Musa's version) who were present in the battle of Hunayn with the Messenger of Allah (ﷺ): After the advent of Islam, Muhallam ibn Jaththamah al-Laythi killed a man of Ashja'. </p><p>That was the first blood-money decided by the Messenger of Allah (ﷺ) (for payment). Uyaynah spoke about the killing of al-Ashja'i, for he belonged to Ghatafan, and al-Aqra' ibn Habis spoke on behalf of Muhallam, for he belonged to Khunduf. The voices rose high, and the dispute and noise grew.  </p><p>So the Messenger of Allah (ﷺ) said: Do you not accept blood-money, Uyaynah?  </p><p>Uyaynah then said: No, I swear by Allah, until I cause his women to suffer the same fighting and grief as he caused my women to suffer. Again the voices rose high, and the dispute and noise grew.  </p><p>The Messenger of Allah (ﷺ) said: Do you not accept the blood-money Uyaynah? Uyaynah gave the same reply as before, and a man of Banu Layth called Mukaytil stood up. He had a weapon and a skin shield in his hand.  </p><p>He said: I do not find in the beginning of Islam any illustration for what he has done except the one that "some sheep came on, and those in the front were shot; hence those in the rear ran away". (The other example is that) "make a law today and change it."  </p><p>The Messenger of Allah (ﷺ) said: Fifty (camels) here immediately and fifty when we return to Medina. This happened during some of his journeys. Muhallam was a tall man of dark complexion. He was with the people. They continued (to make effort for him) until he was released. He sat before the Messenger of Allah (ﷺ), with his eyes flowing.  </p><p>He said: Messenger of Allah! I have done (the act) of which you have been informed. I repent to Allah, the Exalted, so ask Allah's forgiveness for me. Messenger of Allah!  </p><p>The Messenger of Allah (ﷺ) then said: Did you kill him with your weapon at the beginning of Islam. O Allah! do not forgive Muhallam. He said these words loudly.  </p><p>AbuSalamah added: He (Muhallam) then got up while he was wiping his tears with the end of his garment.  </p><p>Ibn Ishaq said: His people alleged that the Messenger of Allah (ﷺ) asked forgiveness for him after that.</p><p>Abu Dawud said: Al-Nadr b. Shumail said: al-ghiyar means blood-wit.</p></b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sunan Abi Dawud</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">4503</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">&nbsp;<b>Da'if</b> (Al-Albani)</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

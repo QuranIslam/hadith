@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح مسلم حديث رقم 2448 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح مسلم حديث رقم 2448 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic">حَدَّثَنَا عَلِيُّ بْنُ حُجْرٍ السَّعْدِيُّ، وَأَحْمَدُ بْنُ جَنَابٍ، كِلاَهُمَا عَنْ عِيسَى، - وَاللَّفْظُ لاِبْنِ حُجْرٍ - حَدَّثَنَا عِيسَى بْنُ يُونُسَ، حَدَّثَنَا هِشَامُ بْنُ عُرْوَةَ، عَنْ أَخِيهِ عَبْدِ اللَّهِ بْنِ عُرْوَةَ، عَنْ عُرْوَةَ، عَنْ عَائِشَةَ، أَنَّهَا قَالَتْ جَلَسَ إِحْدَى عَشْرَةَ امْرَأَةً فَتَعَاهَدْنَ وَتَعَاقَدْنَ أَنْ لاَ يَكْتُمْنَ مِنْ أَخْبَارِ أَزْوَاجِهِنَّ شَيْئًا قَالَتِ الأُولَى زَوْجِي لَحْمُ جَمَلٍ غَثٌّ عَلَى رَأْسِ جَبَلٍ وَعْرٍ لاَ سَهْلٌ فَيُرْتَقَى وَلاَ سَمِينٌ فَيُنْتَقَلَ ‏.‏ قَالَتِ الثَّانِيَةُ زَوْجِي لاَ أَبُثُّ خَبَرَهُ إِنِّي أَخَافُ أَنْ لاَ أَذَرَهُ إِنْ أَذْكُرْهُ أَذْكُرْ عُجَرَهُ وَبُجَرَهُ ‏.‏ قَالَتِ الثَّالِثَةُ زَوْجِي الْعَشَنَّقُ إِنْ أَنْطِقْ أُطَلَّقْ وَإِنْ أَسْكُتْ أُعَلَّقْ ‏.‏ قَالَتِ الرَّابِعَةُ زَوْجِي كَلَيْلِ تِهَامَةَ لاَ حَرٌّ وَلاَ قُرٌّ وَلاَ مَخَافَةَ وَلاَ سَآمَةَ ‏.‏ قَالَتِ الْخَامِسَةُ زَوْجِي إِنْ دَخَلَ فَهِدَ وَإِنْ خَرَجَ أَسِدَ وَلاَ يَسْأَلُ عَمَّا عَهِدَ ‏.‏ قَالَتِ السَّادِسَةُ زَوْجِي إِنْ أَكَلَ لَفَّ وَإِنْ شَرِبَ اشْتَفَّ وَإِنِ اضْطَجَعَ الْتَفَّ وَلاَ يُولِجُ الْكَفَّ لِيَعْلَمَ الْبَثَّ ‏.‏ قَالَتِ السَّابِعَةُ زَوْجِي غَيَايَاءُ أَوْ عَيَايَاءُ طَبَاقَاءُ كُلُّ دَاءٍ لَهُ دَاءٌ شَجَّكِ أَوْ فَلَّكِ أَوْ جَمَعَ كُلاًّ لَكِ ‏.‏ قَالَتِ الثَّامِنَةُ زَوْجِي الرِّيحُ رِيحُ زَرْنَبٍ وَالْمَسُّ مَسُّ أَرْنَبٍ ‏.‏ قَالَتِ التَّاسِعَةُ زَوْجِي رَفِيعُ الْعِمَادِ طَوِيلُ النِّجَادِ عَظِيمُ الرَّمَادِ قَرِيبُ الْبَيْتِ مِنَ النَّادِي ‏.‏ قَالَتِ الْعَاشِرَةُ زَوْجِي مَالِكٌ وَمَا مَالِكٌ مَالِكٌ خَيْرٌ مِنْ ذَلِكِ لَهُ إِبِلٌ كَثِيرَاتُ الْمَبَارِكِ قَلِيلاَتُ الْمَسَارِحِ إِذَا سَمِعْنَ صَوْتَ الْمِزْهَرِ أَيْقَنَّ أَنَّهُنَّ هَوَالِكُ ‏.‏ قَالَتِ الْحَادِيَةَ عَشْرَةَ زَوْجِي أَبُو زَرْعٍ فَمَا أَبُو زَرْعٍ أَنَاسَ مِنْ حُلِيٍّ أُذُنَىَّ وَمَلأَ مِنْ شَحْمٍ عَضُدَىَّ وَبَجَّحَنِي فَبَجِحَتْ إِلَىَّ نَفْسِي وَجَدَنِي فِي أَهْلِ غُنَيْمَةٍ بِشَقٍّ فَجَعَلَنِي فِي أَهْلِ صَهِيلٍ وَأَطِيطٍ وَدَائِسٍ وَمُنَقٍّ فَعِنْدَهُ أَقُولُ فَلاَ أُقَبَّحُ وَأَرْقُدُ فَأَتَصَبَّحُ وَأَشْرَبُ فَأَتَقَنَّحُ ‏.‏ أُمُّ أَبِي زَرْعٍ فَمَا أُمُّ أَبِي زَرْعٍ عُكُومُهَا رَدَاحٌ وَبَيْتُهَا فَسَاحٌ ‏.‏ ابْنُ أَبِي زَرْعٍ فَمَا ابْنُ أَبِي زَرْعٍ مَضْجِعُهُ كَمَسَلِّ شَطْبَةٍ وَيُشْبِعُهُ ذِرَاعُ الْجَفْرَةِ ‏.‏ بِنْتُ أَبِي زَرْعٍ فَمَا بِنْتُ أَبِي زَرْعٍ طَوْعُ أَبِيهَا وَطَوْعُ أُمِّهَا وَمِلْءُ كِسَائِهَا وَغَيْظُ جَارَتِهَا ‏.‏ جَارِيَةُ أَبِي زَرْعٍ فَمَا جَارِيَةُ أَبِي زَرْعٍ لاَ تَبُثُّ حَدِيثَنَا تَبْثِيثًا وَلاَ تُنَقِّثُ مِيرَتَنَا تَنْقِيثًا وَلاَ تَمْلأُ بَيْتَنَا تَعْشِيشًا ‏.‏ قَالَتْ خَرَجَ أَبُو زَرْعٍ وَالأَوْطَابُ تُمْخَضُ فَلَقِيَ امْرَأَةً مَعَهَا وَلَدَانِ لَهَا كَالْفَهْدَيْنِ يَلْعَبَانِ مِنْ تَحْتِ خَصْرِهَا بِرُمَّانَتَيْنِ فَطَلَّقَنِي وَنَكَحَهَا فَنَكَحْتُ بَعْدَهُ رَجُلاً سَرِيًّا رَكِبَ شَرِيًّا وَأَخَذَ خَطِّيًّا وَأَرَاحَ عَلَىَّ نَعَمًا ثَرِيًّا وَأَعْطَانِي مِنْ كُلِّ رَائِحَةٍ زَوْجًا ‏.‏ قَالَ كُلِي أُمَّ زَرْعٍ وَمِيرِي أَهْلَكِ فَلَوْ جَمَعْتُ كُلَّ شَىْءٍ أَعْطَانِي مَا بَلَغَ أَصْغَرَ آنِيَةِ أَبِي زَرْعٍ ‏.‏ قَالَتْ عَائِشَةُ قَالَ لِي رَسُولُ اللَّهِ صلى الله عليه وسلم ‏</span><span class="hadith">"‏ كُنْتُ لَكِ كَأَبِي زَرْعٍ لأُمِّ زَرْعٍ ‏"</span><span class="arabic_sanad arabic">‏ ‏.‏</span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح مسلم</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">2448</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih Muslim 2448</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>'A'isha reported that (one day) there sat together eleven women making an explicit promise amongst themselves that they would conceal nothing about their spouses. The first one said:</div><div class=text_details>My husband is a sort of the meat of a lean camel placed at the top of a hill, which it is difficult to climb up, nor (the meat) is good enough that one finds in oneself the urge to take it away (from the top of that mountain). The second one said: My husband (is so bad) that I am afraid I would not be able to describe his faults-both visible and invisible completely. The third one said: My husband is a long-statured fellow (i. e. he lacks intelligence). If I give vent to my feelings about him, he would divorce me, and if I keep quiet I would be made to live in a state of suspense (neither completely abandoned by him nor entertained as wife). The fourth one said: My husband is like the night of Tihama (the night of Hijaz and Mecca), neither too cold nor hot, neither there is any fear of him nor grief. The fifth one said: My husband is (like) a leopard as he enters the house, and behaves like a lion when he gets out, and he does not ask about that which he leaves in the house. The sixth one said: So far as my husband is concerned, he eats so much that nothing is left back and when he drinks he drinks that no drop is left behind. And when he lies down he wraps his body and does not touch me so that he may know my grief. The seventh one said: My husband is heavy in spirit, having no brightness in him, impotent, suffering from all kinds of conceivable diseases, heaving such rough manners that he may break my head or wound my body, or may do both. The eighth one said: My husband is as sweet as the sweet-smelling plant, and as soft as the softness of the hare. The ninth one said: My husband is the master of a lofty building, long-statured, having heaps of ashes (at his door) and his house is near the meeting place and the inn. The tenth one said: My husband is Malik, and how fine Malik is, much above appreciation and praise (of mine). He has many folds of his camel, more in number than the pastures for them. When they (the camels) hear the sound of music they become sure that they are going to be slaughtered. The eleventh one said: My husband is Abu Zara'. How fine Abu Zara' is! He has suspended in my ears heavy ornaments and (fed me liberally) that my sinews and bones are covered with fat. So he made me happy. He found me among the shepherds living in the side of the mountain, and he made me the owner of the horses, camels and lands and heaps of grain and he finds no fault with me. I sleep and get up in the morning (at my own sweet will) and drink to my heart's content. The mother of Abu Zara', how fine is the mother of Abu Zara'! Her bundles are heavily packed (or receptacles in her house are filled to the brim) and the house quite spacious. So far as the son of Abu Zara' is concerned, his bed is as soft as a green palm-stick drawn forth from its bark, or like a sword drawn forth from its scabbard, and whom just an arm of a lamb is enough to satiate. So far as the daughter of Abu Zara' is concerned, how fine is the daughter of Abu Zara', obedient to her father, obedient to her mother, wearing sufficient flesh and a source of jealousy for her co-wife. As for the slave-girl of Abu Zara', how fine is she; she does not disclose our affairs to others (outside the four walls of the house). She does not remove our wheat, or provision, or take it forth, or squander it, but she preserves it faithfully (as a sacred trust). And she does not let the house fill with rubbish. One day Abu Zara' went out (of his house) when the milk was churned in the vessels, that he met a woman, having two children like leopards playing with her pomegranates (chest) under her vest. He divorced me (Umm Zara') and married that woman (whom Abu Zara') met on the way. I (Umm Zara') later on married another person, a chief, who was an expert rider, and a fine archer: he bestowed upon me many gifts and gave me one pair of every kind of animal and said: Umm Zara', make use of everything (you need) and send forth to your parents (but the fact) is that even if I combine all the gifts that he bestowed upon me, they stand no comparison to the least gift of Abu Zara'. 'A'isha reported that Allah's Messenger (ﷺ) said to me: I am for you as Abu Zara' was for Umm Zara'.</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih Muslim</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">2448</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

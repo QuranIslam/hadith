@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح مسلم حديث رقم 1479 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح مسلم حديث رقم 1479 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنِي زُهَيْرُ بْنُ حَرْبٍ، حَدَّثَنَا عُمَرُ بْنُ يُونُسَ الْحَنَفِيُّ، حَدَّثَنَا عِكْرِمَةُ بْنُ عَمَّارٍ، عَنْ سِمَاكٍ أَبِي زُمَيْلٍ، حَدَّثَنِي عَبْدُ اللَّهِ بْنُ عَبَّاسٍ، حَدَّثَنِي عُمَرُ بْنُ الْخَطَّابِ، قَالَ لَمَّا اعْتَزَلَ نَبِيُّ اللَّهِ صلى الله عليه وسلم نِسَاءَهُ - قَالَ - دَخَلْتُ الْمَسْجِدَ فَإِذَا النَّاسُ يَنْكُتُونَ بِالْحَصَى وَيَقُولُونَ طَلَّقَ رَسُولُ اللَّهِ صلى الله عليه وسلم نِسَاءَهُ وَذَلِكَ قَبْلَ أَنْ يُؤْمَرْنَ بِالْحِجَابِ فَقَالَ عُمَرُ فَقُلْتُ لأَعْلَمَنَّ ذَلِكَ الْيَوْمَ قَالَ فَدَخَلْتُ عَلَى عَائِشَةَ فَقُلْتُ يَا بِنْتَ أَبِي بَكْرٍ أَقَدْ بَلَغَ مِنْ شَأْنِكِ أَنْ تُؤْذِي رَسُولَ اللَّهِ صلى الله عليه وسلم فَقَالَتْ مَا لِي وَمَا لَكَ يَا ابْنَ الْخَطَّابِ عَلَيْكَ بِعَيْبَتِكَ ‏.‏ قَالَ فَدَخَلْتُ عَلَى حَفْصَةَ بِنْتِ عُمَرَ فَقُلْتُ لَهَا يَا حَفْصَةُ أَقَدْ بَلَغَ مِنْ شَأْنِكِ أَنْ تُؤْذِي رَسُولَ اللَّهِ صلى الله عليه وسلم وَاللَّهِ لَقَدْ عَلِمْتِ أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم لاَ يُحِبُّكِ ‏.‏ وَلَوْلاَ أَنَا لَطَلَّقَكِ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏.‏ فَبَكَتْ أَشَدَّ الْبُكَاءِ فَقُلْتُ لَهَا أَيْنَ رَسُولُ اللَّهِ صلى الله عليه وسلم قَالَتْ هُوَ فِي خِزَانَتِهِ فِي الْمَشْرُبَةِ ‏.‏ فَدَخَلْتُ فَإِذَا أَنَا بِرَبَاحٍ غُلاَمِ رَسُولِ اللَّهِ صلى الله عليه وسلم قَاعِدًا عَلَى أُسْكُفَّةِ الْمَشْرُبَةِ مُدَلٍّ رِجْلَيْهِ عَلَى نَقِيرٍ مِنْ خَشَبٍ وَهُوَ جِذْعٌ يَرْقَى عَلَيْهِ رَسُولُ اللَّهِ صلى الله عليه وسلم وَيَنْحَدِرُ فَنَادَيْتُ يَا رَبَاحُ اسْتَأْذِنْ لِي عِنْدَكَ عَلَى رَسُولِ اللَّهِ صلى الله عليه وسلم ‏.‏ فَنَظَرَ رَبَاحٌ إِلَى الْغُرْفَةِ ثُمَّ نَظَرَ إِلَىَّ فَلَمْ يَقُلْ شَيْئًا ثُمَّ قُلْتُ يَا رَبَاحُ اسْتَأْذِنْ لِي عِنْدَكَ عَلَى رَسُولِ اللَّهِ صلى الله عليه وسلم ‏.‏ فَنَظَرَ رَبَاحٌ إِلَى الْغُرْفَةِ ثُمَّ نَظَرَ إِلَىَّ فَلَمْ يَقُلْ شَيْئًا ثُمَّ رَفَعْتُ صَوْتِي فَقُلْتُ يَا رَبَاحُ اسْتَأْذِنْ لِي عِنْدَكَ عَلَى رَسُولِ اللَّهِ صلى الله عليه وسلم فَإِنِّي أَظُنُّ أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم ظَنَّ أَنِّي جِئْتُ مِنْ أَجْلِ حَفْصَةَ وَاللَّهِ لَئِنْ أَمَرَنِي رَسُولُ اللَّهِ صلى الله عليه وسلم بِضَرْبِ عُنُقِهَا لأَضْرِبَنَّ عُنُقَهَا ‏.‏ وَرَفَعْتُ صَوْتِي فَأَوْمَأَ إِلَىَّ أَنِ ارْقَهْ فَدَخَلْتُ عَلَى رَسُولِ اللَّهِ صلى الله عليه وسلم وَهُوَ مُضْطَجِعٌ عَلَى حَصِيرٍ فَجَلَسْتُ فَأَدْنَى عَلَيْهِ إِزَارَهُ وَلَيْسَ عَلَيْهِ غَيْرُهُ وَإِذَا الْحَصِيرُ قَدْ أَثَّرَ فِي جَنْبِهِ فَنَظَرْتُ بِبَصَرِي فِي خِزَانَةِ رَسُولِ اللَّهِ صلى الله عليه وسلم فَإِذَا أَنَا بِقَبْضَةٍ مِنْ شَعِيرٍ نَحْوِ الصَّاعِ وَمِثْلِهَا قَرَظًا فِي نَاحِيَةِ الْغُرْفَةِ وَإِذَا أَفِيقٌ مُعَلَّقٌ - قَالَ - فَابْتَدَرَتْ عَيْنَاىَ قَالَ ‏"‏ مَا يُبْكِيكَ يَا ابْنَ الْخَطَّابِ ‏"‏ ‏.‏ قُلْتُ يَا نَبِيَّ اللَّهِ وَمَا لِي لاَ أَبْكِي وَهَذَا الْحَصِيرُ قَدْ أَثَّرَ فِي جَنْبِكَ وَهَذِهِ خِزَانَتُكَ لاَ أَرَى فِيهَا إِلاَّ مَا أَرَى وَذَاكَ قَيْصَرُ وَكِسْرَى فِي الثِّمَارِ وَالأَنْهَارِ وَأَنْتَ رَسُولُ اللَّهِ صلى الله عليه وسلم وَصَفْوَتُهُ وَهَذِهِ خِزَانَتُكَ ‏.‏ فَقَالَ ‏"‏ يَا ابْنَ الْخَطَّابِ أَلاَ تَرْضَى أَنْ تَكُونَ لَنَا الآخِرَةُ وَلَهُمُ الدُّنْيَا ‏"‏ ‏.‏ قُلْتُ بَلَى - قَالَ - وَدَخَلْتُ عَلَيْهِ حِينَ دَخَلْتُ وَأَنَا أَرَى فِي وَجْهِهِ الْغَضَبَ فَقُلْتُ يَا رَسُولَ اللَّهِ مَا يَشُقُّ عَلَيْكَ مِنْ شَأْنِ النِّسَاءِ فَإِنْ كُنْتَ طَلَّقْتَهُنَّ فَإِنَّ اللَّهَ مَعَكَ وَمَلاَئِكَتَهُ وَجِبْرِيلَ وَمِيكَائِيلَ وَأَنَا وَأَبُو بَكْرٍ وَالْمُؤْمِنُونَ مَعَكَ وَقَلَّمَا تَكَلَّمْتُ وَأَحْمَدُ اللَّهَ بِكَلاَمٍ إِلاَّ رَجَوْتُ أَنْ يَكُونَ اللَّهُ يُصَدِّقُ قَوْلِي الَّذِي أَقُولُ وَنَزَلَتْ هَذِهِ الآيَةُ آيَةُ التَّخْيِيرِ ‏<A id="q11" name="q11" href="javascript:openquran(65,5,5)"><c_q11>{‏ عَسَى رَبُّهُ إِنْ طَلَّقَكُنَّ أَنْ يُبْدِلَهُ أَزْوَاجًا خَيْرًا مِنْكُنَّ‏}</c_q11></a>‏ ‏<A id="q12" name="q12" href="javascript:openquran(65,4,4)"><c_q12>{‏ وَإِنْ تَظَاهَرَا عَلَيْهِ فَإِنَّ اللَّهَ هُوَ مَوْلاَهُ وَجِبْرِيلُ وَصَالِحُ الْمُؤْمِنِينَ وَالْمَلاَئِكَةُ بَعْدَ ذَلِكَ ظَهِيرٌ‏}</c_q12></a>‏ وَكَانَتْ عَائِشَةُ بِنْتُ أَبِي بَكْرٍ وَحَفْصَةُ تَظَاهَرَانِ عَلَى سَائِرِ نِسَاءِ النَّبِيِّ صلى الله عليه وسلم فَقُلْتُ يَا رَسُولَ اللَّهِ أَطَلَّقْتَهُنَّ قَالَ ‏"‏ لاَ ‏"‏ ‏.‏ قُلْتُ يَا رَسُولَ اللَّهِ إِنِّي دَخَلْتُ الْمَسْجِدَ وَالْمُسْلِمُونَ يَنْكُتُونَ بِالْحَصَى يَقُولُونَ طَلَّقَ رَسُولُ اللَّهِ صلى الله عليه وسلم نِسَاءَهُ أَفَأَنْزِلُ فَأُخْبِرَهُمْ أَنَّكَ لَمْ تُطَلِّقْهُنَّ قَالَ ‏"‏ نَعَمْ إِنْ شِئْتَ ‏"‏ ‏.‏ فَلَمْ أَزَلْ أُحَدِّثُهُ حَتَّى تَحَسَّرَ الْغَضَبُ عَنْ وَجْهِهِ وَحَتَّى كَشَرَ فَضَحِكَ وَكَانَ مِنْ أَحْسَنِ النَّاسِ ثَغْرًا ثُمَّ نَزَلَ نَبِيُّ اللَّهِ صلى الله عليه وسلم وَنَزَلْتُ فَنَزَلْتُ أَتَشَبَّثُ بِالْجِذْعِ وَنَزَلَ رَسُولُ اللَّهِ صلى الله عليه وسلم كَأَنَّمَا يَمْشِي عَلَى الأَرْضِ مَا يَمَسُّهُ بِيَدِهِ فَقُلْتُ يَا رَسُولَ اللَّهِ إِنَّمَا كُنْتَ فِي الْغُرْفَةِ تِسْعَةً وَعِشْرِينَ ‏.‏ قَالَ ‏"‏ إِنَّ الشَّهْرَ يَكُونُ تِسْعًا وَعِشْرِينَ ‏"‏ ‏.‏ فقُمْتُ عَلَى بَابِ الْمَسْجِدِ فَنَادَيْتُ بِأَعْلَى صَوْتِي لَمْ يُطَلِّقْ رَسُولُ اللَّهِ صلى الله عليه وسلم نِسَاءَهُ ‏.‏ وَنَزَلَتْ هَذِهِ الآيَةُ ‏<A id="q13" name="q13" href="javascript:openquran(3,83,83)"><c_q13>{‏ وَإِذَا جَاءَهُمْ أَمْرٌ مِنَ الأَمْنِ أَوِ الْخَوْفِ أَذَاعُوا بِهِ وَلَوْ رَدُّوهُ إِلَى الرَّسُولِ وَإِلَى أُولِي الأَمْرِ مِنْهُمْ لَعَلِمَهُ الَّذِينَ يَسْتَنْبِطُونَهُ مِنْهُمْ‏}</c_q13></a>‏ فَكُنْتُ أَنَا اسْتَنْبَطْتُ ذَلِكَ الأَمْرَ وَأَنْزَلَ اللَّهُ عَزَّ وَجَلَّ آيَةَ التَّخْيِيرِ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح مسلم</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">1479</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih Muslim 1479</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>'Umar b. al-Khattab (Allah be pleased with him) reported:</div><div class=text_details>When Allah's Apostle (ﷺ) kept himself away from his wives, I entered the mosque, and found people striking the ground with pebblesand saying: Allah's Messenger (ﷺ) has divorced his wives, and that was before they were commanded to observe seclusion 'Umar said to himself: I must find this (actual position) today. So I went to 'A'isha (Allah be pleased with her) and said (to her): Daughter of Abu Bakr, have you gone to the extent of giving trouble to Allah's Messenger (ﷺ)? Thereupon she said: Son of Khattab, you have nothing to do with me, and I have nothing to do with you. You should look to your own receptacle. He ('Umar) said: I visited Hafsa daughter of 'Umar, and said to her: Hafsa, the (news) has reached me that you cause Allah's Messenger (ﷺ) trouble. You know that Allah's Messenger (ﷺ) does not love you, and had I not been (your father) he would have divorced you. (On hearing this) she wept bitterly. I said to her: Where is Allah's Messenger (ﷺ)? Shesaid: He is in the attic room. I went in and found Rabah, the servant of Allah's Messenger (ﷺ), sitting on the thresholds of the window dangling his feet on the hollow wood of the date-palm with the help of which Allah's Messenger (ﷺ) climbed (to the apartment) and came down. I cried: 0 Rabah, seek permission for me from Allah's Messenger (way peace be upon him). Rabah cast a glance at the apartment and then looked toward me but said nothing. I again said: Rabah, seek permission for me from Allah's Messenger (ﷺ). Rabah looked towards the apartment and then cast a glance at me, but said nothig. I then raised my voice and said: 0 Rabah, seek permission for me from Allah's Messenger (ﷺ). I think that Allah's Messenger (ﷺ) is under the impression that I have come for the sake of Hafsa. By Allah, if Allah's Messenger (ﷺ) would command me to strike her neck, I would certainly strike her neck. I raised my voice and he pointed me to climb up (and get into his apartment). I visited Allah's Messenger (ﷺ), and he was lying on a mat. I sat down and he drew up his lower garment over him and he had nothing (else) over him, and that the mat had left its marks on his sides. I looked with my eyes in the store room of Allah's Messenger (ﷺ). I found only a handful of barley equal to one sa' and an equal quantity of the leaves of Mimosa Flava placed in the nook of the cell, and a semi-tanned leather bag hanging (in one side), and I was moved to tears (on seeing this extremely austere living of the Holy Piophet), and he said: Ibn Khattab, what wakes you weep? I said: Apostle of Allah, why should I not shed tears? This mat has left its marks on your sides and I do not see in your store room (except these few things) that I have seen; Ceasar and Closroes are leading their lives in plenty whereas you are Allah's Messenger. His chosen one, and that is your store! He said: Ibn Khattab, aren't you satisfied that for us (there should be the prosperity) of the Hereafter, and for them (there should be the prosperity of) this world? I said: Yes. And as I had entered I had seen the signs of anger on his face, and I therefore, said: Messenger of Allah, what trouble do you feel from your wives, and if youhave divorced them, verily Allah is with you, His angels, Gabriel, Mika'il, I and Abu Bakr and the believers are with you. And seldom I talked and (which I uttered on that day) I hoped that Allah would testify to my words that I uttered. And so the verse of option (Ayat al-Takhyir) was revealed. Maybe his Lord, if he divorce you, will give him in your place wives better than you..." (Ixv. 5). And if you back up one another against him, then surely Allah is his Patron, and Gabriel and the righteous believers, and the angels after that are the aidera (lvi. 4). And it was 'A'isha, daughter of Abu Bakr, and Hafsa who had prevailed upon all the wives of Allah's Prophet (way peace be upon him) for (pressing them for mote money). I said: Messenger of Allah, have you divorced them? He said: No. I said: Messenger of Allah, I entered the mosque and found the Muslims playing with pebbles (absorbed in thought) and saying: Allah's Messenger has divorced his wives. Should I get down and inform there that you have not divorced them? He said: Yes, if you so like. And I went on talking to him until I (found) the signs of anger disappeared on his face and (his seriousness was changed to a happy mood and as a result thereof) his face had the natural tranquillity upon it and he laughed and his teeth were the most charming (among the teeth) of all people. Then Allah's Apostle (ﷺ) climbed down and I also climbed down and catching hold of the wood of the palm-tree and Allah's Messenger (ﷺ) came down (with such ease) as if he was walking on the ground, not touching anything with his hand (to get support). I said: Messenger of Allah, you remained in your apartment for twenty-nine days. He said: (At times) the month consists of twenty-nine days. I stood at the door of the mosque and I called out at the top of my voice: The Messenger of Allah (ﷺ) has not divorced his wives (and it was on this occasion that this) verse was revealed:" And if any matter pertaining to peace or alarm comes within their ken, they broadcast it; whereas, if they would refer it to the Apostle and those who have been entrusted with authority amongst them, those of them who are engaged in obtaining intelligence would indeed know (what to do with) it" (iv 83). And it was I who understood this matter, and Allah revealed the verse pertaining to option (given to the Prophet (may peace be upon him in regard to the retaining or divorcing of his wives).</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih Muslim</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">1479</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+سنن الترمذي حديث رقم 2863 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+سنن الترمذي حديث رقم 2863 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا مُحَمَّدُ بْنُ إِسْمَاعِيلَ، قَالَ‏ حَدَّثَنَا مُوسَى بْنُ إِسْمَاعِيلَ، قَالَ‏ حَدَّثَنَا أَبَانُ بْنُ يَزِيدَ، قَالَ‏ حَدَّثَنَا يَحْيَى بْنُ أَبِي كَثِيرٍ، عَنْ زَيْدِ بْنِ سَلاَّمٍ، أَنَّ أَبَا سَلاَّمٍ، حَدَّثَهُ أَنَّ الْحَارِثَ الأَشْعَرِيَّ حَدَّثَهُ أَنَّ النَّبِيَّ صلى الله عليه وسلم قَالَ ‏"‏ إِنَّ اللَّهَ أَمَرَ يَحْيَى بْنَ زَكَرِيَّا بِخَمْسِ كَلِمَاتٍ أَنْ يَعْمَلَ بِهَا وَيَأْمُرَ بَنِي إِسْرَائِيلَ أَنْ يَعْمَلُوا بِهَا وَإِنَّهُ كَادَ أَنْ يُبْطِئَ بِهَا فَقَالَ عِيسَى إِنَّ اللَّهَ أَمَرَكَ بِخَمْسِ كَلِمَاتٍ لِتَعْمَلَ بِهَا وَتَأْمُرَ بَنِي إِسْرَائِيلَ أَنْ يَعْمَلُوا بِهَا فَإِمَّا أَنْ تَأْمُرَهُمْ وَإِمَّا أَنَا آمُرُهُمْ ‏.‏ فَقَالَ يَحْيَى أَخْشَى إِنْ سَبَقْتَنِي بِهَا أَنْ يُخْسَفَ بِي أَوْ أُعَذَّبَ فَجَمَعَ النَّاسَ فِي بَيْتِ الْمَقْدِسِ فَامْتَلأَ الْمَسْجِدُ وَقَعَدُوا عَلَى الشُّرَفِ فَقَالَ إِنَّ اللَّهَ أَمَرَنِي بِخَمْسِ كَلِمَاتٍ أَنْ أَعْمَلَ بِهِنَّ وَآمُرَكُمْ أَنْ تَعْمَلُوا بِهِنَّ أَوَّلُهُنَّ أَنْ تَعْبُدُوا اللَّهَ وَلاَ تُشْرِكُوا بِهِ شَيْئًا وَإِنَّ مَثَلَ مَنْ أَشْرَكَ بِاللَّهِ كَمَثَلِ رَجُلٍ اشْتَرَى عَبْدًا مِنْ خَالِصِ مَالِهِ بِذَهَبٍ أَوْ وَرِقٍ فَقَالَ هَذِهِ دَارِي وَهَذَا عَمَلِي فَاعْمَلْ وَأَدِّ إِلَىَّ فَكَانَ يَعْمَلُ وَيُؤَدِّي إِلَى غَيْرِ سَيِّدِهِ فَأَيُّكُمْ يَرْضَى أَنْ يَكُونَ عَبْدُهُ كَذَلِكَ وَإِنَّ اللَّهَ أَمَرَكُمْ بِالصَّلاَةِ فَإِذَا صَلَّيْتُمْ فَلاَ تَلْتَفِتُوا فَإِنَّ اللَّهَ يَنْصِبُ وَجْهَهُ لِوَجْهِ عَبْدِهِ فِي صَلاَتِهِ مَا لَمْ يَلْتَفِتْ وَآمُرُكُمْ بِالصِّيَامِ فَإِنَّ مَثَلَ ذَلِكَ كَمَثَلِ رَجُلٍ فِي عِصَابَةٍ مَعَهُ صُرَّةٌ فِيهَا مِسْكٌ فَكُلُّهُمْ يَعْجَبُ أَوْ يُعْجِبُهُ رِيحُهَا وَإِنَّ رِيحَ الصَّائِمِ أَطْيَبُ عِنْدَ اللَّهِ مِنْ رِيحِ الْمِسْكِ وَآمُرُكُمْ بِالصَّدَقَةِ فَإِنَّ مَثَلَ ذَلِكَ كَمَثَلِ رَجُلٍ أَسَرَهُ الْعَدُوُّ فَأَوْثَقُوا يَدَهُ إِلَى عُنُقِهِ وَقَدَّمُوهُ لِيَضْرِبُوا عُنُقَهُ فَقَالَ أَنَا أَفْدِيهِ مِنْكُمْ بِالْقَلِيلِ وَالْكَثِيرِ ‏.‏ فَفَدَى نَفْسَهُ مِنْهُمْ وَآمُرُكُمْ أَنْ تَذْكُرُوا اللَّهَ فَإِنَّ مَثَلَ ذَلِكَ كَمَثَلِ رَجُلٍ خَرَجَ الْعَدُوُّ فِي أَثَرِهِ سِرَاعًا حَتَّى إِذَا أَتَى عَلَى حِصْنٍ حَصِينٍ فَأَحْرَزَ نَفْسَهُ مِنْهُمْ كَذَلِكَ الْعَبْدُ لاَ يُحْرِزُ نَفْسَهُ مِنَ الشَّيْطَانِ إِلاَّ بِذِكْرِ اللَّهِ ‏"‏ ‏.‏ قَالَ النَّبِيُّ صلى الله عليه وسلم ‏"‏ وَأَنَا آمُرُكُمْ بِخَمْسٍ اللَّهُ أَمَرَنِي بِهِنَّ السَّمْعُ وَالطَّاعَةُ وَالْجِهَادُ وَالْهِجْرَةُ وَالْجَمَاعَةُ فَإِنَّهُ مَنْ فَارَقَ الْجَمَاعَةَ قِيدَ شِبْرٍ فَقَدْ خَلَعَ رِبْقَةَ الإِسْلاَمِ مِنْ عُنُقِهِ إِلاَّ أَنْ يَرْجِعَ وَمَنِ ادَّعَى دَعْوَى الْجَاهِلِيَّةِ فَإِنَّهُ مِنْ جُثَا جَهَنَّمَ ‏"‏ ‏.‏ فَقَالَ رَجُلٌ يَا رَسُولَ اللَّهِ وَإِنْ صَلَّى وَصَامَ قَالَ ‏"‏ وَإِنْ صَلَّى وَصَامَ فَادْعُوا بِدَعْوَى اللَّهِ الَّذِي سَمَّاكُمُ الْمُسْلِمِينَ الْمُؤْمِنِينَ عِبَادَ اللَّهِ ‏"‏ ‏.‏ هَذَا حَدِيثٌ حَسَنٌ صَحِيحٌ غَرِيبٌ ‏.‏ قَالَ مُحَمَّدُ بْنُ إِسْمَاعِيلَ الْحَارِثُ الأَشْعَرِيُّ لَهُ صُحْبَةٌ وَلَهُ غَيْرُ هَذَا الْحَدِيثِ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">سنن الترمذي</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">2863</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">&nbsp;<b>صحيح</b> (دار السلام)</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sunan at-Tirmizi 2863</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated>Narrated Al-Harith Al-Ash'ari:</div><div class=text_details>that the Messenger of Allah (ﷺ) said: "Indeed Allah commanded Yahya bin Zakariyya with five commandments to abide by, and to command the Children of Isra'il to abide by them. But he was slow in doing so. So 'Eisa said: 'Indeed Allah commanded you with five commandments to abide by and to command the Children of Isra'il to abide by. Either you command them, or I shall command them.' So Yahya said: 'I fear that if you precede me in this, then the earth may swallow me, or I shall be punished.' So he gathered the people in Jerusalem, and they filled [the Masjid] and sat upon its balconies. So he said: 'Indeed Allah has commanded me with five commandments to abide by, and to command you to abide by. The first of them is that you worship Allah and not associate anything with him. The parable of the one who associates others with Allah is that of a man who buys a servant with his own gold or silver, then he says to him: "This is my home and this is my business so take care of it and give me the profits." So he takes care of it and gives the profits to someone other than his master. Which of you would live to have a servant like that? And Allah commands you to perform Salat, and when you perform Salat then do not turn away, for Allah is facing the face of His worshipers as long as he does not turn away. And He commands you with fasting. For indeed the parable of fasting, is that of a man in a group with a sachet containing musk. All of them enjoy its fragrance. Indeed the breath of the fasting person is more pleasant to Allah than the scent of musk. And He commands you to give charity. The parable of that, is a man captured by his enemies, tying his hands to his neck, and they come to him to beat his neck. Then he said: "I can ransom myself from you with a little or a lot" so he ransoms himself from them. And He commands you to remember Allah. For indeed the parable of that, is a man whose enemy quickly tracks him until he reaches an impermeable fortress in which he protects himself from them. This is how the worshiper is; he does not protect himself from Ash-Shaitan except by the remembrance of Allah.'" The Prophet (ﷺ) said: "And I command you with five that Allah commanded me: Listening and obeying, Jihad, Hijrah, and the Jama'ah. For indeed whoever parts from the Jama'ah the measure of a hand-span, then he has cast off the yoke of Islam from his neck, unless he returns. And whoever calls with the call of Jahiliyyah then he is from the coals of Hell." A man said: "O Messenger of Allah! Even if he performs Salat and fasts?" So he (ﷺ) said: "Even if he performs Salat and fasts. So call with the call that Allah named you with: Muslims, believers, worshipers of Allah."</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sunan at-Tirmizi</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">2863</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">&nbsp;<b>Sahih</b> (Darussalam)</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

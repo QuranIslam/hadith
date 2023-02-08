@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح البخاري حديث رقم 6207 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح البخاري حديث رقم 6207 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا أَبُو الْيَمَانِ، أَخْبَرَنَا شُعَيْبٌ، عَنِ الزُّهْرِيِّ، حَدَّثَنَا إِسْمَاعِيلُ، قَالَ حَدَّثَنِي أَخِي، عَنْ سُلَيْمَانَ، عَنْ مُحَمَّدِ بْنِ أَبِي عَتِيقٍ، عَنِ ابْنِ شِهَابٍ، عَنْ عُرْوَةَ بْنِ الزُّبَيْرِ، أَنَّ أُسَامَةَ بْنَ زَيْدٍ ـ رضى الله عنهما ـ أَخْبَرَهُ أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم رَكِبَ عَلَى حِمَارٍ عَلَيْهِ قَطِيفَةٌ فَدَكِيَّةٌ وَأُسَامَةُ وَرَاءَهُ، يَعُودُ سَعْدَ بْنَ عُبَادَةَ فِي بَنِي حَارِثِ بْنِ الْخَزْرَجِ قَبْلَ وَقْعَةِ بَدْرٍ، فَسَارَا حَتَّى مَرَّا بِمَجْلِسٍ فِيهِ عَبْدُ اللَّهِ بْنُ أُبَىٍّ ابْنُ سَلُولَ، وَذَلِكَ قَبْلَ أَنْ يُسْلِمَ عَبْدُ اللَّهِ بْنُ أُبَىٍّ، فَإِذَا فِي الْمَجْلِسِ أَخْلاَطٌ مِنَ الْمُسْلِمِينَ وَالْمُشْرِكِينَ عَبَدَةِ الأَوْثَانِ وَالْيَهُودِ، وَفِي الْمُسْلِمِينَ عَبْدُ اللَّهِ بْنُ رَوَاحَةَ، فَلَمَّا غَشِيَتِ الْمَجْلِسَ عَجَاجَةُ الدَّابَّةِ خَمَّرَ ابْنُ أُبَىٍّ أَنْفَهُ بِرِدَائِهِ وَقَالَ لاَ تُغَبِّرُوا عَلَيْنَا‏.‏ فَسَلَّمَ رَسُولُ اللَّهِ صلى الله عليه وسلم عَلَيْهِمْ، ثُمَّ وَقَفَ فَنَزَلَ فَدَعَاهُمْ إِلَى اللَّهِ وَقَرَأَ عَلَيْهِمُ الْقُرْآنَ، فَقَالَ لَهُ عَبْدُ اللَّهِ بْنُ أُبَىٍّ ابْنُ سَلُولَ أَيُّهَا الْمَرْءُ لاَ أَحْسَنَ مِمَّا تَقُولُ إِنْ كَانَ حَقًّا، فَلاَ تُؤْذِنَا بِهِ فِي مَجَالِسِنَا، فَمَنْ جَاءَكَ فَاقْصُصْ عَلَيْهِ‏.‏ قَالَ عَبْدُ اللَّهِ بْنُ رَوَاحَةَ بَلَى يَا رَسُولَ اللَّهِ فَاغْشَنَا فِي مَجَالِسِنَا فَإِنَّا نُحِبُّ ذَلِكَ‏.‏ فَاسْتَبَّ الْمُسْلِمُونَ وَالْمُشْرِكُونَ وَالْيَهُودُ حَتَّى كَادُوا يَتَثَاوَرُونَ فَلَمْ يَزَلْ رَسُولُ اللَّهِ صلى الله عليه وسلم يَخْفِضُهُمْ حَتَّى سَكَتُوا، ثُمَّ رَكِبَ رَسُولُ اللَّهِ صلى الله عليه وسلم دَابَّتَهُ فَسَارَ حَتَّى دَخَلَ عَلَى سَعْدِ بْنِ عُبَادَةَ، فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ أَىْ سَعْدُ أَلَمْ تَسْمَعْ مَا قَالَ أَبُو حُبَابٍ ـ يُرِيدُ عَبْدَ اللَّهِ بْنَ أُبَىٍّ ـ قَالَ كَذَا وَكَذَا ‏"‏‏.‏ فَقَالَ سَعْدُ بْنُ عُبَادَةَ أَىْ رَسُولَ اللَّهِ بِأَبِي أَنْتَ، اعْفُ عَنْهُ وَاصْفَحْ، فَوَالَّذِي أَنْزَلَ عَلَيْكَ الْكِتَابَ لَقَدْ جَاءَ اللَّهُ بِالْحَقِّ الَّذِي أَنْزَلَ عَلَيْكَ، وَلَقَدِ اصْطَلَحَ أَهْلُ هَذِهِ الْبَحْرَةِ عَلَى أَنْ يُتَوِّجُوهُ وَيُعَصِّبُوهُ بِالْعِصَابَةِ، فَلَمَّا رَدَّ اللَّهُ ذَلِكَ بِالْحَقِّ الَّذِي أَعْطَاكَ شَرِقَ بِذَلِكَ فَذَلِكَ فَعَلَ بِهِ مَا رَأَيْتَ‏.‏ فَعَفَا عَنْهُ رَسُولُ اللَّهِ صلى الله عليه وسلم وَكَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم وَأَصْحَابُهُ يَعْفُونَ عَنِ الْمُشْرِكِينَ وَأَهْلِ الْكِتَابِ كَمَا أَمَرَهُمُ اللَّهُ، وَيَصْبِرُونَ عَلَى الأَذَى، قَالَ اللَّهُ تَعَالَى ‏<A id="q10" name="q10" href="javascript:openquran(2,186,186)"><c_q10>{‏وَلَتَسْمَعُنَّ مِنَ الَّذِينَ أُوتُوا الْكِتَابَ‏}</c_q10></a>‏ الآيَةَ، وَقَالَ ‏<A id="q11" name="q11" href="javascript:openquran(1,109,109)"><c_q11>{‏وَدَّ كَثِيرٌ مِنْ أَهْلِ الْكِتَابِ‏}</c_q11></a>‏ فَكَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم يَتَأَوَّلُ فِي الْعَفْوِ عَنْهُمْ مَا أَمَرَهُ اللَّهُ بِهِ حَتَّى أَذِنَ لَهُ فِيهِمْ، فَلَمَّا غَزَا رَسُولُ اللَّهِ صلى الله عليه وسلم بَدْرًا، فَقَتَلَ اللَّهُ بِهَا مَنْ قَتَلَ مِنْ صَنَادِيدِ الْكُفَّارِ، وَسَادَةِ قُرَيْشٍ، فَقَفَلَ رَسُولُ اللَّهِ صلى الله عليه وسلم وَأَصْحَابُهُ مَنْصُورِينَ غَانِمِينَ مَعَهُمْ أُسَارَى مِنْ صَنَادِيدِ الْكُفَّارِ وَسَادَةِ قُرَيْشٍ قَالَ ابْنُ أُبَىٍّ ابْنُ سَلُولَ، وَمَنْ مَعَهُ مِنَ الْمُشْرِكِينَ عَبَدَةِ الأَوْثَانِ هَذَا أَمْرٌ قَدْ تَوَجَّهَ فَبَايِعُوا رَسُولَ اللَّهِ صلى الله عليه وسلم عَلَى الإِسْلاَمِ فَأَسْلَمُوا‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح البخاري</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">6207</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih al-Bukhari 6207</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Narrated Usama bin Zaid:</div><div class=text_details><p>That Allah's Messenger (ﷺ) rode over a donkey covered with a Fadakiya (velvet sheet) and Usama was riding behind him. He was visiting Sa`d bin 'Ubada (who was sick) in the dwelling place of Bani Al-Harith bin Al-Khazraj and this incident happened before the battle of Badr. They proceeded till they passed by a gathering in which `Abdullah bin Ubai bin Salul was present., and that was before `Abdullah bin Ubat embraced Islam. In that gathering there were Muslims, pagan idolators and Jews, and among the Muslims there was `Abdullah bin Rawaha. When a cloud of dust raised by (the movement of ) the animal covered that gathering, `Abdullah bin Ubai covered his nose with his garment and said, "Do not cover us with dust." Allah's Messenger (ﷺ) greeted them, stopped, dismounted and invited them to Allah (i.e. to embrace Islam) and recited to them the Holy Qur'an. On that `Abdullah bin Ubai bin Salul said to him, "O man! There is nothing better than what you say, if it is the truth. So do not trouble us with it in our gatherings, but if somebody comes to you, you can preach to him." On that `Abdullah bin Rawaha said "Yes, O Allah's Messenger (ﷺ)! Call on us in our gathering, for we love that." So the Muslims, the pagans and the Jews started abusing one another till they were about to fight with one another. Allah's Messenger (ﷺ) kept on quietening them till all of them became quiet, and then Allah's Messenger (ﷺ) rode his animal and proceeded till he entered upon Sa`d bin 'Ubada. Allah's Messenger (ﷺ) said, "O Sa`d! Didn't you hear what Abu Habab said?" (meaning `Abdullah bin Unbar). "He said so-and-so." Sa`d bin Ubada said, "O Allah's Messenger (ﷺ)! Let my father be sacrificed for you ! Excuse and forgive him for, by Him Who revealed to you the Book, Allah sent the Truth which was revealed to you at the time when the people of this town had decided to crown him (`Abdullah bin Ubai) as their ruler. So when Allah had prevented that with the Truth He had given you, he was choked by that, and that caused him to behave in such an impolite manner which you had noticed." So Allah's Messenger (ﷺ) excused him. (It was the custom of) Allah's Messenger (ﷺ) and his companions to excuse the pagans and the people of the scripture (Christians and Jews) as Allah ordered them, and they used to be patient when annoyed (by them). Allah said: 'You shall certainly hear much that will grieve you from those who received the Scripture before you.....and from the pagans (3.186) He also said: 'Many of the people of the scripture wish that if they could turn you away as disbelievers after you have believed. .... (2.109) So Allah's Messenger (ﷺ) used to apply what Allah had ordered him by excusing them till he was allowed to fight against them. When Allah's Messenger (ﷺ) had fought the battle of Badr and Allah killed whomever He killed among the chiefs of the infidels and the nobles of Quraish, and Allah's Messenger (ﷺ) and his companions had returned with victory and booty, bringing with them some of the chiefs of the infidels and the nobles of the Quraish as captives. `Abdullah bin Ubai bin Salul and the pagan idolators who were with him, said, "This matter (Islam) has now brought out its face (triumphed), so give Allah's Messenger (ﷺ) the pledge of allegiance (for embracing Islam.)". Then they became Muslims.</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih al-Bukhari</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">6207</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

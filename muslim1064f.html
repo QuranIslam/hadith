@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح مسلم حديث رقم 1064 مكرر موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح مسلم حديث رقم 1064 مكرر مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنِي أَبُو الطَّاهِرِ، أَخْبَرَنَا عَبْدُ اللَّهِ بْنُ وَهْبٍ، أَخْبَرَنِي يُونُسُ، عَنِ ابْنِ شِهَابٍ، أَخْبَرَنِي أَبُو سَلَمَةَ بْنُ عَبْدِ الرَّحْمَنِ، عَنْ أَبِي سَعِيدٍ الْخُدْرِيِّ، ح . وَحَدَّثَنِي حَرْمَلَةُ بْنُ يَحْيَى، وَأَحْمَدُ بْنُ عَبْدِ الرَّحْمَنِ الْفِهْرِيُّ، قَالاَ أَخْبَرَنَا ابْنُ وَهْبٍ، أَخْبَرَنِي يُونُسُ، عَنِ ابْنِ شِهَابٍ، أَخْبَرَنِي أَبُو سَلَمَةَ بْنُ عَبْدِ الرَّحْمَنِ، وَالضَّحَّاكُ الْهَمْدَانِيُّ، أَنَّ أَبَا سَعِيدٍ الْخُدْرِيَّ، قَالَ بَيْنَا نَحْنُ عِنْدَ رَسُولِ اللَّهِ صلى الله عليه وسلم وَهُوَ يَقْسِمُ قَسْمًا أَتَاهُ ذُو الْخُوَيْصِرَةِ وَهُوَ رَجُلٌ مِنْ بَنِي تَمِيمٍ فَقَالَ يَا رَسُولَ اللَّهِ اعْدِلْ ‏.‏ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ وَيْلَكَ وَمَنْ يَعْدِلُ إِنْ لَمْ أَعْدِلْ قَدْ خِبْتَ وَخَسِرْتَ إِنْ لَمْ أَعْدِلْ ‏"‏ ‏.‏ فَقَالَ عُمَرُ بْنُ الْخَطَّابِ رضى الله عنه يَا رَسُولَ اللَّهِ ائْذَنْ لِي فِيهِ أَضْرِبْ عُنُقَهُ ‏.‏ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ دَعْهُ فَإِنَّ لَهُ أَصْحَابًا يَحْقِرُ أَحَدُكُمْ صَلاَتَهُ مَعَ صَلاَتِهِمْ وَصِيَامَهُ مَعَ صِيَامِهِمْ يَقْرَءُونَ الْقُرْآنَ لاَ يُجَاوِزُ تَرَاقِيَهُمْ يَمْرُقُونَ مِنَ الإِسْلاَمِ كَمَا يَمْرُقُ السَّهْمُ مِنَ الرَّمِيَّةِ يُنْظَرُ إِلَى نَصْلِهِ فَلاَ يُوجَدُ فِيهِ شَىْءٌ ثُمَّ يُنْظَرُ إِلَى رِصَافِهِ فَلاَ يُوجَدُ فِيهِ شَىْءٌ ثُمَّ يُنْظَرُ إِلَى نَضِيِّهِ فَلاَ يُوجَدُ فِيهِ شَىْءٌ - وَهُوَ الْقِدْحُ - ثُمَّ يُنْظَرُ إِلَى قُذَذِهِ فَلاَ يُوجَدُ فِيهِ شَىْءٌ سَبَقَ الْفَرْثَ وَالدَّمَ ‏.‏ آيَتُهُمْ رَجُلٌ أَسْوَدُ إِحْدَى عَضُدَيْهِ مِثْلُ ثَدْىِ الْمَرْأَةِ أَوْ مِثْلُ الْبَضْعَةِ تَدَرْدَرُ يَخْرُجُونَ عَلَى حِينِ فُرْقَةٍ مِنَ النَّاسِ ‏"‏ ‏.‏ قَالَ أَبُو سَعِيدٍ فَأَشْهَدُ أَنِّي سَمِعْتُ هَذَا مِنْ رَسُولِ اللَّهِ صلى الله عليه وسلم وَأَشْهَدُ أَنَّ عَلِيَّ بْنَ أَبِي طَالِبٍ - رضى الله عنه - قَاتَلَهُمْ وَأَنَا مَعَهُ فَأَمَرَ بِذَلِكَ الرَّجُلِ فَالْتُمِسَ فَوُجِدَ فَأُتِيَ بِهِ حَتَّى نَظَرْتُ إِلَيْهِ عَلَى نَعْتِ رَسُولِ اللَّهِ صلى الله عليه وسلم الَّذِي نَعَتَ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح مسلم</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">1064 مكرر</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih Muslim 1064f</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Abu Sai'd al-Khudri reported:</div><div class=text_details>When we were in the company of the Messenger of Allah (ﷺ) and he was distributing the spoils of war, there came to him Dhul-Khuwasira, one of Banu Tamim. He said: Messenger of Allah, do justice. Upon this the Messenger of Allah (ﷺ) said: Woe be upon thee! Who would do justice, if I do not do justice? You would be unsuccessful and incurring a loss, if I do not do justice. Upon this Umar b. Khattab (Allah be pleased with him) said: Messenger of Allah, permit me to strike off his neck. The Messenger of Allah (ﷺ) said: Leave him, for he has friends (who would outwardly look to be so religious and pious) that everyone among you would consider his prayer insignificant as compared with their prayer, and his fast as compared with their fasts. They would recite the Qur'an but it would not go beyond their collar-bones. They would pass through (the teachings of Islam so hurriedly) just as the arrow passes through the prey. He would look at its Iron head, but would not find anything ticking) there. He would then see at the lowest end, but would not find anything sticking there. He would then see at its grip but would not find anything sticking to it. He would then see at its feathers and he would find nothing sticking to them (as the arrow would pass so quickly that nothing would stick to it) neither excrement nor blood. They would be recognised by the presence of a black man among them whose upper arms would be like a woman's breast, or like a piece of meat as it quivers, and they would come forth at the time when there is dissension among the people. Abu Sai'd said: I testify to the fact that I heard it from the Messenger of Allah (ﷺ), and I testify to the fact that 'Ali b. Abu Talib fought against them and I was with him. He gave orders about that man who was sought for, and when he was brought in, and when I looked at him, he was exactly as the Messenger of Allah (ﷺ) had described him.</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih Muslim</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">1064f</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

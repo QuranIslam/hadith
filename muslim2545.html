@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح مسلم حديث رقم 2545 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح مسلم حديث رقم 2545 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic">حَدَّثَنَا عُقْبَةُ بْنُ مُكْرَمٍ الْعَمِّيُّ، حَدَّثَنَا يَعْقُوبُ، - يَعْنِي ابْنَ إِسْحَاقَ الْحَضْرَمِيَّ - أَخْبَرَنَا الأَسْوَدُ بْنُ شَيْبَانَ، عَنْ أَبِي نَوْفَلٍ، رَأَيْتُ عَبْدَ اللَّهِ بْنَ الزُّبَيْرِ عَلَى عَقَبَةِ الْمَدِينَةِ - قَالَ - فَجَعَلَتْ قُرَيْشٌ تَمُرُّ عَلَيْهِ وَالنَّاسُ حَتَّى مَرَّ عَلَيْهِ عَبْدُ اللَّهِ بْنُ عُمَرَ فَوَقَفَ عَلَيْهِ فَقَالَ السَّلاَمُ عَلَيْكَ أَبَا خُبَيْبٍ السَّلاَمُ عَلَيْكَ أَبَا خُبَيْبٍ السَّلاَمُ عَلَيْكَ أَبَا خُبَيْبٍ أَمَا وَاللَّهِ لَقَدْ كُنْتُ أَنْهَاكَ عَنْ هَذَا أَمَا وَاللَّهِ لَقَدْ كُنْتُ أَنْهَاكَ عَنْ هَذَا أَمَا وَاللَّهِ لَقَدْ كُنْتُ أَنْهَاكَ عَنْ هَذَا أَمَا وَاللَّهِ إِنْ كُنْتَ مَا عَلِمْتُ صَوَّامًا قَوَّامًا وَصُولاً لِلرَّحِمِ أَمَا وَاللَّهِ لأُمَّةٌ أَنْتَ أَشَرُّهَا لأُمَّةٌ خَيْرٌ ‏.‏ ثُمَّ نَفَذَ عَبْدُ اللَّهِ بْنُ عُمَرَ فَبَلَغَ الْحَجَّاجَ مَوْقِفُ عَبْدِ اللَّهِ وَقَوْلُهُ فَأَرْسَلَ إِلَيْهِ فَأُنْزِلَ عَنْ جِذْعِهِ فَأُلْقِيَ فِي قُبُورِ الْيَهُودِ ثُمَّ أَرْسَلَ إِلَى أُمِّهِ أَسْمَاءَ بِنْتِ أَبِي بَكْرٍ فَأَبَتْ أَنْ تَأْتِيَهُ فَأَعَادَ عَلَيْهَا الرَّسُولَ لَتَأْتِيَنِّي أَوْ لأَبْعَثَنَّ إِلَيْكِ مِنْ يَسْحَبُكِ بِقُرُونِكِ - قَالَ - فَأَبَتْ وَقَالَتْ وَاللَّهِ لاَ آتِيكَ حَتَّى تَبْعَثَ إِلَىَّ مَنْ يَسْحَبُنِي بِقُرُونِي - قَالَ - فَقَالَ أَرُونِي سِبْتَىَّ ‏.‏ فَأَخَذَ نَعْلَيْهِ ثُمَّ انْطَلَقَ يَتَوَذَّفُ حَتَّى دَخَلَ عَلَيْهَا فَقَالَ كَيْفَ رَأَيْتِنِي صَنَعْتُ بِعَدُوِّ اللَّهِ قَالَتْ رَأَيْتُكَ أَفْسَدْتَ عَلَيْهِ دُنْيَاهُ وَأَفْسَدَ عَلَيْكَ آخِرَتَكَ بَلَغَنِي أَنَّكَ تَقُولُ لَهُ يَا ابْنَ ذَاتِ النِّطَاقَيْنِ أَنَا وَاللَّهِ ذَاتُ النِّطَاقَيْنِ أَمَّا أَحَدُهُمَا فَكُنْتُ أَرْفَعُ بِهِ طَعَامَ رَسُولِ اللَّهِ صلى الله عليه وسلم وَطَعَامَ أَبِي بَكْرٍ مِنَ الدَّوَابِّ وَأَمَّا الآخَرُ فَنِطَاقُ الْمَرْأَةِ الَّتِي لاَ تَسْتَغْنِي عَنْهُ أَمَا إِنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم حَدَّثَنَا ‏</span><span class="hadith">"‏ أَنَّ فِي ثَقِيفٍ كَذَّابًا وَمُبِيرًا ‏"</span><span class="arabic_sanad arabic">‏ ‏.‏ فَأَمَّا الْكَذَّابُ فَرَأَيْنَاهُ وَأَمَّا الْمُبِيرُ فَلاَ إِخَالُكَ إِلاَّ إِيَّاهُ - قَالَ - فَقَامَ عَنْهَا وَلَمْ يُرَاجِعْهَا ‏.‏</span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح مسلم</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">2545</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih Muslim 2545</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Abu Naufal reported:</div><div class=text_details>I saw (the dead body) of Abdullah b. Zubair hanging on the road of Medina (leading to Mecca). The Quraish passed by it and other people too, that Abdullah b. Umar happened to pass by it. He stood up there and said: May there be peace upon you, Abu Khubaib (the Kunya of Hadrat 'Abdullah b. Zubair), may there be peace upon you Abu Khubaib, may there be peace upon you, Abu Khubaib! By Allah, I used to forbid you from this; by Allah, I used to forbid you from this, by Allah I used to forbid you from this. By Allah, so far as I know, you had been very much devoted to fasting and prayer and you had been paying very much care to cementing the ties of blood. By Allah, the group to which you belong (are labelled) as (a) wicked (person) is indeed a fine group. Then 'Abdullah b. 'Umar went away. The stand 'Abdullah (b. 'Umar) took in regard to the inhuman treatment (meted out to 'Abdullah b. Zubair) and his words (in that connection) were conveyed to Hajjaj (b. Yusuf) and (as a consequence of that) he (the body of Abdullah b. Zubair) was brought down from the stump (the scaffold) by which it was hanging and thrown into the graves of the Jews. He (Hajjaj) sent (his messenger) to Asma' (bint Abu Bakr, 'Abdullah's mother). But she refused to come. He again sent the messenger to her with the message that she must come, otherwise he would bring her forcibly catching hold of her hair. But she again refused and said: By Allah, I will not come to you until you send one to me who would drag me by pulling my hair. Thereupon he said: Bring me my shoes. He put on his shoes and walked on quickly swollen with vanity and pride until he came to her and said: How do you find what I have done with the enemy of Allah? She said: I find that you wronged him in this world, whereas he has spoiled your next life. It has been conveyed to me that you used to call him ('Abdullah b. Zubair) as the son of one having two belts. By Allah, I am indeed (a woman) of two belts. One is that with the help of which I used to suspend high the food of Allah's Messenger (ﷺ) and that of Abu Bakr (making it out of the reach) of animals and, so far as the second belt is concerned, that is the belt which no woman can dispense with. Verily Allah's Messenger (ﷺ) told us that in Thaqif, there would be born a great liar and great murderer. The liar we have seen, and as far as the murderer is concerned, I do not find anyone else besides you. 'Thereupon he (Hajjaj) stood up and did not give any reply to her.</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih Muslim</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">2545</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

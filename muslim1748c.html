@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح مسلم حديث رقم 1748 مكرر موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح مسلم حديث رقم 1748 مكرر مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا أَبُو بَكْرِ بْنُ أَبِي شَيْبَةَ، وَزُهَيْرُ بْنُ حَرْبٍ، قَالاَ حَدَّثَنَا الْحَسَنُ بْنُ مُوسَى، حَدَّثَنَا زُهَيْرٌ، حَدَّثَنَا سِمَاكُ بْنُ حَرْبٍ، حَدَّثَنِي مُصْعَبُ بْنُ سَعْدٍ، عَنْ أَبِيهِ، أَنَّهُ نَزَلَتْ فِيهِ آيَاتٌ مِنَ الْقُرْآنِ - قَالَ - حَلَفَتْ أُمُّ سَعْدٍ أَنْ لاَ تُكَلِّمَهُ أَبَدًا حَتَّى يَكْفُرَ بِدِينِهِ وَلاَ تَأْكُلَ وَلاَ تَشْرَبَ ‏.‏ قَالَتْ زَعَمْتَ أَنَّ اللَّهَ وَصَّاكَ بِوَالِدَيْكَ وَأَنَا أُمُّكَ وَأَنَا آمُرُكَ بِهَذَا ‏.‏ قَالَ مَكَثَتْ ثَلاَثًا حَتَّى غُشِيَ عَلَيْهَا مِنَ الْجَهْدِ فَقَامَ ابْنٌ لَهَا يُقَالُ لَهُ عُمَارَةُ فَسَقَاهَا فَجَعَلَتْ تَدْعُو عَلَى سَعْدٍ فَأَنْزَلَ اللَّهُ عَزَّ وَجَلَّ فِي الْقُرْآنِ هَذِهِ الآيَةَ ‏<A id="q4" name="q4" href="javascript:openquran(28,8,8)"><c_q4>{‏ وَوَصَّيْنَا الإِنْسَانَ بِوَالِدَيْهِ حُسْنًا‏}</c_q4></a>‏ ‏<A id="q5" name="q5" href="javascript:openquran(30,15,15)"><c_q5>{‏ وَإِنْ جَاهَدَاكَ عَلَى أَنْ تُشْرِكَ بِي‏}</c_q5></a>‏ وَفِيهَا ‏<A id="q6" name="q6" href="javascript:openquran(30,15,15)"><c_q6>{‏ وَصَاحِبْهُمَا فِي الدُّنْيَا مَعْرُوفًا‏}</c_q6></a>‏ قَالَ وَأَصَابَ رَسُولُ اللَّهِ صلى الله عليه وسلم غَنِيمَةً عَظِيمَةً فَإِذَا فِيهَا سَيْفٌ فَأَخَذْتُهُ فَأَتَيْتُ بِهِ الرَّسُولَ صلى الله عليه وسلم فَقُلْتُ نَفِّلْنِي هَذَا السَّيْفَ فَأَنَا مَنْ قَدْ عَلِمْتَ حَالَهُ ‏.‏ فَقَالَ ‏"‏ رُدُّهُ مِنْ حَيْثُ أَخَذْتَهُ ‏"‏ ‏.‏ فَانْطَلَقْتُ حَتَّى إِذَا أَرَدْتُ أَنْ أُلْقِيَهُ فِي الْقَبَضِ لاَمَتْنِي نَفْسِي فَرَجَعْتُ إِلَيْهِ فَقُلْتُ أَعْطِنِيهِ ‏.‏ قَالَ فَشَدَّ لِي صَوْتَهُ ‏"‏ رُدُّهُ مِنْ حَيْثُ أَخَذْتَهُ ‏"‏ ‏.‏ قَالَ فَأَنْزَلَ اللَّهُ عَزَّ وَجَلَّ ‏<A id="q7" name="q7" href="javascript:openquran(7,1,1)"><c_q7>{‏ يَسْأَلُونَكَ عَنِ الأَنْفَالِ‏}</c_q7></a>‏ قَالَ وَمَرِضْتُ فَأَرْسَلْتُ إِلَى النَّبِيِّ صلى الله عليه وسلم فَأَتَانِي فَقُلْتُ دَعْنِي أَقْسِمْ مَالِي حَيْثُ شِئْتُ ‏.‏ قَالَ فَأَبَى ‏.‏ قُلْتُ فَالنِّصْفَ ‏.‏ قَالَ فَأَبَى ‏.‏ قُلْتُ فَالثُّلُثَ ‏.‏ قَالَ فَسَكَتَ فَكَانَ بَعْدُ الثُّلُثُ جَائِزًا ‏.‏ قَالَ وَأَتَيْتُ عَلَى نَفَرٍ مِنَ الأَنْصَارِ وَالْمُهَاجِرِينَ فَقَالُوا تَعَالَ نُطْعِمْكَ وَنَسْقِيكَ خَمْرًا ‏.‏ وَذَلِكَ قَبْلَ أَنْ تُحَرَّمَ الْخَمْرُ - قَالَ - فَأَتَيْتُهُمْ فِي حَشٍّ - وَالْحَشُّ الْبُسْتَانُ - فَإِذَا رَأْسُ جَزُورٍ مَشْوِيٌّ عِنْدَهُمْ وَزِقٌّ مِنْ خَمْرٍ - قَالَ - فَأَكَلْتُ وَشَرِبْتُ مَعَهُمْ - قَالَ - فَذُكِرَتِ الأَنْصَارُ وَالْمُهَاجِرُونَ عِنْدَهُمْ فَقُلْتُ الْمُهَاجِرُونَ خَيْرٌ مِنَ الأَنْصَارِ - قَالَ - فَأَخَذَ رَجُلٌ أَحَدَ لَحْيَىِ الرَّأْسِ فَضَرَبَنِي بِهِ فَجَرَحَ بِأَنْفِي فَأَتَيْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم فَأَخْبَرْتُهُ فَأَنْزَلَ اللَّهُ عَزَّ وَجَلَّ فِيَّ - يَعْنِي نَفْسَهُ - شَأْنَ الْخَمْرِ ‏<A id="q8" name="q8" href="javascript:openquran(4,90,90)"><c_q8>{‏ إِنَّمَا الْخَمْرُ وَالْمَيْسِرُ وَالأَنْصَابُ وَالأَزْلاَمُ رِجْسٌ مِنْ عَمَلِ الشَّيْطَانِ‏}</c_q8></a>‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح مسلم</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">1748 مكرر</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih Muslim 1748c</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Mus'ab b. Sa'd reported on the authority of his father that many verses of the Qur'an had been revealed in connection with him. His mother Umm Sa'd had taken oath that she would never talk with him until he abandoned his faith and she neither ate nor drank and said:</div><div class=text_details>Allah has commanded you to treat well your parents and I am your mother and I command you to do this. She passed three days in this state until she fainted because of extreme hunger and at that time her son whose name was Umara stood up and served her drink and she began to curse Sa'd that Allah, the Exalted and Glorions, revealed these verses of the Holy Qur'an:" And We have enjoined upon a person goodness to his parents but if they contend with thee to associate (others) with Me of which you have no knowledge, then obey them not" (xxix. 8) ; Treat thein with customary good in this world" (xxxi. 15). He also reported that there fell to the lot of Allah's Messenger (ﷺ) huge spoils of war and there was one sword in them. I picked that up and came to Allah's Messenger (ﷺ) and said: Bestow this sword upon me (as my share in the spoils of war) and you know my state. Thereupon he said: Return it to the place from where you picked it up. I went back until I decided to throw it in a store but my soul repulsed me so I came back and asked him to give that sword to me. He said in a loud voice to return it to the place from where I had picked it up. It was on this occasion that this verse was revealed:" They asked about the spoils of war" (viii. 1). He further said: I once fell ill and sent a message to Allah's Apostle (ﷺ). He visited me and I said to him: Permit me to distribute (in charity) my property as much as I like. He did not agree. I said: (Permit me to distribute) half of it. He did not agree. I said: (Permit me to distribute) the third part, whereupon he kept quiet and it was after this (that the distribution of one's property in charity) to the extent of one-third was held valid. He further said: I came to a group of persons of the Ansir and Muhajirin and they said: Come, so that we may serve you wine, and it was before the use of wine had been prohibited. I went to them in a garden and there had been with them the roasted head of a camel and a small water-skin containing wine. I ate and drank along with them and there came under discussion the Ansr (Helpers) and Muhajirin (immigrants). I said: The immigrants are better than the Ansar, that a person picked up a portion of the head (of the camel and struck me with it that my nose was injured. I came to Allah's Messenger (ﷺ) and informed him of the situation that Aliah, the Exalted and Glorious, revealed verses pertaining to wine:" Intoxicants and the games of chance and (sacrificing to) stones set up and (divining by) arrows are only an uncleanliness, the devil's work" (v. 90).</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih Muslim</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">1748c</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

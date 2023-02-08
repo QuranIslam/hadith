@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+سنن الترمذي حديث رقم 198 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+سنن الترمذي حديث رقم 198 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic">حَدَّثَنَا أَحْمَدُ بْنُ مَنِيعٍ، حَدَّثَنَا أَبُو أَحْمَدَ الزُّبَيْرِيُّ، حَدَّثَنَا أَبُو إِسْرَائِيلَ، عَنِ الْحَكَمِ، عَنْ عَبْدِ الرَّحْمَنِ بْنِ أَبِي لَيْلَى، عَنْ بِلاَلٍ، قَالَ قَالَ لِي رَسُولُ اللَّهِ صلى الله عليه وسلم ‏</span><span class="hadith">"‏ لاَ تُثَوِّبَنَّ فِي شَيْءٍ مِنَ الصَّلَوَاتِ إِلاَّ فِي صَلاَةِ الْفَجْرِ ‏"</span><span class="arabic_sanad arabic">‏ ‏.‏ قَالَ وَفِي الْبَابِ عَنْ أَبِي مَحْذُورَةَ ‏.‏ قَالَ أَبُو عِيسَى حَدِيثُ بِلاَلٍ لاَ نَعْرِفُهُ إِلاَّ مِنْ حَدِيثِ أَبِي إِسْرَائِيلَ الْمُلاَئِيِّ ‏.‏ وَأَبُو إِسْرَائِيلَ لَمْ يَسْمَعْ هَذَا الْحَدِيثَ مِنَ الْحَكَمِ بْنِ عُتَيْبَةَ قَالَ إِنَّمَا رَوَاهُ عَنِ الْحَسَنِ بْنِ عُمَارَةَ عَنِ الْحَكَمِ بْنِ عُتَيْبَةَ ‏.‏ وَأَبُو إِسْرَائِيلَ اسْمُهُ إِسْمَاعِيلُ بْنُ أَبِي إِسْحَاقَ وَلَيْسَ هُوَ بِذَاكَ الْقَوِيِّ عِنْدَ أَهْلِ الْحَدِيثِ ‏.‏ وَقَدِ اخْتَلَفَ أَهْلُ الْعِلْمِ فِي تَفْسِيرِ التَّثْوِيبِ فَقَالَ بَعْضُهُمُ التَّثْوِيبُ أَنْ يَقُولَ فِي أَذَانِ الْفَجْرِ الصَّلاَةُ خَيْرٌ مِنَ النَّوْمِ وَهُوَ قَوْلُ ابْنِ الْمُبَارَكِ وَأَحْمَدَ ‏.‏ وَقَالَ إِسْحَاقُ فِي التَّثْوِيبِ غَيْرَ هَذَا قَالَ التَّثْوِيبُ الْمَكْرُوهُ هُوَ شَيْءٌ أَحْدَثَهُ النَّاسُ بَعْدَ النَّبِيِّ صلى الله عليه وسلم إِذَا أَذَّنَ الْمُؤَذِّنُ فَاسْتَبْطَأَ الْقَوْمَ قَالَ بَيْنَ الأَذَانِ وَالإِقَامَةِ قَدْ قَامَتِ الصَّلاَةُ حَىَّ عَلَى الصَّلاَةِ حَىَّ عَلَى الْفَلاَحِ ‏.‏ قَالَ وَهَذَا الَّذِي قَالَ إِسْحَاقُ هُوَ التَّثْوِيبُ الَّذِي قَدْ كَرِهَهُ أَهْلُ الْعِلْمِ وَالَّذِي أَحْدَثُوهُ بَعْدَ النَّبِيِّ صلى الله عليه وسلم ‏.‏ وَالَّذِي فَسَّرَ ابْنُ الْمُبَارَكِ وَأَحْمَدُ أَنَّ التَّثْوِيبَ أَنْ يَقُولَ الْمُؤَذِّنُ فِي أَذَانِ الْفَجْرِ الصَّلاَةُ خَيْرٌ مِنَ النَّوْمِ وَهُوَ قَوْلٌ صَحِيحٌ وَيُقَالُ لَهُ التَّثْوِيبُ أَيْضًا وَهُوَ الَّذِي اخْتَارَهُ أَهْلُ الْعِلْمِ وَرَأَوْهُ ‏.‏ وَرُوِيَ عَنْ عَبْدِ اللَّهِ بْنِ عُمَرَ أَنَّهُ كَانَ يَقُولُ فِي صَلاَةِ الْفَجْرِ الصَّلاَةُ خَيْرٌ مِنَ النَّوْمِ ‏.‏ وَرُوِيَ عَنْ مُجَاهِدٍ قَالَ دَخَلْتُ مَعَ عَبْدِ اللَّهِ بْنِ عُمَرَ مَسْجِدًا وَقَدْ أُذِّنَ فِيهِ وَنَحْنُ نُرِيدُ أَنْ نُصَلِّيَ فِيهِ فَثَوَّبَ الْمُؤَذِّنُ فَخَرَجَ عَبْدُ اللَّهِ بْنُ عُمَرَ مِنَ الْمَسْجِدِ وَقَالَ اخْرُجْ بِنَا مِنْ عِنْدِ هَذَا الْمُبْتَدِعِ ‏.‏ وَلَمْ يُصَلِّ فِيهِ ‏.‏ قَالَ وَإِنَّمَا كَرِهَ عَبْدُ اللَّهِ التَّثْوِيبَ الَّذِي أَحْدَثَهُ النَّاسُ بَعْدُ ‏.‏</span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">سنن الترمذي</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">198</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">&nbsp;<b>ضعيف</b> (دار السلام)</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sunan at-Tirmizi 198</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated>Bilal narrated:</div><div class=text_details>"Allah's Messenger said [to me]: 'Do not say the Tathwib for any prayer except the Fajr prayer.'"[He said:] There is something on this topic from Abu Mahdhurah.Abu `Eisa said: We do not know of the Hadith of Bilal except as a narration of Abu Isra'il Al-Mula'i. Abu Isra'il did not hear this Hadith from Al-Hakam bin `Utaibah.He said: He only reported it from Al-Hasan bin `Umarah, from Al-Hakam bin `Utaibah. Abu Isra'il's name is [Isma`il bin Abi Ishaq, and he is not strong according to the people of Hadith.The people of knowledge have differed over the interpretation of At-Tathwib.Some of them say that At-Tathwib is when one says "As-Salatu Khairummin An-Nawm, (prayer is better than sleep)" for the Adhanof Fajr. This is the saying of Ibn Al-Mubarak and Ahmad.Ishaq said something different about At-Tathwib, he said: "[The disliked Tathwib] is something that the people started after the Prophet; when the Mu'adh-dhincalls the Adhan and the people are slow in coming, so between the Adhan and the Iqamah he says:'Qad Qamatis-Salat, Hayya `Alasalat, Hayya `AlalFalah. (Prayer is ready, come to prayer, come to success.)"[He said:] This Tathwib, which Ishaq mentioned, is the one that the people of knowledge dislike, which they innovated after the Prophet.But Ibn Al-Mubarak and Ahmad explained that At-Tathwib is when the Mu'adh-dhin says: "As-Salatu Khairum minan-Nawm, (prayer is better than sleep)" for the Adhan of Fajr.And this is the correct saying, and it is called At-Tathawwub as well, and this is the one chosen by the people of knowledge, and it is their opinion.It has been reported from `Abdullah bin `Umar that he would say: "As-Salatu Khairum-minan-Nawm, (prayer is better than sleep)" for Fajr.It has been reported from Mujahid that he said: "I entered a Masjid with `Abdullah bin `Umar in which the Adhan was called, and we wanted to pray in it. Then the Mu'adh-dhin said the Tathwib. So `Abdullah bin `Umar left the Masjid and said: 'Let us leave the place of this innovator' And he did not pray in it."[He said:] `Abdullah only disliked the Tathwib that the people invented later on.</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sunan at-Tirmizi</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">198</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">&nbsp;<b>Da'if</b> (Darussalam)</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

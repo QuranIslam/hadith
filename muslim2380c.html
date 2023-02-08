@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح مسلم حديث رقم 2380 مكرر موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح مسلم حديث رقم 2380 مكرر مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا أُبَىُّ بْنُ كَعْبٍ، قَالَ سَمِعْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم يَقُولُ ‏"‏ إِنَّهُ بَيْنَمَا مُوسَى عَلَيْهِ السَّلاَمُ فِي قَوْمِهِ يُذَكِّرُهُمْ بِأَيَّامِ اللَّهِ وَأَيَّامُ اللَّهِ نَعْمَاؤُهُ وَبَلاَؤُهُ إِذْ قَالَ مَا أَعْلَمُ فِي الأَرْضِ رَجُلاً خَيْرًا أَوْ أَعْلَمَ مِنِّي ‏.‏ قَالَ فَأَوْحَى اللَّهُ إِلَيْهِ إِنِّي أَعْلَمُ بِالْخَيْرِ مِنْهُ أَوْ عِنْدَ مَنْ هُوَ إِنَّ فِي الأَرْضِ رَجُلاً هُوَ أَعْلَمُ مِنْكَ ‏.‏ قَالَ يَا رَبِّ فَدُلَّنِي عَلَيْهِ ‏.‏ قَالَ فَقِيلَ لَهُ تَزَوَّدْ حُوتًا مَالِحًا فَإِنَّهُ حَيْثُ تَفْقِدُ الْحُوتَ ‏.‏ قَالَ فَانْطَلَقَ هُوَ وَفَتَاهُ حَتَّى انْتَهَيَا إِلَى الصَّخْرَةِ فَعُمِّيَ عَلَيْهِ فَانْطَلَقَ وَتَرَكَ فَتَاهُ فَاضْطَرَبَ الْحُوتُ فِي الْمَاءِ فَجَعَلَ لاَ يَلْتَئِمُ عَلَيْهِ صَارَ مِثْلَ الْكُوَّةِ قَالَ فَقَالَ فَتَاهُ أَلاَ أَلْحَقُ نَبِيَّ اللَّهِ فَأُخْبِرَهُ قَالَ فَنُسِّيَ ‏.‏ فَلَمَّا تَجَاوَزَا قَالَ لِفَتَاهُ آتِنَا غَدَاءَنَا لَقَدْ لَقِينَا مِنْ سَفَرِنَا هَذَا نَصَبًا ‏.‏ قَالَ وَلَمْ يُصِبْهُمْ نَصَبٌ حَتَّى تَجَاوَزَا ‏.‏ قَالَ فَتَذَكَّرَ قَالَ أَرَأَيْتَ إِذْ أَوَيْنَا إِلَى الصَّخْرَةِ فَإِنِّي نَسِيتُ الْحُوتَ وَمَا أَنْسَانِيهُ إِلاَّ الشَّيْطَانُ أَنْ أَذْكُرَهُ وَاتَّخَذَ سَبِيلَهُ فِي الْبَحْرِ عَجَبًا ‏.‏ قَالَ ذَلِكَ مَا كُنَّا نَبْغِي ‏.‏ فَارْتَدَّا عَلَى آثَارِهِمَا قَصَصًا فَأَرَاهُ مَكَانَ الْحُوتِ قَالَ هَا هُنَا وُصِفَ لِي ‏.‏ قَالَ فَذَهَبَ يَلْتَمِسُ فَإِذَا هُوَ بِالْخَضِرِ مُسَجًّى ثَوْبًا مُسْتَلْقِيًا عَلَى الْقَفَا أَوْ قَالَ عَلَى حَلاَوَةِ الْقَفَا قَالَ السَّلاَمُ عَلَيْكُمْ ‏.‏ فَكَشَفَ الثَّوْبَ عَنْ وَجْهِهِ قَالَ وَعَلَيْكُمُ السَّلاَمُ مَنْ أَنْتَ قَالَ أَنَا مُوسَى ‏.‏ قَالَ وَمَنْ مُوسَى قَالَ مُوسَى بَنِي إِسْرَائِيلَ ‏.‏ قَالَ مَجِيءٌ مَا جَاءَ بِكَ قَالَ جِئْتُ لِتُعَلِّمَنِي مِمَّا عُلِّمْتَ رُشْدًا ‏.‏ قَالَ إِنَّكَ لَنْ تَسْتَطِيعَ مَعِيَ صَبْرًا وَكَيْفَ تَصْبِرُ عَلَى مَا لَمْ تُحِطْ بِهِ خُبْرًا ‏.‏ شَىْءٌ أُمِرْتُ بِهِ أَنْ أَفْعَلَهُ إِذَا رَأَيْتَهُ لَمْ تَصْبِرْ ‏.‏ قَالَ سَتَجِدُنِي إِنْ شَاءَ اللَّهُ صَابِرًا وَلاَ أَعْصِي لَكَ أَمْرًا ‏.‏ قَالَ فَإِنِ اتَّبَعْتَنِي فَلاَ تَسْأَلْنِي عَنْ شَىْءٍ حَتَّى أُحْدِثَ لَكَ مِنْهُ ذِكْرًا ‏.‏ فَانْطَلَقَا حَتَّى إِذَا رَكِبَا فِي السَّفِينَةِ خَرَقَهَا ‏.‏ قَالَ انْتَحَى عَلَيْهَا ‏.‏ قَالَ لَهُ مُوسَى عَلَيْهِ السَّلاَمُ أَخَرَقْتَهَا لِتُغْرِقَ أَهْلَهَا لَقَدْ جِئْتَ شَيْئًا إِمْرًا ‏.‏ قَالَ أَلَمْ أَقُلْ إِنَّكَ لَنْ تَسْتَطِيعَ مَعِيَ صَبْرًا قَالَ لاَ تُؤَاخِذْنِي بِمَا نَسِيتُ وَلاَ تُرْهِقْنِي مِنْ أَمْرِي عُسْرًا ‏.‏ فَانْطَلَقَا حَتَّى إِذَا لَقِيَا غِلْمَانًا يَلْعَبُونَ ‏.‏ قَالَ فَانْطَلَقَ إِلَى أَحَدِهِمْ بَادِيَ الرَّأْىِ فَقَتَلَهُ فَذُعِرَ عِنْدَهَا مُوسَى عَلَيْهِ السَّلاَمُ ذَعْرَةً مُنْكَرَةً ‏.‏ قَالَ أَقَتَلْتَ نَفْسًا زَاكِيَةً بِغَيْرِ نَفْسٍ لَقَدْ جِئْتَ شَيْئًا نُكْرًا ‏.‏ فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم عِنْدَ هَذَا الْمَكَانِ ‏"‏ رَحْمَةُ اللَّهِ عَلَيْنَا وَعَلَى مُوسَى لَوْلاَ أَنَّهُ عَجَّلَ لَرَأَى الْعَجَبَ وَلَكِنَّهُ أَخَذَتْهُ مِنْ صَاحِبِهِ ذَمَامَةٌ ‏.‏ قَالَ إِنْ سَأَلْتُكَ عَنْ شَىْءٍ بَعْدَهَا فَلاَ تُصَاحِبْنِي قَدْ بَلَغْتَ مِنْ لَدُنِّي عُذْرًا ‏.‏ وَلَوْ صَبَرَ لَرَأَى الْعَجَبَ - قَالَ وَكَانَ إِذَا ذَكَرَ أَحَدًا مِنَ الأَنْبِيَاءِ بَدَأَ بِنَفْسِهِ ‏"‏ رَحْمَةُ اللَّهِ عَلَيْنَا وَعَلَى أَخِي كَذَا رَحْمَةُ اللَّهِ عَلَيْنَا - ‏"‏ فَانْطَلَقَا حَتَّى إِذَا أَتَيَا أَهْلَ قَرْيَةٍ لِئَامًا فَطَافَا فِي الْمَجَالِسِ فَاسْتَطْعَمَا أَهْلَهَا فَأَبَوْا أَنْ يُضَيِّفُوهُمَا فَوَجَدَا فِيهَا جِدَارًا يُرِيدُ أَنْ يَنْقَضَّ فَأَقَامَهُ ‏.‏ قَالَ لَوْ شِئْتَ لاَتَّخَذْتَ عَلَيْهِ أَجْرًا ‏.‏ قَالَ هَذَا فِرَاقُ بَيْنِي وَبَيْنِكَ وَأَخَذَ بِثَوْبِهِ ‏.‏ قَالَ سَأُنَبِّئُكَ بِتَأْوِيلِ مَا لَمْ تَسْتَطِعْ عَلَيْهِ صَبْرًا أَمَّا السَّفِينَةُ فَكَانَتْ لِمَسَاكِينَ يَعْمَلُونَ فِي الْبَحْرِ إِلَى آخِرِ الآيَةِ ‏.‏ فَإِذَا جَاءَ الَّذِي يُسَخِّرُهَا وَجَدَهَا مُنْخَرِقَةً فَتَجَاوَزَهَا فَأَصْلَحُوهَا بِخَشَبَةٍ وَأَمَّا الْغُلاَمُ فَطُبِعَ يَوْمَ طُبِعَ كَافِرًا وَكَانَ أَبَوَاهُ قَدْ عَطَفَا عَلَيْهِ فَلَوْ أَنَّهُ أَدْرَكَ أَرْهَقَهُمَا طُغْيَانًا وَكُفْرًا فَأَرَدْنَا أَنْ يُبَدِّلَهُمَا رَبُّهُمَا خَيْرًا مِنْهُ زَكَاةً وَأَقْرَبَ رُحْمًا ‏.‏ وَأَمَّا الْجِدَارُ فَكَانَ لِغُلاَمَيْنِ يَتِيمَيْنِ فِي الْمَدِينَةِ وَكَانَ تَحْتَهُ ‏"‏ ‏.‏ إِلَى آخِرِ الآيَةِ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح مسلم</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">2380 مكرر</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih Muslim 2380c</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Ubayy b. Ka'b narrated to us that he had heard Allah's Messenger (ﷺ) as saying:</div><div class=text_details>Moses had been delivering sermons to his people. And he made this remark: No person upon the earth has better knowledge than I or nothing better than mine. Thereupon Allah revealed to him: I know one who is better than you (in knowledge) or there is a person on the earth having more knowledge than you. Thereupon he said: My Lord, direct me to him. It was said to him: Keep a salted fish as a provision for journey. The place where that fish would be lost (there you will find that man). So he set forth and a young slave along with him until they came to a place Sakhra. but he did not find any clue. So he proceeded on and left that young man there. The fish began to stir in water and the water assumed the form of an ark over the fish. The young man said: I should meet Allah's Apostle (peace be upon him) and inform him, but he was made to forget and when they had gone beyond that place, he (Moses) said to the young man: Bring breakfast. We have been exhausted because of the journey, and he (Moses) was not exhausted until he had crossed that (particular) place (where he had) to meet Khadir, and the youth was reminded and said: Did you not see that as we reached Sakhra I forgot the fish and it is satan alone who has made me forgetful of it'? It is strange that he has been able to find way in the ocean too. He said: This is what we sought for us. They returned retracing their steps, and he (his companion) pointed to him the location (where) the fish (had been lost). Moses began to search him there. He suddenly saw Khadir wrapped in a cloth and lying on his back. He said to him: As-Salamu-'Alaikum. He removed the cloth from his face and said: Wa 'Alaikum-us-Salam! Who are you? He said: I am Moses. He said: Who Moses? He said: Moses Of Bani Isra'il. He said: What brought you here? He said: I have come so that you may teach me what you have been taught of righteousness. He said: You shall have to bear with me, and how can you have patience about a thing of which you have no comprehensive knowledge? You will not have patience when you see me doing a thing I have been ordered to do. He said: If Allah pleases, you will find me patient, nor shall I disobey you in aught. Khadir said: If you follow me, don't ask me about anything until I explain it to you. So they went on until they embarked upon a boat. He (Khadir) made a hole in that. Thereupon he (Moses) said: You have done this so that you may drown the persons sitting in the boat. You have done something grievous. Thereupon he said: Did I not tell you that you will not be able to bear with me? Thereupon he (Moses) said: Blame me not for what I forgot and be not hard upon me for what I did. (Khadir gave him another chance.) So they went on until they reached a place where boys were playing. He went to one of them and caught hold'of one (apparently) at random and killed him. Moses (peace be upon him) felt agitated and said: You have killed an innocent person not guilty of slaying another. You have done something aboininable. Thereupon Allah's Messenger (ﷺ) said: May Allah have mercy upon us and Moses. Had he shown patience he would have seen wonderful things, but fear of blame, with respect to his companion, seized him and he said: If I ask anything after this, keep not company with me. You will then have a valid excuse in my case, and had he (Moses) shown patience he would have seen many wonderful things. He (the narrator) said: Whenever he (the Holy Prophet) made mention of any Prophet, he always said: May there be mercy of Allah upon us and upon my brother so and so. They, however, proceeded on until they came to the inhabitants of a village who were very miserly. They went to the meeting places and asked for hospitality but they refused to show any hospitality to them. They both found in that village a wall which was about to fall. He (Khadir) set it right. Thereupon he (Moses) said: If you so liked. you could get wages for it. Thereupon he said: This is the partince, of ways between me and you, and, taking hold of his cloth, he said: Now I will explain to you the real significance (of all these acts) for which you could not show patience. As for the boat, it belonged to the poor people working on the river and I intended to damage it for there was ahead of them (a king) who seized boats by force. (When he came) to catch hold of it he found it a damaged boat, so he spared it (and later on) it was set right with wood. So far as the boy is concerned, he has been, by very nature, an unbeliever, whereas his parents loved him very much. Had he grown up he would have involved them in wrongdoing and unbelief, so we wished that their Lord should give them in its place one better in purity and close to mercy. And as for the wall it belonged to two orphan boys in the city and there was beneath it a (treasure) belongin to them,... up to the last verse.</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih Muslim</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">2380c</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

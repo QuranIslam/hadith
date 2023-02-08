@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح البخاري حديث رقم 3464 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح البخاري حديث رقم 3464 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic">حَدَّثَنِي أَحْمَدُ بْنُ إِسْحَاقَ، حَدَّثَنَا عَمْرُو بْنُ عَاصِمٍ، حَدَّثَنَا هَمَّامٌ، حَدَّثَنَا إِسْحَاقُ بْنُ عَبْدِ اللَّهِ، قَالَ حَدَّثَنِي عَبْدُ الرَّحْمَنِ بْنُ أَبِي عَمْرَةَ، أَنَّ أَبَا هُرَيْرَةَ، حَدَّثَهُ أَنَّهُ، سَمِعَ النَّبِيَّ صلى الله عليه وسلم ح وَحَدَّثَنِي مُحَمَّدٌ، حَدَّثَنَا عَبْدُ اللَّهِ بْنُ رَجَاءٍ، أَخْبَرَنَا هَمَّامٌ، عَنْ إِسْحَاقَ بْنِ عَبْدِ اللَّهِ، قَالَ أَخْبَرَنِي عَبْدُ الرَّحْمَنِ بْنُ أَبِي عَمْرَةَ، أَنَّ أَبَا هُرَيْرَةَ ـ رضى الله عنه ـ حَدَّثَهُ أَنَّهُ، سَمِعَ رَسُولَ اللَّهِ صلى الله عليه وسلم يَقُولُ ‏</span><span class="hadith">"‏ إِنَّ ثَلاَثَةً فِي بَنِي إِسْرَائِيلَ أَبْرَصَ وَأَقْرَعَ وَأَعْمَى بَدَا لِلَّهِ أَنْ يَبْتَلِيَهُمْ، فَبَعَثَ إِلَيْهِمْ مَلَكًا، فَأَتَى الأَبْرَصَ‏.‏ فَقَالَ أَىُّ شَىْءٍ أَحَبُّ إِلَيْكَ قَالَ لَوْنٌ حَسَنٌ وَجِلْدٌ حَسَنٌ، قَدْ قَذِرَنِي النَّاسُ‏.‏ قَالَ فَمَسَحَهُ، فَذَهَبَ عَنْهُ، فَأُعْطِيَ لَوْنًا حَسَنًا وَجِلْدًا حَسَنًا‏.‏ فَقَالَ أَىُّ الْمَالِ أَحَبُّ إِلَيْكَ قَالَ الإِبِلُ ـ أَوْ قَالَ الْبَقَرُ هُوَ شَكَّ فِي ذَلِكَ، إِنَّ الأَبْرَصَ وَالأَقْرَعَ، قَالَ أَحَدُهُمَا الإِبِلُ، وَقَالَ الآخَرُ الْبَقَرُ ـ فَأُعْطِيَ نَاقَةً عُشَرَاءَ‏.‏ فَقَالَ يُبَارَكُ لَكَ فِيهَا‏.‏ وَأَتَى الأَقْرَعَ فَقَالَ أَىُّ شَىْءٍ أَحَبُّ إِلَيْكَ قَالَ شَعَرٌ حَسَنٌ، وَيَذْهَبُ عَنِّي هَذَا، قَدْ قَذِرَنِي النَّاسُ‏.‏ قَالَ فَمَسَحَهُ فَذَهَبَ، وَأُعْطِيَ شَعَرًا حَسَنًا‏.‏ قَالَ فَأَىُّ الْمَالِ أَحَبُّ إِلَيْكَ قَالَ الْبَقَرُ‏.‏ قَالَ فَأَعْطَاهُ بَقَرَةً حَامِلاً، وَقَالَ يُبَارَكُ لَكَ فِيهَا‏.‏ وَأَتَى الأَعْمَى فَقَالَ أَىُّ شَىْءٍ أَحَبُّ إِلَيْكَ قَالَ يَرُدُّ اللَّهُ إِلَىَّ بَصَرِي، فَأُبْصِرُ بِهِ النَّاسَ‏.‏ قَالَ فَمَسَحَهُ، فَرَدَّ اللَّهُ إِلَيْهِ بَصَرَهُ‏.‏ قَالَ فَأَىُّ الْمَالِ أَحَبُّ إِلَيْكَ قَالَ الْغَنَمُ‏.‏ فَأَعْطَاهُ شَاةً وَالِدًا، فَأُنْتِجَ هَذَانِ، وَوَلَّدَ هَذَا، فَكَانَ لِهَذَا وَادٍ مِنْ إِبِلٍ، وَلِهَذَا وَادٍ مِنْ بَقَرٍ، وَلِهَذَا وَادٍ مِنَ الْغَنَمِ‏.‏ ثُمَّ إِنَّهُ أَتَى الأَبْرَصَ فِي صُورَتِهِ وَهَيْئَتِهِ فَقَالَ رَجُلٌ مِسْكِينٌ، تَقَطَّعَتْ بِيَ الْحِبَالُ فِي سَفَرِي، فَلاَ بَلاَغَ الْيَوْمَ إِلاَّ بِاللَّهِ ثُمَّ بِكَ، أَسْأَلُكَ بِالَّذِي أَعْطَاكَ اللَّوْنَ الْحَسَنَ وَالْجِلْدَ الْحَسَنَ وَالْمَالَ بَعِيرًا أَتَبَلَّغُ عَلَيْهِ فِي سَفَرِي‏.‏ فَقَالَ لَهُ إِنَّ الْحُقُوقَ كَثِيرَةٌ‏.‏ فَقَالَ لَهُ كَأَنِّي أَعْرِفُكَ، أَلَمْ تَكُنْ أَبْرَصَ يَقْذَرُكَ النَّاسُ فَقِيرًا فَأَعْطَاكَ اللَّهُ فَقَالَ لَقَدْ وَرِثْتُ لِكَابِرٍ عَنْ كَابِرٍ‏.‏ فَقَالَ إِنْ كُنْتَ كَاذِبًا فَصَيَّرَكَ اللَّهُ إِلَى مَا كُنْتَ، وَأَتَى الأَقْرَعَ فِي صُورَتِهِ وَهَيْئَتِهِ، فَقَالَ لَهُ مِثْلَ مَا قَالَ لِهَذَا، فَرَدَّ عَلَيْهِ مِثْلَ مَا رَدَّ عَلَيْهِ هَذَا فَقَالَ إِنْ كُنْتَ كَاذِبًا فَصَيَّرَكَ اللَّهُ إِلَى مَا كُنْتَ‏.‏ وَأَتَى الأَعْمَى فِي صُورَتِهِ فَقَالَ رَجُلٌ مِسْكِينٌ وَابْنُ سَبِيلٍ وَتَقَطَّعَتْ بِيَ الْحِبَالُ فِي سَفَرِي، فَلاَ بَلاَغَ الْيَوْمَ إِلاَّ بِاللَّهِ، ثُمَّ بِكَ أَسْأَلُكَ بِالَّذِي رَدَّ عَلَيْكَ بَصَرَكَ شَاةً أَتَبَلَّغُ بِهَا فِي سَفَرِي‏.‏ فَقَالَ قَدْ كُنْتُ أَعْمَى فَرَدَّ اللَّهُ بَصَرِي، وَفَقِيرًا فَقَدْ أَغْنَانِي، فَخُذْ مَا شِئْتَ، فَوَاللَّهِ لاَ أَجْهَدُكَ الْيَوْمَ بِشَىْءٍ أَخَذْتَهُ لِلَّهِ‏.‏ فَقَالَ أَمْسِكْ مَالَكَ، فَإِنَّمَا ابْتُلِيتُمْ، فَقَدْ رَضِيَ اللَّهُ عَنْكَ وَسَخِطَ عَلَى صَاحِبَيْكَ ‏"</span><span class="arabic_sanad arabic">‏‏.‏</span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح البخاري</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">3464</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih al-Bukhari 3464</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Narrated Abu Huraira:</div><div class=text_details><p>that he heard Allah's Messenger (ﷺ) saying, "Allah willed to test three Israelis who were a Leper, a blind man and a bald-headed man. So, he sent them an angel who came to the leper and said, 'What thing do you like most?' He replied, 'Good color and good skin, for the people have a strong aversion to me.' The angel touched him and his illness was cured, and he was given a good color and beautiful skin. The angel asked him, 'What kind of property do you like best?' He replied, 'Camels (or cows).' (The narrator is in doubt, for either the leper or the bald-headed man demanded camels and the other demanded cows). So he (i.e. the leper) was given a pregnant she-camel, and the angel said (to him), 'May Allah bless you in it.' The angel then went to the bald-headed man and said, 'What thing do you like most?' He said, 'I like good hair and wish to be cured of this disease, for the people feel repulsion for me.' The angel touched him and his illness was cured, and he was given good hair. The angel asked (him), 'What kind of property do you like best?' He replied, 'Cows,' The angel gave him a pregnant cow and said, 'May Allah bless you in it.' The angel went to the blind man and asked, 'What thing do you like best?' He said, '(I like) that Allah may restore my eye-sight to me so that I may see the people.' The angel touched his eyes and Allah gave him back his eye-sight. The angel asked him, 'What kind of property do you like best?' He replied, 'Sheep.' The angel gave him a pregnant sheep. Afterwards, all the three pregnant animals gave birth to young ones, and multiplied and brought forth so much that one of the (three) men had a herd of camels filling a valley, and one had a herd of cows filling a valley, and one had a flock of sheep filling a valley. Then the angel, disguised in the shape and appearance of a leper, went to the leper and said, I am a poor man, who has lost all means of livelihood while on a journey. So none will satisfy my need except Allah and then you. In the Name of Him Who has given you such nice color and beautiful skin, and so much property, I ask you to give me a camel so that I may reach my destination. The man replied, 'I have many obligations (so I cannot give you).' The angel said, 'I think I know you; were you not a leper to whom the people had a strong aversion? Weren't you a poor man, and then Allah gave you (all this property).' He replied, '(This is all wrong), I got this property through inheritance from my fore-fathers.' The angel said, 'If you are telling a lie, then let Allah make you as you were before. ' Then the angel, disguised in the shape and appearance of a bald man, went to the bald man and said to him the same as he told the first one, and he too answered the same as the first one did. The angel said, 'If you are telling a lie, then let Allah make you as you were before.' The angel, disguised in the shape of a blind man, went to the blind man and said, 'I am a poor man and a traveler, whose means of livelihood have been exhausted while on a journey. I have nobody to help me except Allah, and after Him, you yourself. I ask you in the Name of Him Who has given you back your eye-sight to give me a sheep, so that with its help, I may complete my journey.' The man said, 'No doubt, I was blind and Allah gave me back my eye-sight; I was poor and Allah made me rich; so take anything you wish from my property. By Allah, I will not stop you for taking anything (you need) of my property which you may take for Allah's sake.' The angel replied, 'Keep your property with you. You (i.e the three men) have been tested, and Allah is pleased with you and is angry with your two companions."</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih al-Bukhari</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">3464</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

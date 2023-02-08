@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح البخاري حديث رقم 7517 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح البخاري حديث رقم 7517 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا عَبْدُ الْعَزِيزِ بْنُ عَبْدِ اللَّهِ، حَدَّثَنِي سُلَيْمَانُ، عَنْ شَرِيكِ بْنِ عَبْدِ اللَّهِ، أَنَّهُ قَالَ سَمِعْتُ ابْنَ مَالِكٍ، يَقُولُ لَيْلَةَ أُسْرِيَ بِرَسُولِ اللَّهِ صلى الله عليه وسلم مِنْ مَسْجِدِ الْكَعْبَةِ أَنَّهُ جَاءَهُ ثَلاَثَةُ نَفَرٍ قَبْلَ أَنْ يُوحَى إِلَيْهِ وَهْوَ نَائِمٌ فِي الْمَسْجِدِ الْحَرَامِ، فَقَالَ أَوَّلُهُمْ أَيُّهُمْ هُوَ فَقَالَ أَوْسَطُهُمْ هُوَ خَيْرُهُمْ‏.‏ فَقَالَ آخِرُهُمْ خُذُوا خَيْرَهُمْ‏.‏ فَكَانَتْ تِلْكَ اللَّيْلَةَ، فَلَمْ يَرَهُمْ حَتَّى أَتَوْهُ لَيْلَةً أُخْرَى فِيمَا يَرَى قَلْبُهُ، وَتَنَامُ عَيْنُهُ وَلاَ يَنَامُ قَلْبُهُ وَكَذَلِكَ الأَنْبِيَاءُ تَنَامُ أَعْيُنُهُمْ وَلاَ تَنَامُ قُلُوبُهُمْ، فَلَمْ يُكَلِّمُوهُ حَتَّى احْتَمَلُوهُ فَوَضَعُوهُ عِنْدَ بِئْرِ زَمْزَمَ فَتَوَلاَّهُ مِنْهُمْ جِبْرِيلُ فَشَقَّ جِبْرِيلُ مَا بَيْنَ نَحْرِهِ إِلَى لَبَّتِهِ حَتَّى فَرَغَ مِنْ صَدْرِهِ وَجَوْفِهِ، فَغَسَلَهُ مِنْ مَاءِ زَمْزَمَ بِيَدِهِ، حَتَّى أَنْقَى جَوْفَهُ، ثُمَّ أُتِيَ بِطَسْتٍ مِنْ ذَهَبٍ فِيهِ تَوْرٌ مِنْ ذَهَبٍ مَحْشُوًّا إِيمَانًا وَحِكْمَةً، فَحَشَا بِهِ صَدْرَهُ وَلَغَادِيدَهُ ـ يَعْنِي عُرُوقَ حَلْقِهِ ـ ثُمَّ أَطْبَقَهُ ثُمَّ عَرَجَ بِهِ إِلَى السَّمَاءِ الدُّنْيَا فَضَرَبَ بَابًا مِنْ أَبْوَابِهَا فَنَادَاهُ أَهْلُ السَّمَاءِ مَنْ هَذَا فَقَالَ جِبْرِيلُ‏.‏ قَالُوا وَمَنْ مَعَكَ قَالَ مَعِي مُحَمَّدٌ‏.‏ قَالَ وَقَدْ بُعِثَ قَالَ نَعَمْ‏.‏ قَالُوا فَمَرْحَبًا بِهِ وَأَهْلاً‏.‏ فَيَسْتَبْشِرُ بِهِ أَهْلُ السَّمَاءِ، لاَ يَعْلَمُ أَهْلُ السَّمَاءِ بِمَا يُرِيدُ اللَّهُ بِهِ فِي الأَرْضِ حَتَّى يُعْلِمَهُمْ، فَوَجَدَ فِي السَّمَاءِ الدُّنْيَا آدَمَ فَقَالَ لَهُ جِبْرِيلُ هَذَا أَبُوكَ فَسَلِّمْ عَلَيْهِ‏.‏ فَسَلَّمَ عَلَيْهِ وَرَدَّ عَلَيْهِ آدَمُ وَقَالَ مَرْحَبًا وَأَهْلاً بِابْنِي، نِعْمَ الاِبْنُ أَنْتَ‏.‏ فَإِذَا هُوَ فِي السَّمَاءِ الدُّنْيَا بِنَهَرَيْنِ يَطَّرِدَانِ فَقَالَ مَا هَذَانِ النَّهَرَانِ يَا جِبْرِيلُ قَالَ هَذَا النِّيلُ وَالْفُرَاتُ عُنْصُرُهُمَا‏.‏ ثُمَّ مَضَى بِهِ فِي السَّمَاءِ فَإِذَا هُوَ بِنَهَرٍ آخَرَ عَلَيْهِ قَصْرٌ مِنْ لُؤْلُؤٍ وَزَبَرْجَدٍ فَضَرَبَ يَدَهُ فَإِذَا هُوَ مِسْكٌ قَالَ مَا هَذَا يَا جِبْرِيلُ قَالَ هَذَا الْكَوْثَرُ الَّذِي خَبَأَ لَكَ رَبُّكَ‏.‏ ثُمَّ عَرَجَ إِلَى السَّمَاءِ الثَّانِيَةِ فَقَالَتِ الْمَلاَئِكَةُ لَهُ مِثْلَ مَا قَالَتْ لَهُ الأُولَى مَنْ هَذَا قَالَ جِبْرِيلُ‏.‏ قَالُوا وَمَنْ مَعَكَ قَالَ مُحَمَّدٌ صلى الله عليه وسلم‏.‏ قَالُوا وَقَدْ بُعِثَ إِلَيْهِ قَالَ نَعَمْ‏.‏ قَالُوا مَرْحَبًا بِهِ وَأَهْلاً‏.‏ ثُمَّ عَرَجَ بِهِ إِلَى السَّمَاءِ الثَّالِثَةِ وَقَالُوا لَهُ مِثْلَ مَا قَالَتِ الأُولَى وَالثَّانِيَةُ، ثُمَّ عَرَجَ بِهِ إِلَى الرَّابِعَةِ فَقَالُوا لَهُ مِثْلَ ذَلِكَ، ثُمَّ عَرَجَ بِهِ إِلَى السَّمَاءِ الْخَامِسَةِ فَقَالُوا مِثْلَ ذَلِكَ، ثُمَّ عَرَجَ بِهِ إِلَى السَّمَاءِ السَّادِسَةِ فَقَالُوا لَهُ مِثْلَ ذَلِكَ، ثُمَّ عَرَجَ بِهِ إِلَى السَّمَاءِ السَّابِعَةِ فَقَالُوا لَهُ مِثْلَ ذَلِكَ، كُلُّ سَمَاءٍ فِيهَا أَنْبِيَاءُ قَدْ سَمَّاهُمْ فَأَوْعَيْتُ مِنْهُمْ إِدْرِيسَ فِي الثَّانِيَةِ، وَهَارُونَ فِي الرَّابِعَةِ، وَآخَرَ فِي الْخَامِسَةِ لَمْ أَحْفَظِ اسْمَهُ، وَإِبْرَاهِيمَ فِي السَّادِسَةِ، وَمُوسَى فِي السَّابِعَةِ بِتَفْضِيلِ كَلاَمِ اللَّهِ، فَقَالَ مُوسَى رَبِّ لَمْ أَظُنَّ أَنْ يُرْفَعَ عَلَىَّ أَحَدٌ‏.‏ ثُمَّ عَلاَ بِهِ فَوْقَ ذَلِكَ بِمَا لاَ يَعْلَمُهُ إِلاَّ اللَّهُ، حَتَّى جَاءَ سِدْرَةَ الْمُنْتَهَى وَدَنَا الْجَبَّارُ رَبُّ الْعِزَّةِ فَتَدَلَّى حَتَّى كَانَ مِنْهُ قَابَ قَوْسَيْنِ أَوْ أَدْنَى فَأَوْحَى اللَّهُ فِيمَا أَوْحَى إِلَيْهِ خَمْسِينَ صَلاَةً عَلَى أُمَّتِكَ كُلَّ يَوْمٍ وَلَيْلَةٍ‏.‏ ثُمَّ هَبَطَ حَتَّى بَلَغَ مُوسَى فَاحْتَبَسَهُ مُوسَى فَقَالَ يَا مُحَمَّدُ مَاذَا عَهِدَ إِلَيْكَ رَبُّكَ قَالَ عَهِدَ إِلَىَّ خَمْسِينَ صَلاَةً كُلَّ يَوْمٍ وَلَيْلَةٍ‏.‏ قَالَ إِنَّ أُمَّتَكَ لاَ تَسْتَطِيعُ ذَلِكَ فَارْجِعْ فَلْيُخَفِّفْ عَنْكَ رَبُّكَ وَعَنْهُمْ‏.‏ فَالْتَفَتَ النَّبِيُّ صلى الله عليه وسلم إِلَى جِبْرِيلَ كَأَنَّهُ يَسْتَشِيرُهُ فِي ذَلِكَ، فَأَشَارَ إِلَيْهِ جِبْرِيلُ أَنْ نَعَمْ إِنْ شِئْتَ‏.‏ فَعَلاَ بِهِ إِلَى الْجَبَّارِ فَقَالَ وَهْوَ مَكَانَهُ يَا رَبِّ خَفِّفْ عَنَّا، فَإِنَّ أُمَّتِي لاَ تَسْتَطِيعُ هَذَا‏.‏ فَوَضَعَ عَنْهُ عَشْرَ صَلَوَاتٍ ثُمَّ رَجَعَ إِلَى مُوسَى فَاحْتَبَسَهُ، فَلَمْ يَزَلْ يُرَدِّدُهُ مُوسَى إِلَى رَبِّهِ حَتَّى صَارَتْ إِلَى خَمْسِ صَلَوَاتٍ، ثُمَّ احْتَبَسَهُ مُوسَى عِنْدَ الْخَمْسِ فَقَالَ يَا مُحَمَّدُ وَاللَّهِ لَقَدْ رَاوَدْتُ بَنِي إِسْرَائِيلَ قَوْمِي عَلَى أَدْنَى مِنْ هَذَا فَضَعُفُوا فَتَرَكُوهُ فَأُمَّتُكَ أَضْعَفُ أَجْسَادًا وَقُلُوبًا وَأَبْدَانًا وَأَبْصَارًا وَأَسْمَاعًا، فَارْجِعْ فَلْيُخَفِّفْ عَنْكَ رَبُّكَ، كُلَّ ذَلِكَ يَلْتَفِتُ النَّبِيُّ صلى الله عليه وسلم إِلَى جِبْرِيلَ لِيُشِيرَ عَلَيْهِ وَلاَ يَكْرَهُ ذَلِكَ جِبْرِيلُ، فَرَفَعَهُ عِنْدَ الْخَامِسَةِ فَقَالَ يَا رَبِّ إِنَّ أُمَّتِي ضُعَفَاءُ أَجْسَادُهُمْ وَقُلُوبُهُمْ وَأَسْمَاعُهُمْ وَأَبْدَانُهُمْ فَخَفِّفْ عَنَّا فَقَالَ الْجَبَّارُ يَا مُحَمَّدُ‏.‏ قَالَ لَبَّيْكَ وَسَعْدَيْكَ‏.‏ قَالَ إِنَّهُ لاَ يُبَدَّلُ الْقَوْلُ لَدَىَّ، كَمَا فَرَضْتُ عَلَيْكَ فِي أُمِّ الْكِتَابِ ـ قَالَ ـ فَكُلُّ حَسَنَةٍ بِعَشْرِ أَمْثَالِهَا، فَهْىَ خَمْسُونَ فِي أُمِّ الْكِتَابِ وَهْىَ خَمْسٌ عَلَيْكَ‏.‏ فَرَجَعَ إِلَى مُوسَى فَقَالَ كَيْفَ فَعَلْتَ فَقَالَ خَفَّفَ عَنَّا أَعْطَانَا بِكُلِّ حَسَنَةٍ عَشْرَ أَمْثَالِهَا‏.‏ قَالَ مُوسَى قَدْ وَاللَّهِ رَاوَدْتُ بَنِي إِسْرَائِيلَ عَلَى أَدْنَى مِنْ ذَلِكَ فَتَرَكُوهُ، ارْجِعْ إِلَى رَبِّكَ فَلْيُخَفِّفْ عَنْكَ أَيْضًا‏.‏ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم يَا مُوسَى قَدْ وَاللَّهِ اسْتَحْيَيْتُ مِنْ رَبِّي مِمَّا اخْتَلَفْتُ إِلَيْهِ‏.‏ قَالَ فَاهْبِطْ بِاسْمِ اللَّهِ‏.‏ قَالَ وَاسْتَيْقَظَ وَهْوَ فِي مَسْجِدِ الْحَرَامِ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح البخاري</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">7517</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih al-Bukhari 7517</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Narrated Anas bin Malik:</div><div class=text_details><p>The night Allah's Messenger (ﷺ) was taken for a journey from the sacred mosque (of Mecca) Al-Ka`ba: Three persons came to him (in a dreamy while he was sleeping in the Sacred Mosque before the Divine Inspiration was revealed to Him. One of them said, "Which of them is he?" The middle (second) angel said, "He is the best of them." The last (third) angle said, "Take the best of them." Only that much happened on that night and he did not see them till they came on another night, i.e. after The Divine Inspiration was revealed to him. (Fath-ul-Bari Page 258, Vol. 17) and he saw them, his eyes were asleep but his heart was not----and so is the case with the prophets: their eyes sleep while their hearts do not sleep. So those angels did not talk to him till they carried him and placed him beside the well of Zamzam. From among them Gabriel took charge of him. Gabriel cut open (the part of his body) between his throat and the middle of his chest (heart) and took all the material out of his chest and `Abdomen and then washed it with Zamzam water with his own hands till he cleansed the inside of his body, and then a gold tray containing a gold bowl full of belief and wisdom was brought and then Gabriel stuffed his chest and throat blood vessels with it and then closed it (the chest). He then ascended with him to the heaven of the world and knocked on one of its doors. The dwellers of the Heaven asked, 'Who is it?' He said, "Gabriel." They said, "Who is accompanying you?" He said, "Muhammad." They said, "Has he been called?" He said, "Yes" They said, "He is welcomed." So the dwellers of the Heaven became pleased with his arrival, and they did not know what Allah would do to the Prophet (ﷺ) on earth unless Allah informed them. The Prophet (ﷺ) met Adam over the nearest Heaven. Gabriel said to the Prophet, "He is your father; greet him." The Prophet (ﷺ) greeted him and Adam returned his greeting and said, "Welcome, O my Son! O what a good son you are!" Behold, he saw two flowing rivers, while he was in the nearest sky. He asked, "What are these two rivers, O Gabriel?" Gabriel said, "These are the sources of the Nile and the Euphrates." Then Gabriel took him around that Heaven and behold, he saw another river at the bank of which there was a palace built of pearls and emerald. He put his hand into the river and found its mud like musk Adhfar. He asked, "What is this, O Gabriel?" Gabriel said, "This is the Kauthar which your Lord has kept for you." Then Gabriel ascended (with him) to the second Heaven and the angels asked the same questions as those on the first Heaven, i.e., "Who is it?" Gabriel replied, "Gabriel". They asked, "Who is accompanying you?" He said, "Muhammad." They asked, "Has he been sent for?" He said, "Yes." Then they said, "He is welcomed.'' Then he (Gabriel) ascended with the Prophet (ﷺ) to the third Heaven, and the angels said the same as the angels of the first and the second Heavens had said. Then he ascended with him to the fourth Heaven and they said the same; and then he ascended with him to the fifth Heaven and they said the same; and then he ascended with him to the sixth Heaven and they said the same; then he ascended with him to the seventh Heaven and they said the same. On each Heaven there were prophets whose names he had mentioned and of whom I remember Idris on the second Heaven, Aaron on the fourth Heavens another prophet whose name I don't remember, on the fifth Heaven, Abraham on the sixth Heaven, and Moses on the seventh Heaven because of his privilege of talking to Allah directly. Moses said (to Allah), "O Lord! I thought that none would be raised up above me." But Gabriel ascended with him (the Prophet) for a distance above that, the distance of which only Allah knows, till he reached the Lote Tree (beyond which none may pass) and then the Irresistible, the Lord of Honor and Majesty approached and came closer till he (Gabriel) was about two bow lengths or (even) nearer. (It is said that it was Gabriel who approached and came closer to the Prophet. (Fate Al-Bari Page 263, 264, Vol. 17). Among the things which Allah revealed to him then, was: "Fifty prayers were enjoined on his followers in a day and a night." Then the Prophet (ﷺ) descended till he met Moses, and then Moses stopped him and asked, "O Muhammad ! What did your Lord en join upon you?" The Prophet (ﷺ) replied," He enjoined upon me to perform fifty prayers in a day and a night." Moses said, "Your followers cannot do that; Go back so that your Lord may reduce it for you and for them." So the Prophet (ﷺ) turned to Gabriel as if he wanted to consult him about that issue. Gabriel told him of his opinion, saying, "Yes, if you wish." So Gabriel ascended with him to the Irresistible and said while he was in his place, "O Lord, please lighten our burden as my followers cannot do that." So Allah deducted for him ten prayers where upon he returned to Moses who stopped him again and kept on sending him back to his Lord till the enjoined prayers were reduced to only five prayers. Then Moses stopped him when the prayers had been reduced to five and said, "O Muhammad! By Allah, I tried to persuade my nation, Bani Israel to do less than this, but they could not do it and gave it up. However, your followers are weaker in body, heart, sight and hearing, so return to your Lord so that He may lighten your burden." The Prophet (ﷺ) turned towards Gabriel for advice and Gabriel did not disapprove of that. So he ascended with him for the fifth time. The Prophet (ﷺ) said, "O Lord, my followers are weak in their bodies, hearts, hearing and constitution, so lighten our burden." On that the Irresistible said, "O Muhammad!" the Prophet replied, "Labbaik and Sa`daik." Allah said, "The Word that comes from Me does not change, so it will be as I enjoined on you in the Mother of the Book." Allah added, "Every good deed will be rewarded as ten times so it is fifty (prayers) in the Mother of the Book (in reward) but you are to perform only five (in practice)." The Prophet (ﷺ) returned to Moses who asked, "What have you done?" He said, "He has lightened our burden: He has given us for every good deed a tenfold reward." Moses said, "By Allah! I tried to make Bani Israel observe less than that, but they gave it up. So go back to your Lord that He may lighten your burden further." Allah's Messenger (ﷺ) said, "O Moses! By Allah, I feel shy of returning too many times to my Lord." On that Gabriel said, "Descend in Allah's Name." The Prophet (ﷺ) then woke while he was in the Sacred Mosque (at Mecca).</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih al-Bukhari</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">7517</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

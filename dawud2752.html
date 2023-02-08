@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+سنن أبي داود حديث رقم 2752 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+سنن أبي داود حديث رقم 2752 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا هَارُونُ بْنُ عَبْدِ اللَّهِ، حَدَّثَنَا هَاشِمُ بْنُ الْقَاسِمِ، حَدَّثَنَا عِكْرِمَةُ، حَدَّثَنِي إِيَاسُ بْنُ سَلَمَةَ، عَنْ أَبِيهِ، قَالَ أَغَارَ عَبْدُ الرَّحْمَنِ بْنُ عُيَيْنَةَ عَلَى إِبِلِ رَسُولِ اللَّهِ صلى الله عليه وسلم فَقَتَلَ رَاعِيَهَا وَخَرَجَ يَطْرُدُهَا هُوَ وَأُنَاسٌ مَعَهُ فِي خَيْلٍ فَجَعَلْتُ وَجْهِي قِبَلَ الْمَدِينَةِ ثُمَّ نَادَيْتُ ثَلاَثَ مَرَّاتٍ يَا صَبَاحَاهُ ‏.‏ ثُمَّ اتَّبَعْتُ الْقَوْمَ فَجَعَلْتُ أَرْمِي وَأَعْقِرُهُمْ فَإِذَا رَجَعَ إِلَىَّ فَارِسٌ جَلَسْتُ فِي أَصْلِ شَجَرَةٍ حَتَّى مَا خَلَقَ اللَّهُ شَيْئًا مِنْ ظَهْرِ النَّبِيِّ صلى الله عليه وسلم إِلاَّ جَعَلْتُهُ وَرَاءَ ظَهْرِي وَحَتَّى أَلْقَوْا أَكْثَرَ مِنْ ثَلاَثِينَ رُمْحًا وَثَلاَثِينَ بُرْدَةً يَسْتَخِفُّونَ مِنْهَا ثُمَّ أَتَاهُمْ عُيَيْنَةُ مَدَدًا فَقَالَ لِيَقُمْ إِلَيْهِ نَفَرٌ مِنْكُمْ ‏.‏ فَقَامَ إِلَىَّ أَرْبَعَةٌ مِنْهُمْ فَصَعِدُوا الْجَبَلَ فَلَمَّا أَسْمَعْتُهُمْ قُلْتُ أَتَعْرِفُونِي قَالُوا وَمَنْ أَنْتَ قُلْتُ أَنَا ابْنُ الأَكْوَعِ وَالَّذِي كَرَّمَ وَجْهَ مُحَمَّدٍ صلى الله عليه وسلم لاَ يَطْلُبُنِي رَجُلٌ مِنْكُمْ فَيُدْرِكُنِي وَلاَ أَطْلُبُهُ فَيَفُوتُنِي ‏.‏ فَمَا بَرِحْتُ حَتَّى نَظَرْتُ إِلَى فَوَارِسِ رَسُولِ اللَّهِ صلى الله عليه وسلم يَتَخَلَّلُونَ الشَّجَرَ أَوَّلُهُمُ الأَخْرَمُ الأَسَدِيُّ فَيَلْحَقُ بِعَبْدِ الرَّحْمَنِ بْنِ عُيَيْنَةَ وَيَعْطِفُ عَلَيْهِ عَبْدُ الرَّحْمَنِ فَاخْتَلَفَا طَعْنَتَيْنِ فَعَقَرَ الأَخْرَمُ عَبْدَ الرَّحْمَنِ وَطَعَنَهُ عَبْدُ الرَّحْمَنِ فَقَتَلَهُ فَتَحَوَّلَ عَبْدُ الرَّحْمَنِ عَلَى فَرَسِ الأَخْرَمِ فَيَلْحَقُ أَبُو قَتَادَةَ بِعَبْدِ الرَّحْمَنِ فَاخْتَلَفَا طَعْنَتَيْنِ فَعَقَرَ بِأَبِي قَتَادَةَ وَقَتَلَهُ أَبُو قَتَادَةَ فَتَحَوَّلَ أَبُو قَتَادَةَ عَلَى فَرَسِ الأَخْرَمِ ثُمَّ جِئْتُ إِلَى رَسُولِ اللَّهِ صلى الله عليه وسلم وَهُوَ عَلَى الْمَاءِ الَّذِي جَلَّيْتُهُمْ عَنْهُ ذُو قَرَدٍ فَإِذَا نَبِيُّ اللَّهِ صلى الله عليه وسلم فِي خَمْسِمِائَةٍ فَأَعْطَانِي سَهْمَ الْفَارِسِ وَالرَّاجِلِ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">سنن أبي داود</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">2752</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">&nbsp;<b> حسن صحيح</b>&nbsp;&nbsp; (الألباني) </span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sunan Abi Dawud 2752</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=text_details>Salamah (bin Al ‘Akwa) said “Abd Al rahman bin ‘Uyainah raided the Camels of the Apostle of Allaah(ﷺ) and killed their herdsman. He and some people who were with him on horses proceeded on driving them away. I turned my face towards Madeenah and shouted three times. A morning raid, I then went after the people shooting arrows at them and hamstringing them (their beasts). When a horseman returned to me, I sat in the foot of a tree till there was no riding beast of the Prophet (ﷺ) created by Allaah which I had not kept behind my back. They threw away more than thirty lance and thirty cloaks to lighten themselves. Then ‘Uyainah came to them with reinforcement and said “A few of you should go to him. Four of them stood and came to me. They ascended a mountain. Then they came near me till they could hear my voice. I told them “Do you know me?”  They said “Who are you? I replied “I am Ibn Al ‘Akwa. By Him Who honored the face of Muhammad (ﷺ) if any man of you pursues he cannot catch me and if I pursue him, I will not miss him. This went on with me till I saw the horsemen of the Apostle of Allaah(ﷺ) coming through the trees. Al Akhram Al Asadi was at their head. He then joined ‘Abd Al Rahman bin ‘Uyainah and ‘Abd Al Rahman turned over him. They attacked each other with lances. Al Akhram hamstrung ‘Abd Al Rahman’s horse and ‘Abd Al Rahman pierced a lance in his body and killed him. ‘Abd al Rahman then returned on the horse of Al Akhram. I then came to the Apostle of Allaah(ﷺ)  who was present at the same water from where I drove them away and which is known as Dhu Qarad. The Prophet (ﷺ) was among five hundred people. He then gave me two portions a horseman’s and a footman’s.</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sunan Abi Dawud</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">2752</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">&nbsp;<b>Hasan Sahih</b> (Al-Albani)</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

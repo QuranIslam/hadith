@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح البخاري حديث رقم 1392 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح البخاري حديث رقم 1392 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا قُتَيْبَةُ، حَدَّثَنَا جَرِيرُ بْنُ عَبْدِ الْحَمِيدِ، حَدَّثَنَا حُصَيْنُ بْنُ عَبْدِ الرَّحْمَنِ، عَنْ عَمْرِو بْنِ مَيْمُونٍ الأَوْدِيِّ، قَالَ رَأَيْتُ عُمَرَ بْنَ الْخَطَّابِ ـ رضى الله عنه ـ قَالَ يَا عَبْدَ اللَّهِ بْنَ عُمَرَ، اذْهَبْ إِلَى أُمِّ الْمُؤْمِنِينَ عَائِشَةَ ـ رضى الله عنها ـ فَقُلْ يَقْرَأُ عُمَرُ بْنُ الْخَطَّابِ عَلَيْكِ السَّلاَمَ، ثُمَّ سَلْهَا أَنْ أُدْفَنَ مَعَ صَاحِبَىَّ‏.‏ قَالَتْ كُنْتُ أُرِيدُهُ لِنَفْسِي، فَلأُوثِرَنَّهُ الْيَوْمَ عَلَى نَفْسِي‏.‏ فَلَمَّا أَقْبَلَ قَالَ لَهُ مَا لَدَيْكَ قَالَ أَذِنَتْ لَكَ يَا أَمِيرَ الْمُؤْمِنِينَ‏.‏ قَالَ مَا كَانَ شَىْءٌ أَهَمَّ إِلَىَّ مِنْ ذَلِكَ الْمَضْجَعِ، فَإِذَا قُبِضْتُ فَاحْمِلُونِي ثُمَّ سَلِّمُوا ثُمَّ قُلْ يَسْتَأْذِنُ عُمَرُ بْنُ الْخَطَّابِ‏.‏ فَإِنْ أَذِنَتْ لِي فَادْفِنُونِي، وَإِلاَّ فَرُدُّونِي إِلَى مَقَابِرِ الْمُسْلِمِينَ، إِنِّي لاَ أَعْلَمُ أَحَدًا أَحَقَّ بِهَذَا الأَمْرِ مِنْ هَؤُلاَءِ النَّفَرِ الَّذِينَ تُوُفِّيَ رَسُولُ اللَّهِ صلى الله عليه وسلم وَهُوَ عَنْهُمْ رَاضٍ، فَمَنِ اسْتَخْلَفُوا بَعْدِي فَهُوَ الْخَلِيفَةُ، فَاسْمَعُوا لَهُ وَأَطِيعُوا‏.‏ فَسَمَّى عُثْمَانَ وَعَلِيًّا وَطَلْحَةَ وَالزُّبَيْرَ وَعَبْدَ الرَّحْمَنِ بْنَ عَوْفٍ وَسَعْدَ بْنَ أَبِي وَقَّاصٍ، وَوَلَجَ عَلَيْهِ شَابٌّ مِنَ الأَنْصَارِ فَقَالَ أَبْشِرْ يَا أَمِيرَ الْمُؤْمِنِينَ بِبُشْرَى اللَّهِ، كَانَ لَكَ مِنَ الْقَدَمِ فِي الإِسْلاَمِ مَا قَدْ عَلِمْتَ، ثُمَّ اسْتُخْلِفْتَ فَعَدَلْتَ، ثُمَّ الشَّهَادَةُ بَعْدَ هَذَا كُلِّهِ‏.‏ فَقَالَ لَيْتَنِي يَا ابْنَ أَخِي وَذَلِكَ كَفَافًا لاَ عَلَىَّ وَلاَ لِي أُوصِي الْخَلِيفَةَ مِنْ بَعْدِي بِالْمُهَاجِرِينَ الأَوَّلِينَ خَيْرًا، أَنْ يَعْرِفَ لَهُمْ حَقَّهُمْ، وَأَنْ يَحْفَظَ لَهُمْ حُرْمَتَهُمْ، وَأُوصِيهِ بِالأَنْصَارِ خَيْرًا الَّذِينَ تَبَوَّءُوا الدَّارَ وَالإِيمَانَ أَنْ يُقْبَلَ مِنْ مُحْسِنِهِمْ، وَيُعْفَى عَنْ مُسِيئِهِمْ، وَأُوصِيهِ بِذِمَّةِ اللَّهِ وَذِمَّةِ رَسُولِهِ صلى الله عليه وسلم أَنْ يُوفَى لَهُمْ بِعَهْدِهِمْ، وَأَنْ يُقَاتَلَ مِنْ وَرَائِهِمْ، وَأَنْ لاَ يُكَلَّفُوا فَوْقَ طَاقَتِهِمْ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح البخاري</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">1392</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih al-Bukhari 1392</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Narrated `Amr bin Maimun Al-Audi:</div><div class=text_details><p>I saw `Umar bin Al-Khattab (when he was stabbed) saying, "O `Abdullah bin `Umar! Go to the mother of the believers Aisha and say, `Umar bin Al-Khattab sends his greetings to you,' and request her to allow me to be buried with my companions." (So, Ibn `Umar conveyed the message to `Aisha.) She said, "I had the idea of having this place for myself but today I prefer him (`Umar) to myself (and allow him to be buried there)." When `Abdullah bin `Umar returned, `Umar asked him, "What (news) do you have?" He replied, "O chief of the believers! She has allowed you (to be buried there)." On that `Umar said, "Nothing was more important to me than to be buried in that (sacred) place. So, when I expire, carry me there and pay my greetings to her (`Aisha ) and say, `Umar bin Al-Khattab asks permission; and if she gives permission, then bury me (there) and if she does not, then take me to the graveyard of the Muslims. I do not think any person has more right for the caliphate than those with whom Allah's Messenger (ﷺ) (p.b.u.h) was always pleased till his death. And whoever is chosen by the people after me will be the caliph, and you people must listen to him and obey him," and then he mentioned the name of `Uthman, `Ali, Talha, Az-Zubair, `Abdur-Rahman bin `Auf and Sa`d bin Abi Waqqas. By this time a young man from Ansar came and said, "O chief of the believers! Be happy with Allah's glad tidings. The grade which you have in Islam is known to you, then you became the caliph and you ruled with justice and then you have been awarded martyrdom after all this." `Umar replied, "O son of my brother! Would that all that privileges will counterbalance (my short comings), so that I neither lose nor gain anything. I recommend my successor to be good to the early emigrants and realize their rights and to protect their honor and sacred things. And I also recommend him to be good to the Ansar who before them, had homes (in Medina) and had adopted the Faith. He should accept the good of the righteous among them and should excuse their wrongdoers. I recommend him to abide by the rules and regulations concerning the Dhimmis (protectees) of Allah and His Apostle, to fulfill their contracts completely and fight for them and not to tax (overburden) them beyond their capabilities."</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih al-Bukhari</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">1392</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

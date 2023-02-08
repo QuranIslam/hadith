@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح البخاري حديث رقم 4122 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح البخاري حديث رقم 4122 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic">حَدَّثَنَا زَكَرِيَّاءُ بْنُ يَحْيَى، حَدَّثَنَا عَبْدُ اللَّهِ بْنُ نُمَيْرٍ، حَدَّثَنَا هِشَامٌ، عَنْ أَبِيهِ، عَنْ عَائِشَةَ ـ رضى الله عنها ـ قَالَتْ أُصِيبَ سَعْدٌ يَوْمَ الْخَنْدَقِ، رَمَاهُ رَجُلٌ مِنْ قُرَيْشٍ يُقَالُ لَهُ حِبَّانُ ابْنُ الْعَرِقَةِ، رَمَاهُ فِي الأَكْحَلِ، فَضَرَبَ النَّبِيُّ صلى الله عليه وسلم خَيْمَةً فِي الْمَسْجِدِ لِيَعُودَهُ مِنْ قَرِيبٍ، فَلَمَّا رَجَعَ رَسُولُ اللَّهِ صلى الله عليه وسلم مِنَ الْخَنْدَقِ وَضَعَ السِّلاَحَ وَاغْتَسَلَ، فَأَتَاهُ جِبْرِيلُ ـ عَلَيْهِ السَّلاَمُ ـ وَهْوَ يَنْفُضُ رَأْسَهُ مِنَ الْغُبَارِ فَقَالَ قَدْ وَضَعْتَ السِّلاَحَ وَاللَّهِ مَا وَضَعْتُهُ، اخْرُجْ إِلَيْهِمْ‏.‏ قَالَ النَّبِيُّ صلى الله عليه وسلم ‏</span><span class="hadith">"‏ فَأَيْنَ ‏"</span><span class="arabic_sanad arabic">‏‏.‏ فَأَشَارَ إِلَى بَنِي قُرَيْظَةَ، فَأَتَاهُمْ رَسُولُ اللَّهِ صلى الله عليه وسلم فَنَزَلُوا عَلَى حُكْمِهِ، فَرَدَّ الْحُكْمَ إِلَى سَعْدٍ، قَالَ فَإِنِّي أَحْكُمُ فِيهِمْ أَنْ تُقْتَلَ الْمُقَاتِلَةُ، وَأَنْ تُسْبَى النِّسَاءُ وَالذُّرِّيَّةُ، وَأَنْ تُقْسَمَ أَمْوَالُهُمْ‏.‏ قَالَ هِشَامٌ فَأَخْبَرَنِي أَبِي عَنْ عَائِشَةَ أَنَّ سَعْدًا قَالَ اللَّهُمَّ إِنَّكَ تَعْلَمُ أَنَّهُ لَيْسَ أَحَدٌ أَحَبَّ إِلَىَّ أَنْ أُجَاهِدَهُمْ فِيكَ مِنْ قَوْمٍ كَذَّبُوا رَسُولَكَ صلى الله عليه وسلم وَأَخْرَجُوهُ، اللَّهُمَّ فَإِنِّي أَظُنُّ أَنَّكَ قَدْ وَضَعْتَ الْحَرْبَ بَيْنَنَا وَبَيْنَهُمْ، فَإِنْ كَانَ بَقِيَ مِنْ حَرْبِ قُرَيْشٍ شَىْءٌ، فَأَبْقِنِي لَهُ حَتَّى أُجَاهِدَهُمْ فِيكَ، وَإِنْ كُنْتَ وَضَعْتَ الْحَرْبَ فَافْجُرْهَا، وَاجْعَلْ مَوْتَتِي فِيهَا‏.‏ فَانْفَجَرَتْ مِنْ لَبَّتِهِ، فَلَمْ يَرُعْهُمْ وَفِي الْمَسْجِدِ خَيْمَةٌ مِنْ بَنِي غِفَارٍ إِلاَّ الدَّمُ يَسِيلُ إِلَيْهِمْ فَقَالُوا يَا أَهْلَ الْخَيْمَةِ مَا هَذَا الَّذِي يَأْتِينَا مِنْ قِبَلِكُمْ فَإِذَا سَعْدٌ يَغْذُو جُرْحُهُ دَمًا، فَمَاتَ مِنْهَا رضى الله عنه‏.‏</span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح البخاري</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">4122</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih al-Bukhari 4122</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Narrated `Aisha:</div><div class=text_details><p>Sa`d was wounded on the day of Khandaq (i.e. Trench) when a man from Quraish, called Hibban bin Al-`Araqa hit him (with an arrow). The man was Hibban bin Qais from (the tribe of) Bani Mais bin 'Amir bin Lu'ai who shot an arrow at Sa`d's medial arm vein (or main artery of the arm). The Prophet (ﷺ) pitched a tent (for Sa`d) in the Mosque so that he might be near to the Prophet (ﷺ) to visit. When the Prophet returned from the (battle) of Al-Khandaq (i.e. Trench) and laid down his arms and took a bath Gabriel came to him while he (i.e. Gabriel) was shaking the dust off his head, and said, "You have laid down the arms?" By Allah, I have not laid them down. Go out to them (to attack them)." The Prophet (ﷺ) said, "Where?" Gabriel pointed towards Bani Quraiza. So Allah's Messenger (ﷺ) went to them (i.e. Banu Quraiza) (i.e. besieged them). They then surrendered to the Prophet's judgment but he directed them to Sa`d to give his verdict concerning them. Sa`d said, "I give my judgment that their warriors should be killed, their women and children should be taken as captives, and their properties distributed." Narrated Hisham: My father informed me that `Aisha said, "Sa`d said, "O Allah! You know that there is nothing more beloved to me than to fight in Your Cause against those who disbelieved Your Apostle and turned him out (of Mecca). O Allah! I think you have put to an end the fight between us and them (i.e. Quraish infidels). And if there still remains any fight with the Quraish (infidels), then keep me alive till I fight against them for Your Sake. But if you have brought the war to an end, then let this wound burst and cause my death thereby.' So blood gushed from the wound. There was a tent in the Mosque belonging to Banu Ghifar who were surprised by the blood flowing towards them . They said, 'O people of the tent! What is this thing which is coming to us from your side?' Behold! Blood was flowing profusely out of Sa`d's wound. Sa`d then died because of that."</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih al-Bukhari</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">4122</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

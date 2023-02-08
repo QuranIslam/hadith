@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح البخاري حديث رقم 7439 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح البخاري حديث رقم 7439 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا يَحْيَى بْنُ بُكَيْرٍ، حَدَّثَنَا اللَّيْثُ، عَنْ خَالِدِ بْنِ يَزِيدَ، عَنْ سَعِيدِ بْنِ أَبِي هِلاَلٍ، عَنْ زَيْدٍ، عَنْ عَطَاءِ بْنِ يَسَارٍ، عَنْ أَبِي سَعِيدٍ الْخُدْرِيِّ، قَالَ قُلْنَا يَا رَسُولَ اللَّهِ هَلْ نَرَى رَبَّنَا يَوْمَ الْقِيَامَةِ قَالَ ‏"‏ هَلْ تُضَارُونَ فِي رُؤْيَةِ الشَّمْسِ وَالْقَمَرِ إِذَا كَانَتْ صَحْوًا ‏"‏‏.‏ قُلْنَا لاَ‏.‏ قَالَ ‏"‏ فَإِنَّكُمْ لاَ تُضَارُونَ فِي رُؤْيَةِ رَبِّكُمْ يَوْمَئِذٍ، إِلاَّ كَمَا تُضَارُونَ فِي رُؤْيَتِهِمَا ـ ثُمَّ قَالَ ـ يُنَادِي مُنَادٍ لِيَذْهَبْ كُلُّ قَوْمٍ إِلَى مَا كَانُوا يَعْبُدُونَ‏.‏ فَيَذْهَبُ أَصْحَابُ الصَّلِيبِ مَعَ صَلِيبِهِمْ، وَأَصْحَابُ الأَوْثَانِ مَعَ أَوْثَانِهِمْ، وَأَصْحَابُ كُلِّ آلِهَةٍ مَعَ آلِهَتِهِمْ حَتَّى يَبْقَى مَنْ كَانَ يَعْبُدُ اللَّهَ مِنْ بَرٍّ أَوْ فَاجِرٍ، وَغُبَّرَاتٌ مِنْ أَهْلِ الْكِتَابِ، ثُمَّ يُؤْتَى بِجَهَنَّمَ تُعْرَضُ كَأَنَّهَا سَرَابٌ فَيُقَالُ لِلْيَهُودِ مَا كُنْتُمْ تَعْبُدُونَ قَالُوا كُنَّا نَعْبُدُ عُزَيْرَ ابْنَ اللَّهِ‏.‏ فَيُقَالُ كَذَبْتُمْ لَمْ يَكُنْ لِلَّهِ صَاحِبَةٌ وَلاَ وَلَدٌ فَمَا تُرِيدُونَ قَالُوا نُرِيدُ أَنْ تَسْقِيَنَا، فَيُقَالُ اشْرَبُوا فَيَتَسَاقَطُونَ فِي جَهَنَّمَ ثُمَّ يُقَالُ لِلنَّصَارَى مَا كُنْتُمْ تَعْبُدُونَ فَيَقُولُونَ كُنَّا نَعْبُدُ الْمَسِيحَ ابْنَ اللَّهِ‏.‏ فَيُقَالُ كَذَبْتُمْ لَمْ يَكُنْ لِلَّهِ صَاحِبَةٌ وَلاَ وَلَدٌ، فَمَا تُرِيدُونَ فَيَقُولُونَ نُرِيدُ أَنْ تَسْقِيَنَا‏.‏ فَيُقَالُ اشْرَبُوا‏.‏ فَيَتَسَاقَطُونَ حَتَّى يَبْقَى مَنْ كَانَ يَعْبُدُ اللَّهَ مِنْ بَرٍّ أَوْ فَاجِرٍ فَيُقَالُ لَهُمْ مَا يَحْبِسُكُمْ وَقَدْ ذَهَبَ النَّاسُ فَيَقُولُونَ فَارَقْنَاهُمْ وَنَحْنُ أَحْوَجُ مِنَّا إِلَيْهِ الْيَوْمَ وَإِنَّا سَمِعْنَا مُنَادِيًا يُنَادِي لِيَلْحَقْ كُلُّ قَوْمٍ بِمَا كَانُوا يَعْبُدُونَ‏.‏ وَإِنَّمَا نَنْتَظِرُ رَبَّنَا ـ قَالَ ـ فَيَأْتِيهِمُ الْجَبَّارُ‏.‏ فَيَقُولُ أَنَا رَبُّكُمْ‏.‏ فَيَقُولُونَ أَنْتَ رَبُّنَا‏.‏ فَلاَ يُكَلِّمُهُ إِلاَّ الأَنْبِيَاءُ فَيَقُولُ هَلْ بَيْنَكُمْ وَبَيْنَهُ آيَةٌ تَعْرِفُونَهُ فَيَقُولُونَ السَّاقُ‏.‏ فَيَكْشِفُ عَنْ سَاقِهِ فَيَسْجُدُ لَهُ كُلُّ مُؤْمِنٍ، وَيَبْقَى مَنْ كَانَ يَسْجُدُ لِلَّهِ رِيَاءً وَسُمْعَةً، فَيَذْهَبُ كَيْمَا يَسْجُدَ فَيَعُودُ ظَهْرُهُ طَبَقًا وَاحِدًا، ثُمَّ يُؤْتَى بِالْجَسْرِ فَيُجْعَلُ بَيْنَ ظَهْرَىْ جَهَنَّمَ ‏"‏‏.‏ قُلْنَا يَا رَسُولَ اللَّهِ وَمَا الْجَسْرُ قَالَ ‏"‏ مَدْحَضَةٌ مَزِلَّةٌ، عَلَيْهِ خَطَاطِيفُ وَكَلاَلِيبُ وَحَسَكَةٌ مُفَلْطَحَةٌ، لَهَا شَوْكَةٌ عُقَيْفَاءُ تَكُونُ بِنَجْدٍ يُقَالُ لَهَا السَّعْدَانُ، الْمُؤْمِنُ عَلَيْهَا كَالطَّرْفِ وَكَالْبَرْقِ وَكَالرِّيحِ وَكَأَجَاوِيدِ الْخَيْلِ وَالرِّكَابِ، فَنَاجٍ مُسَلَّمٌ وَنَاجٍ مَخْدُوشٌ وَمَكْدُوسٌ فِي نَارِ جَهَنَّمَ، حَتَّى يَمُرَّ آخِرُهُمْ يُسْحَبُ سَحْبًا، فَمَا أَنْتُمْ بِأَشَدَّ لِي مُنَاشَدَةً فِي الْحَقِّ، قَدْ تَبَيَّنَ لَكُمْ مِنَ الْمُؤْمِنِ يَوْمَئِذٍ لِلْجَبَّارِ، وَإِذَا رَأَوْا أَنَّهُمْ قَدْ نَجَوْا فِي إِخْوَانِهِمْ يَقُولُونَ رَبَّنَا إِخْوَانُنَا كَانُوا يُصَلُّونَ مَعَنَا وَيَصُومُونَ مَعَنَا وَيَعْمَلُونَ مَعَنَا‏.‏ فَيَقُولُ اللَّهُ تَعَالَى اذْهَبُوا فَمَنْ وَجَدْتُمْ فِي قَلْبِهِ مِثْقَالَ دِينَارٍ مِنْ إِيمَانٍ فَأَخْرِجُوهُ‏.‏ وَيُحَرِّمُ اللَّهُ صُوَرَهُمْ عَلَى النَّارِ، فَيَأْتُونَهُمْ وَبَعْضُهُمْ قَدْ غَابَ فِي النَّارِ إِلَى قَدَمِهِ وَإِلَى أَنْصَافِ سَاقَيْهِ، فَيُخْرِجُونَ مَنْ عَرَفُوا، ثُمَّ يَعُودُونَ فَيَقُولُ اذْهَبُوا فَمَنْ وَجَدْتُمْ فِي قَلْبِهِ مِثْقَالَ نِصْفِ دِينَارٍ فَأَخْرِجُوهُ‏.‏ فَيُخْرِجُونَ مَنْ عَرَفُوا، ثُمَّ يَعُودُونَ فَيَقُولُ اذْهَبُوا فَمَنْ وَجَدْتُمْ فِي قَلْبِهِ مِثْقَالَ ذَرَّةٍ مِنْ إِيمَانٍ فَأَخْرِجُوهُ‏.‏ فَيُخْرِجُونَ مَنْ عَرَفُوا ‏"‏‏.‏ قَالَ أَبُو سَعِيدٍ فَإِنْ لَمْ تُصَدِّقُونِي فَاقْرَءُوا ‏<A id="q43" name="q43" href="javascript:openquran(3,27,27)"><c_q43>{‏إِنَّ اللَّهَ لاَ يَظْلِمُ مِثْقَالَ ذَرَّةٍ وَإِنْ تَكُ حَسَنَةً يُضَاعِفْهَا‏}</c_q43></a>‏ ‏"‏ فَيَشْفَعُ النَّبِيُّونَ وَالْمَلاَئِكَةُ وَالْمُؤْمِنُونَ فَيَقُولُ الْجَبَّارُ بَقِيَتْ شَفَاعَتِي‏.‏ فَيَقْبِضُ قَبْضَةً مِنَ النَّارِ فَيُخْرِجُ أَقْوَامًا قَدِ امْتُحِشُوا، فَيُلْقَوْنَ فِي نَهَرٍ بِأَفْوَاهِ الْجَنَّةِ يُقَالُ لَهُ مَاءُ الْحَيَاةِ، فَيَنْبُتُونَ فِي حَافَتَيْهِ كَمَا تَنْبُتُ الْحِبَّةُ فِي حَمِيلِ السَّيْلِ، قَدْ رَأَيْتُمُوهَا إِلَى جَانِبِ الصَّخْرَةِ إِلَى جَانِبِ الشَّجَرَةِ، فَمَا كَانَ إِلَى الشَّمْسِ مِنْهَا كَانَ أَخْضَرَ، وَمَا كَانَ مِنْهَا إِلَى الظِّلِّ كَانَ أَبْيَضَ، فَيَخْرُجُونَ كَأَنَّهُمُ اللُّؤْلُؤُ، فَيُجْعَلُ فِي رِقَابِهِمُ الْخَوَاتِيمُ فَيَدْخُلُونَ الْجَنَّةَ فَيَقُولُ أَهْلُ الْجَنَّةِ هَؤُلاَءِ عُتَقَاءُ الرَّحْمَنِ أَدْخَلَهُمُ الْجَنَّةَ بِغَيْرِ عَمَلٍ عَمِلُوهُ وَلاَ خَيْرٍ قَدَّمُوهُ‏.‏ فَيُقَالُ لَهُمْ لَكُمْ مَا رَأَيْتُمْ وَمِثْلُهُ مَعَهُ ‏"‏‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح البخاري</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">7439</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih al-Bukhari 7439</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>     Narrated Abu Sa'id Al-Khudri:</div><div class=text_details><p>     We said, "O Allah's Messenger (ﷺ)! Shall we see our Lord on the Day of      Resurrection?" He said, "Do you have any difficulty in seeing the sun      and the moon when the sky is clear?" We said, "No." He said, "So you      will have no difficulty in seeing your Lord on that Day as you have no     difficulty in seeing the sun and the moon (in a clear sky)." The      Prophet then said, "Somebody will then announce, 'Let every nation      follow what they used to worship.' So the companions of the cross will     go with their cross, and the idolators (will go) with their idols, and     the companions of every god (false deities) (will go) with their god,      till there remain those who used to worship Allah, both the obedient      ones and the mischievous ones, and some of the people of the      Scripture. Then Hell will be presented to them as if it were a mirage.     Then it will be said to the Jews, "What did you use to worship?' They      will reply, 'We used to worship Ezra, the son of Allah.' It will be      said to them, 'You are liars, for Allah has neither a wife nor a son.      What do you want (now)?' They will reply, 'We want You to provide us      with water.' Then it will be said to them 'Drink,' and they will fall      down in Hell (instead). Then it will be said to the Christians, 'What      did you use to worship?' <p>     They will reply, 'We used to worship Messiah, the son of Allah.' It      will be said, 'You are liars, for Allah has neither a wife nor a son.      What: do you want (now)?' They will say, 'We want You to provide us      with water.' It will be said to them, 'Drink,' and they will fall down     in Hell (instead). When there remain only those who used to worship      Allah (Alone), both the obedient ones and the mischievous ones, it      will be said to them, 'What keeps you here when all the people have      gone?' They will say, 'We parted with them (in the world) when we were     in greater need of them than we are today, we heard the call of one      proclaiming, 'Let every nation follow what they used to worship,' and      now we are waiting for our Lord.' Then the Almighty will come to them      in a shape other than the one which they saw the first time, and He      will say, 'I am your Lord,' and they will say, 'You are not our Lord.'     And none will speak: to Him then but the Prophets, and then it will be     said to them, 'Do you know any sign by which you can recognize Him?'      They will say. 'The Shin,' and so Allah will then uncover His Shin      whereupon every believer will prostrate before Him and there will      remain those who used to prostrate before Him just for showing off and     for gaining good reputation. These people will try to prostrate but      their backs will be rigid like one piece of a wood (and they will not      be able to prostrate). Then the bridge will be laid across Hell." We,      the companions of the Prophet (ﷺ) said, "O Allah's Messenger (ﷺ)! What is the      bridge?'<p>     He said, "It is a slippery (bridge) on which there are clamps and      (Hooks like) a thorny seed that is wide at one side and narrow at the      other and has thorns with bent ends. Such a thorny seed is found in      Najd and is called As-Sa'dan. Some of the believers will cross the      bridge as quickly as the wink of an eye, some others as quick as      lightning, a strong wind, fast horses or she-camels. So some will be      safe without any harm; some will be safe after receiving some      scratches, and some will fall down into Hell (Fire). The last person      will cross by being dragged (over the bridge)." The Prophet (ﷺ) said, "You     (Muslims) cannot be more pressing in claiming from me a right that has     been clearly proved to be yours than the believers in interceding with     Almighty for their (Muslim) brothers on that Day, when they see      themselves safe. <p>     They will say, 'O Allah! (Save) our brothers (for they) used to pray      with us, fast with us and also do good deeds with us.' Allah will say,     'Go and take out (of Hell) anyone in whose heart you find faith equal      to the weight of one (gold) Dinar.' Allah will forbid the Fire to burn     the faces of those sinners. They will go to them and find some of them     in Hell (Fire) up to their feet, and some up to the middle of their      legs. So they will take out those whom they will recognize and then      they will return, and Allah will say (to them), 'Go and take out (of      Hell) anyone in whose heart you find faith equal to the weight of one      half Dinar.' They will take out whomever they will recognize and      return, and then Allah will say, 'Go and take out (of Hell) anyone in      whose heart you find faith equal to the weight of an atom (or a      smallest ant), and so they will take out all those whom they will      recognize." Abu Sa'id said: If you do not believe me then read the      Holy Verse:--<p>     'Surely! Allah wrongs not even of the weight of an atom (or a smallest     ant) but if there is any good (done) He doubles it.' (4.40) The      Prophet added, "Then the prophets and Angels and the believers will      intercede, and (last of all) the Almighty (Allah) will say, 'Now      remains My Intercession. He will then hold a handful of the Fire from      which He will take out some people whose bodies have been burnt, and      they will be thrown into a river at the entrance of Paradise, called      the water of life. <p>     They will grow on its banks, as a seed carried by the torrent grows.      You have noticed how it grows beside a rock or beside a tree, and how      the side facing the sun is usually green while the side facing the      shade is white. Those people will come out (of the River of Life) like     pearls, and they will have (golden) necklaces, and then they will      enter Paradise whereupon the people of Paradise will say, 'These are      the people emancipated by the Beneficent. He has admitted them into      Paradise without them having done any good deeds and without sending      forth any good (for themselves).' Then it will be said to them, 'For      you is what you have seen and its equivalent as well.'"<p></b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih al-Bukhari</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">7439</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

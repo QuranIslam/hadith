@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح البخاري حديث رقم 6573 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح البخاري حديث رقم 6573 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا أَبُو الْيَمَانِ، أَخْبَرَنَا شُعَيْبٌ، عَنِ الزُّهْرِيِّ، أَخْبَرَنِي سَعِيدٌ، وَعَطَاءُ بْنُ يَزِيدَ، أَنَّ أَبَا هُرَيْرَةَ، أَخْبَرَهُمَا عَنِ النَّبِيِّ صلى الله عليه وسلم‏.‏ وَحَدَّثَنِي مَحْمُودٌ، حَدَّثَنَا عَبْدُ الرَّزَّاقِ، أَخْبَرَنَا مَعْمَرٌ، عَنِ الزُّهْرِيِّ، عَنْ عَطَاءِ بْنِ يَزِيدَ اللَّيْثِيِّ، عَنْ أَبِي هُرَيْرَةَ، قَالَ قَالَ أُنَاسٌ يَا رَسُولَ اللَّهِ هَلْ نَرَى رَبَّنَا يَوْمَ الْقِيَامَةِ فَقَالَ ‏"‏ هَلْ تُضَارُّونَ فِي الشَّمْسِ، لَيْسَ دُونَهَا سَحَابٌ ‏"‏‏.‏ قَالُوا لاَ يَا رَسُولَ اللَّهِ‏.‏ قَالَ ‏"‏ هَلْ تُضَارُّونَ فِي الْقَمَرِ لَيْلَةَ الْبَدْرِ، لَيْسَ دُونَهُ سَحَابٌ ‏"‏‏.‏ قَالُوا لاَ يَا رَسُولَ اللَّهِ‏.‏ قَالَ ‏"‏ فَإِنَّكُمْ تَرَوْنَهُ يَوْمَ الْقِيَامَةِ كَذَلِكَ، يَجْمَعُ اللَّهُ النَّاسَ فَيَقُولُ مَنْ كَانَ يَعْبُدُ شَيْئًا فَلْيَتَّبِعْهُ، فَيَتْبَعُ مَنْ كَانَ يَعْبُدُ الشَّمْسَ، وَيَتْبَعُ مَنْ كَانَ يَعْبُدُ الْقَمَرَ، وَيَتْبَعُ مَنْ كَانَ يَعْبُدُ الطَّوَاغِيتَ، وَتَبْقَى هَذِهِ الأُمَّةُ فِيهَا مُنَافِقُوهَا، فَيَأْتِيهِمُ اللَّهُ فِي غَيْرِ الصُّورَةِ الَّتِي يَعْرِفُونَ فَيَقُولُ أَنَا رَبُّكُمْ‏.‏ فَيَقُولُونَ نَعُوذُ بِاللَّهِ مِنْكَ، هَذَا مَكَانُنَا حَتَّى يَأْتِيَنَا رَبُّنَا، فَإِذَا أَتَانَا رَبُّنَا عَرَفْنَاهُ فَيَأْتِيهِمُ اللَّهُ فِي الصُّورَةِ الَّتِي يَعْرِفُونَ فَيَقُولُ أَنَا رَبُّكُمْ‏.‏ فَيَقُولُونَ أَنْتَ رَبُّنَا، فَيَتْبَعُونَهُ وَيُضْرَبُ جِسْرُ جَهَنَّمَ ‏"‏‏.‏ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ فَأَكُونُ أَوَّلَ مَنْ يُجِيزُ، وَدُعَاءُ الرُّسُلِ يَوْمَئِذٍ اللَّهُمَّ سَلِّمْ سَلِّمْ، وَبِهِ كَلاَلِيبُ مِثْلُ شَوْكِ السَّعْدَانِ، أَمَا رَأَيْتُمْ شَوْكَ السَّعْدَانِ ‏"‏‏.‏ قَالُوا بَلَى يَا رَسُولَ اللَّهِ‏.‏ قَالَ ‏"‏ فَإِنَّهَا مِثْلُ شَوْكِ السَّعْدَانِ، غَيْرَ أَنَّهَا لاَ يَعْلَمُ قَدْرَ عِظَمِهَا إِلاَّ اللَّهُ، فَتَخْطَفُ النَّاسَ بِأَعْمَالِهِمْ، مِنْهُمُ الْمُوبَقُ، بِعَمَلِهِ وَمِنْهُمُ الْمُخَرْدَلُ، ثُمَّ يَنْجُو، حَتَّى إِذَا فَرَغَ اللَّهُ مِنَ الْقَضَاءِ بَيْنَ عِبَادِهِ، وَأَرَادَ أَنْ يُخْرِجَ مِنَ النَّارِ مَنْ أَرَادَ أَنْ يُخْرِجَ، مِمَّنْ كَانَ يَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ، أَمَرَ الْمَلاَئِكَةَ أَنْ يُخْرِجُوهُمْ، فَيَعْرِفُونَهُمْ بِعَلاَمَةِ آثَارِ السُّجُودِ، وَحَرَّمَ اللَّهُ عَلَى النَّارِ أَنْ تَأْكُلَ مِنِ ابْنِ آدَمَ أَثَرَ السُّجُودِ، فَيُخْرِجُونَهُمْ قَدِ امْتُحِشُوا، فَيُصَبُّ عَلَيْهِمْ مَاءٌ يُقَالُ لَهُ مَاءُ الْحَيَاةِ، فَيَنْبُتُونَ نَبَاتَ الْحِبَّةِ فِي حَمِيلِ السَّيْلِ، وَيَبْقَى رَجُلٌ مُقْبِلٌ بِوَجْهِهِ عَلَى النَّارِ فَيَقُولُ يَا رَبِّ قَدْ قَشَبَنِي رِيحُهَا وَأَحْرَقَنِي ذَكَاؤُهَا، فَاصْرِفْ وَجْهِي عَنِ النَّارِ فَلاَ يَزَالُ يَدْعُو اللَّهَ‏.‏ فَيَقُولُ لَعَلَّكَ إِنْ أَعْطَيْتُكَ أَنْ تَسْأَلَنِي غَيْرَهُ‏.‏ فَيَقُولُ لاَ وَعِزَّتِكَ لاَ أَسْأَلُكَ غَيْرَهُ‏.‏ فَيَصْرِفُ وَجْهَهُ عَنِ النَّارِ، ثُمَّ يَقُولُ بَعْدَ ذَلِكَ يَا رَبِّ قَرِّبْنِي إِلَى باب الْجَنَّةِ‏.‏ فَيَقُولُ أَلَيْسَ قَدْ زَعَمْتَ أَنْ لاَ تَسْأَلْنِي غَيْرَهُ، وَيْلَكَ ابْنَ آدَمَ مَا أَغْدَرَكَ‏.‏ فَلاَ يَزَالُ يَدْعُو‏.‏ فَيَقُولُ لَعَلِّي إِنْ أَعْطَيْتُكَ ذَلِكَ تَسْأَلَنِي غَيْرَهُ‏.‏ فَيَقُولُ لاَ وَعِزَّتِكَ لاَ أَسْأَلُكَ غَيْرَهُ‏.‏ فَيُعْطِي اللَّهَ مِنْ عُهُودٍ وَمَوَاثِيقَ أَنْ لاَ يَسْأَلَهُ غَيْرَهُ، فَيُقَرِّبُهُ إِلَى باب الْجَنَّةِ، فَإِذَا رَأَى مَا فِيهَا سَكَتَ مَا شَاءَ اللَّهُ أَنْ يَسْكُتَ، ثُمَّ يَقُولُ رَبِّ أَدْخِلْنِي الْجَنَّةَ‏.‏ ثُمَّ يَقُولُ أَوَلَيْسَ قَدْ زَعَمْتَ أَنْ لاَ تَسْأَلَنِي غَيْرَهُ، وَيْلَكَ يَا ابْنَ آدَمَ مَا أَغْدَرَكَ فَيَقُولُ يَا رَبِّ لاَ تَجْعَلْنِي أَشْقَى خَلْقِكَ‏.‏ فَلاَ يَزَالُ يَدْعُو حَتَّى يَضْحَكَ، فَإِذَا ضَحِكَ مِنْهُ أَذِنَ لَهُ بِالدُّخُولِ فِيهَا، فَإِذَا دَخَلَ فِيهَا قِيلَ تَمَنَّ مِنْ كَذَا‏.‏ فَيَتَمَنَّى، ثُمَّ يُقَالُ لَهُ تَمَنَّ مِنْ كَذَا‏.‏ فَيَتَمَنَّى حَتَّى تَنْقَطِعَ بِهِ الأَمَانِيُّ فَيَقُولُ لَهُ هَذَا لَكَ وَمِثْلُهُ مَعَهُ ‏"‏‏.‏ قَالَ أَبُو هُرَيْرَةَ وَذَلِكَ الرَّجُلُ آخِرُ أَهْلِ الْجَنَّةِ دُخُولاً‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح البخاري</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">6573</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih al-Bukhari 6573</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Narrated Abu Huraira:</div><div class=text_details><p>Some people said, "O Allah's Messenger (ﷺ)! Shall we see our Lord on the Day of Resurrection?" He said, "Do you crowd and squeeze each other on looking at the sun when it is not hidden by clouds?" They replied, "No, Allah's Messenger (ﷺ)." He said, "Do you crowd and squeeze each other on looking at the moon when it is full and not hidden by clouds?" They replied, No, O Allah's Messenger (ﷺ)!" He said, "So you will see Him (your Lord) on the Day of Resurrection similarly Allah will gather all the people and say, 'Whoever used to worship anything should follow that thing. 'So, he who used to worship the sun, will follow it, and he who used to worship the moon will follow it, and he who used to worship false deities will follow them; and then only this nation (i.e., Muslims) will remain, including their hypocrites. Allah will come to them in a shape other than they know and will say, 'I am your Lord.' They will say, 'We seek refuge with Allah from you. This is our place; (we will not follow you) till our Lord comes to us, and when our Lord comes to us, we will recognize Him. Then Allah will come to then in a shape they know and will say, "I am your Lord.' They will say, '(No doubt) You are our Lord,' and they will follow Him. Then a bridge will be laid over the (Hell) Fire." Allah's Messenger (ﷺ) added, "I will be the first to cross it. And the invocation of the Apostles on that Day, will be 'Allahumma Sallim, Sallim (O Allah, save us, save us!),' and over that bridge there will be hooks Similar to the thorns of As Sa'dan (a thorny tree). Didn't you see the thorns of As-Sa'dan?" The companions said, "Yes, O Allah's Messenger (ﷺ)." He added, "So the hooks over that bridge will be like the thorns of As-Sa-dan except that their greatness in size is only known to Allah. These hooks will snatch the people according to their deeds. Some people will be ruined because of their evil deeds, and some will be cut into pieces and fall down in Hell, but will be saved afterwards, when Allah has finished the judgments among His slaves, and intends to take out of the Fire whoever He wishes to take out from among those who used to testify that none had the right to be worshipped but Allah. We will order the angels to take them out and the angels will know them by the mark of the traces of prostration (on their foreheads) for Allah banned the f ire to consume the traces of prostration on the body of Adam's son. So they will take them out, and by then they would have burnt (as coal), and then water, called Ma'ul Hayat (water of life) will be poured on them, and they will spring out like a seed springs out on the bank of a rainwater stream, and there will remain one man who will be facing the (Hell) Fire and will say, 'O Lord! It's (Hell's) vapor has Poisoned and smoked me and its flame has burnt me; please turn my face away from the Fire.' He will keep on invoking Allah till Allah says, 'Perhaps, if I give you what you want), you will ask for another thing?' The man will say, 'No, by Your Power, I will not ask You for anything else.' Then Allah will turn his face away from the Fire. The man will say after that, 'O Lord, bring me near the gate of Paradise.' Allah will say (to him), 'Didn't you promise not to ask for anything else? Woe to you, O son of Adam ! How treacherous you are!' The man will keep on invoking Allah till Allah will say, 'But if I give you that, you may ask me for something else.' The man will say, 'No, by Your Power. I will not ask for anything else.' He will give Allah his covenant and promise not to ask for anything else after that. So Allah will bring him near to the gate of Paradise, and when he sees what is in it, he will remain silent as long as Allah will, and then he will say, 'O Lord! Let me enter Paradise.' Allah will say, 'Didn't you promise that you would not ask Me for anything other than that? Woe to you, O son of Adam ! How treacherous you are!' On that, the man will say, 'O Lord! Do not make me the most wretched of Your creation,' and will keep on invoking Allah till Allah will smile and when Allah will smile because of him, then He will allow him to enter Paradise, and when he will enter Paradise, he will be addressed, 'Wish from so-and-so.' He will wish till all his wishes will be fulfilled, then Allah will say, All this (i.e. what you have wished for) and as much again therewith are for you.' " Abu Huraira added: That man will be the last of the people of Paradise to enter (Paradise).</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih al-Bukhari</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">6573</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

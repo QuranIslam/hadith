@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح مسلم حديث رقم 2450 مكرر موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح مسلم حديث رقم 2450 مكرر مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا أَبُو بَكْرِ بْنُ أَبِي شَيْبَةَ، وَحَدَّثَنَا عَبْدُ اللَّهِ بْنُ نُمَيْرٍ، عَنْ زَكَرِيَّاءَ، ح وَحَدَّثَنَا  ابْنُ نُمَيْرٍ، حَدَّثَنَا أَبِي، حَدَّثَنَا زَكَرِيَّاءُ، عَنْ فِرَاسٍ، عَنْ عَامِرٍ، عَنْ مَسْرُوقٍ، عَنْ عَائِشَةَ، قَالَتِ اجْتَمَعَ نِسَاءُ النَّبِيِّ صلى الله عليه وسلم فَلَمْ يُغَادِرْ مِنْهُنَّ امْرَأَةً فَجَاءَتْ فَاطِمَةُ تَمْشِي كَأَنَّ مِشْيَتَهَا مِشْيَةُ رَسُولِ اللَّهِ صلى الله عليه وسلم فَقَالَ ‏"‏ مَرْحَبًا بِابْنَتِي ‏"‏ ‏.‏ فَأَجْلَسَهَا عَنْ يَمِينِهِ أَوْ عَنْ شِمَالِهِ ثُمَّ إِنَّهُ أَسَرَّ إِلَيْهَا حَدِيثًا فَبَكَتْ فَاطِمَةُ ثُمَّ إِنَّهُ سَارَّهَا فَضَحِكَتْ أَيْضًا فَقُلْتُ لَهَا مَا يُبْكِيكِ فَقَالَتْ مَا كُنْتُ لأُفْشِيَ سِرَّ رَسُولِ اللَّهِ صلى الله عليه وسلم ‏.‏ فَقُلْتُ مَا رَأَيْتُ كَالْيَوْمِ فَرَحًا أَقْرَبَ مِنْ حُزْنٍ ‏.‏ فَقُلْتُ لَهَا حِينَ بَكَتْ أَخَصَّكِ رَسُولُ اللَّهِ صلى الله عليه وسلم بِحَدِيثِهِ دُونَنَا ثُمَّ تَبْكِينَ وَسَأَلْتُهَا عَمَّا قَالَ فَقَالَتْ مَا كُنْتُ لأُفْشِيَ سِرَّ رَسُولِ اللَّهِ صلى الله عليه وسلم ‏.‏ حَتَّى إِذَا قُبِضَ سَأَلْتُهَا فَقَالَتْ إِنَّهُ كَانَ حَدَّثَنِي ‏"‏ أَنَّ جِبْرِيلَ كَانَ يُعَارِضُهُ بِالْقُرْآنِ كُلَّ عَامٍ مَرَّةً وَإِنَّهُ عَارَضَهُ بِهِ فِي الْعَامِ مَرَّتَيْنِ وَلاَ أُرَانِي إِلاَّ قَدْ حَضَرَ أَجَلِي وَإِنَّكِ أَوَّلُ أَهْلِي لُحُوقًا بِي وَنِعْمَ السَّلَفُ أَنَا لَكِ ‏"‏ ‏.‏ فَبَكَيْتُ لِذَلِكِ ثُمَّ إِنَّهُ سَارَّنِي فَقَالَ ‏"‏ أَلاَ تَرْضَيْنَ أَنْ تَكُونِي سَيِّدَةَ نِسَاءِ الْمُؤْمِنِينَ أَوْ سَيِّدَةَ نِسَاءِ هَذِهِ الأُمَّةِ ‏"‏ ‏.‏ فَضَحِكْتُ لِذَلِكِ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح مسلم</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">2450 مكرر</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih Muslim 2450c</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>`A'isha reported that all the wives of Allah's Apostle (ﷺ) had gathered (in her apartment) during the days of his (Prophet's) last illness and no woman was left behind that Fatima, who walked after the style of Allah's Messenger (ﷺ), came there. He welcomed her by saying:</div><div class=text_details>You are welcome, my daughter, and made her sit on his right side or on his left side, and then talked something secretly to her and Fatima wept. Then he talked something secretly to her and she laughed. I said to her: What makes you weep? She said: I am not going to divulge the secret of Allah's Messenger (ﷺ). I (`A'isha) said: I have not seen (anything happening) like today, the happiness being more close to grief (as I see today) when she wept. I said to her: Has Allah's Messenger (ﷺ) singled you out for saying something leaving us aside? She then wept and I asked her what he said, and she said: I am not going to divulge the secrets of Allah's Messenger (ﷺ). And when he died I again asked her and she said that he (the Holy Prophet) told her: Gabriel used to recite the Qur'an to me once a year and for this year it was twice and so I perceived that my death had drawn near, and that I (Fatima) would be the first amongst the members of his family who would meet him (in the Hereafter). He shall be my good forerunner and it made me weep. He again talked to me secretly (saying): Aren't you pleased that you should be the sovereign amongst the believing women or the head of women of this Ummah? And this made me laugh.</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih Muslim</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">2450c</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح البخاري حديث رقم 4196 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح البخاري حديث رقم 4196 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا عَبْدُ اللَّهِ بْنُ مَسْلَمَةَ، حَدَّثَنَا حَاتِمُ بْنُ إِسْمَاعِيلَ، عَنْ يَزِيدَ بْنِ أَبِي عُبَيْدٍ، عَنْ سَلَمَةَ بْنِ الأَكْوَعِ ـ رضى الله عنه ـ قَالَ خَرَجْنَا مَعَ النَّبِيِّ صلى الله عليه وسلم إِلَى خَيْبَرَ فَسِرْنَا لَيْلاً، فَقَالَ رَجُلٌ مِنَ الْقَوْمِ لِعَامِرٍ يَا عَامِرُ أَلاَ تُسْمِعُنَا مِنْ هُنَيْهَاتِكَ‏.‏ وَكَانَ عَامِرٌ رَجُلاً شَاعِرًا فَنَزَلَ يَحْدُو بِالْقَوْمِ يَقُولُ:<br><br><span style="text-align: center;">اللَّهُمَّ لَوْلاَ أَنْتَ مَا اهْتَدَيْنَا &nbsp;&nbsp;&nbsp;&nbsp;وَلاَ تَصَدَّقْنَا وَلاَ صَلَّيْنَا<br>فَاغْفِرْ فِدَاءً لَكَ مَا أَبْقَيْنَا&nbsp;&nbsp;&nbsp;&nbsp; وَثَبِّتِ الأَقْدَامَ إِنْ لاَقَيْنَا<br> وَأَلْقِيَنْ سَكِينَةً عَلَيْنَا&nbsp;&nbsp;&nbsp;&nbsp; إِنَّا إِذَا صِيحَ بِنَا أَبَيْنَا<br> وَبِالصِّيَاحِ عَوَّلُوا عَلَيْنَا</span><br><br> فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ مَنْ هَذَا السَّائِقُ ‏"‏‏.‏ قَالُوا عَامِرُ بْنُ الأَكْوَعِ‏.‏ قَالَ ‏"‏ يَرْحَمُهُ اللَّهُ ‏"‏‏.‏ قَالَ رَجُلٌ مِنَ الْقَوْمِ وَجَبَتْ يَا نَبِيَّ اللَّهِ، لَوْلاَ أَمْتَعْتَنَا بِهِ‏.‏ فَأَتَيْنَا خَيْبَرَ، فَحَاصَرْنَاهُمْ حَتَّى أَصَابَتْنَا مَخْمَصَةٌ شَدِيدَةٌ، ثُمَّ إِنَّ اللَّهَ تَعَالَى فَتَحَهَا عَلَيْهِمْ، فَلَمَّا أَمْسَى النَّاسُ مَسَاءَ الْيَوْمِ الَّذِي فُتِحَتْ عَلَيْهِمْ أَوْقَدُوا نِيرَانًا كَثِيرَةً، فَقَالَ النَّبِيُّ صلى الله عليه وسلم ‏"‏ مَا هَذِهِ النِّيرَانُ عَلَى أَىِّ شَىْءٍ تُوقِدُونَ ‏"‏‏.‏ قَالُوا عَلَى لَحْمٍ‏.‏ قَالَ ‏"‏ عَلَى أَىِّ لَحْمٍ ‏"‏‏.‏ قَالُوا لَحْمِ حُمُرِ الإِنْسِيَّةِ‏.‏ قَالَ النَّبِيُّ صلى الله عليه وسلم ‏"‏ أَهْرِيقُوهَا وَاكْسِرُوهَا ‏"‏‏.‏ فَقَالَ رَجُلٌ يَا رَسُولَ اللَّهِ، أَوْ نُهَرِيقُهَا وَنَغْسِلُهَا قَالَ ‏"‏ أَوْ ذَاكَ ‏"‏‏.‏ فَلَمَّا تَصَافَّ الْقَوْمُ كَانَ سَيْفُ عَامِرٍ قَصِيرًا فَتَنَاوَلَ بِهِ سَاقَ يَهُودِيٍّ لِيَضْرِبَهُ، وَيَرْجِعُ ذُبَابُ سَيْفِهِ، فَأَصَابَ عَيْنَ رُكْبَةِ عَامِرٍ، فَمَاتَ مِنْهُ قَالَ فَلَمَّا قَفَلُوا، قَالَ سَلَمَةُ رَآنِي رَسُولُ اللَّهِ صلى الله عليه وسلم وَهْوَ آخِذٌ بِيَدِي، قَالَ ‏"‏ مَا لَكَ ‏"‏‏.‏ قُلْتُ لَهُ فِدَاكَ أَبِي وَأُمِّي، زَعَمُوا أَنَّ عَامِرًا حَبِطَ عَمَلُهُ‏.‏ قَالَ النَّبِيُّ صلى الله عليه وسلم ‏"‏ كَذَبَ مَنْ قَالَهُ، إِنَّ لَهُ لأَجْرَيْنِ ـ وَجَمَعَ بَيْنَ إِصْبَعَيْهِ ـ إِنَّهُ لَجَاهِدٌ مُجَاهِدٌ قَلَّ عَرَبِيٌّ مَشَى بِهَا مِثْلَهُ ‏"‏‏.‏ حَدَّثَنَا قُتَيْبَةُ حَدَّثَنَا حَاتِمٌ قَالَ ‏"‏ نَشَأَ بِهَا ‏"‏‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح البخاري</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">4196</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih al-Bukhari 4196</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Narrated Salama bin Al-Akwa`:</div><div class=text_details><p>We went out to Khaibar in the company of the Prophet. While we were proceeding at night, a man from the group said to 'Amir, "O 'Amir! Won't you let us hear your poetry?" 'Amir was a poet, so he got down and started reciting for the people poetry that kept pace with the camels' footsteps, saying:-- "O Allah! Without You we Would not have been guided On the right path Neither would be have given In charity, nor would We have prayed. So please forgive us, what we have committed (i.e. our defects); let all of us Be sacrificed for Your Cause And send Sakina (i.e. calmness) Upon us to make our feet firm When we meet our enemy, and If they will call us towards An unjust thing, We will refuse. The infidels have made a hue and Cry to ask others' help Against us." The Prophet (ﷺ) on that, asked, "Who is that (camel) driver (reciting poetry)?" The people said, "He is 'Amir bin Al-Akwa`." Then the Prophet (ﷺ) said, "May Allah bestow His Mercy on him." A man amongst the people said, "O Allah's Prophet! has (martyrdom) been granted to him. Would that you let us enjoy his company longer." Then we reached and besieged Khaibar till we were afflicted with severe hunger. Then Allah helped the Muslims conquer it (i.e. Khaibar). In the evening of the day of the conquest of the city, the Muslims made huge fires. The Prophet (ﷺ) said, "What are these fires? For cooking what, are you making the fire?" The people replied, "(For cooking) meat." He asked, "What kind of meat?" They (i.e. people) said, "The meat of donkeys." The Prophet (ﷺ) said, "Throw away the meat and break the pots!" Some man said, "O Allah's Messenger (ﷺ)! Shall we throw away the meat and wash the pots instead?" He said, "(Yes, you can do) that too." So when the army files were arranged in rows (for the clash), 'Amir's sword was short and he aimed at the leg of a Jew to strike it, but the sharp blade of the sword returned to him and injured his own knee, and that caused him to die. When they returned from the battle, Allah's Messenger (ﷺ) saw me (in a sad mood). He took my hand and said, "What is bothering you?" I replied, "Let my father and mother be sacrificed for you! The people say that the deeds of 'Amir are lost." The Prophet (ﷺ) said, "Whoever says so, is mistaken, for 'Amir has got a double reward." The Prophet raised two fingers and added, "He (i.e. Amir) was a persevering struggler in the Cause of Allah and there are few 'Arabs who achieved the like of (good deeds) 'Amir had done."</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih al-Bukhari</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">4196</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

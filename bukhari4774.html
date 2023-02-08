@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح البخاري حديث رقم 4774 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح البخاري حديث رقم 4774 مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا مُحَمَّدُ بْنُ كَثِيرٍ، حَدَّثَنَا سُفْيَانُ، حَدَّثَنَا مَنْصُورٌ، وَالأَعْمَشُ، عَنْ أَبِي الضُّحَى، عَنْ مَسْرُوقٍ، قَالَ بَيْنَمَا رَجُلٌ يُحَدِّثُ فِي كِنْدَةَ فَقَالَ يَجِيءُ دُخَانٌ يَوْمَ الْقِيَامَةِ فَيَأْخُذُ بِأَسْمَاعِ الْمُنَافِقِينَ وَأَبْصَارِهِمْ، يَأْخُذُ الْمُؤْمِنَ كَهَيْئَةِ الزُّكَامِ‏.‏ فَفَزِعْنَا، فَأَتَيْتُ ابْنَ مَسْعُودٍ، وَكَانَ مُتَّكِئًا، فَغَضِبَ فَجَلَسَ فَقَالَ مَنْ عَلِمَ فَلْيَقُلْ، وَمَنْ لَمْ يَعْلَمْ فَلْيَقُلِ اللَّهُ أَعْلَمُ‏.‏ فَإِنَّ مِنَ الْعِلْمِ أَنْ يَقُولَ لِمَا لاَ يَعْلَمُ لاَ أَعْلَمُ‏.‏ فَإِنَّ اللَّهَ قَالَ لِنَبِيِّهِ صلى الله عليه وسلم ‏<A id="q29" name="q29" href="javascript:openquran(37,86,86)"><c_q29>{‏قُلْ مَا أَسْأَلُكُمْ عَلَيْهِ مِنْ أَجْرٍ وَمَا أَنَا مِنَ الْمُتَكَلِّفِينَ‏}</c_q29></a>‏ وَإِنَّ قُرَيْشًا أَبْطَئُوا عَنِ الإِسْلاَمِ فَدَعَا عَلَيْهِمِ النَّبِيُّ صلى الله عليه وسلم فَقَالَ ‏"‏ اللَّهُمَّ أَعِنِّي عَلَيْهِمْ بِسَبْعٍ كَسَبْعِ يُوسُفَ، فَأَخَذَتْهُمْ سَنَةٌ حَتَّى هَلَكُوا فِيهَا، وَأَكَلُوا الْمَيْتَةَ وَالْعِظَامَ وَيَرَى الرَّجُلُ مَا بَيْنَ السَّمَاءِ وَالأَرْضِ كَهَيْئَةِ الدُّخَانِ ‏"‏، فَجَاءَهُ أَبُو سُفْيَانَ فَقَالَ يَا مُحَمَّدُ جِئْتَ تَأْمُرُنَا بِصِلَةِ الرَّحِمِ، وَإِنَّ قَوْمَكَ قَدْ هَلَكُوا فَادْعُ اللَّهَ، فَقَرَأَ ‏<A id="q30" name="q30" href="javascript:openquran(43,10,10)"><c_q30>{‏فَارْتَقِبْ يَوْمَ تَأْتِي السَّمَاءُ بِدُخَانٍ مُبِينٍ‏}</c_q30></a>‏ إِلَى قَوْلِهِ ‏{‏عَائِدُونَ‏}‏ أَفَيُكْشَفُ عَنْهُمْ عَذَابُ الآخِرَةِ إِذَا جَاءَ ثُمَّ عَادُوا إِلَى كُفْرِهِمْ فَذَلِكَ قَوْلُهُ تَعَالَى ‏<A id="q31" name="q31" href="javascript:openquran(43,16,16)"><c_q31>{‏يَوْمَ نَبْطِشُ الْبَطْشَةَ الْكُبْرَى‏}</c_q31></a>‏ يَوْمَ بَدْرٍ وَلِزَامًا يَوْمَ بَدْرٍ ‏<A id="q32" name="q32" href="javascript:openquran(29,1,2)"><c_q32>{‏الم * غُلِبَتِ الرُّومُ‏}</c_q32></a>‏ إِلَى ‏{‏سَيَغْلِبُونَ‏}‏ وَالرُّومُ قَدْ مَضَى‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح البخاري</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">4774</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih al-Bukhari 4774</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Narrated Masruq:</div><div class=text_details><p>While a man was delivering a speech in the tribe of Kinda, he said, "Smoke will prevail on the Day of Resurrection and will deprive the hypocrites their faculties of hearing and seeing. The believers will be afflicted with something like cold only thereof." That news scared us, so I went to (Abdullah) Ibn Mas`ud while he was reclining (and told him the story) whereupon he became angry, sat up and said, "He who knows a thing can say, it, but if he does not know, he should say, 'Allah knows best,' for it is an aspect of knowledge to say, 'I do not know,' if you do not know a certain thing. Allah said to His prophet. 'Say (O Muhammad): No wage do I ask of you for this (Qur'an), nor I am one of the pretenders (a person who pretends things which do not exist.)' (38.86) The Qur'aish delayed in embracing Islam for a period, so the Prophet (ﷺ) invoked evil on them, saying, 'O Allah! Help me against them by sending seven years of (famine) like those of Joseph.' So they were afflicted with such a severe year of famine that they were destroyed therein and ate dead animals and bones. They started seeing something like smoke between the sky and the earth (because of severe hunger). Abu Sufyan then came (to the Prophet) and said, "O Muhammad! You came to order us for to keep good relations with Kith and kin, and your kinsmen have now perished, so please invoke Allah (to relieve them).' Then Ibn Mas`ud recited:-- 'Then watch you for the day that the sky will bring forth a kind of smoke plainly visible....but truly you will return! (to disbelief) (44.10-15) Ibn Mas`ud added, Then the punishment was stopped, but truly, they reverted to heathenism (their old way). So Allah (threatened them thus): 'On the day when we shall seize you with a mighty grasp.' (44.16) And that was the day of the Battle of Badr. Allah's saying- "Lizama" (the punishment) refers to the day of Badr Allah's Statement: Alif-Lam-Mim, the Romans have been defeated, and they, after their defeat, will be victorious,' (30.1- 3) (This verse): Indicates that the defeat of Byzantine has already passed.</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih al-Bukhari</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">4774</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

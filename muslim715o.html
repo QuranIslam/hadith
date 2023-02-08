@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+صحيح مسلم حديث رقم 715 مكرر موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+صحيح مسلم حديث رقم 715 مكرر مع شرح الحديث
+</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+<span class="arabic_sanad arabic"></span><span class="hadith">حَدَّثَنَا عُثْمَانُ بْنُ أَبِي شَيْبَةَ، وَإِسْحَاقُ بْنُ إِبْرَاهِيمَ، - وَاللَّفْظُ لِعُثْمَانَ - قَالَ إِسْحَاقُ أَخْبَرَنَا وَقَالَ، عُثْمَانُ حَدَّثَنَا جَرِيرٌ، عَنْ مُغِيرَةَ، عَنِ الشَّعْبِيِّ، عَنْ جَابِرِ بْنِ عَبْدِ اللَّهِ، قَالَ غَزَوْتُ مَعَ رَسُولِ اللَّهِ صلى الله عليه وسلم فَتَلاَحَقَ بِي وَتَحْتِي نَاضِحٌ لِي قَدْ أَعْيَا وَلاَ يَكَادُ يَسِيرُ قَالَ فَقَالَ لِي ‏"‏ مَا لِبَعِيرِكَ ‏"‏ ‏.‏ قَالَ قُلْتُ عَلِيلٌ - قَالَ - فَتَخَلَّفَ رَسُولُ اللَّهِ صلى الله عليه وسلم فَزَجَرَهُ وَدَعَا لَهُ فَمَازَالَ بَيْنَ يَدَىِ الإِبِلِ قُدَّامَهَا يَسِيرُ ‏.‏ قَالَ فَقَالَ لِي ‏"‏ كَيْفَ تَرَى بَعِيرَكَ ‏"‏ ‏.‏ قَالَ قُلْتُ بِخَيْرٍ قَدْ أَصَابَتْهُ بَرَكَتُكَ ‏.‏ قَالَ ‏"‏ أَفَتَبِيعُنِيهِ ‏"‏ ‏.‏ فَاسْتَحْيَيْتُ وَلَمْ يَكُنْ لَنَا نَاضِحٌ غَيْرُهُ قَالَ فَقُلْتُ نَعَمْ ‏.‏ فَبِعْتُهُ إِيَّاهُ عَلَى أَنَّ لِي فَقَارَ ظَهْرِهِ حَتَّى أَبْلُغَ الْمَدِينَةَ - قَالَ - فَقُلْتُ لَهُ يَا رَسُولَ اللَّهِ إِنِّي عَرُوسٌ فَاسْتَأْذَنْتُهُ فَأَذِنَ لِي فَتَقَدَّمْتُ النَّاسَ إِلَى الْمَدِينَةِ حَتَّى انْتَهَيْتُ فَلَقِيَنِي خَالِي فَسَأَلَنِي عَنِ الْبَعِيرِ فَأَخْبَرْتُهُ بِمَا صَنَعْتُ فِيهِ فَلاَمَنِي فِيهِ - قَالَ - وَقَدْ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم قَالَ لِي حِينَ اسْتَأْذَنْتُهُ ‏"‏ مَا تَزَوَّجْتَ أَبِكْرًا أَمْ ثَيِّبًا ‏"‏ ‏.‏ فَقُلْتُ لَهُ تَزَوَّجْتُ ثَيِّبًا ‏.‏ قَالَ ‏"‏ أَفَلاَ تَزَوَّجْتَ بِكْرًا تُلاَعِبُكَ وَتُلاَعِبُهَا ‏"‏ ‏.‏ فَقُلْتُ لَهُ يَا رَسُولَ اللَّهِ تُوُفِّيَ وَالِدِي - أَوِ اسْتُشْهِدَ - وَلِي أَخَوَاتٌ صِغَارٌ فَكَرِهْتُ أَنْ أَتَزَوَّجَ إِلَيْهِنَّ مِثْلَهُنَّ فَلاَ تُؤَدِّبُهُنَّ وَلاَ تَقُومُ عَلَيْهِنَّ فَتَزَوَّجْتُ ثَيِّبًا لِتَقُومَ عَلَيْهِنَّ وَتُؤَدِّبَهُنَّ - قَالَ - فَلَمَّا قَدِمَ رَسُولُ اللَّهِ صلى الله عليه وسلم الْمَدِينَةَ غَدَوْتُ إِلَيْهِ بِالْبَعِيرِ فَأَعْطَانِي ثَمَنَهُ وَرَدَّهُ عَلَىَّ ‏.‏</span><span class="arabic_sanad arabic"></span>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">صحيح مسلم</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">715 مكرر</span>
+		</strong>
+		<strong class="px-2">
+			| خلاصة حكم الحديث :
+			<span class="primary-text-color">صحيح</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">Sahih Muslim 715o</h2>
+	<div style="direction:ltr;"><div class="english_hadith_full"><div class=hadith_narrated><p>Jabir b. 'Abdullah (Allah be pleased with them) reported:</div><div class=text_details>I went on an expedition with Allah's Messenger (ﷺ). He overtook me and I was on a water-carrying camel who had grown tired and did not walk (trot). He (the Holy Prophet) said to me: What is the matter with your camel? I said: It is sick. He (the Holy Prophet) stepped behind and drove it and prayed for it, and then it always moved ahead of other camels. He (then) said: How do you find your camel? I said: It is, by the grace of your prayer, all right. He said: Would you sell this (camel) to me? I felt shy (to say him," No" ) as we had no other camel for carrying water, but (later on) I said: Yes, and to I sold it to him on the condition that (I would be permitted) to ride it until I reached Madina. I said to him: Allah's Messenger, I am newly married, so I asked his permission (to go ahead of the caravan). He permitted me, and I reached Medina well in advance of other people, until I reached my destination. There my maternal uncle met me and asked me about the camel, and I told him what I had done with regard to it. He reproved me in this connection. He (Jabir) said: When I asked his permission (to go ahead of the caravan) Allah's Messenger (ﷺ) inquired of me whether I had married a virgin or a non-virgin. I said to him: I have married a non-virgin. He said: Why did you not marry a virgin who would have played with you and you would have played with her? I said to him: Allah's Messenger, my father died (or he fell as a martyr), and I have small sisters to (look after), so I did not like the idea that I should marry a woman who is like them and thus be not able to teach them manners and look after them properly. So I have married a non-virgin so that she should be able to look after them and teach them manners, When Allah's Messenger (ﷺ) came to Medina, I went to him in the morning with the camel. He paid me its price and returned that (the camel) to me.</b></div><div class=clear></div></div></div>
+	<div style="direction:ltr;"><div class="d-block mb-2">
+		<strong class="px-2">
+		Source :
+			<span class="primary-text-color">Sahih Muslim</span>
+		</strong>
+		<strong class="px-2">
+			| Number :
+			<span class="primary-text-color">715o</span>
+		</strong>
+		<strong class="px-2">
+			| Grade :
+			<span class="primary-text-color">Sahih</span>
+		</strong>
+		
+	</div></div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://www.archive.org/details/waqmsnda">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>
