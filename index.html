@@ -28,7 +28,7 @@
 
 function check_hadith(){
 
-	$.getJSON("http://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+	$.getJSON("https://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
 
 	  $("#dorar").html("");
 	  $.each(data.ahadith, function(index, item){
