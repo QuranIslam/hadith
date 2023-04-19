@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+مسند أحمد حديث رقم 391 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("https://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option><option value="ahmad">مسند أحمد</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+مسند أحمد حديث رقم 391</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+عن ابن عباس  أن عبد الرحمن بن عوف رجع إلى رحله، قال ابن عباس: وكنت أقرئ عبد الرحمن بن عوف، فوجدني، وأنا أنتظره، وذلك بمنى في آخر حجة حجها عمر بن الخطاب، قال عبد الرحمن بن عوف: إن رجلا أتى عمر بن الخطاب، فقال: إن فلانا يقول: لو قد مات عمر بايعت فلانا، فقال عمر: إني قائم العشية في الناس فمحذرهم هؤلاء الرهط الذين يريدون أن يغصبوهم أمرهم، قال عبد الرحمن: فقلت: يا أمير المؤمنين، لا تفعل، فإن الموسم يجمع رعاع الناس وغوغاءهم، وإنهم الذين يغلبون على مجلسك إذا قمت في الناس، فأخشى أن تقول مقالة يطير بها أولئك فلا يعوها، ولا يضعوها على مواضعها، ولكن حتى تقدم المدينة، فإنها دار الهجرة والسنة، وتخلص بعلماء الناس وأشرافهم، فتقول ما قلت متمكنا، فيعون مقالتك، ويضعونها مواضعها، فقال عمر: لئن قدمت المدينة صالحا لأكلمن بها الناس في أول مقام أقومه.<br>فلما قدمنا المدينة في عقب ذي الحجة، وكان يوم الجمعة، عجلت الرواح صكة الأعمى - فقلت لمالك: وما صكة الأعمى؟ قال: إنه لا يبالي أي ساعة خرج، لا يعرف الحر والبرد ونحو هذا - فوجدت سعيد بن زيد عند ركن المنبر الأيمن قد سبقني، فجلست حذاءه تحك ركبتي ركبته، فلم أنشب أن طلع عمر، فلما رأيته قلت: ليقولن العشية على هذا المنبر مقالة ما قالها عليه أحد قبله، قال: فأنكر سعيد بن زيد ذلك، فقال: ما عسيت أن يقول ما لم يقل أحد؟ فجلس عمر على المنبر، فلما سكت المؤذن، قام فأثنى على الله بما هو أهله، ثم قال: أما بعد، أيها الناس، فإني قائل مقالة قد قدر لي أن أقولها، لا أدري لعلها بين يدي أجلي، فمن وعاها وعقلها فليحدث بها حيث انتهت به راحلته، ومن لم يعها فلا أحل له أن يكذب علي: إن الله تبارك وتعالى بعث محمدا صلى الله عليه وسلم بالحق، وأنزل عليه الكتاب، وكان مما  أنزل عليه آية الرجم، فقرأناها ووعيناها، ورجم رسول الله صلى الله عليه وسلم ورجمنا بعده، فأخشى إن طال بالناس زمان أن يقول قائل: لا نجد آية  الرجم في كتاب الله عز وجل، فيضلوا بترك فريضة قد أنزلها الله عز وجل، فالرجم في كتاب الله حق على من زنى إذا أحصن من الرجال والنساء إذا قامت البينة أو الحبل أو الاعتراف، ألا وإنا قد كنا نقرأ: لا ترغبوا عن آبائكم، فإن كفرا بكم أن ترغبوا عن آبائكم.<br>ألا وإن رسول الله صلى الله عليه وسلم قال: " لا تطروني كما أطري عيسى ابن مريم عليه السلام، فإنما أنا عبد الله، فقولوا عبد الله ورسوله ".<br>وقد بلغني أن قائلا منكم يقول: لو قد مات عمر، بايعت فلانا، فلا يغترن امرؤ أن يقول: إن بيعة أبي بكر رضي الله عنه كانت فلتة، ألا وإنها كانت كذلك، إلا أن الله عز وجل وقى شرها، وليس فيكم اليوم من تقطع إليه الأعناق مثل أبي بكر، ألا وإنه كان من خبرنا حين توفي رسول الله صلى الله عليه وسلم: أن عليا والزبير، ومن كان معهما، تخلفوا في بيت فاطمة رضي الله عنها بنت رسول الله صلى الله عليه وسلم، وتخلفت عنا الأنصار بأجمعها في  سقيفة بني ساعدة، واجتمع المهاجرون إلى أبي بكر، فقلت له: يا أبا بكر، انطلق بنا إلى إخواننا من الأنصار، فانطلقنا نؤمهم حتى لقينا رجلان صالحان، فذكرا لنا الذي صنع القوم، فقالا: أين تريدون يا معشر المهاجرين؟ فقلت: نريد إخواننا هؤلاء من الأنصار، فقالا: لا عليكم أن لا تقربوهم، واقضوا أمركم يا معشر المهاجرين، فقلت: والله لنأتينهم.<br>فانطلقنا حتى جئناهم في سقيفة بني ساعدة، فإذا هم مجتمعون، وإذا بين ظهرانيهم رجل مزمل، فقلت: من هذا؟ فقالوا: سعد بن عبادة، فقلت: ما له؟ قالوا: وجع، فلما جلسنا قام خطيبهم فأثنى على الله عز وجل بما هو أهله، وقال: أما بعد، فنحن أنصار الله عز وجل، وكتيبة الإسلام، وأنتم يا معشر المهاجرين رهط منا، وقد دفت دافة منكم يريدون أن يخزلونا من أصلنا، ويحضنونا من الأمر، فلما سكت أردت أن أتكلم، وكنت قد زورت مقالة أعجبتني، أردت أن أقولها بين يدي أبي بكر، وقد كنت أداري منه بعض الحد، وهو كان أحلم مني وأوقر، فقال أبو بكر: على رسلك.<br> فكرهت أن أغضبه، وكان أعلم مني وأوقر، والله ما ترك من كلمة أعجبتني في تزويري إلا قالها في بديهته وأفضل، حتى سكت، فقال: أما بعد، فما ذكرتم من خير فأنتم أهله، ولم تعرف العرب هذا الأمر إلا لهذا الحي من قريش، هم أوسط العرب نسبا ودارا، وقد رضيت لكم أحد هذين الرجلين أيهما شئتم.<br> وأخذ بيدي وبيد أبي عبيدة بن الجراح، فلم أكره مما قال غيرها، وكان والله أن أقدم فتضرب عنقي، لا يقربني ذلك إلى إثم، أحب إلي من أن أتأمر على قوم فيهم أبو بكر، إلا أن تغير نفسي عند الموت، فقال قائل من الأنصار: أنا جذيلها المحكك، وعذيقها المرجب، منا أمير ومنكم أمير يا معشر قريش - فقلت لمالك: ما معنى " أنا جذيلها المحكك، وعذيقها المرجب "؟ قال: كأنه يقول: أنا داهيتها -.<br>قال: وكثر اللغط، وارتفعت الأصوات، حتى خشيت الاختلاف، فقلت: ابسط يدك يا أبا بكر، فبسط يده فبايعته، وبايعه المهاجرون، ثم بايعه الأنصار، ونزونا على سعد بن عبادة، فقال قائل منهم: قتلتم سعدا، فقلت: قتل الله سعدا.<br>وقال عمر رضي الله عنه: أما والله ما وجدنا فيما حضرنا أمرا هو أقوى من مبايعة أبي بكر رضي الله عنه، خشينا إن فارقنا القوم، ولم تكن بيعة، أن يحدثوا بعدنا بيعة، فإما أن نتابعهم على ما لا نرضى، وإما أن نخالفهم فيكون فيه فساد، فمن بايع أميرا عن غير مشورة المسلمين فلا بيعة له، ولا بيعة للذي بايعه، تغرة أن يقتلا قال مالك: وأخبرني ابن شهاب، عن عروة بن الزبير: أن الرجلين اللذين لقياهما : عويم بن ساعدة، ومعن بن عدي.<br>قال ابن شهاب: وأخبرني سعيد بن المسيب: أن الذي قال: أنا جذيلها المحكك وعذيقها المرجب: الحباب بن المنذر<br>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">مسند الإمام أحمد بن حنبل</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">391</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">حكم ودرجة صحة الحديث رقم 391 مسند أحمد</h2>
+	
+	<div>
+ إسناد حديث السقيفة صحيح على شرط مسلم، رجاله ثقات رجال الشيخين غير إسحاق بن عيسى الطباع، فمن رجال مسلم.	
+	</div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/ozkorallh_20181027">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

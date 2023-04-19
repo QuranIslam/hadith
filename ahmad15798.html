@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+مسند أحمد حديث رقم 15798 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("https://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option><option value="ahmad">مسند أحمد</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+مسند أحمد حديث رقم 15798</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+عن ابن إسحاق، قال: فحدثني معبد بن كعب بن مالك بن أبي كعب بن القين، أخو بني سلمة، أن أخاه عبيد الله بن كعب، وكان من أعلم الأنصار، حدثه أن أباه كعب بن مالك، وكان كعب ممن شهد العقبة، وبايع رسول الله صلى الله عليه وسلم بها، قال: خرجنا في حجاج قومنا من المشركين، وقد صلينا وفقهنا ومعنا البراء بن معرور كبيرنا وسيدنا، فلما توجهنا لسفرنا وخرجنا من المدينة، قال البراء لنا: يا هؤلاء، إني قد رأيت والله رأيا، وإني والله ما أدري توافقوني عليه أم لا، قال: قلنا له: وما ذاك؟ قال: قد رأيت أن لا أدع هذه البنية مني بظهر، يعني الكعبة، وأن أصلي إليها، قال: فقلنا: والله ما بلغنا أن نبينا يصلي إلا إلى الشام، وما نريد أن نخالفه،<br>فقال: إني أصلي إليها ، قال: فقلنا له: لكنا لا نفعل، فكنا  إذا حضرت الصلاة صلينا إلى الشام وصلى إلى الكعبة، حتى قدمنا مكة، قال أخي : وقد كنا عبنا عليه ما صنع، وأبى إلا الإقامة عليه، فلما قدمنا مكة قال: يا ابن أخي انطلق إلى رسول الله صلى الله عليه وسلم، فاسأله عما صنعت في سفري هذا، فإنه والله قد وقع في نفسي منه شيء لما رأيت من خلافكم إياي فيه، قال: فخرجنا نسأل عن رسول الله صلى الله عليه وسلم، وكنا لا نعرفه لم نره قبل ذلك، فلقينا رجل من أهل مكة، فسألناه عن رسول الله صلى الله عليه وسلم، فقال: هل تعرفانه؟ قال: قلنا: لا، قال: فهل تعرفان العباس بن عبد المطلب عمه؟ قلنا: نعم، قال: وكنا  نعرف العباس، كان لا يزال يقدم علينا تاجرا، قال: فإذا دخلتما المسجد فهو الرجل الجالس مع العباس، قال: فدخلنا المسجد فإذا العباس جالس، ورسول الله صلى الله عليه وسلم معه جالس فسلمنا، ثم جلسنا إليه، فقال رسول الله صلى الله عليه وسلم للعباس: " هل<br>تعرف هذين الرجلين يا أبا الفضل؟ " قال: نعم هذا البراء بن معرور سيد قومه، وهذا كعب بن مالك، قال: فوالله ما أنسى قول رسول الله صلى الله عليه وسلم: " الشاعر؟ " قال: نعم، قال: فقال البراء بن معرور: يا نبي الله إني خرجت في سفري هذا، وهداني الله للإسلام، فرأيت أن لا أجعل هذه البنية مني بظهر، فصليت إليها، وقد خالفني أصحابي في ذلك، حتى وقع في نفسي من ذلك شيء، فماذا ترى يا رسول الله؟ قال: " لقد كنت على قبلة لو صبرت عليها " قال: فرجع البراء إلى قبلة رسول الله صلى الله عليه وسلم فصلى معنا إلى الشام، قال: وأهله يزعمون أنه صلى إلى الكعبة حتى مات، وليس ذلك كما قالوا، نحن أعلم به منهم، قال: وخرجنا إلى الحج، فواعدنا رسول الله صلى الله عليه وسلم العقبة من أوسط أيام التشريق، فلما فرغنا من الحج، وكانت الليلة التي وعدنا رسول الله صلى الله عليه وسلم، ومعنا عبد الله بن عمرو بن حرام أبو جابر سيد من سادتنا ، وكنا نكتم من معنا من قومنا من المشركين أمرنا فكلمناه، وقلنا له: يا أبا جابر، إنك سيد من سادتنا  ، وشريف من أشرافنا، وإنا نرغب بك عما أنت فيه أن تكون حطبا للنار غدا، ثم دعوته إلى الإسلام، وأخبرته بميعاد رسول الله صلى الله عليه وسلم، فأسلم وشهد معنا العقبة، وكان نقيبا، قال: فنمنا<br>تلك الليلة مع قومنا في رحالنا حتى إذا مضى ثلث الليل خرجنا من رحالنا لميعاد رسول الله صلى الله عليه وسلم، نتسلل مستخفين تسلل القطا حتى اجتمعنا في الشعب عند العقبة، ونحن سبعون رجلا، ومعنا امرأتان من نسائهم نسيبة بنت كعب أم عمارة إحدى نساء بني مازن بن النجار، وأسماء بنت عمرو بن عدي بن ثابت إحدى نساء بني سلمة، وهي أم منيع، قال: فاجتمعنا بالشعب ننتظر رسول الله صلى الله عليه وسلم، حتى جاءنا ومعه يومئذ عمه العباس بن عبد المطلب، وهو يومئذ على دين قومه، إلا أنه أحب أن يحضر أمر ابن أخيه، ويتوثق له، فلما جلسنا كان العباس بن عبد المطلب أول متكلم، فقال: يا معشر  الخزرج، قال: وكانت العرب مما يسمون هذا الحي من الأنصار الخزرج أوسها وخزرجها، إن محمدا منا حيث قد علمتم، وقد منعناه من قومنا ممن هو على مثل رأينا فيه، وهو في عز من قومه، ومنعة في بلده، قال: فقلنا: قد سمعنا ما قلت، فتكلم يا رسول الله، فخذ لنفسك، ولربك ما أحببت، قال: فتكلم رسول الله صلى الله عليه وسلم، فتلا ودعا إلى الله عز وجل ورغب في الإسلام، قال: " أبايعكم على أن تمنعوني مما تمنعون منه نساءكم، وأبناءكم " قال: فأخذ البراء بن معرور بيده ثم قال: نعم والذي بعثك بالحق لنمنعنك مما نمنع منه<br>أزرنا، فبايعنا يا  رسول الله، فنحن أهل الحروب، وأهل الحلقة، ورثناها كابرا عن كابر، قال: فاعترض القول  ، والبراء يكلم رسول الله صلى الله عليه وسلم أبو الهيثم بن التيهان حليف بني عبد الأشهل، فقال: يا رسول الله، إن بيننا وبين الرجال حبالا، وإنا قاطعوها - يعني العهود - فهل عسيت إن نحن فعلنا ذلك، ثم أظهرك الله أن ترجع إلى قومك، وتدعنا؟ قال: فتبسم رسول الله صلى الله عليه وسلم، ثم قال: " بل الدم الدم، والهدم الهدم  أنا منكم، وأنتم مني أحارب من حاربتم، وأسالم من سالمتم "، وقد قال رسول الله صلى الله عليه وسلم: " أخرجوا إلي منكم  اثني عشر  نقيبا يكونون على قومهم "، فأخرجوا منهم اثني عشر نقيبا منهم تسعة من الخزرج، وثلاثة من الأوس - وأما معبد بن كعب فحدثني في حديثه ، عن أخيه، عن أبيه كعب بن مالك - قال: كان أول من ضرب على يد رسول الله صلى الله عليه وسلم البراء بن معرور، ثم تتابع القوم، فلما بايعنا رسول الله صلى الله عليه وسلم<br>صرخ  الشيطان من رأس العقبة بأبعد صوت سمعته قط: يا أهل الجباجب - والجباجب: المنازل - هل لكم في مذمم والصباة معه؟ قد أجمعوا على حربكم ـ قال علي  يعني ابن إسحاق ما يقوله عدو الله محمد  ـ فقال رسول الله صلى الله عليه وسلم: " هذا أزب العقبة هذا ابن أزيب، اسمع أي عدو الله أما والله، لأفرغن لك " ثم قال رسول الله صلى الله عليه وسلم: " ارفعوا  إلى رحالكم " قال: فقال له العباس بن عبادة بن نضلة: والذي بعثك بالحق لئن شئت لنميلن على أهل منى غدا بأسيافنا، قال: فقال رسول الله صلى الله عليه وسلم: " لم أؤمر بذلك " قال: فرجعنا فنمنا حتى أصبحنا، فلما أصبحنا غدت علينا جلة قريش حتى جاءونا في منازلنا، فقالوا: يا معشر الخزرج، إنه قد بلغنا أنكم قد جئتم إلى صاحبنا هذا تستخرجونه من بين أظهرنا، وتبايعونه على حربنا، والله إنه ما من العرب أحد أبغض إلينا أن تنشب الحرب بيننا وبينه منكم، قال: فانبعث من هنالك من مشركي قومنا، يحلفون لهم بالله ما كان من هذا شيء، وما علمناه، وقد صدقوا لم يعلموا ما كان منا، قال: فبعضنا ينظر<br>إلى بعض، قال: وقام القوم وفيهم الحارث بن هشام بن المغيرة المخزومي، وعليه نعلان جديدان، قال: فقلت كلمة كأني أريد أن أشرك القوم بها فيما قالوا: ما تستطيع يا أبا جابر، وأنت سيد من سادتنا  أن تتخذ نعلين مثل نعلي هذا الفتى من قريش، فسمعها الحارث فخلعهما، ثم رمى بهما إلي، فقال: والله لتنتعلنهما قال: يقول أبو جابر: أحفظت - والله - الفتى ، فاردد عليه نعليه، قال: فقلت: والله لا أردهما، فأل والله صالح  ، والله لئن صدق الفأل لأسلبنه<br>فهذا حديث كعب بن مالك عن العقبة وما حضر منها<br>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">مسند الإمام أحمد بن حنبل</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">15798</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">حكم ودرجة صحة الحديث رقم 15798 مسند أحمد</h2>
+	
+	<div>
+حديث قوي، وهذا إسناد حسن، محمد بن إسحاف- وإن كان مدلسا- صرح بالسماع فانتفت شبهة تدليسه، وقد رواه عنه سلمة بن الفضل- كما سنذكر- وقد قال فيه جرير- فيما نقله عنه ابن معين-: ليس من لدن بغداد إلى أن تبلغ خراسان أثبت في ابن إسحاق من سلمة بن الفضل، وباقي رجال الإسناد ثقات رجال الشيخين، يعقوب: هو ابن إبراهيم بن سعد الزهري.	
+	</div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/ozkorallh_20181027">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+مسند أحمد حديث رقم 15 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("https://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option><option value="ahmad">مسند أحمد</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+مسند أحمد حديث رقم 15</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+عن أبي بكر الصديق، رضي الله عنه، قال: أصبح رسول الله صلى الله عليه وسلم ذات يوم فصلى الغداة، ثم جلس، حتى إذا كان من الضحى ضحك رسول الله صلى الله عليه وسلم، ثم جلس مكانه حتى صلى الأولى والعصر والمغرب، كل ذلك لا يتكلم، حتى صلى العشاء الآخرة، ثم قام إلى أهله، فقال الناس لأبي بكر: ألا الله عليه وسلم ما شأنه؟ صنع اليوم شيئا لم يصنعه قط، قال: فسأله، فقال:" نعم عرض علي ما هو كائن من أمر الدنيا، وأمر الآخرة، فجمع الأولون والآخرون بصعيد واحد، ففظع الناس بذلك، حتى انطلقوا إلى آدم عليه السلام، والعرق يكاد يلجمهم، فقالوا: يا آدم، أنت أبو البشر، وأنت اصطفاك الله عز وجل، اشفع لنا إلى ربك، قال: قد  لقيت مثل الذي لقيتم، انطلقوا إلى أبيكم بعد أبيكم، إلى نوح: {إن الله اصطفى آدم ونوحا وآل إبراهيم وآل عمران على العالمين} قال: فينطلقون إلى نوح عليه السلام، فيقولون: اشفع لنا إلى ربك، فأنت اصطفاك الله، واستجاب لك في دعائك، ولم يدع على الأرض من الكافرين ديارا، فيقول: ليس ذاكم عندي، انطلقوا إلى إبراهيم عليه السلام، فإن الله عز وجل اتخذه خليلا، فينطلقون إلى إبراهيم، فيقول: ليس ذاكم عندي، ولكن انطلقوا إلى موسى عليه السلام، فإن الله عز وجل كلمه تكليما، فيقول موسى عليه السلام: ليس ذاكم عندي، ولكن انطلقوا إلى عيسى ابن مريم، فإنه يبرئ الأكمه والأبرص ويحيي الموتى، فيقول عيسى عليه السلام: ليس ذاكم عندي، ولكن انطلقوا إلى سيد ولد آدم، فإنه أول من تنشق عنه الأرض يوم القيامة، انطلقوا إلى محمد صلى الله عليه وسلم، فيشفع لكم إلى ربكم عز وجل.<br>قال: فينطلق، فيأتي جبريل عليه السلام ربه، فيقول الله عز وجل: ائذن له، وبشره بالجنة، قال  : فينطلق به جبريل فيخر ساجدا قدر جمعة، ويقول الله عز وجل: ارفع رأسك يا محمد، وقل يسمع، واشفع تشفع، قال: فيرفع رأسه، فإذا نظر إلى ربه عز وجل، خر ساجدا قدر جمعة أخرى، فيقول الله عز وجل: ارفع رأسك، وقل يسمع، واشفع تشفع، قال: فيذهب ليقع ساجدا، فيأخذ جبريل عليه السلام بضبعيه فيفتح الله عز وجل عليه من الدعاء شيئا لم يفتحه على بشر قط، فيقول: أي رب، خلقتني سيد ولد آدم، ولا فخر، وأول من تنشق عنه الأرض يوم القيامة، ولا فخر، حتى إنه ليرد علي الحوض أكثر مما بين صنعاء وأيلة، ثم يقال: ادعوا الصديقين فيشفعون، ثم يقال: ادعوا الأنبياء ، قال: فيجيء النبي ومعه العصابة، والنبي ومعه الخمسة والستة، والنبي ليس معه أحد، ثم يقال: ادعوا الشهداء فيشفعون لمن أرادوا، قال: فإذا فعلت الشهداء ذلك، قال: يقول الله عز وجل: أنا أرحم الراحمين، أدخلوا جنتي من كان لا يشرك بي شيئا، قال: فيدخلون الجنة.<br>قال: ثم يقول الله عز وجل: انظروا في النار: هل تلقون من أحد عمل خيرا قط؟ قال: فيجدون في النار رجلا، فيقول له: هل عملت خيرا قط؟ فيقول: لا، غير أني كنت أسامح الناس في البيع ، فيقول الله عز وجل: أسمحوا لعبدي كإسماحه إلى عبيدي.<br>ثم يخرجون من النار رجلا فيقول له: هل عملت خيرا قط؟ فيقول: لا، غير أني قد أمرت ولدي: إذا مت فأحرقوني بالنار، ثم اطحنوني، حتى إذا كنت مثل الكحل، فاذهبوا بي إلى البحر، فاذروني في الريح، فوالله لا يقدر علي رب العالمين أبدا، فقال الله عز وجل له: لم فعلت ذلك؟ قال: من مخافتك، قال: فيقول الله عز وجل: انظر إلى ملك أعظم ملك، فإن لك مثله وعشرة أمثاله، قال: فيقول: لم تسخر بي وأنت الملك؟ قال: وذاك الذي ضحكت منه من الضحى "<br>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">مسند الإمام أحمد بن حنبل</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">15</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">حكم ودرجة صحة الحديث رقم 15 مسند أحمد</h2>
+	
+	<div>
+ إسناده حسن، أبو نعامة: هو عمرو بن عيسى بن سويد العدوي، وثقه ابن معين  والنسائي وابن حبان، وقال أبو حاتم: لا بأس به، وقال أحمد: ثقة إلا أنه اختلط قبل موته، وقال الذهبي في " الكاشف ": ثقة، قيل: تغير بأخرة، واحتج به مسلم وابن ماجه، وأبو هنيدة روى عنه جمع، وذكره ابن حبان في " الثقات " ٧ / ٦٦٨، وثقه ابن معين كما في " الجرح والتعديل " ٢ / ٤٠، وقال ابن سعد في " الطبقات " ٧ / ٢٢٦: كان معروفا قليل الحديث، ووالان العدوي: هو والان بن بيهس أو ابن قرفة، قال الحافظ في " تعجيل المنفعة " رقم (١١٥٠) : قال ابن معين: والان بن قرفة بصري ثقة، وذكره ابن حبان في " الثقات " ٥ / ٤٩٧، وقول الدارقطني عنه في " العلل " ١ / ١٩٠ - ١٩١: ليس بمشهور إلا في هذا الحديث، والحديث غير ثابت، متعقب بما في " لسان الميزان " ٦ / ٢١٦: كذا قال، وقد قال يحيى بن معين: بصري ثقة، وذكره ابن حبان في " الثقات "، وأخرج حديثه في " صحيحه "، وكذا أخرجه أبو عوانة وهو من زياداته على مسلم.	
+	</div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/ozkorallh_20181027">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

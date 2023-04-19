@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+مسند أحمد حديث رقم 25623 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("https://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option><option value="ahmad">مسند أحمد</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+مسند أحمد حديث رقم 25623</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+عن حديث عائشة زوج النبي صلى الله عليه وسلم، حين قال لها أهل الإفك ما قالوا، فبرأها الله عز وجل، وكلهم حدثني بطائفة من حديثها، وبعضهم كان أوعى لحديثها من بعض، وأثبت اقتصاصا، وقد وعيت عن كل واحد منهم الحديث الذي حدثني، وبعض حديثهم يصدق بعضا ذكروا أن عائشة زوج النبي صلى الله عليه وسلم قالت: " كان رسول الله صلى الله عليه وسلم إذا أراد أن يخرج سفرا، أقرع بين نسائه، فأيتهن خرج سهمها، خرج بها رسول الله صلى الله عليه وسلم معه " قالت عائشة: فأقرع بيننا في غزوة غزاها،فخرج فيها سهمي، فخرجت مع رسول الله صلى الله عليه وسلم، وذلك بعدما أنزل الحجاب، فأنا أحمل في هودجي، وأنزل فيه مسيرنا، حتى إذا فرغ رسول الله صلى الله عليه وسلم من غزوه، وقفل ودنونا من المدينة، آذن ليلة بالرحيل، فقمت حين آذنوا بالرحيل، فمشيت حتى جاوزت الجيش، فلما قضيت شأني، أقبلت إلى الرحل، فلمست صدري، فإذا عقد من جزع أظفار  قد انقطع، فرجعت فالتمست عقدي، فاحتبسني ابتغاؤه، وأقبل الرهط الذين  كانوا يرحلون بي، فحملوا هودجي فرحلوه على بعيري الذي كنت أركب، وهم يحسبون أني فيه، قالت وكانت النساء إذ ذاك خفافا لم يهبلهن  ، ولم يغشهن اللحم، إنما يأكلن العلقة من الطعام، فلم يستنكر القوم ثقل  الهودج حين رحلوه ورفعوه، وكنت جارية حديثة السن فبعثوا الجمل، وساروا، فوجدت عقدي بعدما استمر الجيش، فجئت منازلهم وليس بها داع ولا مجيب، فيممت منزلي الذي كنت فيه، وظننت أن القوم سيفقدوني، فيرجعوا إلي فبينما أنا جالسة في منزلي، غلبتني عيني فنمت، وكان صفوان بن المعطل السلمي ثم الذكواني قد عرس وراء الجيش، فأدلج فأصبح عند منزلي، فرأى سواد إنسان نائم، فأتاني فعرفني حين رآني، وقد كان يراني قبل أن يضرب علي الحجاب، فاستيقظت باسترجاعه حين عرفني، فخمرت وجهي بجلبابي، فوالله ما كلمني كلمة، ولا سمعت منه كلمة غير استرجاعه حتى أناخ راحلته، فوطئ على يدها، فركبتها فانطلق يقود بي الراحلة، حتى أتينا الجيش بعدما نزلوا موغرين في نحر الظهيرة، فهلك من هلك في شأني، وكان الذي تولى كبره عبد الله بن أبي ابن سلول، فقدمت المدينة فاشتكيت حين قدمنا شهرا، والناس يفيضون في قول أهل الإفك، ولم  أشعر بشيء من ذلك، وهو يريبني في وجعي، أني لا أعرف من رسول الله صلى الله عليه وسلم اللطف الذي كنت أرى منه حين أشتكي، إنما يدخل رسول الله صلى الله عليه وسلم فيسلم، ثم يقول: كيف تيكم؟ فذاك يريبني، ولا أشعر بالشر حتى خرجت بعدما نقهت، وخرجت معي  أم مسطح قبل المناصع، وهو متبرزنا، ولا نخرج إلا ليلا إلى ليل، وذلك قبل أن تتخذ الكنف قريبا من بيوتنا، وأمرنا أمر العرب الأول في التنزه، وكنا نتأذى بالكنف أن نتخذها عند بيوتنا، وانطلقت أنا وأم مسطح - وهي بنت أبي رهم بن المطلب بن عبد مناف، وأمها بنت صخر بن عامر، خالة أبي بكر الصديق، وابنها مسطح بن أثاثة بن عباد بن المطلب - وأقبلت أنا وبنت أبي رهم قبل بيتي حين فرغنا من شأننا، فعثرت أم مسطح في مرطها، فقالت: تعس مسطح، فقلت لها: بئس ما قلت، تسبين رجلا قد شهد بدرا قالت: أي هنتاه أولم تسمعي ما قال؟ قلت: وماذا قال؟ فأخبرتني بقول أهل الإفك، فازددت مرضا إلى مرضي، فلما رجعت إلى بيتي، فدخل علي رسول الله صلى الله عليه وسلم، ثم قال: كيف تيكم؟ قلت: أتأذن لي أن آتي أبوي؟ قالت: وأنا حينئذ أريد أن أتيقن الخبر من قبلهما، فأذن لي  رسول الله صلى الله عليه وسلم فجئت أبوي، فقلت لأمي: يا أمتاه ما يتحدث الناس؟ فقالت: أي بنية هوني عليك، فوالله لقلما كانت امرأة قط وضيئة عند رجل يحبها، ولها ضرائر إلا كثرن عليها، قالت قلت: سبحان الله أوقد تحدث الناس بهذا؟ قالت: فبكيت تلك الليلة حتى أصبحت، لا يرقأ لي دمع، ولا أكتحل بنوم، ثم أصبحت أبكي، ودعا رسول الله صلى الله عليه وسلم علي بن أبي طالب، وأسامة بن زيد حين استلبث الوحي يستشيرهما في فراق أهله، قالت: فأما أسامة بن زيد فأشار على رسول الله صلى الله عليه وسلم بالذي يعلم من براءة أهله، وبالذي يعلم في نفسه لهم من الود، فقال: يا رسول الله هم أهلك، ولا نعلم إلا خيرا، وأما علي بن أبي طالب فقال: لم يضيق الله عز وجل عليك، والنساء سواها كثير، وإن تسأل الجارية تصدقك، قالت فدعا رسول الله صلى الله عليه وسلم بريرة، قال: أي بريرة هل رأيت من شيء يريبك من عائشة؟ قالت له بريرة: والذي بعثك بالحق إن رأيت عليها أمرا قط أغمصه عليها أكثر من أنها جارية حديثة السن، تنام عن عجين أهلها، فتأتي الداجن فتأكله، فقام رسول الله صلى الله عليه وسلم فاستعذر من عبد الله بن أبي ابن سلول فقالت قال رسول الله صلى الله عليه وسلم وهو على المنبر: " يا معشر المسلمين، من يعذرني من رجل قد بلغني أذاه في أهل بيتي، فوالله ما علمت على أهلي إلا خيرا، ولقد ذكروا رجلا ما علمت عليه إلا خيرا، وما كان يدخل على أهلي إلا معي "، فقام سعد بن معاذ الأنصاري فقال: أعذرك منه يا رسول الله؟ إن كان من الأوس ضربنا عنقه، وإن كان من إخواننا من الخزرج أمرتنا ففعلنا أمرك، قالت: فقام سعد بن عبادة وهو سيد الخزرج، وكان رجلا صالحا، ولكن اجتهلته الحمية، فقال لسعد بن معاذ: لعمر الله لا تقتله، ولا تقدر على قتله، فقام أسيد بن حضير، وهو ابن عم سعد بن معاذ، فقال لسعد بن عبادة: كذبت لعمر الله لنقتلنه فإنك منافق تجادل عن المنافقين، فثار الحيان الأوس والخزرج، حتى هموا أن يقتتلوا ورسول الله صلى الله عليه وسلم قائم على المنبر، فلم يزل رسول الله صلى الله عليه وسلم يخفضهم حتى سكتوا، وسكت.<br> قالت: وبكيت يومي ذاك لا يرقأ لي دمع، ولا أكتحل بنوم، ثم بكيت ليلتي المقبلة لا يرقأ لي دمع، ولا أكتحل بنوم، وأبواي يظنان أن البكاء فالق كبدي، قالت: فبينما هما جالسان عندي، وأنا أبكي، استأذنت علي امرأة من الأنصار، فأذنت لها فجلست تبكي معي، فبينما نحن على ذلك، دخل علينا رسول الله صلى الله عليه وسلم فسلم، ثم جلس، قالت: ولم يجلس عندي منذ قيل لي ما قيل، وقد لبث شهرا لا يوحى إليه في شأني شيء، قالت: فتشهد رسول الله صلى الله عليه وسلم حين جلس، ثم قال: " أما بعد يا عائشة فإنه بلغني عنك كذا وكذا، فإن كنت بريئة فسيبرئك الله عز وجل، وإن كنت ألممت بذنب فاستغفري الله، ثم توبي  إليه، فإن العبد إذا اعترف بذنب، ثم تاب تاب الله عليه "، قالت: فلما قضى رسول الله صلى الله عليه وسلم مقالته قلص دمعي حتى ما أحس منه قطرة، فقلت لأبي: أجب عني رسول الله صلى الله عليه وسلم فيما قال  فقال: ما أدري والله ما أقول لرسول الله صلى الله عليه وسلم؟ فقلت لأمي: أجيبي عني رسول الله صلى الله عليه وسلم، فقالت: والله ما أدري ما أقول لرسول الله صلى الله عليه وسلم؟ قالت: فقلت وأنا جارية حديثة السن لا أقرأ كثيرا من القرآن، إني والله قد عرفت أنكم قد سمعتم بهذا، حتى استقر في أنفسكم وصدقتم به، ولئن قلت لكم إني بريئة، والله عز وجل يعلم أني بريئة، لا تصدقوني بذلك، ولئن اعترفت لكم بأمر والله عز وجل يعلم أني بريئة تصدقوني، وإني والله ما أجد لي ولكم مثلا، إلا كما قال أبو يوسف {فصبر جميل، والله المستعان على ما تصفون} قالت: ثم تحولت فاضطجعت على فراشي، قالت: وأنا والله حينئذ أعلم أني بريئة، وأن الله عز وجل مبرئي ببراءتي، ولكن والله ما كنت أظن أن ينزل في شأني وحي يتلى، ولشأني كان أحقر في نفسي من أن يتكلم الله عز وجل في بأمر يتلى، ولكن كنت أرجو أن يرى رسول الله صلى الله عليه وسلم في النوم رؤيا، يبرئني الله عز وجل بها، قالت: فوالله ما رام رسول الله صلى الله عليه وسلم مجلسه، ولا خرج من أهل البيت أحد حتى أنزل الله عز وجل على نبيه، فأخذه ما كان يأخذه من البرحاء عند الوحي، حتى إنه ليتحدر منه مثل الجمان من العرق في اليوم الشاتي من ثقل القول الذي أنزل عليه، قالت: فلما سري عن رسول الله صلى الله عليه وسلم، وهو يضحك، فكان أول كلمة تكلم بها أن قال: " أبشري يا عائشة، أما الله عز وجل فقد برأك، فقالت لي أمي: قومي إليه، فقلت: والله لا أقوم إليه، ولا أحمد إلا الله عز وجل، هو الذي أنزل براءتي، فأنزل الله عز وجل: {إن الذين جاءوا بالإفك عصبة منكم} عشر آيات، فأنزل الله عز وجل هذه الآيات براءتي، قالت: فقال أبو بكر وكان ينفق على مسطح لقرابته منه وفقره، والله لا أنفق عليه شيئا أبدا بعد الذي قال لعائشة، فأنزل الله عز وجل: {ولا يأتل أولو الفضل منكم والسعة} إلى قوله {ألا تحبون أن يغفر الله لكم}  فقال أبو بكر: والله إني لأحب أن يغفر الله لي، فرجع إلى مسطح النفقة التي كان ينفق عليه، وقال: لا أنزعها منه أبدا، قالت عائشة: وكان رسول الله صلى الله عليه وسلم سأل زينب بنت جحش زوج النبي صلى الله عليه وسلم عن أمري، ما علمت أو ما رأيت أو ما بلغك؟ قالت: يا رسول الله أحمي سمعي وبصري، وأنا ما علمت إلا خيرا، قالت عائشة: وهي التي كانت تساميني من أزواج النبي صلى الله عليه وسلم، فعصمها الله عز وجل بالورع، وطفقت أختها حمنة بنت جحش تحارب لها، فهلكت فيمن هلك ".<br> قال: ابن شهاب: فهذا ما انتهى إلينا من أمر هؤلاء الرهط.<br>  (1)     25624- عن عائشة زوج النبي صلى الله عليه وسلم، حين قال لها أهل الإفك ما قالوا، فبرأها الله، وكلهم حدثني طائفة من حديثها، وبعضهم كان أوعى لحديثها من بعض، وأثبت له اقتصاصا وقد وعيت عن كل رجل منهم الحديث الذي حدثني عن عائشة، وبعض حديثهم يصدق بعضا، وإن كان بعضهم أوعى له من بعض، قالوا: قالت عائشة: كان رسول الله صلى الله عليه وسلم إذا أراد سفرا أقرع بين أزواجه، فأيتهن خرج سهمها خرج بها فذكر الحديث، إلا أنه قال: آذن ليلة بالرحيل فقمت، حين آذنوا بالرحيل، وقال: من جزع ظفار، وقال: يهبلن، وقال: فيممت منزلي، وقال قال عروة: أخبرت أنه كان يشاع ويحدث به عنده فيقره ويستمعه ويستوشيه وقال عروة أيضا لم يسم من أهل الإفك إلا حسان بن ثابت ومسطح بن أثاثة، وحمنة بنت جحش في ناس آخرين لا علم لي بهم إلا أنهم عصبة كما قال الله عز وجل وإن كبر ذلك كان يقال عند عبد الله بن أبي ابن سلول قال عروة وكانت عائشة تكره أن يسب عندها حسان وتقول إنه الذي قال وطفقت أختها حمنة تحارب لها، وقال عروة قالت عائشة: والله إن الرجل الذي قيل له ما قيل ليقول سبحان الله، فوالذي نفسي بيده ما كشفت عن كنف أنثى قط، قالت: ثم قتل بعد ذلك في سبيل الله شهيدا.<br> قال عبد الله بن أحمد: قال أبي: في أحد الحديثين تجاذب (2)     25625- عن صالح بن كيسان، قال ابن شهاب، حدثني عروة، فذكر الحديث وإسناده، وقال من جزع ظفار، وقال يهبلن  ، وقال: تيممت، وقال: في البرية، وقال: لها ضرائر، وقال: فتأتي الداجن فتأكله، وقال وكان قبل ذلك رجلا صالحا، ولكن احتملته الحمية وقال: لم يزل رسول الله صلى الله عليه وسلم يخفضهم حتى سكتوا،  وقال: قلص دمعي، وقال: تحارب (3)<br> <br> <br>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">مسند الإمام أحمد بن حنبل</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">25623</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">حكم ودرجة صحة الحديث رقم 25623 مسند أحمد</h2>
+	
+	<div>
+(١) إسناده صحيح على شرط الشيخين.	
+	</div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/ozkorallh_20181027">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

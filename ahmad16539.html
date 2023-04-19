@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+مسند أحمد حديث رقم 16539 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("https://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option><option value="ahmad">مسند أحمد</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+مسند أحمد حديث رقم 16539</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+ حدثنا إياس بن سلمة بن الأكوع، عن أبيه قال: قدمنا المدينة زمن الحديبية مع رسول الله صلى الله عليه وسلم فخرجنا أنا ورباح غلام رسول الله صلى الله عليه وسلم بظهر رسول الله صلى الله عليه وسلم، وخرجت بفرس لطلحة بن عبيد الله، كنت أريد أن أبديه مع الإبل، فلما كان بغلس غار  عبد الرحمن بن عيينة على إبل رسول الله صلى الله عليه وسلم، وقتل راعيها وخرج يطردها هو وأناس معه في خيل، فقلت: يا رباح، اقعد على هذا الفرس فألحقه بطلحة وأخبر رسول الله صلى الله عليه وسلم أنه قد أغير على سرحه، قال: وقمت على تل<br>فجعلت وجهي من قبل المدينة، ثم ناديت ثلاث مرات: يا صباحاه، ثم اتبعت القوم معي سيفي ونبلي  ، فجعلت أرميهم وأعقر بهم، وذلك حين يكثر الشجر، فإذا رجع إلي فارس جلست له في أصل شجرة ثم رميت، فلا يقبل علي فارس إلا عقرت به، فجعلت أرميهم وأنا أقول:<br>[البحر الرجز]<br>أنا ابن الأكوع .<br> واليوم يوم الرضع،<br>فألحق برجل منهم فأرميه وهو على راحلته، فيقع سهمي في الرجل حتى انتظمت كتفه فقلت: خذها وأنا ابن الأكوع واليوم يوم الرضع، فإذا كنت في الشجر أحرقتهم بالنبل، فإذا  تضايقت الثنايا علوت الجبل فرديتهم بالحجارة، فما زال ذاك شأني وشأنهم، أتبعهم فأرتجز حتى ما خلق الله شيئا من ظهر رسول الله صلى الله عليه وسلم إلا خلفته وراء ظهري، فاستنقذته من أيديهم، ثم لم أزل أرميهم حتى ألقوا أكثر من ثلاثين رمحا، وأكثر من ثلاثين بردة يستخفون منها، ولا يلقون من ذلك شيئا إلا جعلت عليه حجارة، وجمعت على طريق رسول الله صلى الله عليه وسلم، حتى إذا امتد الضحى أتاهم عيينة بن بدر الفزاري مددا لهم وهم في ثنية ضيقة، ثم علوت الجبل فأنا فوقهم، فقال عيينة: ما هذا الذي<br>أرى؟ قالوا: لقينا من هذا البرح ما فارقنا بسحر حتى الآن، وأخذ كل شيء في أيدينا وجعله وراء ظهره، قال عيينة: لولا أن هذا يرى أن وراءه طلبا لقد ترككم، ليقم إليه نفر منكم، فقام إليه نفر منهم أربعة، فصعدوا في الجبل، فلما أسمعتهم الصوت قلت: أتعرفوني؟ قالوا: ومن أنت؟ قلت: أنا ابن الأكوع، والذي كرم وجه محمد صلى الله عليه وسلم لا يطلبني منكم رجل فيدركني ولا أطلبه فيفوتني، قال رجل منهم: إن أظن، قال: فما برحت مقعدي ذلك حتى نظرت إلى فوارس رسول الله صلى الله عليه وسلم يتخللون الشجر، وإذا أولهم الأخرم الأسدي، وعلى أثره أبو قتادة فارس رسول الله صلى الله عليه وسلم، وعلى أثر أبي قتادة المقداد الكندي، فولى المشركون مدبرين وأنزل  من الجبل، فأعرض للأخرم فآخذ عنان  فرسه فقلت: يا أخرم، ائذن  القوم ـ يعني احذرهم ـ فإني لا آمن أن يقطعوك، فاتئد حتى يلحق رسول الله صلى الله عليه وسلم وأصحابه، قال: يا سلمة، إن كنت تؤمن بالله واليوم الآخر وتعلم أن الجنة حق والنار حق فلا تحل بيني وبين الشهادة، قال: فخليت عنان فرسه فيلحق بعبد الرحمن بن عيينة، ويعطف عليه عبد الرحمن فاختلفا طعنتين، فعقر الأخرم بعبد الرحمن وطعنه عبد الرحمن فقتله، فتحول عبد الرحمن على فرس الأخرم فيلحق أبو قتادة بعبد الرحمن، فاختلفا طعنتين، فعقر بأبي قتادة وقتله أبو قتادة، وتحول أبو قتادة على فرس الأخرم، ثم إني خرجت أعدو في أثر القوم، حتى ما أرى من غبار صحابة النبي صلى الله عليه وسلم شيئا، ويعرضون قبل غيبوبة الشمس إلى شعب فيه ماء، يقال له: ذو قرد، فأرادوا أن يشربوا منه، فأبصروني أعدو وراءهم، فعطفوا عنه واشتدوا في الثنية - ثنية ذي نثر (١) -، وغربت الشمس فألحق رجلا فأرميه، فقلت: خذها<br>وأنا ابن الأكوع واليوم يوم الرضع، قال: فقال: يا ثكل أم أكوع بكرة؟، قلت: نعم، أي عدو نفسه، وكان الذي رميته بكرة، فأتبعته سهما آخر فعلق به سهمان، ويخلفون فرسين، فجئت بهما أسوقهما إلى رسول الله صلى الله عليه وسلم وهو على الماء الذي حليتهم (٢) عنه ذو قرد، فإذا بنبي الله صلى الله عليه وسلم في خمسمائة، وإذا بلال قد نحر جزورا مما خلفت، فهو يشوي لرسول الله صلى الله عليه وسلم من كبدها وسنامها، فأتيت رسول الله صلى الله عليه وسلم فقلت: يا رسول الله، خلني فأنتخب من أصحابك مائة، فآخذ على الكفار بالعشوة فلا يبقى منهم مخبر إلا قتلته، قال: " أكنت فاعلا ذلك يا سلمة؟ "، قال: نعم، والذي أكرمك،<br>جلدها رأوا غبرة فتركوها وخرجوا هرابا فلما أصبحنا قال رسول الله صلى الله عليه وسلم: " خير فرساننا اليوم أبو قتادة، وخير رجالتنا سلمة "، فأعطاني رسول الله صلى الله عليه وسلم سهم الراجل والفارس جميعا ثم أردفني وراءه على العضباء راجعين إلى المدينة، فلما كان بيننا وبينها قريبا من ضحوة وفي القوم رجل من الأنصار كان لا يسبق جعل ينادي: هل من مسابق؟ ألا رجل يسابق إلى المدينة؟ فأعاد ذلك مرارا وأنا وراء رسول الله صلى الله عليه وسلم مردفي، قلت له: أما تكرم كريما، ولا تهاب شريفا، قال: لا، إلا رسول الله صلى الله عليه وسلم، قال: قلت: يا رسول الله، بأبي أنت وأمي خلني فلأسابق الرجل، قال: " إن شئت "، قلت: أذهب إليك، فطفر عن راحلته، وثنيت رجلي فطفرت عن الناقة، ثم إني ربطت عليها شرفا أو شرفين، يعني استبقيت نفسي، ثم إني عدوت حتى ألحقه فأصك بين كتفيه بيدي، قلت: سبقتك والله، أو كلمة نحوها، قال: فضحك وقال: إن أظن، حتى قدمنا المدينة <br>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">مسند الإمام أحمد بن حنبل</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">16539</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">حكم ودرجة صحة الحديث رقم 16539 مسند أحمد</h2>
+	
+	<div>
+ إسناده صحيح على شرط مسلم.	
+	</div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/ozkorallh_20181027">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

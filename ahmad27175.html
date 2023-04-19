@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+مسند أحمد حديث رقم 27175 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("https://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option><option value="ahmad">مسند أحمد</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+مسند أحمد حديث رقم 27175</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+ عن عبد الرحمن بن كعب بن مالك، عن أبيه، قال: لم أتخلف عن النبي صلى الله عليه وسلم في غزاة  غزاها حتى كانت غزوة  تبوك إلا بدرا، ولم يعاتب النبي صلى الله عليه وسلم أحدا تخلف عن بدر، إنما خرج يريد العير، فخرجت قريش مغوثين لعيرهم، فالتقوا عن غير موعد، كما قال الله عز وجل، ولعمري، إن أشرف مشاهد رسول الله صلى الله عليه وسلم في الناس لبدر، وما أحب أني كنت شهدتها مكان بيعتي ليلة العقبة، حيث توافقنا على الإسلام، ولم أتخلف بعد عن النبي صلى الله عليه وسلم في غزاة  غزاها، حتى كانت غزوة تبوك، وهي آخر غزوة غزاها، فأذن رسول الله صلى الله عليه وسلم للناس بالرحيل، وأراد أن يتأهبوا أهبة غزوهم، وذلك حين طاب الظلال وطابت الثمار، فكان قلما أراد غزوة إلا وارى غيرها  ، وقال يعقوب: عن ابن أخي ابن شهاب: إلا ورى بغيرها، حدثناه سفيان، عن معمر، عن الزهري، عن عبد الرحمن بن عبد الله بن كعب بن مالك عن أبيه  ، وقال فيه: ورى غيرها، ثم رجع إلى حديث عبد الرزاق،: وكان يقول: " الحرب خدعة " فأراد النبي صلى الله عليه وسلم في غزوة تبوك، أن يتأهب الناس أهبته  ، وأنا أيسر ما كنت، قد جمعت راحلتين، وأنا أقدر شيء في نفسي على الجهاد وخفة الحاذ، وأنا في ذلك أصغو إلى الظلال وطيب الثمار، فلم أزل كذلك، حتى قام النبي صلى الله عليه وسلم غاديا بالغداة، وذلك يوم الخميس، وكان يحب أن يخرج يوم الخميس، فأصبح غاديا، فقلت: أنطلق غدا  إلى السوق، فأشتري جهازي، ثم ألحق بهم، فانطلقت إلى السوق من الغد  ، فعسر علي بعض شأني، فرجعت فقلت: أرجع غدا إن شاء الله، فألحق بهم، فعسر علي بعض شأني، فلم أزل كذلك، حتى التبس بي الذنب، وتخلفت عن رسول الله صلى الله عليه وسلم، فجعلت أمشي في الأسواق، وأطوف بالمدينة فيحزنني أني لا أرى أحدا تخلف إلا رجلا مغموصا عليه في النفاق، وكان ليس أحد تخلف إلا رأى أن ذلك سيخفى له، وكان الناس كثيرا لا يجمعهم ديوان، وكان جميع من تخلف عن النبي صلى الله عليه وسلم بضعة وثمانين رجلا، ولم يذكرني النبي صلى الله عليه وسلم حتى بلغ تبوكا، فلما بلغ تبوكا، قال: " ما فعل كعب بن مالك؟ " فقال رجل من قومي: خلفه يا رسول الله برديه، والنظر في عطفيه - وقال يعقوب: عن ابن أخي ابن شهاب: برداه، والنظر في عطفيه  - فقال: معاذ بن جبل: بئسما قلت، والله يا نبي الله، ما نعلم إلا خيرا، فبينا هم كذلك، إذا هم برجل يزول به السراب، فقال النبي صلى الله عليه وسلم: " كن أبا خيثمة "، فإذا هو أبو خيثمة فلما قضى رسول الله صلى الله عليه وسلم غزوة تبوك، وقفل، ودنا من المدينة، جعلت أتذكر بماذا أخرج من سخطة النبي صلى الله عليه وسلم، وأستعين على ذلك كل ذي رأي من أهلي، حتى إذا قيل: النبي هو مصبحكم بالغداة، زاح عني الباطل، وعرفت أني لا أنجو إلا بالصدق، ودخل النبي صلى الله عليه وسلم ضحى، فصلى في المسجد ركعتين - وكان إذا جاء من سفر، فعل ذلك: دخل  المسجد، فصلى ركعتين - ثم جلس فجعل يأتيه من تخلف، فيحلفون له، ويعتذرون إليه، فيستغفر لهم، ويقبل علانيتهم ويكل سرائرهم إلى الله عز وجل، فدخلت المسجد، فإذا هو جالس، فلما رآني، تبسم تبسم المغضب، فجئت فجلست بين يديه، فقال: " ألم تكن ابتعت ظهرك؟ " قلت: بلى يا نبي الله، قال: " فما خلفك؟ " قلت: والله لو بين يدي أحد من الناس غيرك جلست، لخرجت من سخطته بعذر لقد أوتيت جدلا وقال يعقوب: عن ابن أخي ابن شهاب: لرأيت أن  أخرج من سخطته بعذر، وفي حديث عقيل: أخرج من سخطته  بعذر، وفيه: ليوشكن أن الله يسخطك علي، ولئن حدثتك حديث صدق، تجد علي فيه، إني لأرجو فيه عفو الله، ثم رجع إلى حديث عبد الرزاق:، ولكن قد علمت يا نبي الله أني إن  أخبرتك اليوم بقول تجد علي فيه، وهو حق، فإني أرجو فيه عفو الله، وإن حدثتك اليوم حديثا ترضى عني فيه، وهو كذب، أوشك أن يطلعك الله علي، والله يا نبي الله ما كنت قط أيسر، ولا أخف حاذا مني حين تخلفت عنك، فقال: " أما هذا، فقد صدقكم الحديث، قم حتى يقضي الله فيك " فقمت، فثار على أثري ناس من قومي يؤنبونني، فقالوا: والله ما نعلمك أذنبت ذنبا قط قبل هذا، فهلا اعتذرت إلى النبي صلى الله عليه وسلم بعذر يرضى عنك فيه، فكان استغفار رسول الله صلى الله عليه وسلم، سيأتي من وراء ذنبك؟ ولم تقف نفسك موقفا لا تدري ماذا يقضى لك فيه؟ فلم يزالوا يؤنبونني حتى هممت أن أرجع، فأكذب نفسي، فقلت: هل قال هذا القول أحد غيري؟ قالوا: نعم، هلال بن أمية، ومرارة يعني ابن ربيعة فذكروا رجلين صالحين، قد شهدا بدرا، لي فيهما - يعني أسوة  - فقلت: والله لا أرجع إليه في هذا أبدا، ولا أكذب نفسي، ونهى النبي صلى الله عليه وسلم الناس عن كلامنا أيها الثلاثة، قال: فجعلت أخرج إلى السوق، فلا يكلمني أحد، وتنكر لنا الناس، حتى ما هم بالذين نعرف، وتنكرت لنا الحيطان التي نعرف حتى  ما هي الحيطان، التي نعرف، وتنكرت لنا الأرض حتى ما هي بالأرض  التي نعرف، وكنت أقوى أصحابي، فكنت أخرج، فأطوف بالأسواق، وآتي المسجد، فأدخل، وآتي النبي صلى الله عليه وسلم فأسلم عليه، فأقول: هل حرك شفتيه بالسلام، فإذا قمت أصلي إلى سارية، فأقبلت قبل صلاتي، نظر إلي بمؤخر عينيه، وإذا نظرت إليه، أعرض عني، واستكان صاحباي، فجعلا يبكيان الليل والنهار، لا يطلعان رءوسهما، فبينا أنا أطوف السوق إذا رجل نصراني، جاء بطعام  يبيعه، يقول: من يدل على كعب بن مالك، فطفق الناس يشيرون له  إلي، فأتاني وأتاني بصحيفة من ملك غسان، فإذا فيها: أما بعد: فإنه بلغني أن صاحبك، قد جفاك، وأقصاك، ولست بدار مضيعة، ولا هوان، فالحق بنا نواسك  ، فقلت: هذا أيضا من البلاء والشر، فسجرت لها التنور، وأحرقتها فيه، فلما مضت أربعون ليلة، إذا رسول من النبي صلى الله عليه وسلم قد أتاني، فقال: اعتزل امرأتك، فقلت: أطلقها؟ قال: لا، ولكن لا تقربنها، فجاءت امرأة هلال، فقالت: يا رسول الله، إن هلال بن أمية شيخ ضعيف، فهل تأذن لي أن أخدمه؟ قال: " نعم، ولكن لا يقربنك "، قالت: يا نبي الله، ما به حركة لشيء، ما زال مكبا يبكي الليل والنهار، منذ كان من أمره ما كان، قال كعب: فلما طال علي البلاء، اقتحمت على أبي قتادة حائطه - وهو ابن عمي - فسلمت عليه، فلم يرد علي، فقلت: أنشدك الله يا أبا قتادة، أتعلم أني أحب الله ورسوله؟ فسكت، ثم قلت: أنشدك الله يا أبا قتادة، أتعلم أني أحب الله ورسوله؟ قال الله ورسوله أعلم، قال: فلم أملك نفسي أن بكيت، ثم اقتحمت الحائط خارجا، حتى إذا مضت خمسون ليلة من حين نهى النبي صلى الله عليه وسلم الناس عن كلامنا، صليت على ظهر بيت لنا صلاة الفجر، ثم جلست وأنا في المنزلة التي قال الله عز وجل، قد ضاقت علينا الأرض بما رحبت، وضاقت علينا أنفسنا، إذ سمعت نداء من ذروة سلع: أن أبشر يا كعب بن مالك، فخررت ساجدا، وعرفت أن الله قد جاءنا بالفرج، ثم جاء رجل يركض على فرس يبشرني، فكان الصوت أسرع من فرسه، فأعطيته ثوبي بشارة، ولبست ثوبين آخرين، وكانت توبتنا نزلت على النبي صلى الله عليه وسلم ثلث الليل ، فقالت أم سلمة عشيتئذ: يا نبي الله، ألا نبشر كعب بن مالك؟ قال: " إذا يحطمنكم    الناس، ويمنعونكم النوم سائر الليلة " وكانت أم سلمة محسنة محتسبة في شأني، تحزن بأمري، فانطلقت إلى النبي صلى الله عليه وسلم، فإذا هو جالس في المسجد وحوله المسلمون، وهو يستنير كاستنارة القمر، وكان إذا سر بالأمر، استنار، فجئت فجلست بين يديه، فقال: " أبشر يا كعب بن مالك بخير يوم أتى عليك منذ يوم ولدتك أمك "، قلت: يا نبي الله، أمن عند الله، أو من عندك؟ قال: " بل من عند الله عز وجل "، ثم تلا عليهم: {لقد تاب الله على النبي والمهاجرين والأنصار} حتى بلغ {إن الله هو التواب الرحيم} قال: وفينا نزلت أيضا {اتقوا الله وكونوا مع الصادقين} فقلت: يا نبي الله، إن من توبتي أن لا أحدث إلا صدقا، وأن أنخلع من مالي كله صدقة إلى الله عز وجل، وإلى رسوله، فقال: " أمسك عليك بعض مالك، فهو خير لك "، قلت: فإني أمسك سهمي الذي بخيبر قال: فما أنعم الله عز وجل علي نعمة بعد الإسلام أعظم في نفسي من صدقي رسول الله صلى الله عليه وسلم حين صدقته أنا وصاحباي، أن لا نكون كذبنا، فهلكنا كما هلكوا، إني  لأرجو أن لا يكون الله عز وجل أبلى أحدا في الصدق، مثل الذي أبلاني ما تعمدت لكذبة بعد، وإني لأرجو أن يحفظني الله فيما بقي <br>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">مسند الإمام أحمد بن حنبل</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">27175</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">حكم ودرجة صحة الحديث رقم 27175 مسند أحمد</h2>
+	
+	<div>
+إسناده صحيح، رجاله ثقات رجال الشيخين غير أن أبا سفيان - وهو محمد بن حميد - من رجال مسلم.	
+	</div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/ozkorallh_20181027">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

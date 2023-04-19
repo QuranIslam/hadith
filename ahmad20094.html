@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+مسند أحمد حديث رقم 20094 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("https://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option><option value="ahmad">مسند أحمد</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+مسند أحمد حديث رقم 20094</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+حدثنا سمرة بن جندب الفزاري، قال: كان رسول الله صلى الله عليه وسلم مما يقول لأصحابه: " هل رأى أحد منكم رؤيا؟ " قال: فيقص عليه من شاء الله أن يقص، قال: وإنه قال لنا ذات غداة: " إنه أتاني الليلة آتيان، وإنهما ابتعثاني، وإنهما قالا لي: انطلق، وإني انطلقت معهما، وإنا أتينا على رجل مضطجع، وإذا آخر قائم عليه بصخرة، وإذا هو يهوي عليه بالصخرة لرأسه، فيثلغ  بها رأسه، فيتدهدا الحجر هاهنا، فيتبع الحجر يأخذه، فما يرجع إليه حتى يصح رأسه كما كان، ثم يعود عليه، فيفعل به مثل ما فعل<br>المرة الأولى "، قال: قلت: " سبحان الله ما هذان؟ قالا لي: انطلق انطلق، فانطلقت معهما، فأتينا على رجل مستلق لقفاه، وإذا آخر قائم عليه بكلوب من حديد، وإذا هو يأتي أحد شقي وجهه فيشرشر شدقه إلى قفاه، ومنخريه إلى قفاه، وعينيه  إلى قفاه "، قال: " ثم يتحول إلى الجانب الآخر، فيفعل به مثل ما فعل بالجانب الأول، فما يفرغ من ذلك الجانب حتى يصح الأول كما كان، ثم يعود فيفعل به مثل ما فعل به المرة الأولى "، قال: قلت: " سبحان الله ما هذان؟ قالا لي: انطلق انطلق "، قال: " فانطلقنا، فأتينا على مثل بناء التنور "، قال عوف: وأحسب أنه قال: وإذا فيه لغط وأصوات، قال: " فاطلعت، فإذا فيه رجال ونساء عراة، وإذا هم يأتيهم لهيب من أسفل منهم، فإذا أتاهم ذلك اللهب ضوضوا "، قال: قلت: " ما هؤلاء؟ قالا لي: انطلق انطلق، فانطلقت فأتينا على نهر، حسبت أنه قال: أحمر، مثل الدم، وإذا في النهر رجل يسبح، ثم يأتي ذلك الرجل الذي قد<br>جمع الحجارة،  فيفغر له فاه، فيلقمه حجرا حجرا " قال: " فينطلق فيسبح ما يسبح، ثم يرجع إليه، كلما رجع إليه فغر له فاه وألقمه حجرا "، قال: قلت: " ما هذا؟ "، قال: " قالا لي: انطلق انطلق، فانطلقنا فأتينا على رجل كريه المرآة، كأكره ما أنت راء رجلا مرآة، فإذا هو عند نار له يحشها، ويسعى حولها، قلت لهما: " ما هذا؟ قالا لي: انطلق انطلق فانطلقت فأتينا على روضة معشبة فيها من كل نور الربيع "، قال: " وإذا بين ظهراني الروضة رجل قائم طويل، لا أكاد أن أرى رأسه طولا في السماء، وإذا حول الرجل من أكثر ولدان رأيتهم قط وأحسنه "، قال: قلت لهما: " ما هذا وما هؤلاء؟ قالا لي: انطلق انطلق، فانطلقت فانتهينا إلى دوحة عظيمة لم أر دوحة قط أعظم منها، ولا أحسن "، قال: " فقالا لي: ارق فيها، فارتقينا فيها، فانتهينا  إلى مدينة مبنية بلبن ذهب، ولبن فضة، فأتينا باب<br>المدينة، فاستفتحنا، ففتح لنا، فدخلنا فتلقانا فيها رجال  شطر من خلقهم كأحسن ما أنت راء، وشطر كأقبح ما أنت راء "، قال: " فقالا لهم: اذهبوا فقعوا في ذلك النهر، فإذا نهر صغير معترض يجري كأنما هو المحض في البياض "، قال: " فذهبوا فوقعوا فيه، ثم رجعوا إلينا، وقد ذهب ذلك السوء عنهم، وصاروا في أحسن صورة "، قال: " فقالا لي: هذه جنة عدن، وهاذاك منزلك "، قال: " فسما  بصري صعدا، فإذا قصر مثل الربابة البيضاء "، قالا لي: " هاذاك منزلك "، قال: " قلت لهما: بارك الله فيكما، ذراني فلأدخله "، قال: " قالا لي: أما الآن فلا، وأنت داخله "، قال: " فإني رأيت منذ الليلة عجبا فما هذا الذي رأيت؟ " قال: " قالا لي: " أما إنا سنخبرك: أما الرجل الأول الذي أتيت عليه يثلغ رأسه بالحجر، فإنه رجل يأخذ القرآن فيرفضه، وينام عن الصلاة  المكتوبة، وأما الرجل الذي أتيت عليه يشرشر شدقه إلى قفاه، وعيناه<br>إلى قفاه، ومنخراه إلى قفاه، فإنه الرجل يغدو من بيته، فيكذب الكذبة تبلغ الآفاق، وأما الرجال والنساء العراة الذين في بناء مثل بناء التنور، فإنهم الزناة والزواني، وأما الرجل الذي يسبح في النهر، ويلقم الحجارة، فإنه آكل الربا، وأما الرجل الكريه المرآة الذي عند النار يحشها، فإنه مالك خازن جهنم، وأما الرجل الطويل الذي رأيت في الروضة، فإنه إبراهيم عليه السلام، وأما الولدان الذين حوله، فكل مولود مات على الفطرة "، قال: فقال بعض المسلمين: يا رسول الله وأولاد المشركين، فقال رسول الله صلى الله عليه وسلم: " وأولاد المشركين "، " وأما القوم الذين كان شطر منهم حسنا، وشطر قبيحا، فإنهم قوم خلطوا عملا صالحا، وآخر سيئا، فتجاوز الله عنهم "،<br>٢٠٠٩٥ - قال أبو عبد الرحمن: قال أبي سمعت من عباد بن عباد، يخبر به، عن عوف، عن أبي رجاء، عن سمرة، عن النبي صلى الله عليه وسلم قال: " فيتدهده الحجر هاهنا "، قال أبي: " فجعلت أتعجب من فصاحة عباد "<br>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">مسند الإمام أحمد بن حنبل</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">20094</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">حكم ودرجة صحة الحديث رقم 20094 مسند أحمد</h2>
+	
+	<div>
+ إسناده صحيح على شرط الشيخين.	
+	</div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/ozkorallh_20181027">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

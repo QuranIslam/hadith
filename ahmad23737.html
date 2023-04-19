@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+مسند أحمد حديث رقم 23737 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("https://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option><option value="ahmad">مسند أحمد</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+مسند أحمد حديث رقم 23737</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+عن عبد الله بن عباس، قال: حدثني سلمان الفارسي حديثه من فيه، قال: كنت رجلا فارسيا من أهل أصبهان من أهل قرية منها يقال لها جي، وكان أبي دهقان قريته، وكنت أحب خلق الله إليه، فلم يزل به حبه إياي حتى حبسني في بيته كما تحبس الجارية، واجتهدت في المجوسية حتى كنت قطن النار الذي يوقدها لا يتركها تخبو ساعة، قال: وكانت لأبي ضيعة عظيمة، قال: فشغل في بنيان له يوما، فقال لي: يا بني، إني قد شغلت في بنيان هذا اليوم عن ضيعتي، فاذهب فاطلعها، وأمرني فيها ببعض ما يريد، فخرجت أريد ضيعته، فمررت بكنيسة من كنائس النصارى، فسمعت أصواتهم فيها وهم يصلون، وكنت لا أدري ما أمر الناس لحبس أبي إياي في بيته، فلما مررت بهم، وسمعت أصواتهم، دخلت عليهم أنظر ما يصنعون، قال: فلما رأيتهم أعجبني صلاتهم، ورغبت في أمرهم، وقلت: هذا والله خير من الدين الذي نحن عليه، فوالله ما تركتهم حتى غربت الشمس، وتركت ضيعة أبي ولم آتها، فقلت لهم: أين أصل هذا الدين؟ <br>قالوا: بالشام قال: ثم رجعت إلى أبي، وقد بعث في طلبي وشغلته عن عمله كله، قال: فلما جئته، قال: أي بني، أين كنت؟ ألم أكن عهدت إليك ما عهدت؟ قال: قلت: يا أبت، مررت بناس يصلون في كنيسة لهم فأعجبني ما رأيت من دينهم، فوالله مازلت عندهم حتى غربت الشمس، قال: أي بني، ليس في ذلك الدين خير، دينك ودين آبائك خير منه، قال: قلت: كلا والله إنه لخير من ديننا، قال: فخافني، فجعل في رجلي قيدا، ثم حبسني في بيته، قال: وبعثت إلى النصارى فقلت لهم: إذا قدم عليكم ركب من الشام تجار من النصارى فأخبروني بهم، قال: فقدم عليهم ركب من الشام تجار من النصارى، قال: فأخبروني بهم، قال: فقلت لهم: إذا قضوا حوائجهم وأرادوا الرجعة إلى بلادهم فآذنوني بهم، قال: فلما أرادوا الرجعة إلى بلادهم أخبروني بهم، فألقيت الحديد من رجلي، ثم خرجت معهم حتى قدمت الشام، فلما قدمتها، قلت: من أفضل أهل هذا الدين؟ قالوا: الأسقف في الكنيسة، قال: فجئته، فقلت: إني قد رغبت في هذا الدين، وأحببت أن أكون معك أخدمك في كنيستك، وأتعلم منك وأصلي معك، قال: فادخل فدخلت معه، قال: فكان رجل سوء يأمرهم بالصدقة ويرغبهم فيها، فإذا جمعوا إليه منها أشياء، اكتنزه لنفسه، ولم يعطه المساكين، حتى جمع سبع قلال من ذهب وورق، قال: وأبغضته بغضا شديدا لما رأيته يصنع، ثم مات، فاجتمعت إليه النصارى ليدفنوه، فقلت لهم: إن هذا كان رجل سوء يأمركم بالصدقة ويرغبكم فيها فإذا جئتموه بها اكتنزها لنفسه، ولم يعط المساكين منها شيئا، قالوا: وما علمك بذلك؟، قال: قلت أنا أدلكم على كنزه، قالوا: فدلنا عليه، قال: فأريتهم موضعه، قال: فاستخرجوا منه سبع قلال مملوءة ذهبا وورقا، قال: فلما رأوها قالوا: والله لا ندفنه أبدا فصلبوه، ثم رجموه بالحجارة، ثم جاءوا برجل آخر، فجعلوه بمكانه، قال: يقول سلمان: فما رأيت رجلا لا يصلي الخمس، أرى أنه أفضل منه، أزهد في الدنيا، ولا أرغب في الآخرة، ولا أدأب ليلا ونهارا منه، قال: فأحببته حبا لم أحبه من قبله، فأقمت معه زمانا، ثم حضرته الوفاة، فقلت له: يا فلان إني كنت معك وأحببتك حبا لم أحبه من قبلك وقد حضرك ما ترى من أمر الله، فإلى من توصي بي، وما تأمرني؟، قال: أي بني والله ما أعلم أحدا اليوم على ما كنت عليه، لقد هلك الناس وبدلوا وتركوا أكثر ما كانوا عليه، إلا رجلا بالموصل، وهو فلان، فهو على ما كنت عليه، فالحق به، قال: فلما مات وغيب، لحقت بصاحب الموصل فقلت له: يا فلان، إن فلانا أوصاني عند موته أن ألحق بك، وأخبرني أنك على أمره، قال: فقال لي: أقم عندي فأقمت عنده، فوجدته خير رجل على أمر صاحبه، فلم يلبث أن مات، فلما حضرته الوفاة، قلت له: يا فلان، إن فلانا أوصى بي إليك، وأمرني باللحوق بك، وقد حضرك من الله عز وجل ما ترى، فإلى من توصي بي، وما تأمرني؟ قال: أي بني، والله ما أعلم رجلا على مثل ما كنا عليه إلا بنصيبين، وهو فلان، فالحق به، قال: فلما مات وغيب لحقت بصاحب نصيبين، فجئته فأخبرته خبري  ، وما أمرني به صاحبي، قال: فأقم عندي، فأقمت عنده، فوجدته على أمر صاحبيه، فأقمت مع خير رجل، فوالله ما لبث أن نزل به الموت، فلما حضر، قلت له: يا فلان، إن فلانا كان أوصى بي إلى فلان، ثم أوصى بي فلان إليك، فإلى من توصي بي، وما تأمرني؟ قال: أي بني، والله ما نعلم أحدا بقي على أمرنا آمرك أن تأتيه إلا رجلا بعمورية، فإنه على مثل ما نحن عليه، فإن أحببت فأته، قال: فإنه على أمرنا، قال: فلما مات وغيب لحقت بصاحب عمورية، وأخبرته خبري، فقال: أقم عندي، فأقمت مع رجل على هدي أصحابه وأمرهم، قال: واكتسبت حتى كان لي بقرات وغنيمة، قال: ثم نزل به أمر الله، فلما حضر قلت له: يا فلان، إني كنت مع فلان، فأوصى بي فلان إلى فلان، وأوصى بي فلان إلى فلان، ثم أوصى بي فلان إليك، فإلى من توصي بي، وما تأمرني؟ قال: أي بني، والله ما أعلمه أصبح على ما كنا عليه أحد من الناس آمرك أن تأتيه، ولكنه قد أظلك زمان نبي هو مبعوث بدين إبراهيم يخرج بأرض العرب، مهاجرا إلى أرض بين حرتين بينهما نخل، به علامات لا تخفى: يأكل الهدية، ولا يأكل الصدقة، بين كتفيه خاتم النبوة، فإن استطعت أن تلحق بتلك البلاد فافعل، قال: ثم مات وغيب، فمكثت بعمورية ما شاء الله أن أمكث، ثم مر بي نفر من كلب تجارا، فقلت لهم: تحملوني إلى أرض العرب، وأعطيكم بقراتي هذه وغنيمتي هذه؟ قالوا: نعم فأعطيتهموها وحملوني، حتى إذا قدموا بي وادي القرى ظلموني فباعوني من رجل من يهود عبدا، فكنت عنده، ورأيت النخل، ورجوت أن تكون البلد الذي وصف لي صاحبي، ولم يحق لي في نفسي، فبينما أنا عنده، قدم عليه ابن عم له من المدينة من بني قريظة فابتاعني منه، فاحتملني إلى المدينة، فوالله ما هو إلا أن رأيتها فعرفتها بصفة صاحبي، فأقمت بها وبعث الله رسوله، فأقام بمكة ما أقام لا أسمع له بذكر مع ما أنا فيه من شغل الرق، ثم هاجر إلى المدينة، فوالله إني لفي رأس عذق لسيدي أعمل فيه بعض العمل، وسيدي جالس، إذ أقبل ابن عم له حتى وقف عليه، فقال: فلان، قاتل الله بني قيلة، والله إنهم الآن لمجتمعون بقباء على رجل قدم عليهم من مكة اليوم، يزعمون أنه نبي، قال: فلما سمعتها أخذتني العرواء، حتى ظننت سأسقط على سيدي، قال: ونزلت عن النخلة، فجعلت أقول لابن عمه ذلك: ماذا تقول؟ ماذا تقول؟ قال: فغضب سيدي فلكمني لكمة شديدة، ثم قال: ما لك ولهذا أقبل على عملك، قال: قلت: لا شيء، إنما أردت أن أستثبته  عما قال: وقد كان عندي شيء قد جمعته، فلما أمسيت أخذته ثم ذهبت إلى رسول الله صلى الله عليه وسلم وهو بقباء، فدخلت عليه، فقلت له: إنه قد بلغني أنك رجل صالح، ومعك أصحاب لك غرباء ذوو حاجة، وهذا شيء كان عندي للصدقة، فرأيتكم أحق به من غيركم قال: فقربته إليه، فقال رسول الله صلى الله عليه وسلم لأصحابه: " كلوا " وأمسك يده فلم يأكل، قال: فقلت في نفسي: هذه واحدة، ثم انصرفت عنه فجمعت شيئا، وتحول رسول الله صلى الله عليه وسلم إلى المدينة، ثم جئته به، فقلت: إني رأيتك لا تأكل الصدقة، وهذه هدية أكرمتك بها، قال: فأكل رسول الله صلى الله عليه وسلم منها وأمر أصحابه فأكلوا <br>معه، قال: فقلت في نفسي: هاتان اثنتان، قال: ثم جئت رسول الله صلى الله عليه وسلم وهو ببقيع الغرقد، قال: وقد تبع جنازة من أصحابه، عليه شملتان له، وهو جالس في أصحابه، فسلمت عليه، ثم استدرت أنظر إلى ظهره، هل أرى الخاتم الذي وصف لي صاحبي؟ فلما رآني رسول الله صلى الله عليه وسلم استدبرته ، عرف أني أستثبت في شيء وصف لي، قال: فألقى رداءه عن ظهره، فنظرت إلى الخاتم فعرفته، فانكببت عليه أقبله وأبكي، فقال لي رسول الله صلى الله عليه وسلم: " تحول " فتحولت، فقصصت عليه حديثي كما حدثتك يا ابن عباس، قال: فأعجب رسول الله صلى الله عليه وسلم أن يسمع ذلك أصحابه، ثم شغل سلمان الرق حتى فاته مع رسول الله صلى الله عليه وسلم بدر، وأحد، قال: ثم قال لي رسول الله صلى الله عليه وسلم: " كاتب يا سلمان " فكاتبت صاحبي على ثلاث مائة نخلة أحييها له بالفقير، وبأربعين أوقية، فقال رسول الله صلى الله عليه وسلم لأصحابه: " أعينوا أخاكم " فأعانوني بالنخل: الرجل بثلاثين ودية، والرجل بعشرين، والرجل بخمس عشرة، والرجل بعشر، يعني: الرجل بقدر ما عنده، حتى اجتمعت لي ثلاث مائة ودية، فقال لي رسول الله صلى الله عليه وسلم: " اذهب يا سلمان ففقر لها، فإذا فرغت فأتني أكون أنا أضعها بيدي " قال: ففقرت لها، وأعانني أصحابي، حتى إذا فرغت منها جئته فأخبرته، فخرج رسول الله صلى الله عليه وسلم معي إليها فجعلنا نقرب له الودي ويضعه رسول الله صلى الله عليه وسلم بيده، فوالذي نفس سلمان بيده، ما ماتت منها ودية واحدة، فأديت النخل، وبقي علي المال، فأتي رسول الله صلى الله عليه وسلم بمثل بيضة الدجاجة من ذهب من بعض المغازي، فقال: " ما فعل الفارسي المكاتب؟ " قال: فدعيت له، فقال: " خذ هذه فأد بها ما عليك يا سلمان " فقلت: وأين تقع هذه يا رسول الله مما علي؟ قال: " خذها، فإن الله سيؤدي بها عنك " قال: فأخذتها فوزنت لهم منها، والذي نفس سلمان بيده، أربعين أوقية، فأوفيتهم حقهم، وعتقت، فشهدت مع رسول الله صلى الله عليه وسلم الخندق، ثم لم يفتني معه مشهد<br> <br>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">مسند الإمام أحمد بن حنبل</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">23737</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">حكم ودرجة صحة الحديث رقم 23737 مسند أحمد</h2>
+	
+	<div>
+إسناده حسن، محمد بن إسحاق صدوق حسن الحديث، وقد صرح بالتحديث، وباقي رجال الإسناد ثقات رجال الصحيح.	
+	</div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/ozkorallh_20181027">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

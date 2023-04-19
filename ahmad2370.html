@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+مسند أحمد حديث رقم 2370 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("https://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option><option value="ahmad">مسند أحمد</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+مسند أحمد حديث رقم 2370</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+عن عبيد الله بن عبد الله بن عتبة بن مسعود، أن عبد الله بن عباس، أخبره: أن رسول الله صلى الله عليه وسلم كتب إلى قيصر يدعوه إلى الإسلام، وبعث كتابه مع دحية الكلبي، وأمره رسول الله صلى الله عليه وسلم، أن يدفعه إلى عظيم بصرى، ليدفعه إلى قيصر، فدفعه عظيم بصرى إلى قيصر وكان قيصر، لما كشف الله عز وجل عنه جنود فارس مشى من حمص إلى إيلياء على الزرابي تبسط له، فقال عبد الله بن عباس: فلما جاء قيصر كتاب رسول الله صلى الله عليه وسلم، قال حين قرأه: التمسوا لي من قومه من أسأله عن رسول الله،قال ابن عباس: فأخبرني أبو سفيان بن حرب أنه كان بالشام في رجال من قريش قدموا تجارا، وذلك في المدة التي كانت بين رسول الله صلى الله عليه وسلم وبين كفار قريش، قال أبو سفيان: فأتاني رسول قيصر، فانطلق بي وبأصحابي، حتى قدمنا إيلياء، فأدخلنا عليه، فإذا هو جالس في مجلس ملكه، عليه التاج، وإذا حوله عظماء الروم، فقال لترجمانه: سلهم أيهم أقرب نسبا بهذا الرجل الذي يزعم أنه نبي؟ قال أبو سفيان: أنا أقربهم إليه نسبا، قال: ما قرابتك منه؟ قال: قلت: هو ابن عمي قال أبو سفيان: وليس في الركب يومئذ رجل من بني عبد مناف غيري، قال: فقال قيصر: أدنوه مني، ثم أمر بأصحابي، فجعلوا خلف ظهري عند كتفي، ثم قال لترجمانه: قل لأصحابه: إني سائل هذا عن هذا الرجل الذي يزعم أنه نبي، فإن كذب، فكذبوه، قال أبو سفيان: فوالله لولا الاستحياء يومئذ أن يأثر أصحابي عني الكذب لكذبته حين سألني، ولكني استحيت أن يأثروا عني الكذب، فصدقته عنه، ثم قال لترجمانه: قل له: كيف نسب هذا الرجل فيكم؟ قال: قلت: هو فينا ذو نسب، قال: فهل قال هذا القول منكم أحد قط قبله؟ قال: قلت: لا، قال: فهل كنتم تتهمونه في الكذب قبل أن يقول ما قال؟ قال: فقلت: لا، قال: فهل كان من آبائه من ملك؟ قال: قلت: لا، قال: فأشراف الناس اتبعوه أم ضعفاؤهم؟ قال: قلت: بل ضعفاؤهم، قال: فيزيدون أم ينقصون؟ قال: قلت: بل يزيدون، قال: فهل يرتد أحد سخطة لدينه بعد أن يدخل فيه؟ قال: قلت: لا، قال: فهل يغدر؟ قال: قلت: لا، ونحن الآن منه في مدة، ونحن نخاف ذلك، قال أبو سفيان: ولم تمكني كلمة أدخل فيها شيئا أنتقصه به غيرها، لا أخاف أن يؤثر عني، قال: فهل قاتلتموه أو قاتلكم؟ قال: قلت: نعم، قال: كيف كانت حربكم وحربه؟ قال: قلت: كانت دولا سجالا ندال عليه المرة، ويدال علينا الأخرى، قال: فبم يأمركم؟ قال: قلت: يأمرنا أن نعبد الله وحده ولا نشرك به شيئا، وينهانا عما كان يعبد آباؤنا، ويأمرنا بالصلاة والصدق، والعفاف والوفاء بالعهد، وأداء الأمانة، قال: فقال لترجمانه حين قلت له ذلك: قل له: إني سألتك عن نسبه فيكم، فزعمت أنه فيكم ذو نسب، وكذلك الرسل تبعث في نسب قومها وسألتك: هل قال هذا القول أحد منكم قط قبله؟ فزعمت أن لا، فقلت: لو كان أحد منكم قال هذا القول قبله، قلت: رجل يأتم بقول قيل قبله، وسألتك: هل كنتم تتهمونه بالكذب قبل أن يقول ما قال؟ فزعمت أن لا، فقد أعرف أنه لم يكن ليذر الكذب على الناس، ويكذب على الله عز وجل، وسألتك: هل كان من آبائه من ملك؟ فزعمت أن لا، فقلت: لو كان من آبائه ملك، قلت: رجل يطلب ملك آبائه، وسألتك: أشراف الناس يتبعونه أم ضعفاؤهم؟ فزعمت أن ضعفاءهم اتبعوه، وهم أتباع الرسل،وسألتك: هل يزيدون أم ينقصون؟ فزعمت أنهم يزيدون، وكذلك الإيمان حتى يتم، وسألتك: هل يرتد أحد سخطة لدينه بعد أن يدخل فيه؟ فزعمت أن لا، وكذلك الإيمان حين يخالط بشاشة القلوب لا يسخطه أحد، وسألتك: هل يغدر؟ فزعمت أن لا، وكذلك الرسل، وسألتك: هل قاتلتموه وقاتلكم؟ فزعمت أن قد فعل، وأن حربكم وحربه يكون دولا، يدال عليكم المرة، وتدالون عليه الأخرى، وكذلك الرسل تبتلى، ويكون لها العاقبة وسألتك: بماذا يأمركم؟ فزعمت أنه يأمركم أن تعبدوا الله عز وجل، وحده لا تشركوا به شيئا، وينهاكم عما كان يعبد آباؤكم، ويأمركم بالصدق، والصلاة، والعفاف، والوفاء بالعهد، وأداء الأمانة، وهذه صفة نبي قد كنت أعلم أنه خارج، ولكن لم أظن أنه منكم، فإن يكن ما قلت فيه حقا، فيوشك أن يملك موضع قدمي هاتين، والله لو أرجو أن أخلص إليه، لتجشمت لقيه، ولو كنت عنده، لغسلت عن قدميه، قال أبو سفيان: ثم دعا بكتاب رسول الله صلى الله عليه وسلم، فأمر به، فقرئ فإذا فيه: " بسم الله الرحمن الرحيم، من محمد عبد الله ورسوله إلى هرقل عظيم الروم، سلام على من اتبع الهدى، أما بعد فإني أدعوك بداعية  الإسلام، أسلم تسلم، وأسلم يؤتك الله أجرك مرتين، فإن توليت فعليك إثم الأريسيين - يعني الأكرة  و {يا أهل الكتاب تعالوا إلى كلمة سواء بيننا وبينكم ألا نعبد إلا الله ولا نشرك به شيئا ولا يتخذ بعضنا بعضا أربابا من دون الله فإن تولوا فقولوا اشهدوا بأنا مسلمون}  " قال أبو سفيان: فلما قضى مقالته، علت أصوات الذين حوله من عظماء الروم، وكثر لغطهم، فلا أدري ماذا قالوا، وأمر بنا فأخرجنا، قال أبو سفيان: فلما خرجت مع أصحابي وخلصت لهم، قلت لهم: أمر أمر ابن أبي كبشة، هذا ملك بني الأصفر يخافه، قال أبو سفيان: فوالله ما زلت ذليلا مستيقنا أن أمره سيظهر، حتى أدخل الله قلبي الإسلام، وأنا كاره  (1) 2371- عن عبيد الله بن عبد الله بن عتبة بن مسعود، أن عبد الله بن عباس، أخبره أن رسول الله صلى الله عليه وسلم كتب فذكره.<br> (2) 2372- حدثناه عبد الرزاق، عن معمر فذكره (3)<br>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">مسند الإمام أحمد بن حنبل</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">2370</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">حكم ودرجة صحة الحديث رقم 2370 مسند أحمد</h2>
+	
+	<div>
+(١)إسناده صحيح على شرط الشيخين.	
+	</div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/ozkorallh_20181027">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

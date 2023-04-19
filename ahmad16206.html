@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+مسند أحمد حديث رقم 16206 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("https://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option><option value="ahmad">مسند أحمد</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+مسند أحمد حديث رقم 16206</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+عن عاصم بن لقيط، أن لقيطا خرج وافدا إلى رسول الله صلى الله عليه وسلم، ومعه صاحب له يقال له: نهيك بن عاصم بن مالك بن المنتفق، قال لقيط: فخرجت أنا وصاحبي حتى قدمنا على رسول الله صلى الله عليه وسلم لانسلاخ رجب، فأتينا رسول الله صلى الله عليه وسلم فوافيناه حين انصرف من صلاة الغداة، فقام في الناس خطيبا، فقال: " أيها الناس، ألا إني قد خبأت لكم صوتي منذ أربعة أيام، ألا لأسمعنكم، ألا فهل من امرئ بعثه قومه؟ فقالوا: اعلم لنا ما يقول رسول الله صلى الله عليه وسلم، ألا<br>ثم لعله أن يلهيه حديث نفسه، أو حديث صاحبه، أو يلهيه الضلال، ألا إني مسئول، هل بلغت؟ ألا اسمعوا تعيشوا، ألا اجلسوا، ألا اجلسوا " قال  : فجلس الناس، وقمت أنا وصاحبي حتى إذا فرغ لنا فؤاده، وبصره، قلت: يا رسول الله، ما عندك من علم الغيب؟ فضحك لعمر الله، وهز رأسه، وعلم أني أبتغي لسقطه، فقال: " ضن ربك عز وجل بمفاتيح خمس من الغيب، لا يعلمها إلا الله "، وأشار بيده، قلت: وما هي؟ قال: " علم المنية، قد علم متى  منية أحدكم، ولا تعلمونه، وعلم المني حين يكون في الرحم قد علمه، ولا تعلمونه ، وعلم ما في غد، [قد علم] ما  أنت طاعم غدا، ولا تعلمه، وعلم يوم الغيث، يشرف عليكم آزلين آزلين مشفقين، فيظل يضحك قد علم أن غيركم إلى<br>قرب  " قال لقيط قلت :: لن نعدم من رب يضحك خيرا، وعلم يوم الساعة، قلت: يا رسول الله، علمنا مما تعلم الناس، وما تعلم، فإنا من قبيل لا يصدق  تصديقنا أحد من مذحج التي تربأ علينا، وخثعم التي توالينا، وعشيرتنا التي نحن منها، قال: " تلبثون ما لبثتم، ثم يتوفى نبيكم صلى الله عليه وسلم، ثم تلبثون ما لبثتم، ثم تبعث الصائحة لعمر إلهك، ما تدع على ظهرها من شيء إلا مات، والملائكة الذين مع ربك عز وجل، فأصبح ربك يطوف في الأرض، وخلت عليه البلاد، فأرسل ربك عز وجل السماء تهضب من عند العرش، فلعمر إلهك ما تدع على ظهرها من مصرع قتيل، ولا مدفن ميت، إلا شقت القبر عنه، حتى تجعله من عند رأسه، فيستوي جالسا، فيقول ربك: مهيم لما كان فيه، يقول: يا رب، أمس، اليوم، ولعهده بالحياة يحسبه، حديثا بأهله "، فقلت: يا رسول الله، كيف يجمعنا بعد ما تمزقنا الرياح<br>والبلى، والسباع؟، قال: " أنبئك بمثل ذلك في آلاء الله، الأرض أشرفت عليها، وهي مدرة بالية، فقلت: لا تحيا أبدا، ثم أرسل ربك عز وجل عليها السماء، فلم تلبث عليك إلا أياما حتى أشرفت عليها، وهي شربة واحدة ولعمر إلهك لهو أقدر على أن يجمعهم  من الماء على أن يجمع نبات الأرض فيخرجون من الأصواء، ومن  مصارعهم فتنظرون إليه، وينظر إليكم " قال: قلت: يا رسول الله، كيف ونحن ملء الأرض وهو شخص واحد ننظر إليه وينظر إلينا؟ قال: " أنبئك بمثل ذلك في آلاء الله عز وجل، الشمس والقمر آية منه صغيرة ترونهما ويريانكم، ساعة واحدة لا تضارون في رؤيتهما، ولعمر إلهك لهو أقدر على أن يراكم، وترونه من أن ترونهما، ويريانكم لا تضارون في رؤيتهما " قلت: يا رسول الله، فما يفعل بنا ربنا عز وجل إذا لقيناه؟ قال: " تعرضون عليه بادية له صفحاتكم، لا يخفى عليه منكم خافية، فيأخذ ربك عز وجل بيده غرفة من الماء فينضح قبيلكم<br>بها، فلعمر إلهك ما تخطئ وجه أحدكم منها قطرة، فأما المسلم فتدع وجهه مثل الريطة البيضاء، وأما الكافر فتخطمه بمثل الحميم  الأسود، ألا ثم ينصرف نبيكم صلى الله عليه وسلم ويفترق على إثره الصالحون، فيسلكون جسرا من النار، فيطأ أحدكم الجمر، فيقول: حس يقول ربك عز وجل: أوانه، ألا فتطلعون على حوض الرسول على أظمأ، والله ناهلة عليها قط، ما رأيتها، فلعمر إلهك ما يبسط واحد منكم يده، إلا وقع  عليها قدح يطهره من الطوف، والبول، والأذى، وتحبس الشمس والقمر، ولا ترون منهما واحدا " قال: قلت: يا رسول الله، فبما نبصر؟ قال: " بمثل بصرك ساعتك هذه، وذلك قبل طلوع الشمس في يوم أشرقت الأرض، واجهت به الجبال "<br>قال: قلت: يا رسول الله، فبما نجزى من سيئاتنا وحسناتنا؟ قال: " الحسنة بعشر أمثالها، والسيئة بمثلها، إلا أن يعفو " قال: قلت: يا رسول الله، إما الجنة، إما النار  قال: " لعمر إلهك إن للنار لسبعة أبواب، ما منهن بابان إلا يسير الراكب بينهما سبعين عاما، وإن للجنة لثمانية أبواب ما منهما بابان إلا يسير الراكب بينهما سبعين عاما " قلت: يا رسول الله، فعلى ما نطلع من الجنة؟ قال: " على أنهار من عسل مصفى، وأنهار من كأس ما بها من صداع، ولا ندامة، وأنهار من لبن لم يتغير طعمه، وماء غير آسن، وبفاكهة لعمر إلهك ما تعلمون  ، وخير من مثله معه، وأزواج مطهرة " قلت: يا رسول الله، أولنا فيها أزواج، أو منهن مصلحات؟ قال: " الصالحات للصالحين، تلذونهن  مثل لذاتكم في الدنيا، ويلذذن بكم غير أن لا توالد " قال لقيط: فقلت: أقصي  ما نحن بالغون، ومنتهون إليه؟ فلم<br>يجبه النبي صلى الله عليه وسلم، قلت: يا رسول الله، على ما أبايعك؟ قال: فبسط النبي صلى الله عليه وسلم يده، وقال: " على إقام الصلاة، وإيتاء الزكاة، وزيال المشرك، وأن لا تشرك بالله إلها غيره " قلت:  وإن لنا ما بين المشرق، والمغرب؟ فقبض النبي صلى الله عليه وسلم يده، وظن أني مشترط شيئا لا يعطينيه، قال: قلت: نحل منها حيث شئنا، ولا يجني امرؤ إلا على نفسه ، فبسط يده، وقال: " ذلك لك تحل حيث شئت، ولا يجني عليك إلا نفسك " قال: فانصرفنا عنه، ثم قال: " إن هذين لعمر إلهك من أتقى الناس في الأولى، والآخرة " فقال له كعب ابن الخدارية أحد بني بكر بن كلاب: من هم  يا رسول الله؟ قال: " بنو المنتفق أهل ذلك " قال: فانصرفنا، وأقبلت عليه، فقلت: يا رسول الله، هل لأحد ممن مضى من خير في جاهليتهم؟ قال: قال رجل من عرض قريش: والله إن أباك المنتفق لفي النار، قال: فلكأنه وقع حر بين جلدي ووجهي ولحمي مما قال لأبي على رءوس الناس، فهممت أن أقول: وأبوك يا رسول الله؟ ثم إذا الأخرى<br>أجمل،  فقلت: يا رسول الله، وأهلك؟ قال: " وأهلي لعمر الله ما أتيت عليه من قبر عامري، أو قرشي من مشرك، فقل: أرسلني إليك محمد، فأبشرك بما يسوءك، تجر على وجهك، وبطنك في النار " قال: قلت: يا رسول الله، ما فعل بهم ذلك وقد كانوا على عمل لا يحسنون إلا إياه؟ وكانوا يحسبون أنهم مصلحون؟ قال: " ذلك لأن  الله عز وجل بعث في آخر كل سبع أمم - يعني  - نبيا، فمن عصى نبيه كان من الضالين، ومن أطاع نبيه كان من المهتدين "<br>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">مسند الإمام أحمد بن حنبل</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">16206</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">حكم ودرجة صحة الحديث رقم 16206 مسند أحمد</h2>
+	
+	<div>
+ إسناده ضعيف، مسلسل بالمجاهيل، عبد الرحمن بن عياش، ودلهم ابن الأسود، وأبوه الأسود بن عبد الله بن حاجب، مجهولون، ولم يؤثر توثيقهم إلا عن ابن حبان كعادته في توثيق المجاهيل، وعاصم بن لقيط، إن لم يكن ابن صبرة، فهو مجهول كذلك.	
+	</div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/ozkorallh_20181027">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

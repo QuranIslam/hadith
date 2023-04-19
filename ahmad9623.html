@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+مسند أحمد حديث رقم 9623 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("https://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option><option value="ahmad">مسند أحمد</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+مسند أحمد حديث رقم 9623</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+عن أبي هريرة، قال: أتي رسول الله صلى الله عليه وسلم بلحم، فدفع إليه الذراع، وكانت تعجبه، فنهس منها نهسة ، ثم قال: " أنا سيد الناس يوم القيامة، وهل تدرون لم ذلك؟ يجمع الله عز وجل الأولين والآخرين في صعيد واحد، يسمعهم الداعي، وينفذهم<br>البصر، وتدنو الشمس فيبلغ الناس من الغم والكرب ما لا يطيقون، ولا يحتملون، فيقول بعض الناس لبعض: ألا ترون إلى ما أنتم فيه؟ ما قد بلغكم؟ ألا تنظرون من يشفع لكم إلى ربكم عز وجل؟ فيقول بعض الناس لبعض: أبوكم آدم، فيأتون آدم، فيقولون: يا آدم، أنت أبو البشر، خلقك الله بيده، ونفخ فيك من روحه، وأمر الملائكة فسجدوا لك، فاشفع لنا إلى ربك، ألا ترى ما نحن فيه؟ ألا ترى ما قد بلغنا؟ فيقول: آدم عليه السلام: إن ربي عز وجل قد غضب اليوم غضبا لم يغضب قبله مثله، ولن يغضب بعده مثله، وإنه نهاني عن الشجرة فعصيته، نفسي نفسي، نفسي نفسي، اذهبوا إلى غيري اذهبوا إلى نوح، فيأتون نوحا، فيقولون: يا نوح، أنت أول الرسل إلى أهل الأرض، وسماك الله عبدا شكورا، فاشفع لنا إلى ربك ، ألا ترى ما نحن فيه؟ ألا ترى ما قد بلغنا؟ فيقول نوح: إن ربي قد غضب اليوم غضبا لم يغضب قبله مثله، ولن يغضب بعده مثله،<br>وإنه كانت لي دعوة على قومي، نفسي نفسي، نفسي نفسي، اذهبوا إلى غيري، اذهبوا إلى إبراهيم، فيأتون إبراهيم فيقولون: يا إبراهيم، أنت نبي الله وخليله من أهل الأرض، اشفع لنا إلى ربك ألا ترى إلى ما نحن فيه؟ ألا ترى ما قد بلغنا؟ فيقول لهم إبراهيم: إن ربي قد غضب اليوم غضبا لم يغضب قبله مثله، ولن يغضب بعده مثله فذكر كذباته، نفسي نفسي، نفسي نفسي، اذهبوا إلى غيري، اذهبوا إلى موسى، فيأتون موسى، فيقولون: يا موسى، أنت رسول الله، اصطفاك الله برسالاته، وبتكليمه على الناس، اشفع لنا إلى ربك، ألا ترى إلى ما نحن فيه؟ ألا ترى ما قد بلغنا؟ فيقول لهم موسى: إن ربي قد غضب اليوم غضبا لم يغضب قبله مثله، ولن يغضب بعده مثله، وإني قتلت نفسا لم أومر بقتلها، نفسي نفسي، نفسي نفسي، اذهبوا إلى غيري، اذهبوا إلى عيسى، فيأتون عيسى، فيقولون: يا عيسى، أنت رسول الله، وكلمته ألقاها إلى مريم، وروح منه، قال: هكذا هو، وكلمت الناس في المهد، فاشفع لنا إلى ربك، ألا ترى إلى ما نحن فيه؟ ألا ترى ما قد بلغنا؟ فيقول لهم عيسى، إن ربي قد غضب اليوم غضبا لم يغضب قبله مثله، ولن يغضب بعده مثله، ولم يذكر له ذنبا،<br>اذهبوا إلى غيري، اذهبوا إلى محمد، فيأتوني فيقولون: يا محمد، أنت رسول الله، وخاتم الأنبياء، غفر الله لك ما تقدم من ذنبك، وما تأخر ، فاشفع لنا إلى ربك، ألا ترى إلى ما نحن فيه؟ ألا ترى ما قد بلغنا؟ فأقوم فآتي تحت العرش، فأقع ساجدا لربي عز وجل، ثم يفتح الله علي ويلهمني من محامده، وحسن الثناء عليه، شيئا لم يفتحه على أحد قبلي، فيقال: يا محمد، ارفع رأسك، سل تعطه، اشفع تشفع، فأقول: يا رب أمتي أمتي، يا رب أمتي أمتي، يا رب أمتي أمتي، يا رب، فيقول: يا محمد، أدخل من أمتك من لا حساب عليه من الباب الأيمن من أبواب الجنة، وهم شركاء الناس فيما سواه من الأبواب "، ثم قال: " والذي نفس محمد بيده، لما بين مصراعين من مصاريع الجنة كما بين مكة وهجر، أو كما بين مكة وبصرى " <br>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">مسند الإمام أحمد بن حنبل</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">9623</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">حكم ودرجة صحة الحديث رقم 9623 مسند أحمد</h2>
+	
+	<div>
+إسناده صحيح على شرط الشيخين.	
+	</div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/ozkorallh_20181027">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>

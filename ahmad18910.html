@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD88CQRN0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD88CQRN0S');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>
+مسند أحمد حديث رقم 18910 موسوعة الأحاديث النبوية
+</title>
+<meta name="msapplication-TileColor" content="#ffffff"><!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb-pro.min.css" rel="stylesheet">
+<!-- Your custom styles (mandatory) -->
+<link href="css/dorar.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function check_hadith(){
+
+	$.getJSON("https://dorar.net/dorar_api.json?skey=" + $("#skey").attr("value") + "&callback=?", function(data){
+
+	  $("#dorar").html("");
+	  $.each(data.ahadith, function(index, item){
+		$("#dorar").append("<span class='qalink' >" + item + "</span>");
+	  });
+	});
+	
+	
+}
+</script>
+<style>
+.enc-image {
+max-width: 80%;
+margin: 20px 10%;
+}.hist-link{
+border-bottom: 1px dotted #000;
+text-decoration: none;
+padding-bottom: 1px;
+}
+</style>
+ <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
+<body class="fixed-sn dorar-skin scrollbar-dusty-grass thin body">
+ 
+<header class="h-auto w-100">
+<!-- Main Navigation -->
+<div class="z-depth-0 default-gradient pt-1 pt-md-1 pt-sm-1 pt-xl-0 pt-lg-0">
+ 
+</div> </header><br><div style="text-align:center;">
+<a href="https://quranislam.github.io" style="text-align:center;"><img width="250px" src="images/tawhid.png" alt="أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدا عبده ورسوله" style="text-align:center;"><div style="font-size:small!important;">(للإنتقال إلى الصفحة الرئيسية للموسوعة الإسلامية اضغط هنا)</div></a>
+</div><br>
+<section>
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-11 col-xl-10 mb-3 mb-md-4 mb-lg-4">
+<!-- Grid row -->
+<div class="row">
+<div class="col-12 mt-4"></div>
+<div class="col-12"></div><div class="w-100"></div>
+<!-- Grid column -->
+<div class="col-12 position-relative">
+<!--/ Collapsible content -->
+<style>
+.amiri_custom_content table {
+max-width: 100% !important;
+}@media (max-width: 480px) {
+.amiri_custom_content table td{
+display: block;
+}.amiri_custom_content table .sep-td {
+display: none;
+}
+}
+#toc {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+		max-width:265px;
+      }
+      #toc ol {
+        list-style-type: disclosure-closed;
+        padding-left: 0;
+      }
+      #toc a {
+        text-decoration: none;
+        font-weight: bold;
+      }.info-subtitle{color:#bb5700;}</style>
+<div style="text-align: center;">
+ <span>ابحث في جميع كتب الحديث</span>
+	<form onsubmit="check_hadith(); return false;">
+  <input style="width:50%;margin-bottom:10px;" type="text" id="skey" />
+  <button type="submit"> بحث </button>
+</form>
+</div>
+<div class="amiri_custom_content card card-personal z-depth-4 animated fadeIn h-100 rounded">
+<div class="card-body" id="cntnt">
+<div class="card-title text-center py-2">
+<div id="dorar"></div>
+<!--div: Modals-->
+<form action="#" id="myForm">
+  <select id="firstMenu">
+    <option value="">كتب الحديث النبوي</option>
+    <option value="bukhari">صحيح البخاري</option>
+    <option value="muslim">صحيح مسلم</option>
+    <option value="nisay">سنن النسائي</option>
+    <option value="dawud">سنن أبي داود</option>
+    <option value="tirmizi">سنن الترمذي</option>
+    <option value="maga">سنن ابن ماجه</option><option value="ahmad">مسند أحمد</option>
+  </select>
+  <select id="secondMenu"></select>
+  <button type="submit">اذهب</button>
+</form>
+
+<script>
+  document.getElementById("firstMenu").addEventListener("change", function() {
+    var selectedValue = this.value;
+    var secondMenu = document.getElementById("secondMenu");
+    secondMenu.innerHTML = "";
+
+    if (selectedValue === "") {
+      return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", selectedValue + ".txt", true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var lines = this.responseText.split("\n");
+        lines.forEach(function(line) {
+          var option = document.createElement("option");
+          option.value = line;
+          option.text = line;
+          secondMenu.appendChild(option);
+        });
+      }
+    };
+    xhr.send();
+  });
+
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var firstMenuValue = document.getElementById("firstMenu").value;
+    var secondMenuValue = document.getElementById("secondMenu").value;
+    if (firstMenuValue === "" || secondMenuValue === "") {
+      return;
+    }
+    window.location.href = firstMenuValue + secondMenuValue + ".html";
+  });
+</script>
+
+<br><br><h1 class="h5-responsivemb-3 mb-lg-0 primary-text-color font-weight-bold ">
+مسند أحمد حديث رقم 18910</h1>
+</div><!-- Collapse buttons -->
+<!-- Collapsible element -->
+<div class="collapse grey lighten-5 p-3 pt-0 mt-0 smooth-scroll" id="collapseExample">
+<ul class="list-unstyled px-0 m-0" id="index"></ul>
+</div>
+<!-- / Collapsible element -->
+<div class="w-100 mt-4">
+<div class="text-justify rtl">
+عن المسور بن مخرمة، ومروان بن الحكم، قالا: خرج رسول الله صلى الله عليه وسلم عام الحديبية يريد زيارة البيت، لا يريد قتالا، وساق معه الهدي سبعين بدنة، وكان الناس سبع مائة رجل، فكانت كل بدنة عن عشرة، قال: وخرج رسول الله صلى الله عليه وسلم حتى إذا كان بعسفان لقيه بشر بن سفيان الكعبي، فقال: يا رسول الله، هذه قريش قد سمعت بمسيرك، فخرجت معها العوذ المطافيل، قد لبسوا جلود النمور، يعاهدون الله أن لا تدخلها عليهم عنوة أبدا، وهذا خالد بن الوليد في خيلهم قدموا إلى كراع الغميم، فقال رسول الله صلى الله عليه وسلم: " يا ويح قريش، لقد أكلتهم الحرب، ماذا عليهم لو خلوا بيني وبين سائر الناس، فإن أصابوني كان الذي أرادوا، وإن أظهرني الله عليهم دخلوا في الإسلام وهم وافرون، وإن لم يفعلوا، قاتلوا وبهم قوة، فماذا تظن قريش، والله إني  لا أزال أجاهدهم على الذي بعثني الله له حتى يظهره الله له أو تنفرد هذه السالفة "، ثم أمر الناس، فسلكوا ذات اليمين بين ظهري الحمض على طريق تخرجه على ثنية المرار والحديبية من أسفل مكة، قال: فسلك بالجيش تلك الطريق، فلما رأت خيل قريش قترة الجيش قد خالفوا عن<br>طريقهم، نكصوا راجعين إلى قريش، فخرج رسول الله صلى الله عليه وسلم حتى إذا سلك ثنية المرار بركت ناقته، فقال الناس: خلأت.<br> فقال رسول الله صلى الله عليه وسلم: " ما خلأت، وما هو لها بخلق، ولكن حبسها حابس الفيل عن مكة، والله لا تدعوني قريش اليوم إلى خطة يسألوني فيها صلة الرحم إلا أعطيتهم إياها " ثم قال للناس: " انزلوا " فقالوا: يا رسول الله، ما بالوادي من ماء ينزل عليه الناس.<br> فأخرج رسول الله صلى الله عليه وسلم سهما من كنانته، فأعطاه رجلا من أصحابه، فنزل في قليب من تلك القلب، فغرزه فيه، فجاش الماء  بالرواء حتى ضرب الناس عنه بعطن، فلما اطمأن رسول الله صلى الله عليه وسلم إذا بديل بن ورقاء في رجال من خزاعة، فقال لهم كقوله لبشير  بن سفيان، فرجعوا إلى قريش فقالوا: يا معشر قريش، إنكم تعجلون على محمد، وإن  محمدا لم يأت لقتال إنما جاء زائرا لهذا البيت، معظما لحقه.<br> فاتهموهم.<br> قال محمد يعني ابن إسحاق: قال الزهري: وكانت خزاعة في غيبة رسول الله صلى الله عليه وسلم مسلمها ومشركها، لا يخفون على رسول الله صلى الله عليه وسلم شيئا كان بمكة، قالوا: وإن كان إنما جاء لذلك، فلا والله لا يدخلها أبدا علينا عنوة، ولا تتحدث بذلك العرب.<br> ثم<br>بعثوا إليه مكرز بن حفص بن الأخيف، أحد بني عامر بن لؤي، فلما رآه رسول الله صلى الله عليه وسلم، قال: " هذا رجل غادر ".<br> فلما انتهى إلى رسول الله صلى الله عليه وسلم كلمه رسول الله صلى الله عليه وسلم بنحو مما كلم به أصحابه، ثم رجع إلى قريش، فأخبرهم بما قال له رسول الله صلى الله عليه وسلم.<br> قال: فبعثوا إليه الحلس بن علقمة الكناني، وهو يومئذ سيد الأحابش،  فلما رآه رسول الله صلى الله عليه وسلم قال: " هذا من قوم يتألهون، فابعثوا الهدي في وجهه ".<br> فبعثوا الهدي، فلما رأى الهدي يسيل عليه من عرض الوادي في قلائده، قد أكل أوتاره  من طول الحبس عن محله، رجع، ولم يصل إلى رسول الله صلى الله عليه وسلم إعظاما لما رأى، فقال: يا معشر  قريش، قد رأيت ما لا يحل صده: الهدي في قلائده قد أكل أوتاره من طول الحبس عن محله.<br> فقالوا: اجلس، إنما أنت أعرابي لا علم لك، فبعثوا إليه عروة بن مسعود الثقفي، فقال: يا معشر قريش، إني قد رأيت ما يلقى منكم، من تبعثون إلى محمد إذا جاءكم، من التعنيف وسوء اللفظ، وقد عرفتم أنكم والد وأني ولد، وقد سمعت بالذي نابكم، فجمعت من أطاعني من قومي، ثم جئت<br>حتى آسيتكم بنفسي.<br> قالوا: صدقت، ما أنت عندنا بمتهم.<br> فخرج حتى أتى رسول الله صلى الله عليه وسلم، فجلس بين يديه، فقال: يا محمد، جمعت أوباش الناس، ثم جئت بهم لبيضتك لتفضها، إنها قريش قد خرجت معها العوذ المطافيل، قد لبسوا جلود النمور، يعاهدون الله أن لا تدخلها عليهم عنوة أبدا، وأيم الله، لكأني بهؤلاء قد انكشفوا عنك غدا.<br> قال: وأبو بكر الصديق خلف رسول الله صلى الله عليه وسلم قاعد، فقال: امصص بظر اللات، أنحن ننكشف عنه؟ قال: من هذا يا محمد؟ قال: " هذا ابن أبي قحافة " قال: والله لولا يد كانت لك عندي، لكافأتك بها، ولكن هذه بها.<br> ثم تناول لحية رسول الله صلى الله عليه وسلم والمغيرة بن شعبة واقف على رأس رسول الله صلى الله عليه وسلم في الحديد، قال: يقرع  يده، ثم قال: أمسك يدك عن لحية رسول الله صلى الله عليه وسلم قبل والله لا تصل إليك.<br> قال: ويحك، ما أفظك وأغلظك.<br> قال: فتبسم رسول الله صلى الله عليه وسلم قال: من هذا يا محمد؟ قال: " هذا ابن أخيك المغيرة بن شعبة " قال: أغدر، هل غسلت سوأتك إلا بالأمس.<br> قال: فكلمه رسول الله صلى الله عليه وسلم بمثل ما كلم به أصحابه، فأخبره أنه لم يأت يريد حربا.<br> قال: فقام من عند رسول الله صلى الله عليه وسلم وقد رأى ما يصنع به أصحابه، لا يتوضأ وضوءا إلا ابتدروه، ولا يبسق بساقا إلا ابتدروه، ولا يسقط من شعره<br>شيء إلا أخذوه، فرجع إلى قريش، فقال: يا معشر  قريش، إني جئت كسرى في ملكه، وجئت قيصر والنجاشي في ملكهما، والله ما رأيت ملكا قط مثل محمد في أصحابه، ولقد رأيت قوما لا يسلمونه لشيء أبدا، فروا رأيكم.<br> قال: وقد كان رسول الله صلى الله عليه وسلم قبل ذلك بعث خراش بن أمية الخزاعي إلى مكة، وحمله على جمل له يقال له: الثعلب، فلما دخل مكة عقرت به قريش، وأرادوا قتل خراش، فمنعهم الأحابش  حتى أتى رسول الله صلى الله عليه وسلم، فدعا عمر ليبعثه إلى مكة، فقال: يا رسول الله، إني أخاف قريشا على نفسي، وليس بها من بني عدي أحد يمنعني، وقد عرفت قريش عداوتي إياها، وغلظتي عليها، ولكن أدلك على رجل هو أعز مني عثمان بن عفان.<br> قال: فدعاه رسول الله صلى الله عليه وسلم، فبعثه إلى قريش يخبرهم أنه لم يأت لحرب، وأنه جاء زائرا لهذا البيت، معظما لحرمته، فخرج عثمان حتى أتى مكة، ولقيه أبان بن سعيد بن العاص، فنزل عن دابته وحمله بين يديه، وردف خلفه، وأجاره حتى بلغ رسالة رسول الله صلى الله عليه وسلم، فانطلق عثمان حتى أتى أبا سفيان وعظماء قريش، فبلغهم عن رسول الله صلى الله عليه وسلم ما أرسله به، فقالوا لعثمان: إن شئت أن تطوف بالبيت، فطف به.<br> فقال: ما كنت<br>لأفعل حتى يطوف به رسول الله صلى الله عليه وسلم.<br> قال: فاحتبسته قريش عندها، فبلغ رسول الله صلى الله عليه وسلم والمسلمين أن عثمان قد قتل.<br> قال محمد: فحدثني الزهري: أن قريشا بعثوا سهيل بن عمرو، أحد بني عامر بن لؤي، فقالوا: ائت محمدا فصالحه، ولا يكون في صلحه إلا أن يرجع عنا عامه هذا، فوالله لا تتحدث العرب أنه دخلها علينا عنوة أبدا، فأتاه سهيل بن عمرو، فلما رآه النبي صلى الله عليه وسلم قال: " قد أراد القوم الصلح حين بعثوا هذا الرجل "، فلما انتهى إلى رسول الله صلى الله عليه وسلم تكلما، وأطالا الكلام، وتراجعا حتى جرى بينهما الصلح، فلما التأم الأمر ولم يبق إلا الكتاب وثب عمر بن الخطاب، فأتى أبا بكر، فقال: يا أبا بكر، أوليس برسول الله صلى الله عليه وسلم؟ أولسنا بالمسلمين؟ أوليسوا بالمشركين؟ قال: بلى.<br> قال: فعلام نعطي الذلة في ديننا.<br> فقال أبو بكر: يا عمر الزم غرزه حيث كان، فإني أشهد أنه رسول الله.<br> قال عمر: وأنا أشهد، ثم أتى رسول الله صلى الله عليه وسلم، فقال: يا رسول الله، أولسنا بالمسلمين؟ أوليسوا بالمشركين؟ قال: " بلى "، قال: فعلام نعطي الذلة في ديننا؟ فقال: " أنا عبد الله ورسوله، لن أخالف أمره، ولن يضيعني " ثم قال عمر: ما زلت أصوم وأتصدق وأصلي وأعتق من الذي صنعت مخافة كلامي الذي تكلمت به يومئذ حتى رجوت أن يكون خيرا.<br>قال: ودعا رسول الله صلى الله عليه وسلم علي بن أبي طالب، فقال له رسول الله صلى الله عليه وسلم: " اكتب بسم الله الرحمن الرحيم " فقال سهيل بن عمرو: لا أعرف هذا، ولكن اكتب باسمك اللهم، فقال له رسول الله صلى الله عليه وسلم: " اكتب باسمك اللهم، هذا ما صالح عليه محمد رسول الله سهيل بن عمرو " فقال سهيل بن عمرو : لو شهدت أنك رسول الله لم أقاتلك، ولكن اكتب: هذا ما اصطلح  عليه محمد بن عبد الله وسهيل بن عمرو على وضع الحرب عشر سنين، يأمن فيها  الناس، ويكف بعضهم عن بعض، على أنه من أتى رسول الله صلى الله عليه وسلم من أصحابه بغير إذن وليه رده عليهم، ومن أتى قريشا ممن مع رسول الله صلى الله عليه وسلم لم يردوه عليه، وإن بيننا عيبة مكفوفة، وإنه لا إسلال ولا إغلال.<br> وكان في شرطهم حين كتبوا الكتاب أنه من أحب أن يدخل في عقد محمد وعهده دخل فيه، ومن أحب أن يدخل في عقد قريش وعهدهم دخل فيه، فتواثبت خزاعة فقالوا: نحن مع عقد رسول الله صلى الله عليه وسلم وعهده، وتواثبت بنو بكر، فقالوا: نحن في عقد قريش وعهدهم.<br> وأنك ترجع عنا عامنا هذا، فلا تدخل علينا مكة، وأنه إذا كان عام قابل، خرجنا عنك، فتدخلها بأصحابك، وأقمت فيهم<br>ثلاثا  معك سلاح الراكب لا تدخلها بغير السيوف في القرب.<br> فبينا رسول الله صلى الله عليه وسلم يكتب الكتاب إذ جاءه أبو جندل بن سهيل بن عمرو في الحديد قد انفلت إلى رسول الله صلى الله عليه وسلم.<br> قال: وقد كان أصحاب رسول الله صلى الله عليه وسلم خرجوا  وهم لا يشكون في الفتح لرؤيا رآها رسول الله صلى الله عليه وسلم، فلما رأوا ما رأوا من الصلح والرجوع، وما تحمل رسول الله صلى الله عليه وسلم على نفسه، دخل الناس من ذلك أمر عظيم حتى كادوا أن يهلكوا، فلما رأى سهيل أبا جندل، قام إليه، فضرب وجهه، ثم قال: يا محمد، قد لجت القضية بيني وبينك قبل أن يأتيك هذا.<br> قال: " صدقت ".<br> فقام إليه، فأخذ بتلبيبه، قال: وصرخ أبو جندل بأعلى صوته: يا معاشر المسلمين، أتردونني إلى أهل الشرك، فيفتنوني  في ديني.<br> قال: فزاد الناس شرا إلى ما بهم.<br> فقال رسول الله صلى الله عليه وسلم: " يا أبا جندل اصبر واحتسب، فإن الله عز وجل جاعل لك ولمن معك من المستضعفين فرجا ومخرجا، إنا قد عقدنا بيننا وبين القوم صلحا، فأعطيناهم على ذلك، وأعطونا عليه عهدا، وإنا لن نغدر بهم ".<br>قال: فوثب إليه عمر بن الخطاب مع أبي جندل، فجعل يمشي إلى جنبه وهو يقول: اصبر أبا جندل، فإنما هم المشركون، وإنما دم أحدهم دم كلب.<br> قال: ويدني قائم السيف منه.<br> قال: يقول: رجوت أن يأخذ السيف، فيضرب به أباه .<br> قال: فضن الرجل بأبيه، ونفذت القضية، فلما فرغا من الكتاب، وكان رسول الله صلى الله عليه وسلم يصلي في الحرم وهو مضطرب في الحل.<br> قال: فقام رسول الله صلى الله عليه وسلم فقال: " يا أيها الناس، انحروا واحلقوا " قال: فما قام أحد، قال: ثم  عاد بمثلها، فما قام رجل، حتى عاد بمثلها، فما قام رجل، فرجع رسول الله صلى الله عليه وسلم فدخل على أم سلمة، فقال: " يا أم سلمة، ما شأن الناس؟ " قالت: يا رسول الله، قد دخلهم ما قد رأيت، فلا تكلمن منهم إنسانا، واعمد إلى هديك حيث كان فانحره واحلق، فلو قد فعلت ذلك فعل الناس ذلك.<br> فخرج رسول الله صلى الله عليه وسلم لا يكلم أحدا حتى أتى هديه فنحره، ثم جلس، فحلق، فقام الناس ينحرون ويحلقون.<br> قال: حتى إذا كان بين مكة والمدينة في وسط الطريق، فنزلت  سورة الفتح<br>
+</div>
+<div class="d-block mb-2">
+		<strong class="px-2">
+			المصدر :
+			<span class="primary-text-color">مسند الإمام أحمد بن حنبل</span>
+		</strong>
+		<strong class="px-2">
+			| الرقم :
+			<span class="primary-text-color">18910</span>
+		</strong>
+		
+	</div>
+	<br>
+	<hr>
+	<h2 id="more-titles">حكم ودرجة صحة الحديث رقم 18910 مسند أحمد</h2>
+	
+	<div>
+إسناده حسن، محمد بن إسحاق، وإن كان مدلسا وقد عنعن إلا أنه قد=صرح بالتحديث في بعض فقرات هذا الحديث، فانتفت شبهة تدليسه، ثم إنه قد توبع كما سيأتي برقم (١٨٩٢٨) (١٨٩٢٩) .	
+	</div>
+<hr>
+<a href="https://archive.org/details/FP34714">لتحميل صحيح البخاري نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP121852">تحميل صحيح مسلم نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144445">تحميل سنن النسائي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144444">تحميل سنن أبي داود نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144449">تحميل سنن الترمذي نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/FP144429">تحميل سنن ابن ماجه نسخة الأوقاف السعودية بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a><br><a href="https://archive.org/details/ozkorallh_20181027">تحميل مسند أحمد بصيغة PDF اضغط هنا <i class="fa fa-external-link sharh"></i></a>
+</div>
+</div>
+</div>
+<!-- Grid column -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body></html>
